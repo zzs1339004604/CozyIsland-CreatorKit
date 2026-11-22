@@ -1,0 +1,25 @@
+# Author-local game references and build caches are never part of the public kit.
+References/
+Results/
+MyMods/
+Examples/*/Code/
+ResearchArchive/
+**/bin/
+**/obj/
+**/.vs/
+*.user
+*.suo
+*.zip
+**/*.pdb
+**/Source/UnityProject/Library/
+**/Source/UnityProject/Temp/
+**/Source/UnityProject/Logs/
+**/Source/UnityProject/UserSettings/
+**/Source/UnityProject/*.csproj
+**/Source/UnityProject/*.sln
+
+# Keep editable external project templates even if the Unity repository ignores generated projects.
+!Examples/
+!Examples/**/Source/
+!Examples/**/Source/*.csproj
+!Examples/**/Source/*.cs

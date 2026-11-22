@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "cozy.example.minimal-code",
+  "title": "代码加载与 Harmony 示例",
+  "author": "Cozy Island Mod Examples",
+  "version": "1.0.0",
+  "description": "最小代码示例：修补自己程序集中的方法，并在 Player 日志中记录加载、更新、场景和清理回调。没有游戏玩法改动或额外界面。",
+  "multiplayer": "client",
+  "code": {
+    "assembly": "Code/CozyMods.MinimalCodeMod.dll",
+    "type": "CozyMods.MinimalCodeMod"
+  }
+}

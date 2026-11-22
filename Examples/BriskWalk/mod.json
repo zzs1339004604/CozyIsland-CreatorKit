@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "examples.brisk-walk",
+  "title": "轻快散步",
+  "author": "Cozy Island Mod Examples",
+  "version": "2.0.0",
+  "description": "功能模组：房主世界中玩家步行速度提高25%，奔跑设置提高15%。返回主菜单关闭后恢复原始设置。",
+  "multiplayer": "host",
+  "preview": "preview.png",
+  "code": {
+    "assembly": "Code/CozyMods.BriskWalk.dll",
+    "type": "CozyMods.Examples.BriskWalk"
+  }
+}

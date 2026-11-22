@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../../Tools/CozyMod.props" />
+  <PropertyGroup>
+    <AssemblyName>Trial.NoBridge.TrailTreat</AssemblyName>
+    <RootNamespace>Trial.NoBridge</RootNamespace>
+  </PropertyGroup>
+</Project>

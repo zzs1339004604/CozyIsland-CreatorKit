@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../../Tools/CozyMod.props" />
+  <PropertyGroup>
+    <AssemblyName>FreshEye.ResearchCamp</AssemblyName>
+    <RootNamespace>FreshEye.ResearchCamp</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="UnityProject/**/*.cs" />
+  </ItemGroup>
+</Project>

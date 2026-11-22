@@ -1,0 +1,2012 @@
+{
+  "appId": 2918500,
+  "apiVersion": 1,
+  "gameVersion": "1.0.0",
+  "generatedUtc": "2026-10-15T15:01:30.0515945Z",
+  "recipes": [
+    {
+      "name": "南瓜房子",
+      "description": "南瓜房子",
+      "workshop": "蔬菜工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-PumpkintHouse",
+      "ingredients": [
+        {
+          "item": "巨大南瓜",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "南瓜椅子",
+      "description": "南瓜虽然不能煮，但现在它能当椅子！",
+      "workshop": "蔬菜工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-PumpkinChair",
+      "ingredients": [
+        {
+          "item": "南瓜",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "南瓜篮子",
+      "description": "南瓜虽然不能煮，但现在它能做篮子！",
+      "workshop": "蔬菜工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-PumpkinBasket",
+      "ingredients": [
+        {
+          "item": "南瓜",
+          "amount": 4
+        },
+        {
+          "item": "红蘑菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "原木墙壁",
+      "description": "原木拼成的墙壁，简单但可靠",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-WoodenWall",
+      "ingredients": [
+        {
+          "item": "原木",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "咔瑞房子",
+      "description": "咔瑞房子",
+      "workshop": "魔法工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-MagicCarrotHouse",
+      "ingredients": [
+        {
+          "item": "巨大咔瑞",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "基础工作台",
+      "description": "可以制作很多东西",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-Workshop-Base",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 10
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "帕姆房子",
+      "description": "帕姆房子",
+      "workshop": "魔法工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-MagicPumpkintHouse",
+      "ingredients": [
+        {
+          "item": "巨大帕姆",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "托玛房子",
+      "description": "托玛房子",
+      "workshop": "魔法工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-MagicTomatoHouse",
+      "ingredients": [
+        {
+          "item": "巨大托玛",
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "name": "摇摆气球人",
+      "description": "摇摇晃晃的气球人",
+      "workshop": "小岛订购终端",
+      "category": "建筑",
+      "product": "CozyBuildingBP-BalloonMan",
+      "ingredients": [
+        {
+          "item": "金甜菜",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "木房子",
+      "description": "木房子",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-WoodenHouse",
+      "ingredients": [
+        {
+          "item": "原木",
+          "amount": 6
+        },
+        {
+          "item": "长原木",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "木桌子",
+      "description": "木桌子",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-WoodenTable",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 12
+        }
+      ]
+    },
+    {
+      "name": "木棍展览架",
+      "description": "可以用来展览一个东西",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-BranchenSlot",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 6
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "木棍方形篮子",
+      "description": "木棍做的篮子",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-WoodenBasket-2",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 16
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "深色木棍栅栏",
+      "description": "木头做的深色栅栏",
+      "workshop": "魔法工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-WoodenFence-Dark",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "木棍栅栏",
+      "description": "木头做的栅栏",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-WoodenFence",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "木棍篮子",
+      "description": "木棍做的篮子",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-WoodenBasket",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 16
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "木椅子",
+      "description": "木椅子",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-WoodenChair",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 6
+        }
+      ]
+    },
+    {
+      "name": "木质篮球框",
+      "description": "木质篮球框",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-WoodenBasketballHoop",
+      "ingredients": [
+        {
+          "item": "原木",
+          "amount": 3
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "木质马桶",
+      "description": "木质马桶",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-WoodenToilet",
+      "ingredients": [
+        {
+          "item": "原木",
+          "amount": 1
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "水井",
+      "description": "可以用来打水",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-Well",
+      "ingredients": [
+        {
+          "item": "石头",
+          "amount": 5
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "炼药锅",
+      "description": "可以用来炼药的锅",
+      "workshop": "魔法工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-Pot-Magic",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 5
+        },
+        {
+          "item": "石头",
+          "amount": 5
+        },
+        {
+          "item": "魔法粉末",
+          "amount": 3
+        },
+        {
+          "item": "红魔法菇",
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "name": "烹饪锅",
+      "description": "可以用来把蔬菜煮熟的锅",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-Pot-Cook",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 5
+        },
+        {
+          "item": "石头",
+          "amount": 5
+        },
+        {
+          "item": "香菇",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "番茄房子",
+      "description": "番茄房子",
+      "workshop": "蔬菜工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-TomatoHouse",
+      "ingredients": [
+        {
+          "item": "巨大西红柿",
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "name": "石头墙",
+      "description": "石头做的墙",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-RockWall",
+      "ingredients": [
+        {
+          "item": "石头",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "石头篝火",
+      "description": "放在旁边的食材会被缓慢烤熟，但是比篝火快",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-BonfireWithStone",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 12
+        },
+        {
+          "item": "石头",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "篝火",
+      "description": "放在旁边的食材会被缓慢烤熟",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-Bonfire",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 12
+        }
+      ]
+    },
+    {
+      "name": "胡萝卜房子",
+      "description": "胡萝卜房子",
+      "workshop": "蔬菜工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-CarrotHouse",
+      "ingredients": [
+        {
+          "item": "巨大胡萝卜",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "胡萝卜栅栏",
+      "description": "用胡萝卜做的栅栏",
+      "workshop": "蔬菜工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-CarrotFence",
+      "ingredients": [
+        {
+          "item": "胡萝卜",
+          "amount": 6
+        }
+      ]
+    },
+    {
+      "name": "自定义告示牌",
+      "description": "可以自己写东西的告示牌",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-CustomBillborad",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "name": "蔬菜工作台",
+      "description": "可以制作蔬菜相关东西",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-Workshop-Vege",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 10
+        },
+        {
+          "item": "南瓜",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "藏品展示架",
+      "description": "可以用来展览一个东西",
+      "workshop": "小岛订购终端",
+      "category": "建筑",
+      "product": "CozyBuildingBP-TrophyBaseSlot",
+      "ingredients": [
+        {
+          "item": "金甜菜",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "蛋窝",
+      "description": "可以用来孵蛋",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-EggIncubator",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 12
+        }
+      ]
+    },
+    {
+      "name": "西红柿椅子",
+      "description": "西红柿椅子",
+      "workshop": "蔬菜工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-TomatoChair",
+      "ingredients": [
+        {
+          "item": "西红柿",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "青虫摇摆气球",
+      "description": "摇摇摆摆的青虫气球",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-BalloonMan-GreenWorm",
+      "ingredients": [
+        {
+          "item": "青虫",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "魔法工作台",
+      "description": "可以制作魔法相关东西",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-Workshop-Magic",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 10
+        },
+        {
+          "item": "棕魔法菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "鱼类工作台",
+      "description": "可以制作鱼类相关物品",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-Workshop-Fish",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 10
+        },
+        {
+          "item": "花园鳗",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "剑鱼玩偶帽",
+      "description": "剑鱼玩偶帽",
+      "workshop": "鱼类工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-SwordFishCosplayHat",
+      "ingredients": [
+        {
+          "item": "剑鱼",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "剑鱼玩偶服",
+      "description": "剑鱼玩偶服",
+      "workshop": "鱼类工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-SwordFishCosplayCloth",
+      "ingredients": [
+        {
+          "item": "剑鱼",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "南瓜玩偶帽",
+      "description": "南瓜玩偶帽",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-MagicTomatoCosplayHat (1)",
+      "ingredients": [
+        {
+          "item": "南瓜",
+          "amount": 3
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "南瓜玩偶服",
+      "description": "南瓜玩偶服",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-PumpkinCosplayCloth",
+      "ingredients": [
+        {
+          "item": "巨大南瓜",
+          "amount": 1
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "咔瑞玩偶帽",
+      "description": "咔瑞玩偶帽",
+      "workshop": "魔法工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-MagicCarrotCosplayHat",
+      "ingredients": [
+        {
+          "item": "咔瑞",
+          "amount": 3
+        },
+        {
+          "item": "蓝魔法菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "咔瑞玩偶服",
+      "description": "咔瑞玩偶服",
+      "workshop": "魔法工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-MagicCarrotCosplayCloth",
+      "ingredients": [
+        {
+          "item": "巨大咔瑞",
+          "amount": 1
+        },
+        {
+          "item": "蓝魔法菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "小猫玩偶服",
+      "description": "小猫玩偶服",
+      "workshop": "基础工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-CatCosplayCloth",
+      "ingredients": [
+        {
+          "item": "小刺球",
+          "amount": 20
+        }
+      ]
+    },
+    {
+      "name": "帕姆玩偶帽",
+      "description": "帕姆玩偶帽",
+      "workshop": "魔法工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-MagicPumpkinCosplayHat",
+      "ingredients": [
+        {
+          "item": "帕姆",
+          "amount": 3
+        },
+        {
+          "item": "红魔法菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "帕姆玩偶服",
+      "description": "帕姆玩偶服",
+      "workshop": "魔法工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-MagicPumpkinCosplayCloth",
+      "ingredients": [
+        {
+          "item": "巨大帕姆",
+          "amount": 1
+        },
+        {
+          "item": "红魔法菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "托玛玩偶帽",
+      "description": "托玛玩偶帽",
+      "workshop": "魔法工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-MagicTomatoCosplayHat",
+      "ingredients": [
+        {
+          "item": "托玛",
+          "amount": 3
+        },
+        {
+          "item": "棕魔法菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "托玛玩偶服",
+      "description": "托玛玩偶服",
+      "workshop": "魔法工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-MagicTomatoCosplayCloth",
+      "ingredients": [
+        {
+          "item": "巨大托玛",
+          "amount": 1
+        },
+        {
+          "item": "棕魔法菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "粉南瓜玩偶帽",
+      "description": "粉南瓜玩偶帽",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-PumpkinCosplayHat-Pink",
+      "ingredients": [
+        {
+          "item": "粉南瓜",
+          "amount": 1
+        },
+        {
+          "item": "红蘑菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "粉南瓜玩偶服",
+      "description": "粉南瓜玩偶服",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-PumpkinCosplayCloth-Pink",
+      "ingredients": [
+        {
+          "item": "粉南瓜",
+          "amount": 1
+        },
+        {
+          "item": "红蘑菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "红鲤鱼玩偶帽",
+      "description": "红鲤鱼玩偶帽",
+      "workshop": "鱼类工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-RedFishCosHat",
+      "ingredients": [
+        {
+          "item": "大红鲤鱼",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "红鲤鱼玩偶服",
+      "description": "红鲤鱼玩偶服",
+      "workshop": "鱼类工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-RedFishCosCloth",
+      "ingredients": [
+        {
+          "item": "大红鲤鱼",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "胡萝卜发卡",
+      "description": "胡萝卜发卡",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-CarrotHairpin",
+      "ingredients": [
+        {
+          "item": "胡萝卜",
+          "amount": 1
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "胡萝卜玩偶头套",
+      "description": "胡萝卜玩偶头套",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-CarrotCosplayHat",
+      "ingredients": [
+        {
+          "item": "巨大胡萝卜",
+          "amount": 1
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "胡萝卜玩偶服装",
+      "description": "胡萝卜玩偶服装",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-CarrotCosplayCloth",
+      "ingredients": [
+        {
+          "item": "巨大胡萝卜",
+          "amount": 1
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "花园鳗发卡",
+      "description": "花园鳗发卡",
+      "workshop": "鱼类工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-GardenEelHairpin",
+      "ingredients": [
+        {
+          "item": "花园鳗",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "花园鳗玩偶帽",
+      "description": "花园鳗玩偶帽",
+      "workshop": "鱼类工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-GardenEelMask",
+      "ingredients": [
+        {
+          "item": "花园鳗",
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "name": "花园鳗玩偶服",
+      "description": "花园鳗玩偶服",
+      "workshop": "鱼类工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-GardenEelCloth",
+      "ingredients": [
+        {
+          "item": "花园鳗",
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "name": "蓝鲤鱼玩偶帽",
+      "description": "蓝鲤鱼玩偶帽",
+      "workshop": "鱼类工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-BlueFishCosHat",
+      "ingredients": [
+        {
+          "item": "大蓝鲤鱼",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "蓝鲤鱼玩偶服",
+      "description": "蓝鲤鱼玩偶服",
+      "workshop": "鱼类工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-BlueFishCosCloth",
+      "ingredients": [
+        {
+          "item": "大蓝鲤鱼",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "西橙柿玩偶头套",
+      "description": "西橙柿玩偶头套",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-TomatoCosplayHat-Orange",
+      "ingredients": [
+        {
+          "item": "西橙柿",
+          "amount": 1
+        },
+        {
+          "item": "红蘑菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "西橙柿玩偶服装",
+      "description": "西橙柿玩偶服装",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-TomatoCosplayCloth-Orange",
+      "ingredients": [
+        {
+          "item": "西橙柿",
+          "amount": 1
+        },
+        {
+          "item": "红蘑菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "西粉柿玩偶头套",
+      "description": "西粉柿玩偶头套",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-TomatoCosplayHat-Pink",
+      "ingredients": [
+        {
+          "item": "西粉柿",
+          "amount": 1
+        },
+        {
+          "item": "红蘑菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "西粉柿玩偶服装",
+      "description": "西粉柿玩偶服装",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-TomatoCosplayCloth-Pink",
+      "ingredients": [
+        {
+          "item": "西粉柿",
+          "amount": 1
+        },
+        {
+          "item": "红蘑菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "西红柿发卡",
+      "description": "西红柿发卡",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-TomatoHairpin",
+      "ingredients": [
+        {
+          "item": "西红柿",
+          "amount": 1
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "西红柿玩偶头套",
+      "description": "西红柿玩偶头套",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-TomatoCosplayHat",
+      "ingredients": [
+        {
+          "item": "西红柿",
+          "amount": 3
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "西红柿玩偶服装",
+      "description": "西红柿玩偶服装",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-TomatoCosplayCloth",
+      "ingredients": [
+        {
+          "item": "巨大西红柿",
+          "amount": 1
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "西红瓜玩偶帽",
+      "description": "西红瓜玩偶帽",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-PumpkinCosplayHat-Tomato",
+      "ingredients": [
+        {
+          "item": "西红瓜",
+          "amount": 1
+        },
+        {
+          "item": "红蘑菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "西红瓜玩偶服",
+      "description": "西红瓜玩偶服",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-PumpkinCosplayCloth-Tomato",
+      "ingredients": [
+        {
+          "item": "西红瓜",
+          "amount": 1
+        },
+        {
+          "item": "红蘑菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "西红红红柿玩偶头套",
+      "description": "西红红红柿玩偶头套",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-TomatoCosplayHat-Fat",
+      "ingredients": [
+        {
+          "item": "西红红红柿",
+          "amount": 1
+        },
+        {
+          "item": "红蘑菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "西红红红柿玩偶服",
+      "description": "西红红红柿玩偶服",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-TomatoCosplayCloth-Fat",
+      "ingredients": [
+        {
+          "item": "西红红红柿",
+          "amount": 1
+        },
+        {
+          "item": "红蘑菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "西绿柿玩偶头套",
+      "description": "西绿柿玩偶头套",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-TomatoCosplayHat-Green",
+      "ingredients": [
+        {
+          "item": "西绿柿",
+          "amount": 1
+        },
+        {
+          "item": "红蘑菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "西绿柿玩偶服装",
+      "description": "西绿柿玩偶服装",
+      "workshop": "蔬菜工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-TomatoCosplayCloth-Green",
+      "ingredients": [
+        {
+          "item": "西绿柿",
+          "amount": 1
+        },
+        {
+          "item": "红蘑菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "鲨鱼玩偶帽",
+      "description": "鲨鱼玩偶帽",
+      "workshop": "鱼类工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-SharkCosplayHat",
+      "ingredients": [
+        {
+          "item": "鲨鱼",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "鲨鱼玩偶服",
+      "description": "鲨鱼玩偶服",
+      "workshop": "鱼类工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-SharkCosplayCloth",
+      "ingredients": [
+        {
+          "item": "鲨鱼",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "黄鲤鱼玩偶帽",
+      "description": "黄鲤鱼玩偶帽",
+      "workshop": "鱼类工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-YellowFishCosHat",
+      "ingredients": [
+        {
+          "item": "大黄鲤鱼",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "黄鲤鱼玩偶服",
+      "description": "黄鲤鱼玩偶服",
+      "workshop": "鱼类工作台",
+      "category": "装扮",
+      "product": "CozyEquipmentProp-YellowFishCosCloth",
+      "ingredients": [
+        {
+          "item": "大黄鲤鱼",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "一箱甜菜",
+      "description": "一箱甜菜",
+      "workshop": "小岛订购终端",
+      "category": "物体",
+      "product": "CozyBox-Beet",
+      "ingredients": [
+        {
+          "item": "甜菜",
+          "amount": 18
+        }
+      ]
+    },
+    {
+      "name": "一箱金甜菜",
+      "description": "一箱金甜菜",
+      "workshop": "小岛订购终端",
+      "category": "物体",
+      "product": "CozyBox-Beet-Gold",
+      "ingredients": [
+        {
+          "item": "金甜菜",
+          "amount": 18
+        }
+      ]
+    },
+    {
+      "name": "木棍平板拖车",
+      "description": "移动的木棍置物架拖车",
+      "workshop": "小岛订购终端",
+      "category": "物体",
+      "product": "CozyBranchenSlotBasket-Draggable",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 24
+        },
+        {
+          "item": "金甜菜",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "篮子拖车",
+      "description": "篮子拖车",
+      "workshop": "小岛订购终端",
+      "category": "物体",
+      "product": "CozyPlasticBasket-Draggable",
+      "ingredients": [
+        {
+          "item": "金甜菜",
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "name": "置物风筝",
+      "description": "可以把朋友放飞的风筝，朋友可能会变得很扭曲",
+      "workshop": "小岛订购终端",
+      "category": "物体",
+      "product": "CozyKite-Slot",
+      "ingredients": [
+        {
+          "item": "原木",
+          "amount": 1
+        },
+        {
+          "item": "金甜菜",
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "name": "金甜菜",
+      "description": "黄金甜菜！",
+      "workshop": "小岛订购终端",
+      "category": "物体",
+      "product": "CozyVege-Beet-Gold",
+      "ingredients": [
+        {
+          "item": "甜菜",
+          "amount": 15
+        }
+      ]
+    },
+    {
+      "name": "刺刺树桩",
+      "description": "可以长出刺刺果的树桩",
+      "workshop": "基础工作台",
+      "category": "建筑",
+      "product": "CozyBuildingBP-SpikeTreeBottom",
+      "ingredients": [
+        {
+          "item": "小刺球",
+          "amount": 30
+        }
+      ]
+    },
+    {
+      "name": "刺刺球",
+      "description": "刺刺球",
+      "workshop": "基础工作台",
+      "category": "物体",
+      "product": "CozyFootball-SpikeBallToy",
+      "ingredients": [
+        {
+          "item": "小刺球",
+          "amount": 20
+        }
+      ]
+    },
+    {
+      "name": "南瓜篮子推车",
+      "description": "南瓜篮子推车",
+      "workshop": "蔬菜工作台",
+      "category": "物体",
+      "product": "CozyPumpkinBasket-Draggable",
+      "ingredients": [
+        {
+          "item": "巨大南瓜",
+          "amount": 1
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "木棍篮子拖车",
+      "description": "可以移动的木棍篮子",
+      "workshop": "基础工作台",
+      "category": "物体",
+      "product": "CozyWoodenBasket-Draggable v2",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 24
+        }
+      ]
+    },
+    {
+      "name": "载人拖车",
+      "description": "可以给自行车增加一个座位",
+      "workshop": "基础工作台",
+      "category": "物体",
+      "product": "CozyChair-Draggable",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 18
+        }
+      ]
+    },
+    {
+      "name": "木质篮球",
+      "description": "木质篮球",
+      "workshop": "基础工作台",
+      "category": "物体",
+      "product": "CozyBasketball-Wooden",
+      "ingredients": [
+        {
+          "item": "原木",
+          "amount": 1
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "西红柿气球",
+      "description": "番茄气球",
+      "workshop": "蔬菜工作台",
+      "category": "物体",
+      "product": "CozyBalloon-Tomato",
+      "ingredients": [
+        {
+          "item": "西红柿",
+          "amount": 1
+        },
+        {
+          "item": "木棍",
+          "amount": 1
+        },
+        {
+          "item": "红蘑菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "足球",
+      "description": "足球",
+      "workshop": "基础工作台",
+      "category": "物体",
+      "product": "CozyFootball",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 5
+        }
+      ]
+    },
+    {
+      "name": "长原木",
+      "description": "可以用来造桥",
+      "workshop": "基础工作台",
+      "category": "物体",
+      "product": "CozyTruck-Long",
+      "ingredients": [
+        {
+          "item": "原木",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "魔法粉末",
+      "description": "魔法粉末",
+      "workshop": "魔法工作台",
+      "category": "物体",
+      "product": "CozyPowder-Magic",
+      "ingredients": [
+        {
+          "item": "咔瑞",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "剑鱼剑",
+      "description": "剑鱼剑",
+      "workshop": "鱼类工作台",
+      "category": "物体",
+      "product": "CozySwordProp-SmallSwordFish",
+      "ingredients": [
+        {
+          "item": "小剑鱼",
+          "amount": 1
+        },
+        {
+          "item": "金甜菜",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "剑鱼巨剑",
+      "description": "剑鱼巨剑",
+      "workshop": "鱼类工作台",
+      "category": "物体",
+      "product": "CozySwordProp-BigSwordFish",
+      "ingredients": [
+        {
+          "item": "剑鱼",
+          "amount": 1
+        },
+        {
+          "item": "金甜菜",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "小木剑",
+      "description": "木质的短剑，不要用来欺负朋友哦！",
+      "workshop": "基础工作台",
+      "category": "物体",
+      "product": "CozySwordProp-Wooden",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 12
+        },
+        {
+          "item": "香菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "翻车鱼盾牌",
+      "description": "翻车鱼盾牌",
+      "workshop": "鱼类工作台",
+      "category": "物体",
+      "product": "CozyShieldProp-SunFish",
+      "ingredients": [
+        {
+          "item": "翻车鱼",
+          "amount": 1
+        },
+        {
+          "item": "金甜菜",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "剑鱼摩托车",
+      "description": "剑鱼摩托车",
+      "workshop": "鱼类工作台",
+      "category": "载具",
+      "product": "PCDCozyVehicle-SwordFishBike",
+      "ingredients": [
+        {
+          "item": "剑鱼",
+          "amount": 2
+        },
+        {
+          "item": "金甜菜",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "双人自行车",
+      "description": "平原赛道的银牌奖励",
+      "workshop": "小岛订购终端",
+      "category": "载具",
+      "product": "PCDCozyVehicle-TandemBicycle",
+      "ingredients": [
+        {
+          "item": "金甜菜",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "扭扭车",
+      "description": "森林赛道的银牌奖励",
+      "workshop": "小岛订购终端",
+      "category": "载具",
+      "product": "PCDCozyVehicle-SwingCar",
+      "ingredients": [
+        {
+          "item": "金甜菜",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "摩托车",
+      "description": "摩托车",
+      "workshop": "小岛订购终端",
+      "category": "载具",
+      "product": "PCDCozyVehicle-MotorBike",
+      "ingredients": [
+        {
+          "item": "金甜菜",
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "name": "棕虫小车",
+      "description": "赛车赛道的银牌奖励",
+      "workshop": "小岛订购终端",
+      "category": "载具",
+      "product": "PCDCozyVehicle-GreenWormCar-Wooden",
+      "ingredients": [
+        {
+          "item": "金甜菜",
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "name": "滚滚球",
+      "description": "滚滚球",
+      "workshop": "小岛订购终端",
+      "category": "载具",
+      "product": "PCDCozyVehicle-Bubble",
+      "ingredients": [
+        {
+          "item": "金甜菜",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "电动自行车",
+      "description": "电动自行车",
+      "workshop": "小岛订购终端",
+      "category": "载具",
+      "product": "PCDCozyVehicle-EletricBicycle",
+      "ingredients": [
+        {
+          "item": "金甜菜",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "番茄小车",
+      "description": "番茄小车",
+      "workshop": "小岛订购终端",
+      "category": "载具",
+      "product": "PCDCozyVehicle-TomatoCar",
+      "ingredients": [
+        {
+          "item": "巨大西红柿",
+          "amount": 1
+        },
+        {
+          "item": "金甜菜",
+          "amount": 6
+        }
+      ]
+    },
+    {
+      "name": "篮子自行车",
+      "description": "葫芦赛道银牌奖励",
+      "workshop": "小岛订购终端",
+      "category": "载具",
+      "product": "PCDCozyVehicle-Tricycle",
+      "ingredients": [
+        {
+          "item": "金甜菜",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "花园鳗小车",
+      "description": "可以在海产商店用花园鳗兑换",
+      "workshop": "鱼类工作台",
+      "category": "载具",
+      "product": "PCDCozyVehicle-GardenEelCar",
+      "ingredients": [
+        {
+          "item": "花园鳗",
+          "amount": 5
+        },
+        {
+          "item": "金甜菜",
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "name": "跳跳杆",
+      "description": "麦田赛道银牌奖励",
+      "workshop": "小岛订购终端",
+      "category": "载具",
+      "product": "PCDCozyVehicle-PogoStick",
+      "ingredients": [
+        {
+          "item": "金甜菜",
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "name": "迷你自行车",
+      "description": "足球赛道银牌奖励",
+      "workshop": "小岛订购终端",
+      "category": "载具",
+      "product": "PCDCozyVehicle-MiniBicycle",
+      "ingredients": [
+        {
+          "item": "金甜菜",
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "name": "青虫小车",
+      "description": "青虫扭蛋机里可以扭出",
+      "workshop": "小岛订购终端",
+      "category": "载具",
+      "product": "PCDCozyVehicle-GreenWormCar",
+      "ingredients": [
+        {
+          "item": "青虫",
+          "amount": 4
+        },
+        {
+          "item": "金甜菜",
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "name": "魔法扫把",
+      "description": "昏睡番茄赛道银牌奖励",
+      "workshop": "小岛订购终端",
+      "category": "载具",
+      "product": "PCDCozyVehicle-MagicBroom",
+      "ingredients": [
+        {
+          "item": "白魔法菇",
+          "amount": 5
+        },
+        {
+          "item": "金甜菜",
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "name": "木质自行车",
+      "description": "木头做的自行车",
+      "workshop": "基础工作台",
+      "category": "载具",
+      "product": "PCDCozyVehicle-WoodenBicycle",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 10
+        },
+        {
+          "item": "原木",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "木质赛车",
+      "description": "木头做的赛车",
+      "workshop": "基础工作台",
+      "category": "载具",
+      "product": "PCDCozyVehicle-WoodenCar",
+      "ingredients": [
+        {
+          "item": "木棍",
+          "amount": 10
+        },
+        {
+          "item": "原木",
+          "amount": 4
+        }
+      ]
+    },
+    {
+      "name": "面包车",
+      "description": "面包做的车",
+      "workshop": "基础工作台",
+      "category": "载具",
+      "product": "PCDCozyVehicle-BreadCar",
+      "ingredients": [
+        {
+          "item": "法棍",
+          "amount": 4
+        },
+        {
+          "item": "吐司盾牌",
+          "amount": 2
+        },
+        {
+          "item": "预制汉堡",
+          "amount": 4
+        },
+        {
+          "item": "吐司面包",
+          "amount": 2
+        },
+        {
+          "item": "金甜菜",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "除草药水",
+      "description": "除草药水",
+      "workshop": "",
+      "category": "",
+      "product": "CozyPotion-Wither",
+      "ingredients": [
+        {
+          "item": "魔法粉末",
+          "amount": 1
+        },
+        {
+          "item": "咔瑞",
+          "amount": 2
+        },
+        {
+          "item": "红魔法菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "胡萝卜蛋",
+      "description": "胡萝卜蛋",
+      "workshop": "",
+      "category": "",
+      "product": "CozyEgg-Carrot",
+      "ingredients": [
+        {
+          "item": "魔法粉末",
+          "amount": 1
+        },
+        {
+          "item": "咔瑞",
+          "amount": 4
+        },
+        {
+          "item": "胡萝卜",
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "name": "南瓜蛋",
+      "description": "南瓜蛋",
+      "workshop": "",
+      "category": "",
+      "product": "CozyEgg-Pumpkin",
+      "ingredients": [
+        {
+          "item": "魔法粉末",
+          "amount": 1
+        },
+        {
+          "item": "帕姆",
+          "amount": 4
+        },
+        {
+          "item": "南瓜",
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "name": "西红柿蛋",
+      "description": "西红柿蛋",
+      "workshop": "",
+      "category": "",
+      "product": "CozyEgg-Tomato",
+      "ingredients": [
+        {
+          "item": "魔法粉末",
+          "amount": 1
+        },
+        {
+          "item": "托玛",
+          "amount": 4
+        },
+        {
+          "item": "西红柿",
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "name": "烧烤药水",
+      "description": "烧烤药水",
+      "workshop": null,
+      "category": null,
+      "product": "CozyPotion-Barbecue",
+      "ingredients": [
+        {
+          "item": "魔法粉末",
+          "amount": 1
+        },
+        {
+          "item": "咔瑞",
+          "amount": 2
+        },
+        {
+          "item": "红魔法菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "手脚错乱药水",
+      "description": "手脚错乱药水",
+      "workshop": "",
+      "category": "",
+      "product": "CozyPotion-ChaosBody",
+      "ingredients": [
+        {
+          "item": "魔法粉末",
+          "amount": 2
+        },
+        {
+          "item": "昏睡番茄",
+          "amount": 5
+        },
+        {
+          "item": "蓝魔法菇",
+          "amount": 1
+        },
+        {
+          "item": "红魔法菇",
+          "amount": 1
+        },
+        {
+          "item": "白魔法菇",
+          "amount": 1
+        },
+        {
+          "item": "棕魔法菇",
+          "amount": 1
+        },
+        {
+          "item": "帕姆",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "强力清洁药水",
+      "description": "强力清洁药水",
+      "workshop": null,
+      "category": null,
+      "product": "CozyPotion-Cleansing",
+      "ingredients": [
+        {
+          "item": "魔法粉末",
+          "amount": 1
+        },
+        {
+          "item": "咔瑞",
+          "amount": 2
+        },
+        {
+          "item": "蓝魔法菇",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "巨大成熟药水",
+      "description": "巨大成熟药水",
+      "workshop": "",
+      "category": "",
+      "product": "CozyPotion-GaintManure",
+      "ingredients": [
+        {
+          "item": "魔法粉末",
+          "amount": 1
+        },
+        {
+          "item": "大大便",
+          "amount": 1
+        },
+        {
+          "item": "棕魔法菇",
+          "amount": 1
+        },
+        {
+          "item": "咔瑞",
+          "amount": 1
+        },
+        {
+          "item": "托玛",
+          "amount": 1
+        },
+        {
+          "item": "帕姆",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "速速成熟药水",
+      "description": "速速成熟药水",
+      "workshop": "",
+      "category": "",
+      "product": "CozyPotion-Manure",
+      "ingredients": [
+        {
+          "item": "魔法粉末",
+          "amount": 1
+        },
+        {
+          "item": "大便",
+          "amount": 1
+        },
+        {
+          "item": "棕魔法菇",
+          "amount": 1
+        },
+        {
+          "item": "咔瑞",
+          "amount": 1
+        },
+        {
+          "item": "托玛",
+          "amount": 1
+        },
+        {
+          "item": "帕姆",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "快快长高药水",
+      "description": "快快长高药水",
+      "workshop": null,
+      "category": null,
+      "product": "CozyPotion-RiseBody",
+      "ingredients": [
+        {
+          "item": "魔法粉末",
+          "amount": 1
+        },
+        {
+          "item": "咔瑞",
+          "amount": 3
+        },
+        {
+          "item": "白魔法菇",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "变形药水",
+      "description": "变形药水",
+      "workshop": "",
+      "category": "",
+      "product": "CozyPotion-Transformer",
+      "ingredients": [
+        {
+          "item": "魔法粉末",
+          "amount": 1
+        },
+        {
+          "item": "昏睡番茄",
+          "amount": 1
+        },
+        {
+          "item": "白魔法菇",
+          "amount": 1
+        },
+        {
+          "item": "风风虾",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../../Tools/CozyMod.props" />
+  <PropertyGroup>
+    <AssemblyName>CozyMods.BriskWalk</AssemblyName>
+    <RootNamespace>CozyMods.Examples</RootNamespace>
+  </PropertyGroup>
+</Project>

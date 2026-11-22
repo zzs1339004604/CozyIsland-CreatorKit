@@ -1,0 +1,4899 @@
+{
+  "game": "CozyIsland",
+  "appId": 2918500,
+  "apiVersion": 1,
+  "gameVersion": "1.0.0",
+  "generatedUtc": "2026-10-15T15:07:00.0391647Z",
+  "items": [
+    {
+      "name": "",
+      "objectId": "木棍栅栏",
+      "prefabName": "CozyBuilding-WoodenFence",
+      "prefabId": "4154434114",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "木棍方形篮子",
+      "prefabName": "CozyBuilding-WoodenBasket-2",
+      "prefabId": "1572502940",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "胡萝卜栅栏",
+      "prefabName": "CozyBuilding-CarrotFence",
+      "prefabId": "419920728",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "南瓜篮子",
+      "prefabName": "CozyBuilding-PumpkinBasket",
+      "prefabId": "2182987676",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "建筑",
+      "prefabName": "CozyMinimalBuilding",
+      "prefabId": "1755488886",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "木质篮球框",
+      "prefabName": "CozyBuilding-WoodenBasketballHoop",
+      "prefabId": "2819173556",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "深色木棍栅栏",
+      "prefabName": "CozyBuilding-WoodenFence-Dark",
+      "prefabId": "3498283722",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "木棍篮子",
+      "prefabName": "CozyBuilding-WoodenBasket",
+      "prefabId": "412502776",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "雪糕桶",
+      "prefabName": "CozyBuilding-IceCreamBlock",
+      "prefabId": "3010375478",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "雪糕桶",
+      "prefabName": "CozyBuilding-IceCreamBlock-WithTips",
+      "prefabId": "1602706583",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "切菜桌",
+      "prefabName": "CozyBuilding-KitchenTable-MiniGame",
+      "prefabId": "870651938",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "切菜桌",
+      "prefabName": "CozyBuilding-KitchenTable",
+      "prefabId": "2360985206",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "木棍栅栏",
+      "prefabName": "CozyBuilding-FishingFence",
+      "prefabId": "2323586597",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "南瓜房子",
+      "prefabName": "CozyBuilding-PumpkinHouse",
+      "prefabId": "1062218156",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "南瓜椅子",
+      "prefabName": "CozyBuilding-PumpkinChair",
+      "prefabId": "1558907482",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "原木墙壁",
+      "prefabName": "CozyBuilding-WoodenWall",
+      "prefabId": "834564566",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "咔瑞房子",
+      "prefabName": "CozyBuilding-MagicCarrotHouse",
+      "prefabId": "3904730576",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "帕姆房子",
+      "prefabName": "CozyBuilding-MagicPumpkinHouse",
+      "prefabId": "3837671807",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "托玛房子",
+      "prefabName": "CozyBuilding-MagicTomatoHouse",
+      "prefabId": "2076226806",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "摇摆气球人",
+      "prefabName": "CozyBuilding-BalloonMan",
+      "prefabId": "3096032085",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "木房子",
+      "prefabName": "CozyBuilding-WoodenHouse",
+      "prefabId": "3122606817",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "木桌子",
+      "prefabName": "CozyBuilding-WoodenTable",
+      "prefabId": "3856940797",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "木椅子",
+      "prefabName": "CozyBuilding-WoodenChair",
+      "prefabId": "544787222",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "木质马桶",
+      "prefabName": "CozyBuilding-WoodenToilet",
+      "prefabId": "1153991648",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "西红柿房子",
+      "prefabName": "CozyBuilding-TomatoHouse",
+      "prefabId": "1448934651",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "石头墙",
+      "prefabName": "CozyBuilding-RockWall",
+      "prefabId": "4208036136",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "石头篝火",
+      "prefabName": "CozyBuilding-BonfireWithStone",
+      "prefabId": "1246774103",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "篝火",
+      "prefabName": "CozyBuilding-Bonfire",
+      "prefabId": "996123853",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "胡萝卜房子",
+      "prefabName": "CozyBuilding-CarrotHouse",
+      "prefabId": "4040940485",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "自定义告示牌",
+      "prefabName": "CozyBuilding-CustomBillborad",
+      "prefabId": "1190970459",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "西红柿椅子",
+      "prefabName": "CozyBuilding-TomatoChair",
+      "prefabId": "4118358391",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "",
+      "objectId": "青虫摇摆气球",
+      "prefabName": "CozyBuilding-BalloonMan-GreenWorm",
+      "prefabId": "48149747",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "25连发火箭",
+      "objectId": "",
+      "prefabName": "CozyFirework-Box-25",
+      "prefabId": "4240846252",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "DIY风筝",
+      "objectId": "",
+      "prefabName": "CozyKite-Slot",
+      "prefabId": "2465815730",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "《普通种地学-1》",
+      "objectId": "",
+      "prefabName": "CozyBook-ToturialFarm",
+      "prefabId": "4157750914",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "《普通种地学-1》",
+      "objectId": "",
+      "prefabName": "CozyBook-ToturialFarm-1.1",
+      "prefabId": "3869633140",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "《普通种地学-2》",
+      "objectId": "",
+      "prefabName": "CozyBook-ToturialFarm-2",
+      "prefabId": "3815614593",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "《普通种地学-3》",
+      "objectId": "",
+      "prefabName": "CozyBook-ToturialFarm-3",
+      "prefabId": "3968409855",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "《魔法素材图鉴》",
+      "objectId": "",
+      "prefabName": "CozyBook-MagicVegeEncyc",
+      "prefabId": "3564081465",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "《魔药奇闻》",
+      "objectId": "",
+      "prefabName": "CozyBook-ToturialRefining",
+      "prefabId": "3477586422",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "一箱小黄花",
+      "objectId": "",
+      "prefabName": "Express-CozyPaperBox",
+      "prefabId": "2279741596",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "一箱小黄花（好像是谁弄丢的）",
+      "objectId": "",
+      "prefabName": "CozyPaperBox-Quest-Flower",
+      "prefabId": "1202148928",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "一箱甜菜",
+      "objectId": "",
+      "prefabName": "CozyBox-Beet",
+      "prefabId": "2116548981",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "一箱金甜菜",
+      "objectId": "",
+      "prefabName": "CozyBox-Beet-Gold",
+      "prefabId": "3800242279",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "全小岛最好的宝剑",
+      "objectId": "",
+      "prefabName": "CozySwordProp-Sword",
+      "prefabId": "232469611",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "农场后院钥匙",
+      "objectId": "",
+      "prefabName": "CozyKey-FarmBackyard",
+      "prefabId": "2937850410",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "农场大门钥匙",
+      "objectId": "",
+      "prefabName": "CozyKey-FarmEntrance",
+      "prefabId": "1260686191",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "农夫帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-StrawHat",
+      "prefabId": "3193855836",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "切菜桌蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-KitchenTable-MiniGame",
+      "prefabId": "671635647",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "切菜桌蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-KitchenTable",
+      "prefabId": "1826425722",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "刺刺果",
+      "objectId": "",
+      "prefabName": "CozyFood-SpikeTomato",
+      "prefabId": "198459743",
+      "category": "Widget",
+      "foodPower": 10,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "刺刺树桩蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-SpikeTreeBottom",
+      "prefabId": "3584502119",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "刺刺环盾",
+      "objectId": "",
+      "prefabName": "CozyShieldProp-SpikeRound",
+      "prefabId": "1898907724",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "刺刺球",
+      "objectId": "",
+      "prefabName": "CozyFootball-SpikeBall",
+      "prefabId": "1598874894",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "刺刺球",
+      "objectId": "",
+      "prefabName": "CozyFootball-SpickBallFast",
+      "prefabId": "2080948288",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "刺刺球",
+      "objectId": "",
+      "prefabName": "CozyFootball-SpikeBall-Cave",
+      "prefabId": "4207656058",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "刺刺球",
+      "objectId": "",
+      "prefabName": "CozyFootball-SpikeBallToy",
+      "prefabId": "1004040271",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "剑鱼",
+      "objectId": "",
+      "prefabName": "CozySwordFish",
+      "prefabId": "1187192675",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "剑鱼剑",
+      "objectId": "",
+      "prefabName": "CozySwordProp-SmallSwordFish",
+      "prefabId": "2645699988",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "剑鱼巨剑",
+      "objectId": "",
+      "prefabName": "CozySwordProp-BigSwordFish",
+      "prefabId": "3962299820",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "剑鱼摩托车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-SwordFishBike",
+      "prefabId": "2465555370",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "剑鱼玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-SwordFishCosplayHat",
+      "prefabId": "4100472871",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "剑鱼玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-SwordFishCosplayCloth",
+      "prefabId": "1637132380",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "南瓜",
+      "objectId": "",
+      "prefabName": "CozyVege-Pumpkin",
+      "prefabId": "2660512388",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "南瓜",
+      "objectId": "",
+      "prefabName": "CozyVege-Pumpkin-Green",
+      "prefabId": "1441992589",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "南瓜房子蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-PumpkintHouse",
+      "prefabId": "1951286524",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "南瓜拖车",
+      "objectId": "",
+      "prefabName": "CozyPumpkinBasket-Draggable",
+      "prefabId": "886019204",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "南瓜椅子蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-PumpkinChair",
+      "prefabId": "997005521",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "南瓜玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-MagicTomatoCosplayHat (1)",
+      "prefabId": "4279869451",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "南瓜玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-PumpkinCosplayCloth",
+      "prefabId": "29210924",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "南瓜种子袋",
+      "objectId": "",
+      "prefabName": "CozySeedBagProp-Pumpkin",
+      "prefabId": "2898996170",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "南瓜篮子蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-PumpkinBasket",
+      "prefabId": "4101718817",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "南瓜蛋",
+      "objectId": "",
+      "prefabName": "CozyEgg-Pumpkin",
+      "prefabId": "1367093631",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "原木",
+      "objectId": "",
+      "prefabName": "CozyTruck",
+      "prefabId": "40999182",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "原木",
+      "objectId": "",
+      "prefabName": "CozyTruck",
+      "prefabId": "3585914311",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "原木墙壁蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-WoodenWall",
+      "prefabId": "1917556006",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "双人自行车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-TandemBicycle",
+      "prefabId": "3160092218",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "发光蘑菇",
+      "objectId": "",
+      "prefabName": "CozyVege-Msrm-MagicBloom",
+      "prefabId": "1008954805",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "变形药水",
+      "objectId": "",
+      "prefabName": "CozyPotion-Transformer",
+      "prefabId": "2969467009",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "可砍的树干",
+      "objectId": "",
+      "prefabName": "CozyTreeTruck",
+      "prefabId": "1533455693",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "可砍的树干",
+      "objectId": "",
+      "prefabName": "CozyTreeTruck-Damagable-WithCrown",
+      "prefabId": "873302992",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "吐司盾牌",
+      "objectId": "",
+      "prefabName": "CozyShieldProp-Toast",
+      "prefabId": "1319000979",
+      "category": "Widget",
+      "foodPower": 9,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "吐司面包",
+      "objectId": "",
+      "prefabName": "CozyFood-Toast",
+      "prefabId": "2773636279",
+      "category": "Widget",
+      "foodPower": 6,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "咔瑞",
+      "objectId": "",
+      "prefabName": "CozyVege-MagicCarrot",
+      "prefabId": "3228038201",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "咔瑞房子蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-MagicCarrotHouse",
+      "prefabId": "1375996900",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "咔瑞玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-MagicCarrotCosplayHat",
+      "prefabId": "445503390",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "咔瑞玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-MagicCarrotCosplayCloth",
+      "prefabId": "391538083",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "喷泉烟花",
+      "objectId": "",
+      "prefabName": "CozyFirework-Fountain-1",
+      "prefabId": "1893058985",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "喷泉魔杖",
+      "objectId": "",
+      "prefabName": "CozyFirework-FountainStick",
+      "prefabId": "806161230",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "土地蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-Fallowland",
+      "prefabId": "3451675418",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "土豆",
+      "objectId": "",
+      "prefabName": "CozyVege-Potato",
+      "prefabId": "1981787636",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "在土里的发光蘑菇",
+      "objectId": "",
+      "prefabName": "CozyMsrm-MagicBloom-Pullable",
+      "prefabId": "1531346619",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "基础工作台",
+      "objectId": "",
+      "prefabName": "CozyWorkShop-Base",
+      "prefabId": "2174121949",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "基础工作台蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-Workshop-Base",
+      "prefabId": "3112758868",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "塑料拖车",
+      "objectId": "",
+      "prefabName": "CozyPlasticBasket-Draggable",
+      "prefabId": "1213234352",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "大便",
+      "objectId": "",
+      "prefabName": "CozyShit",
+      "prefabId": "2014393454",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "大便",
+      "objectId": "",
+      "prefabName": "Shit",
+      "prefabId": "793546633",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "大便发卡",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-ShitHairpin",
+      "prefabId": "1065317068",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "大便帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-ShitHat",
+      "prefabId": "1083164608",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "大便玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-ShitMask",
+      "prefabId": "1441709705",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "大便玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-ShitCloth",
+      "prefabId": "1127698837",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "大便种子袋",
+      "objectId": "",
+      "prefabName": "CozySeedBagProp-Shit",
+      "prefabId": "3668019757",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "大木锤子",
+      "objectId": "",
+      "prefabName": "CozyHammerProp-Wooden",
+      "prefabId": "1043653426",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "失败的药水",
+      "objectId": "",
+      "prefabName": "CozyPotion-Failed",
+      "prefabId": "2110577708",
+      "category": "Widget",
+      "foodPower": 0,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "奖杯",
+      "objectId": "",
+      "prefabName": "CozyTrophy",
+      "prefabId": "1397534184",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "宝箱",
+      "objectId": "",
+      "prefabName": "Chest-Cave",
+      "prefabId": "1737276326",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "宝箱",
+      "objectId": "",
+      "prefabName": "CozyChest",
+      "prefabId": "1947271964",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "宝箱怪",
+      "objectId": "",
+      "prefabName": "CozyChester",
+      "prefabId": "3233068014",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "宝箱怪",
+      "objectId": "",
+      "prefabName": "CozyChester-FarmBackyardKey",
+      "prefabId": "1648925273",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "小丑鱼",
+      "objectId": "",
+      "prefabName": "CozyClownFish",
+      "prefabId": "1445813973",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "小刺球",
+      "objectId": "",
+      "prefabName": "CozySpikeSphere",
+      "prefabId": "418198979",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "小木剑",
+      "objectId": "",
+      "prefabName": "CozySwordProp-Wooden",
+      "prefabId": "4125800941",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "小木锤",
+      "objectId": "",
+      "prefabName": "CozyWoodedHammerProp",
+      "prefabId": "3146317612",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "小游戏树干",
+      "objectId": "",
+      "prefabName": "CozyGameTreeTruck",
+      "prefabId": "1794179145",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "小游戏树干",
+      "objectId": "",
+      "prefabName": "CozyGameTreeTruckWithLeave",
+      "prefabId": "1464333797",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "小猫玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-CatCosplayCloth",
+      "prefabId": "115259673",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "小耙子",
+      "objectId": "",
+      "prefabName": "CozyForkHoeProp",
+      "prefabId": "1048826671",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "小花发饰",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-FlowerHairpin",
+      "prefabId": "2671537321",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "小菜刀",
+      "objectId": "",
+      "prefabName": "CozySwordProp-kitchenKnife",
+      "prefabId": "2925538770",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "小赛车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-Car",
+      "prefabId": "660800264",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "小麦枝",
+      "objectId": "",
+      "prefabName": "CozyWheat",
+      "prefabId": "2773226502",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "小麦种子袋",
+      "objectId": "",
+      "prefabName": "CozySeedBagProp-Wheat",
+      "prefabId": "3311403314",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "小黄菇",
+      "objectId": "",
+      "prefabName": "CozyMsrm-SmallYellow-Pullable",
+      "prefabId": "3868240431",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "巨剑",
+      "objectId": "",
+      "prefabName": "CozySwordProp-Long",
+      "prefabId": "1543269554",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "巨大南瓜",
+      "objectId": "",
+      "prefabName": "CozyVege-Pumpkin-Gaint",
+      "prefabId": "1292253888",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "巨大成熟药水",
+      "objectId": "",
+      "prefabName": "CozyPotion-GaintManure",
+      "prefabId": "420978043",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "巨大胡萝卜",
+      "objectId": "",
+      "prefabName": "CozyCarrot-Gaint-Pullable",
+      "prefabId": "1822011358",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "巨大胡萝卜",
+      "objectId": "",
+      "prefabName": "CozyVege-Carrot-Gaint",
+      "prefabId": "2251081294",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "巨大西红柿",
+      "objectId": "",
+      "prefabName": "CozyVege-Tomato-Gaint",
+      "prefabId": "536418840",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "巨大金矿石",
+      "objectId": "",
+      "prefabName": "CozyMineral-1-Gold",
+      "prefabId": "155999437",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "巨大钻石矿",
+      "objectId": "",
+      "prefabName": "CozyMineral-1-Diamond",
+      "prefabId": "47869281",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "巨大银矿石",
+      "objectId": "",
+      "prefabName": "CozyMineral-1",
+      "prefabId": "364526522",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "帕姆",
+      "objectId": "",
+      "prefabName": "CozyVege-MagicPumpkin",
+      "prefabId": "474045800",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "帕姆房子蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-MagicPumpkintHouse",
+      "prefabId": "1250419076",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "帕姆玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-MagicPumpkinCosplayHat",
+      "prefabId": "903114179",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "帕姆玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-MagicPumpkinCosplayCloth",
+      "prefabId": "101473364",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "建筑蓝图",
+      "objectId": "",
+      "prefabName": "CozyMinimalBlueprint",
+      "prefabId": "2069763207",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "建筑蓝图",
+      "objectId": "",
+      "prefabName": "TestBasket(BluePrint)",
+      "prefabId": "2058407415",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "建筑蓝图",
+      "objectId": "",
+      "prefabName": "Fence",
+      "prefabId": "3525502250",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "建筑蓝图",
+      "objectId": "",
+      "prefabName": "Foundation(BluePrint)",
+      "prefabId": "3754906618",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "建筑蓝图",
+      "objectId": "",
+      "prefabName": "TestTent(BluePrint)",
+      "prefabId": "2682702579",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "建筑蓝图",
+      "objectId": "",
+      "prefabName": "FallowLand",
+      "prefabId": "3695102460",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "建筑蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-CozyMsrm-Wood-MiniGame",
+      "prefabId": "450704005",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "建筑蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-CozyMsrm-Bread-MiniGame",
+      "prefabId": "3471067309",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "强力清洁药水",
+      "objectId": "",
+      "prefabName": "CozyPotion-Cleansing",
+      "prefabId": "353054478",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "快快长高药水",
+      "objectId": "",
+      "prefabName": "CozyPotion-RiseBody",
+      "prefabId": "3246556267",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "手脚错乱药水",
+      "objectId": "",
+      "prefabName": "CozyPotion-ChaosBody",
+      "prefabId": "3837344187",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "托玛",
+      "objectId": "",
+      "prefabName": "CozyVege-MagicTomato",
+      "prefabId": "4277317156",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "托玛房子蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-MagicTomatoHouse",
+      "prefabId": "1101994375",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "托玛玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-MagicTomatoCosplayHat",
+      "prefabId": "2514010722",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "托玛玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-MagicTomatoCosplayCloth",
+      "prefabId": "3543641259",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "扫帚",
+      "objectId": "",
+      "prefabName": "CozySwordProp-Broom",
+      "prefabId": "402192106",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "扭扭车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-SwingCar",
+      "prefabId": "2729366140",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "扭蛋",
+      "objectId": "",
+      "prefabName": "CozyGashapon",
+      "prefabId": "120356945",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "扭蛋",
+      "objectId": "",
+      "prefabName": "CozyGashapon-BlueBicycle",
+      "prefabId": "1120130298",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "扭蛋",
+      "objectId": "",
+      "prefabName": "CozyGashapon-RedBicycle",
+      "prefabId": "1387921943",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "扭蛋[菜篮子推车]",
+      "objectId": "",
+      "prefabName": "CozyGashapon-PlasticBasket",
+      "prefabId": "4122998217",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "护膝",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-Kneecap",
+      "prefabId": "1503171855",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "摇摆气球人蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-BalloonMan",
+      "prefabId": "3180789184",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "摩托车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-MotorBike",
+      "prefabId": "216764442",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "操纵杆",
+      "objectId": "",
+      "prefabName": "CozyJoyStick",
+      "prefabId": "539850236",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "操纵杆",
+      "objectId": "",
+      "prefabName": "CozyCaveExitJoystick",
+      "prefabId": "350001915",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "斧头",
+      "objectId": "",
+      "prefabName": "CozyAxeProp",
+      "prefabId": "1911392173",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "昏睡番茄",
+      "objectId": "",
+      "prefabName": "CozyFood-Tomato-Sleep",
+      "prefabId": "3238796963",
+      "category": "Widget",
+      "foodPower": 0,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木房子蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-WoodenHouse",
+      "prefabId": "422257869",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木桌子蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-WoodenTable",
+      "prefabId": "2310739955",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木棍",
+      "objectId": "",
+      "prefabName": "CozyBranch",
+      "prefabId": "4059503004",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木棍展览架",
+      "objectId": "",
+      "prefabName": "CozyBranchenSlot",
+      "prefabId": "345590199",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木棍展览架",
+      "objectId": "",
+      "prefabName": "CozyBuilding-KitchenSlot-MiniGame",
+      "prefabId": "3539186671",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木棍展览架",
+      "objectId": "",
+      "prefabName": "CozyBuilding-KitchenSlot",
+      "prefabId": "1917204355",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木棍展览架蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-BranchenSlot",
+      "prefabId": "3324480212",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木棍展览架蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-KitchenSlot-MiniGame",
+      "prefabId": "4135347391",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木棍展览架蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-KitchenSlot",
+      "prefabId": "63107312",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木棍平板拖车",
+      "objectId": "",
+      "prefabName": "CozyBranchenSlotBasket-Draggable",
+      "prefabId": "2393616737",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木棍方形篮子蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-WoodenBasket-2",
+      "prefabId": "2439180668",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木棍栅栏蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-WoodenFence",
+      "prefabId": "441406309",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木棍篮子拖车",
+      "objectId": "",
+      "prefabName": "CozyWoodenBasket-Draggable v2",
+      "prefabId": "1904775361",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木棍篮子蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-WoodenBasket",
+      "prefabId": "2118918980",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木椅子蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-WoodenChair",
+      "prefabId": "712634032",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木盾牌",
+      "objectId": "",
+      "prefabName": "CozyShieldProp-Wooden",
+      "prefabId": "2160197891",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木色足球",
+      "objectId": "",
+      "prefabName": "CozyFootball-MiniGame-Wood",
+      "prefabId": "1334019229",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木质篮球框蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-WoodenBasketballHoop",
+      "prefabId": "2972630082",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木质自行车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-WoodenBicycle",
+      "prefabId": "705466560",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木质赛车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-WoodenCar",
+      "prefabId": "1183157907",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "木质马桶蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-WoodenToilet",
+      "prefabId": "309102059",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyBeet-Pullable",
+      "prefabId": "2849153442",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMsrm-Shiitake-Pullable",
+      "prefabId": "2679842114",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMinimalPickable",
+      "prefabId": "546915099",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMinimalPullable",
+      "prefabId": "2552175856",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMinimalVege",
+      "prefabId": "712407843",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyCarrot-Pullable",
+      "prefabId": "3065237752",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMagicCarrot-Pullable",
+      "prefabId": "2614245431",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyBookProp",
+      "prefabId": "2046054583",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMinimalDraggable",
+      "prefabId": "3488093904",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMinimalPullableSlot",
+      "prefabId": "3771369228",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMinimalEquipmentProp",
+      "prefabId": "2706134063",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMsrm-RedWhiteDot-Pullable",
+      "prefabId": "797201030",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyWoodenBasket-Draggable",
+      "prefabId": "2713883043",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyWoodenSlotCart-Draggable",
+      "prefabId": "582697338",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "GaintVegeBook",
+      "prefabId": "3579329912",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyPot",
+      "prefabId": "450275517",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyWorm-Pullable",
+      "prefabId": "1564204308",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMsrm-MagicWater-Pullable",
+      "prefabId": "88395043",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMinimalPotion",
+      "prefabId": "1525486108",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyKey",
+      "prefabId": "3468395768",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyBeet-Gold-Pullable",
+      "prefabId": "1693222167",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyKabibala",
+      "prefabId": "1490062827",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CarrotVacuum",
+      "prefabId": "3266757693",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMsrm-MagicFire-Pullable",
+      "prefabId": "2651689327",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMsrm-MagicEarth-Pullable",
+      "prefabId": "4081958536",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMsrm-MagicAir-Pullable",
+      "prefabId": "564936206",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyBook-EncyclopediaMsrm",
+      "prefabId": "207552029",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMsrm-GreenWhiteDot-Pullable",
+      "prefabId": "61984631",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyBook-ToturialMoreComing",
+      "prefabId": "888244057",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyBook-EncyclopediaAnimal",
+      "prefabId": "66631745",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyBook-Wall",
+      "prefabId": "4094170449",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyBook-ToturialFish",
+      "prefabId": "3233072559",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMsrmKiddy-Pullable",
+      "prefabId": "2186495525",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMsrm-Bomb-Pullable",
+      "prefabId": "1484678878",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMsrm-MagicGreen-Pullable",
+      "prefabId": "3558073293",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyChewingGum",
+      "prefabId": "306466421",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyTurnip-Pullable",
+      "prefabId": "3773159006",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyPowder",
+      "prefabId": "2868987960",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyWorm-Pickable",
+      "prefabId": "2438968541",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMasterCoin Variant",
+      "prefabId": "1851851992",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyFish-Pickable",
+      "prefabId": "2333744591",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyPot-Fat",
+      "prefabId": "3763812095",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyPBPhysicFish-Red",
+      "prefabId": "2239472814",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyPBPhysicFish",
+      "prefabId": "681557874",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozySackage",
+      "prefabId": "1492086005",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMsrm-Bread-Hamburger",
+      "prefabId": "3957001740",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyPBPhysicFish-Blue",
+      "prefabId": "3770178240",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyMinimalFish",
+      "prefabId": "1810530826",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "未知物体",
+      "objectId": "",
+      "prefabName": "CozyPullable-Paste",
+      "prefabId": "985186039",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "枯萎灌木丛",
+      "objectId": "",
+      "prefabName": "CozyBush-Damagable",
+      "prefabId": "892143518",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "枯萎灌木丛",
+      "objectId": "",
+      "prefabName": "CozyBush-Damagable-WithTips",
+      "prefabId": "557399526",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "枯萎灌木丛种子袋",
+      "objectId": "",
+      "prefabName": "CozySeedBagProp-Bush",
+      "prefabId": "1003458488",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "枯萎药水",
+      "objectId": "",
+      "prefabName": "CozyPotion-Wither",
+      "prefabId": "3768377975",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "某种食物",
+      "objectId": "",
+      "prefabName": "CozyMinimalFood",
+      "prefabId": "2472234269",
+      "category": "Widget",
+      "foodPower": 1,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "树桩",
+      "objectId": "",
+      "prefabName": "PCDStackTree-Fog-Bottom",
+      "prefabId": "3493143976",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "树桩蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-TreeBottom",
+      "prefabId": "1758157158",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "棒槌胡萝卜",
+      "objectId": "",
+      "prefabName": "CozyCarrot-Club-Pullable",
+      "prefabId": "910361260",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "棕虫小车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-GreenWormCar-Wooden",
+      "prefabId": "837311201",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "棕魔法菇",
+      "objectId": "",
+      "prefabName": "CozyVege-Msrm-MagicEarth",
+      "prefabId": "3205047596",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "森林入口钥匙",
+      "objectId": "",
+      "prefabName": "CozyKey-ForestEntrance",
+      "prefabId": "1720975452",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "比目鱼",
+      "objectId": "",
+      "prefabName": "CozyFlatfish",
+      "prefabId": "2586043836",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "气球",
+      "objectId": "",
+      "prefabName": "CozyBalloon",
+      "prefabId": "2947017660",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "水井蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-Well",
+      "prefabId": "2077981683",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "水枪",
+      "objectId": "",
+      "prefabName": "CozyWaterGunProp",
+      "prefabId": "3936503012",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "水桶",
+      "objectId": "",
+      "prefabName": "CozyBucketProp",
+      "prefabId": "4116885047",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "汉堡玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-HamburgerCosplayHat",
+      "prefabId": "2368972839",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "汉堡玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-HamburgerCosplayCloth",
+      "prefabId": "770361501",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "汉堡面包",
+      "objectId": "",
+      "prefabName": "CozyFood-Hamburger",
+      "prefabId": "436670067",
+      "category": "Widget",
+      "foodPower": 2,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "汉堡面包底",
+      "objectId": "",
+      "prefabName": "CozyBread-Hamburger-Down",
+      "prefabId": "3424072841",
+      "category": null,
+      "foodPower": 1,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "汉堡面包盖",
+      "objectId": "",
+      "prefabName": "CozyBread-Hamburger-Up",
+      "prefabId": "3472736947",
+      "category": null,
+      "foodPower": 1,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "污泥",
+      "objectId": "",
+      "prefabName": "CozyDirtyMud-Damagable",
+      "prefabId": "1731831197",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "污泥",
+      "objectId": "",
+      "prefabName": "CozyDirtyMud-Cave",
+      "prefabId": "1872017646",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "污泥团",
+      "objectId": "",
+      "prefabName": "CozyDirtyMud-Pickable",
+      "prefabId": "3792656935",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "污泥桶",
+      "objectId": "",
+      "prefabName": "CozyMudBucketProp",
+      "prefabId": "2132244934",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "污泥陷阱蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-DirtyMud",
+      "prefabId": "1378396201",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "河豚",
+      "objectId": "",
+      "prefabName": "CozyBalloonFish",
+      "prefabId": "1641213835",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "泥巴块",
+      "objectId": "",
+      "prefabName": "CozyMud-Pickable",
+      "prefabId": "2235508556",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "浮漂",
+      "objectId": "",
+      "prefabName": "CozyFishingBobber",
+      "prefabId": "3168036983",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "深色木棍栅栏蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-WoodenFence-Dark",
+      "prefabId": "4102119561",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "滚滚球",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-Bubble",
+      "prefabId": "2564040329",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "灌木足球",
+      "objectId": "",
+      "prefabName": "CozyFootball-MiniGame-Bush",
+      "prefabId": "2561077421",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "火花魔杖",
+      "objectId": "",
+      "prefabName": "CozyFirework-Sparkler",
+      "prefabId": "3758520538",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "灰色足球",
+      "objectId": "",
+      "prefabName": "CozyFootball-MiniGame-Gray",
+      "prefabId": "3829804695",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "炸弹菇",
+      "objectId": "",
+      "prefabName": "CozyVege-Msrm-Bomb",
+      "prefabId": "3693177012",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "炸药",
+      "objectId": "",
+      "prefabName": "CozyPotion-Bomb",
+      "prefabId": "2995856754",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "炸药",
+      "objectId": "",
+      "prefabName": "Bomb",
+      "prefabId": "2827192458",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "炸药包",
+      "objectId": "",
+      "prefabName": "CozyPotion-Bomb-Big",
+      "prefabId": "2151095295",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "炼药锅",
+      "objectId": "",
+      "prefabName": "CozyPot-Magic",
+      "prefabId": "3534408255",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "炼金锅蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-Pot-Magic",
+      "prefabId": "3524869319",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "烟花火箭",
+      "objectId": "",
+      "prefabName": "CozyFirework-SkyRocket",
+      "prefabId": "662379213",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "烧烤药水",
+      "objectId": "",
+      "prefabName": "CozyPotion-Barbecue",
+      "prefabId": "54821169",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "烹饪锅",
+      "objectId": "",
+      "prefabName": "CozyPot-Cook",
+      "prefabId": "722459245",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "烹饪锅蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-Pot-Cook",
+      "prefabId": "1435817883",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "照相机",
+      "objectId": "",
+      "prefabName": "CozyCameraProp",
+      "prefabId": "1042273890",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "熟红蘑菇",
+      "objectId": "",
+      "prefabName": "CozyFood-Msrm-RedWhiteDot",
+      "prefabId": "3117791659",
+      "category": "Widget",
+      "foodPower": 4,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "熟胡萝卜",
+      "objectId": "",
+      "prefabName": "CozyFood-Carrot",
+      "prefabId": "2401314486",
+      "category": "Widget",
+      "foodPower": 1,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "熟花菜",
+      "objectId": "",
+      "prefabName": "CozyFood-Caultiflower",
+      "prefabId": "2220372035",
+      "category": "Widget",
+      "foodPower": 1,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "熟西红柿",
+      "objectId": "",
+      "prefabName": "CozyFood-Tomato",
+      "prefabId": "1080662586",
+      "category": "Widget",
+      "foodPower": 2,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "熟香菇",
+      "objectId": "",
+      "prefabName": "CozyFood-Msrm-Shiitake",
+      "prefabId": "3698180761",
+      "category": "Widget",
+      "foodPower": 4,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "特殊鲨鱼",
+      "objectId": "",
+      "prefabName": "Express-CozyShark",
+      "prefabId": "2427425673",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "独轮车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-Monocycle",
+      "prefabId": "2898235470",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "甜菜",
+      "objectId": "",
+      "prefabName": "CozyVege-Beet",
+      "prefabId": "3775302819",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "甜菜",
+      "objectId": "",
+      "prefabName": "CozyVege-Turnip",
+      "prefabId": "4163540469",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "甜菜发射器",
+      "objectId": "",
+      "prefabName": "CozyBeetGunProp",
+      "prefabId": "204743843",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "甜菜商店钥匙",
+      "objectId": "",
+      "prefabName": "CozyKey-Shop",
+      "prefabId": "2822616942",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "甜菜种子袋",
+      "objectId": "",
+      "prefabName": "CozySeedBagProp-Potato",
+      "prefabId": "3092093251",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "甜菜种子袋",
+      "objectId": "",
+      "prefabName": "CozySeedBagProp-Beet",
+      "prefabId": "2480082323",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "生菜",
+      "objectId": "",
+      "prefabName": "CozyVege-Cabbage",
+      "prefabId": "1352542766",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "生菜片",
+      "objectId": "",
+      "prefabName": "CozyCabbage-Slice",
+      "prefabId": "2126288343",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "生菜种子袋",
+      "objectId": "",
+      "prefabName": "CozySeedBagProp-Cabbage",
+      "prefabId": "1595051303",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "电动自行车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-EletricBicycle",
+      "prefabId": "1239766136",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "番茄发卡",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-TomatoHairpin",
+      "prefabId": "4090035761",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "番茄气球",
+      "objectId": "",
+      "prefabName": "CozyBalloon-Tomato",
+      "prefabId": "1204225363",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "番茄玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-TomatoCosplayHat",
+      "prefabId": "531893967",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "番茄玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-TomatoCosplayCloth",
+      "prefabId": "973832226",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "番茄车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-TomatoCar",
+      "prefabId": "331190764",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "番茄风筝",
+      "objectId": "",
+      "prefabName": "CozyKite",
+      "prefabId": "1981107797",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "白魔法菇",
+      "objectId": "",
+      "prefabName": "CozyVege-Msrm-MagicAir",
+      "prefabId": "2937562901",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "相片",
+      "objectId": "",
+      "prefabName": "CozyPhotoProp",
+      "prefabId": "147933356",
+      "category": null,
+      "foodPower": 0,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "相片",
+      "objectId": "",
+      "prefabName": "CozyPhotoProp-Big",
+      "prefabId": "1712743586",
+      "category": null,
+      "foodPower": 0,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "相片",
+      "objectId": "",
+      "prefabName": "CozyPictureFarmeProp",
+      "prefabId": "1490773292",
+      "category": null,
+      "foodPower": 0,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "相片",
+      "objectId": "",
+      "prefabName": "CozyPictureFarmeProp-Branch-2",
+      "prefabId": "1388410904",
+      "category": null,
+      "foodPower": 0,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "相片",
+      "objectId": "",
+      "prefabName": "CozyPictureFarmeProp-Branch-1",
+      "prefabId": "2308251714",
+      "category": null,
+      "foodPower": 0,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "睡觉青虫发卡",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-GreenWormHairpin-Sleep",
+      "prefabId": "277568009",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "睡觉青虫帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-GreenWormHat-Sleep",
+      "prefabId": "1341516920",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "睡觉青虫手办",
+      "objectId": "",
+      "prefabName": "CozyToy-GreenWorm-Sleeping",
+      "prefabId": "2426230172",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "石头",
+      "objectId": "",
+      "prefabName": "CozyStone",
+      "prefabId": "1032523908",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "石头",
+      "objectId": "",
+      "prefabName": "Stone",
+      "prefabId": "3532253461",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "石头墙蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-RockWall",
+      "prefabId": "1044622636",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "石头篝火蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-BonfireWithStone",
+      "prefabId": "3835353929",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "矿镐",
+      "objectId": "",
+      "prefabName": "CozyPickaxeProp",
+      "prefabId": "2794648286",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "礼物盒",
+      "objectId": "",
+      "prefabName": "CozyGiftBoxProp",
+      "prefabId": "3277438622",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "礼物盒",
+      "objectId": "",
+      "prefabName": "CozyGiftBox-FallowLandReward",
+      "prefabId": "2991635766",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "种子枪",
+      "objectId": "",
+      "prefabName": "CozySeedGunProp",
+      "prefabId": "1881704242",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "种子枪",
+      "objectId": "",
+      "prefabName": "CozyWaterGun-Pickable",
+      "prefabId": "857623630",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "空礼物盒",
+      "objectId": "",
+      "prefabName": "CozyGiftBoxProp-Empty",
+      "prefabId": "280603333",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "窜稀花菜种子袋",
+      "objectId": "",
+      "prefabName": "CozySeedBagProp-Cualtiflower",
+      "prefabId": "1316112888",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "箱子",
+      "objectId": "",
+      "prefabName": "CozyPaperBox",
+      "prefabId": "469198526",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "篝火蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-Bonfire",
+      "prefabId": "1522077040",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "篮子自行车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-Tricycle",
+      "prefabId": "3838362231",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "篮球",
+      "objectId": "",
+      "prefabName": "CozyBasketball-Wooden",
+      "prefabId": "2408075787",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "篮球",
+      "objectId": "",
+      "prefabName": "CozyBasketballProp",
+      "prefabId": "886380185",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "篮球",
+      "objectId": "",
+      "prefabName": "CozyBasketball-MiniGame-1",
+      "prefabId": "2687973179",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "篮球",
+      "objectId": "",
+      "prefabName": "CozyTennisProp-CantPick",
+      "prefabId": "3504712320",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "篮球",
+      "objectId": "",
+      "prefabName": "CozyTennisProp",
+      "prefabId": "2771005378",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "篮球",
+      "objectId": "",
+      "prefabName": "Basketball",
+      "prefabId": "2649267530",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "粉南瓜",
+      "objectId": "",
+      "prefabName": "CozyVege-Pumpkin-Pink",
+      "prefabId": "2491063146",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "粉南瓜玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-PumpkinCosplayHat-Pink",
+      "prefabId": "1814909546",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "粉南瓜玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-PumpkinCosplayCloth-Pink",
+      "prefabId": "3813129846",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "粉色螺壳",
+      "objectId": "",
+      "prefabName": "CozyShell-WhitePinkGradient",
+      "prefabId": "2391462482",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "红蘑菇",
+      "objectId": "",
+      "prefabName": "CozyVege-Msrm-RedWhiteDot",
+      "prefabId": "311342278",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "红魔法菇",
+      "objectId": "",
+      "prefabName": "CozyVege-Msrm-MagicFire",
+      "prefabId": "3789643032",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "红鲤鱼",
+      "objectId": "",
+      "prefabName": "CozyRiverFish",
+      "prefabId": "999866093",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "红鲤鱼玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-RedFishCosHat",
+      "prefabId": "3948458883",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "红鲤鱼玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-RedFishCosCloth",
+      "prefabId": "1137251055",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "纸箱",
+      "objectId": "",
+      "prefabName": "CozyPaperBox-Cave",
+      "prefabId": "698352669",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "绿蘑菇",
+      "objectId": "",
+      "prefabName": "CozyVege-Msrm-GreenWhiteDot",
+      "prefabId": "3942677207",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "网球拍",
+      "objectId": "",
+      "prefabName": "CozySwordProp-TennisRacket",
+      "prefabId": "2751151213",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "翻车鱼",
+      "objectId": "",
+      "prefabName": "CozyJumpSunfish",
+      "prefabId": "133279769",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "翻车鱼盾牌",
+      "objectId": "",
+      "prefabName": "CozyShieldProp-SunFish",
+      "prefabId": "2445180238",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "胡萝卜",
+      "objectId": "",
+      "prefabName": "CozyVege-GiantCarrot",
+      "prefabId": "901820955",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "胡萝卜",
+      "objectId": "",
+      "prefabName": "CozyVege-Carrot",
+      "prefabId": "2081404407",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "胡萝卜发卡",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-CarrotHairpin",
+      "prefabId": "1406606159",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "胡萝卜房子蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-CarrotHouse",
+      "prefabId": "327068624",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "胡萝卜栅栏蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-CarrotFence",
+      "prefabId": "3269898021",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "胡萝卜玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-CarrotCosplayHat",
+      "prefabId": "3432366868",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "胡萝卜玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-PotCloth-Magic",
+      "prefabId": "610997901",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "胡萝卜玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-PotCloth-Cook",
+      "prefabId": "726717771",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "胡萝卜玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-CarrotCosplayCloth",
+      "prefabId": "2745642738",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "胡萝卜种子袋",
+      "objectId": "",
+      "prefabName": "CozySeedBagProp-Carrot",
+      "prefabId": "3112200727",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "胡萝卜蛋",
+      "objectId": "",
+      "prefabName": "CozyEgg-Carrot",
+      "prefabId": "3616742706",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "自定义告示牌蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-CustomBillborad",
+      "prefabId": "2528525496",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "自己鱼",
+      "objectId": "",
+      "prefabName": "CozySelfish",
+      "prefabId": "584756093",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "自行车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-Bicycle",
+      "prefabId": "2070001000",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "自行车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-WoodenBicycle Variant",
+      "prefabId": "1319099166",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "自行车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-WoodenBicycle-Broken",
+      "prefabId": "3868511602",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "自行车仓库钥匙",
+      "objectId": "",
+      "prefabName": "CozyKey-BicycleWarehouse",
+      "prefabId": "2013454103",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "芝士片",
+      "objectId": "",
+      "prefabName": "CozyCheese-Slice",
+      "prefabId": "2269577148",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "花园鳗",
+      "objectId": "",
+      "prefabName": "CozyGreenWorm-GardenEel-Pickable",
+      "prefabId": "2806476959",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "花园鳗",
+      "objectId": "",
+      "prefabName": "CozyWorm-GardenEel-Pullable",
+      "prefabId": "1777543446",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "花园鳗发卡",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-GardenEelHairpin",
+      "prefabId": "3272828001",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "花园鳗玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-GardenEelMask",
+      "prefabId": "2949735450",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "花园鳗玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-GardenEelCloth",
+      "prefabId": "679362415",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "花园鳗车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-GardenEelCar",
+      "prefabId": "1052722030",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "花菜",
+      "objectId": "",
+      "prefabName": "CozyVege-Cauliflower",
+      "prefabId": "1445649506",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "花菜癌细胞",
+      "objectId": "",
+      "prefabName": "CozyVege-DummyCauliflower",
+      "prefabId": "2395522868",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "萝卜棒槌",
+      "objectId": "",
+      "prefabName": "CozyCarrotClubProp",
+      "prefabId": "198927735",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "蓝色足球",
+      "objectId": "",
+      "prefabName": "CozyFootball-MiniGame-Blue",
+      "prefabId": "2552947908",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "蓝魔法菇",
+      "objectId": "",
+      "prefabName": "CozyVege-Msrm-MagicWater",
+      "prefabId": "2362747420",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "蓝鲤鱼",
+      "objectId": "",
+      "prefabName": "CozySeaFish",
+      "prefabId": "234107989",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "蓝鲤鱼玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-BlueFishCosHat",
+      "prefabId": "2863826827",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "蓝鲤鱼玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-BlueFishCosCloth",
+      "prefabId": "3287135572",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "蔬菜代币",
+      "objectId": "",
+      "prefabName": "CozyCoin-Vege",
+      "prefabId": "968399543",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "蔬菜工作台",
+      "objectId": "",
+      "prefabName": "CozyWorkShop-Vege",
+      "prefabId": "3653644047",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "蔬菜工作台蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-Workshop-Vege",
+      "prefabId": "1309299233",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "藏品展示架",
+      "objectId": "",
+      "prefabName": "CozyBuilding-TrophyBaseSlot",
+      "prefabId": "3107689844",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "藏品展示架蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-TrophyBaseSlot",
+      "prefabId": "2013729230",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "虾",
+      "objectId": "",
+      "prefabName": "CozyJumpShrimp",
+      "prefabId": "1131731842",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "蛋",
+      "objectId": "",
+      "prefabName": "CozyEgg",
+      "prefabId": "3721601184",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "蛋窝",
+      "objectId": "建筑",
+      "prefabName": "CozyEggIncubator",
+      "prefabId": "3702681107",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "蛋窝蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-EggIncubator",
+      "prefabId": "1273128335",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "螃蟹",
+      "objectId": "",
+      "prefabName": "CozyJumpCrab",
+      "prefabId": "1806532606",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西橙柿",
+      "objectId": "",
+      "prefabName": "CozyVege-Tomato-Orange",
+      "prefabId": "2513910670",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西橙柿玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-TomatoCosplayHat-Orange",
+      "prefabId": "532791846",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西橙柿玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-TomatoCosplayCloth-Orange",
+      "prefabId": "2626243223",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西粉柿",
+      "objectId": "",
+      "prefabName": "CozyVege-Tomato-Pink",
+      "prefabId": "3100678205",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西粉柿",
+      "objectId": "",
+      "prefabName": "Tomato-Pink",
+      "prefabId": "3010569145",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西粉柿玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-TomatoCosplayHat-Pink",
+      "prefabId": "2817659063",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西粉柿玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-TomatoCosplayCloth-Pink",
+      "prefabId": "3985650483",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红柿",
+      "objectId": "",
+      "prefabName": "CozyVege-Tomato",
+      "prefabId": "1553806667",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红柿",
+      "objectId": "",
+      "prefabName": "Tomato",
+      "prefabId": "3342882710",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红柿房子蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-TomatoHouse",
+      "prefabId": "1923940588",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红柿椅子蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-TomatoChair",
+      "prefabId": "3701651768",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红柿片",
+      "objectId": "",
+      "prefabName": "CozyTomato-Slice",
+      "prefabId": "2789752161",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红柿片",
+      "objectId": "",
+      "prefabName": "CozyMinimalSlice",
+      "prefabId": "3733579402",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红柿片",
+      "objectId": "",
+      "prefabName": "CozyTomato-Slice-Gaint",
+      "prefabId": "3730417198",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红柿种子袋",
+      "objectId": "",
+      "prefabName": "CozySeedBagProp-Tomato",
+      "prefabId": "1959667114",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红柿蛋",
+      "objectId": "",
+      "prefabName": "CozyEgg-Tomato",
+      "prefabId": "1748776577",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红瓜",
+      "objectId": "",
+      "prefabName": "CozyVege-Pumpkin-Tomato",
+      "prefabId": "1978430871",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红瓜玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-PumpkinCosplayHat-Tomato",
+      "prefabId": "794246570",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红瓜玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-PumpkinCosplayCloth-Tomato",
+      "prefabId": "3183182383",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红红红柿",
+      "objectId": "",
+      "prefabName": "CozyVege-Tomato-Fat",
+      "prefabId": "11352263",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红红红柿玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-TomatoCosplayHat-Fat",
+      "prefabId": "3231330434",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西红红红柿玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-TomatoCosplayCloth-Fat",
+      "prefabId": "2735896679",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西绿柿",
+      "objectId": "",
+      "prefabName": "CozyVege-Tomato-Green",
+      "prefabId": "3858628159",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西绿柿玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-TomatoCosplayHat-Green",
+      "prefabId": "157509731",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "西绿柿玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-TomatoCosplayCloth-Green",
+      "prefabId": "164866945",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "贝壳",
+      "objectId": "",
+      "prefabName": "CozyShell",
+      "prefabId": "2891178783",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "超长法棍",
+      "objectId": "",
+      "prefabName": "CozySwordProp-Buguette",
+      "prefabId": "1940864794",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "足球",
+      "objectId": "",
+      "prefabName": "CozyFootball",
+      "prefabId": "3567591861",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "足球",
+      "objectId": "",
+      "prefabName": "CozyFootball-MiniGame-1",
+      "prefabId": "3268241233",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "足球",
+      "objectId": "",
+      "prefabName": "CozyFootball-MiniGame-Red",
+      "prefabId": "1561062600",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "跳跳杆",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-PogoStick",
+      "prefabId": "1280266433",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "载人拖车",
+      "objectId": "",
+      "prefabName": "CozyChair-Draggable",
+      "prefabId": "564034250",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "迷你土地蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-Fallowland-MiniGame",
+      "prefabId": "4228461733",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "迷你自行车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-MiniBicycle",
+      "prefabId": "820722221",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "送货地址",
+      "objectId": "",
+      "prefabName": "CozyExpressPaper",
+      "prefabId": "149028197",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "速速成熟药水",
+      "objectId": "",
+      "prefabName": "CozyPotion-Manure",
+      "prefabId": "4167028427",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "采购的巨大南瓜",
+      "objectId": "",
+      "prefabName": "Express-Pumpkin-Gaint",
+      "prefabId": "3346481421",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "金币",
+      "objectId": "",
+      "prefabName": "CozyCoin-Gold",
+      "prefabId": "548094069",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "金币",
+      "objectId": "",
+      "prefabName": "CozyCoin-Animal",
+      "prefabId": "2891594384",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "金币",
+      "objectId": "",
+      "prefabName": "CozyCoin-Wood",
+      "prefabId": "50646559",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "金币",
+      "objectId": "",
+      "prefabName": "CozyCoin-Rock",
+      "prefabId": "332604026",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "金币",
+      "objectId": "",
+      "prefabName": "CozyCoin-Water",
+      "prefabId": "4237274833",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "金币",
+      "objectId": "",
+      "prefabName": "GoldCoin",
+      "prefabId": "1911216737",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "金斧头",
+      "objectId": "",
+      "prefabName": "CozyAxeProp-Gold",
+      "prefabId": "3954624745",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "金甜菜",
+      "objectId": "",
+      "prefabName": "CozyVege-Beet-Gold",
+      "prefabId": "4018053755",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "金矿石",
+      "objectId": "",
+      "prefabName": "CozyMineral-2-Gold",
+      "prefabId": "641858814",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "钻石矿石",
+      "objectId": "",
+      "prefabName": "CozyMineral-2 -Diamond",
+      "prefabId": "1161686585",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "铜币",
+      "objectId": "",
+      "prefabName": "CopperCoin",
+      "prefabId": "4213656889",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "铲子",
+      "objectId": "",
+      "prefabName": "CozyShovelProp",
+      "prefabId": "12088170",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "银币",
+      "objectId": "",
+      "prefabName": "CozyCoin-Silver",
+      "prefabId": "1071043255",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "银币",
+      "objectId": "",
+      "prefabName": "SilverCoin",
+      "prefabId": "676235966",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "银矿石",
+      "objectId": "",
+      "prefabName": "CozyMineral-2",
+      "prefabId": "3040854478",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "银色奖杯",
+      "objectId": "",
+      "prefabName": "Trophy-Cave",
+      "prefabId": "1639699803",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "长原木",
+      "objectId": "",
+      "prefabName": "CozyTruck-Long",
+      "prefabId": "1261366519",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "随机种子袋",
+      "objectId": "",
+      "prefabName": "CozySeedBagProp-Random",
+      "prefabId": "2825961194",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "雪糕筒蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-IceCreamBlock",
+      "prefabId": "4198066839",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "青虫",
+      "objectId": "",
+      "prefabName": "CozyWorm-Green-Pullable",
+      "prefabId": "1810671174",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "青虫",
+      "objectId": "",
+      "prefabName": "CozyGreenWorm-Pickable",
+      "prefabId": "72242120",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "青虫代币",
+      "objectId": "",
+      "prefabName": "CozyCoin-GreenWorm",
+      "prefabId": "3466859612",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "青虫发卡",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-GreenWormHairpin",
+      "prefabId": "3968301640",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "青虫小车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-GreenWormCar",
+      "prefabId": "3256639551",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "青虫帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-GreenWormHat",
+      "prefabId": "1365261902",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "青虫手办",
+      "objectId": "",
+      "prefabName": "CozyToy-GreenWorm",
+      "prefabId": "3854788411",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "青虫摇摆气球蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-BalloonMan-GreenWorm",
+      "prefabId": "2610638413",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "青虫摇摇马",
+      "objectId": "",
+      "prefabName": "CozyDDHorse-GreenWorm",
+      "prefabId": "3005481922",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "青虫摇摇马",
+      "objectId": "",
+      "prefabName": "CozyDDHorse-Bee",
+      "prefabId": "3615376699",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "青虫摇摇马蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-DDHorse-GreenWorm",
+      "prefabId": "2749097082",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "青虫玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-GreenWormMask",
+      "prefabId": "3507445161",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "青虫玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-GreenWormCloth",
+      "prefabId": "2743943254",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "青虫鱼",
+      "objectId": "",
+      "prefabName": "CozyGreenWormFish",
+      "prefabId": "950698039",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "面包车",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-BreadCar",
+      "prefabId": "2309425827",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "面粉",
+      "objectId": "",
+      "prefabName": "CozySackage-Flour",
+      "prefabId": "355069780",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "顽固污泥",
+      "objectId": "",
+      "prefabName": "CozyDirtyMud-Magic-Damagable",
+      "prefabId": "1929761923",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "飞盘",
+      "objectId": "",
+      "prefabName": "CozyFrisbee",
+      "prefabId": "2046488791",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "香菇",
+      "objectId": "",
+      "prefabName": "CozyVege-Msrm-Shiitake",
+      "prefabId": "276622243",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "香菇",
+      "objectId": "",
+      "prefabName": "CozyVege-Msrm-SmallYellow",
+      "prefabId": "555325860",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "香菇",
+      "objectId": "",
+      "prefabName": "CozyVege-Msrm-MagicGreen",
+      "prefabId": "4134612361",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "香菇",
+      "objectId": "",
+      "prefabName": "CozyVege-SmallMushroom",
+      "prefabId": "518218343",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "香菇片",
+      "objectId": "",
+      "prefabName": "CozyShiitake-Slice",
+      "prefabId": "841343517",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "魔法工作台",
+      "objectId": "",
+      "prefabName": "CozyWorkShop-Magic",
+      "prefabId": "2085975358",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "魔法工作台蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-Workshop-Magic",
+      "prefabId": "1019428900",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "魔法帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-MagicHat",
+      "prefabId": "815921587",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "魔法扫把",
+      "objectId": "",
+      "prefabName": "PCDCozyVehicle-MagicBroom",
+      "prefabId": "976753022",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "魔法种子",
+      "objectId": "",
+      "prefabName": "CozyGaintSeed",
+      "prefabId": "3606504270",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "魔法粉末",
+      "objectId": "",
+      "prefabName": "CozyPowder-Magic",
+      "prefabId": "3009441730",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "魔药配方",
+      "objectId": "",
+      "prefabName": "CozyPaperProp",
+      "prefabId": "224334666",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "魔药配方-清洁",
+      "objectId": "",
+      "prefabName": "CozyPaper-PotionRecipe-Cleansing",
+      "prefabId": "3228386081",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "魔药配方-烧烤",
+      "objectId": "",
+      "prefabName": "CozyPaper-PotionRecipe-Barbecue",
+      "prefabId": "426112277",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "魔药配方-生长",
+      "objectId": "",
+      "prefabName": "CozyPaper-PotionRecipe-Manure",
+      "prefabId": "59940635",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "魔药配方-长高",
+      "objectId": "",
+      "prefabName": "CozyPaper-PotionRecipe-RiseBody",
+      "prefabId": "1755798726",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "鱼竿",
+      "objectId": "",
+      "prefabName": "CozyFishingRodProp",
+      "prefabId": "118328796",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "鱼竿",
+      "objectId": "",
+      "prefabName": "CozyFishingRodProp-Long",
+      "prefabId": "3093390108",
+      "category": "Tool",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "鱼类工作台",
+      "objectId": "",
+      "prefabName": "CozyWorkShop-Fish",
+      "prefabId": "99407695",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "鱼类工作台蓝图",
+      "objectId": "",
+      "prefabName": "CozyBuildingBP-Workshop-Fish",
+      "prefabId": "3104384491",
+      "category": "Furniture",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "鲤鱼",
+      "objectId": "",
+      "prefabName": "CozyPBJumpFish",
+      "prefabId": "1686591308",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "鲨鱼",
+      "objectId": "",
+      "prefabName": "CozyShark",
+      "prefabId": "3756492539",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "鲨鱼玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-SharkCosplayHat",
+      "prefabId": "1301512203",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "鲨鱼玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-SharkCosplayCloth",
+      "prefabId": "715218598",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "黄色足球",
+      "objectId": "",
+      "prefabName": "CozyFootball-MiniGame-Yellow",
+      "prefabId": "1095306863",
+      "category": null,
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "黄鲤鱼",
+      "objectId": "",
+      "prefabName": "CozyYellowFish",
+      "prefabId": "676451595",
+      "category": "Widget",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "黄鲤鱼玩偶帽",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-YellowFishCosHat",
+      "prefabId": "240262129",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    },
+    {
+      "name": "黄鲤鱼玩偶服",
+      "objectId": "",
+      "prefabName": "CozyEquipmentProp-YellowFishCosCloth",
+      "prefabId": "3740089005",
+      "category": "Cloth",
+      "foodPower": null,
+      "networked": true,
+      "modTemplate": false
+    }
+  ]
+}

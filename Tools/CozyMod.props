@@ -1,0 +1,28 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <!-- Compile against the exact Unity Mono framework shipped by the game, with no NuGet framework download. -->
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NoStdLib>true</NoStdLib>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <GameManagedPath Condition="'$(GameManagedPath)' == ''">$(MSBuildThisFileDirectory)..\References\Managed</GameManagedPath>
+    <OutputPath>$(MSBuildProjectDirectory)\..\Code\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- The patch engine loads Backports at runtime. It defines framework types already supplied by Unity Mono. -->
+    <Reference Include="$(GameManagedPath)\*.dll" Exclude="$(GameManagedPath)\MonoMod.Backports.dll">
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <Target Name="CheckCozyGameReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(GameManagedPath)\Assembly-CSharp.dll')" Text="Game references are missing. Run Tools/Import-GameReferences.ps1 with your game's installation directory." />
+    <Error Condition="!Exists('$(GameManagedPath)\0Harmony.dll')" Text="This game build predates the code-Mod API. Update the game and re-import its Managed references." />
+    <Error Condition="!Exists('$(GameManagedPath)\mscorlib.dll')" Text="The exact Unity Mono framework references are missing. Import the complete Managed directory from the installed game." />
+  </Target>
+</Project>
