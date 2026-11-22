@@ -4,7 +4,7 @@
 
 ## 构建和试用
 
-1. 在工具包根目录打开 PowerShell，按[主指南](../../README.md#第一个代码-mod)为配套 Mono Player 设置 `$game` 和 `$player`。运行 `./Tools/Import-GameReferences.ps1 -GameDirectory $game`。
+1. 在工具包根目录打开 PowerShell，按[工具说明](../../Tools/README.md#核对配套-build-并导入引用)为配套 Mono Player 设置 `$game` 和 `$player`。运行 `./Tools/Import-GameReferences.ps1 -GameDirectory $game`。
 2. 运行 `./Tools/Build-CodeMod.ps1 -ProjectPath 'Examples/BuildingHints/Source/BuildingHints.csproj'`。需要本机安装 .NET SDK；产物是 `Code/CozyMods.BuildingHints.dll`。
 3. 把示例的 `mod.json` 和 `Code/` 复制到游戏 `Mods/BuildingHints`。退出游戏后运行 `./Tools/Validate-Mod.ps1 -GameExe $player -ModDirectory '<Mods 根目录的绝对路径>/BuildingHints'` 校验该副本。启动游戏，在主菜单的“模组”界面启用它，再进入世界。
 4. 拿起“小木锤”，把焦点移到可拆除的原版建筑或家具上，确认提示包含该物体的名称。不必实际执行拆除操作。

@@ -1,6 +1,6 @@
 # 岛屿研究营地 / Island Research Camp
 
-这是 CreatorKit 的独立作者范例。**0.1.2** 延续原 Mod ID `fresh-eye.research-camp-20261104` 和入口 `FreshEye.ResearchCamp.CampMod`。源码、可编辑的 Unity 资源工程以及 Windows 和 macOS 的 Bundle 随工具包提供。DLL 由作者用配套 Mono Player 的本机引用编译。
+这是 Cozy Island Modding 的独立作者范例。**0.1.2** 延续原 Mod ID `fresh-eye.research-camp-20261104` 和入口 `FreshEye.ResearchCamp.CampMod`。源码、可编辑的 Unity 资源工程以及 Windows 和 macOS 的 Bundle 随工具包提供。DLL 由作者用配套 Mono Player 的本机引用编译。
 
 [Steam 工坊实验作品](https://steamcommunity.com/sharedfiles/filedetails/?id=3833673375) 保持**私密**；账号之外可能无法访问。0.1.0 首次上传和 0.1.1 同项更新均有本次 `success=true/result=OK` 回执；它不是公开发布的正式兼容承诺。
 
@@ -19,7 +19,7 @@
 
 ## 从源码构建
 
-将本目录放在 CreatorKit 的 `Examples/ResearchCamp`。在 CreatorKit 根目录执行：
+本示例位于仓库的 `Examples/ResearchCamp`。在下载目录的根目录执行：
 
 ```powershell
 ./Tools/Import-GameReferences.ps1 -GameDirectory 'Windows游戏根目录或Mac游戏.app的绝对路径'
@@ -28,7 +28,7 @@
 
 `Source/ResearchCamp.csproj` 引用 `../../../Tools/CozyMod.props`，显式排除 `UnityProject/**/*.cs`，因此 Unity Editor 构建脚本和其缓存不会混入作者 DLL。构建后得到 `Examples/ResearchCamp/Code/FreshEye.ResearchCamp.dll`。编译引用由导入命令从本机配套 Player 提取。
 
-资源工程为 `Source/UnityProject`。随包 Windows Bundle 沿用历史版的 Unity **2022.3.62f3c1** 产物，Mac Bundle 由 Unity **2022.3.62f2c1** 构建。直接试用范例可以使用随包资源。改了资源后，按 [CreatorKit 配套说明](../../README.md) 核对目标 Player 的实际 Unity 版本，并安装该版本的目标平台 Standalone Build Support。打开资源工程，编辑并保存 `Assets/camp.prefab`、`Assets/ration.prefab` 和材质，关闭 Editor，再执行相应的批处理命令。
+资源工程为 `Source/UnityProject`。随包 Windows Bundle 沿用历史版的 Unity **2022.3.62f3c1** 产物，Mac Bundle 由 Unity **2022.3.62f2c1** 构建。直接试用范例可以使用随包资源。改了资源后，按 [配套游戏版本说明](../../Tools/README.md#核对配套-build-并导入引用) 核对目标 Player 的实际 Unity 版本，并安装该版本的目标平台 Standalone Build Support。打开资源工程，编辑并保存 `Assets/camp.prefab`、`Assets/ration.prefab` 和材质，关闭 Editor，再执行相应的批处理命令。
 
 ```powershell
 # Windows x64 Mono Player
@@ -56,7 +56,7 @@ ResearchCamp/
 
 ## 内容、存档与网络
 
-创建独立派生作品时，从 CreatorKit 根目录运行 `./Tools/New-CodeMod.ps1 -ProjectName my-camp -Title '我的营地' -Author '作者名'`。保留新项目生成的 `UniqueID` 和程序集名，按下面步骤迁移实现。
+创建独立派生作品时，从下载目录的根目录运行 `./Tools/New-CodeMod.ps1 -ProjectName my-camp -Title '我的营地' -Author '作者名'`。保留新项目生成的 `UniqueID` 和程序集名，按下面步骤迁移实现。
 
 1. 把 `Source/CampMod.cs` 和 `Source/UnityProject` 复制到 `MyMods/my-camp/Source`。删除脚手架的 `ModEntry.cs`，将 `CampMod.cs` 的命名空间改为自己的命名空间，并把 `mod.json` 的 `code.type` 更新为该命名空间下的 `CampMod`。保留脚手架的 `code.assembly`，并设置 `requiresRestart: true`。
 2. 在新项目的 `Source/Mod.csproj` 中加入下面的排除规则。它让普通 .NET 编译跳过独立 Unity 工程里的 Editor 脚本。

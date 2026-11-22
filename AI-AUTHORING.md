@@ -7,12 +7,12 @@
 复制模板并替换路径、身份、需求和可见性。模板明确授权上传一个作品；只做本地制作时改为“完成制作与本地测试，暂不上传”。
 
 ```text
-请使用我提供的 Cozy Island ModCreatorKit，为《舒舒服服小岛时光》制作一个 Mod，完成本地测试后上传到我当前登录的 Steam 账号。
+请使用我提供的 Cozy Island Modding 工具包，为《舒舒服服小岛时光》制作一个 Mod，完成本地测试后上传到我当前登录的 Steam 账号。
 
-工具包目录：D:\ModCreatorKit
+工具包目录：D:\cozy-island-modding
 完整游戏 Build：Windows 安装目录（如 D:\SteamLibrary\steamapps\common\Cozy Island），或 macOS 的完整 CozyIsland.app
 游戏启动路径：Windows 的 CozyIsland.exe，或 macOS 的完整 CozyIsland.app
-作者作品目录：D:\ModCreatorKit\MyMods\my-garden
+作者作品目录：D:\cozy-island-modding\MyMods\my-garden
 UniqueID：由 New-CodeMod.ps1 创建时生成，后续保留
 作者名：我的作者名
 作品标题：轻松园艺

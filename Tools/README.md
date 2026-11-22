@@ -1,10 +1,10 @@
-# 创作者工具
+# Cozy Island Modding 工具说明
 
-把 CreatorKit 作为独立目录使用。准备一份配套的完整 Cozy Island Mono Player，安装 PowerShell 7 和 .NET SDK 8。普通 C# 作品不需要 Unity Editor。只有重建 AssetBundle 等资源时，才需要与目标 Player 配套的 Unity Editor 和目标平台构建模块。
+下载并解压 Cozy Island Modding 仓库，准备一份配套的完整 Cozy Island Mono 游戏版本，再安装 PowerShell 7 和 .NET SDK。普通 C# 作品不需要 Unity Editor。只有重建 AssetBundle 等资源时，才需要与目标 Player 配套的 Unity Editor 和目标平台构建模块。
 
 ## 核对配套 Build 并导入引用
 
-在 CreatorKit 根目录打开 PowerShell。根据平台设置路径：
+在下载目录的根目录（能看到 Tools 和 Examples 的那一层）打开 PowerShell 7。根据平台设置路径：
 
 ```powershell
 # macOS：使用整个 .app
@@ -18,7 +18,7 @@ $player = $game
 ./Tools/Import-GameReferences.ps1 -GameDirectory $game
 ```
 
-根目录的 [PlayerIdentity.json](../PlayerIdentity.json) 标明本版 CreatorKit 对应的游戏源码提交、必需的清单能力和已验收的配套 Player 指纹。Clone 或下载仓库源码也会获得这份清单。游戏界面的版本号和 `schemaVersion: 1` 都不足以判断是否配套。
+根目录的 [PlayerIdentity.json](../PlayerIdentity.json) 标明本仓库当前版本对应的游戏源码提交、必需的清单能力和已验收的配套 Player 指纹。Clone 或下载仓库源码也会获得这份清单。游戏界面的版本号和 `schemaVersion: 1` 都不足以判断是否配套。
 
 导入前会启动所选 Player。游戏自己的校验器会读取临时作品的 UUID 和 DLL 元数据，工具也会比对当前平台的程序集和已登记的 Player 可执行文件 SHA-256。只想检查并查看配套报告时，可以运行 `./Tools/Test-GameCompatibility.ps1 -GameDirectory $game`。报告中 `exact` 表示登记的程序集和可执行文件指纹均匹配配套记录，`unmatched` 表示存在平台记录但哈希不同，`unpinned` 表示该平台尚无指纹。后两种可以继续编写和试验，需要针对实际 Build 重新确认范例、Prefab、存档和联机行为。游戏更新后应重新检查、导入、编译和测试。
 
@@ -72,7 +72,7 @@ $runtime = '/替换为/Mods/garden'
 
 ## 维护者生成 Foundation ZIP
 
-从干净的 CreatorKit 提交或 Release 标签准备打包。打包器要求所选 Player 能实际读取 UUID 清单，且程序集指纹与当前平台的 `release` 或 `release-candidate` 记录一致。
+从干净的 Cozy Island Modding 提交或 Release 标签准备打包。打包器要求所选 Player 能实际读取 UUID 清单，且程序集指纹与当前平台的 `release` 或 `release-candidate` 记录一致。
 
 ```powershell
 ./Tools/Package-ModCreatorKit.ps1 -GameDirectory $game -OutputPath '../Artifacts/CozyIsland-ModCreatorKit-Foundation.zip'

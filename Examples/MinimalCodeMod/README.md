@@ -4,7 +4,7 @@
 
 ## 构建与安装
 
-在工具包根目录打开 PowerShell，按[主指南](../../README.md#第一个代码-mod)为配套 Mono Player 设置 `$game` 和 `$player`，再导入、编译。
+在工具包根目录打开 PowerShell，按[工具说明](../../Tools/README.md#核对配套-build-并导入引用)为配套 Mono Player 设置 `$game` 和 `$player`，再导入、编译。
 
 ```powershell
 ./Tools/Import-GameReferences.ps1 -GameDirectory $game
