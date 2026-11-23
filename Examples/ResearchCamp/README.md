@@ -1,6 +1,6 @@
 # 岛屿研究营地 / Island Research Camp
 
-这是 Cozy Island Modding 的独立作者范例。**0.1.2** 延续原 Mod ID `fresh-eye.research-camp-20261104` 和入口 `FreshEye.ResearchCamp.CampMod`。源码、可编辑的 Unity 资源工程以及 Windows 和 macOS 的 Bundle 随工具包提供。DLL 由作者用配套 Mono Player 的本机引用编译。
+这是 Cozy Island Modding 的独立作者范例。**0.1.2** 的标识名为 `fresh-eye.research-camp-20261104`，入口为 `FreshEye.ResearchCamp.CampMod`。UUID 见本目录的 `mod.json`。源码、可编辑的 Unity 资源工程以及 Windows 和 macOS 的 Bundle 随工具包提供。DLL 由作者用配套 Mono Player 的本机引用编译。
 
 [Steam 工坊实验作品](https://steamcommunity.com/sharedfiles/filedetails/?id=3833673375) 保持**私密**；账号之外可能无法访问。0.1.0 首次上传和 0.1.1 同项更新均有本次 `success=true/result=OK` 回执；它不是公开发布的正式兼容承诺。
 
@@ -42,7 +42,7 @@
 
 `BuildCamp.RegenerateExampleAssets` 是另外一个可选入口，会重建原始示例的 Prefab 和材质。请仅在需要恢复原始资源的工程副本中执行。
 
-把下列运行文件放到游戏的 `Mods` 直接子目录。源码留在本地创作工程中。若从旧版更新，用结构如下的完整新包替换旧副本，保留安装目录名、清单身份和已绑定的工坊 ID。
+把下列运行文件放到游戏的 `Mods` 直接子目录。源码留在本地创作工程中。更新使用相同 UUID 的作品时，用完整新包替换原运行包，保留安装目录和已绑定的工坊 ID。
 
 ```text
 ResearchCamp/
@@ -56,7 +56,7 @@ ResearchCamp/
 
 ## 内容、存档与网络
 
-创建独立派生作品时，从下载目录的根目录运行 `./Tools/New-CodeMod.ps1 -ProjectName my-camp -Title '我的营地' -Author '作者名'`。保留新项目生成的 `UniqueID` 和程序集名，按下面步骤迁移实现。
+创建独立派生作品时，从下载目录的根目录运行 `./Tools/New-CodeMod.ps1 -ProjectName my-camp -DisplayName '我的营地' -Author '作者名'`。保留新项目生成的 `uuid` 和程序集名，按下面步骤迁移实现。
 
 1. 把 `Source/CampMod.cs` 和 `Source/UnityProject` 复制到 `MyMods/my-camp/Source`。删除脚手架的 `ModEntry.cs`，将 `CampMod.cs` 的命名空间改为自己的命名空间，并把 `mod.json` 的 `code.type` 更新为该命名空间下的 `CampMod`。保留脚手架的 `code.assembly`，并设置 `requiresRestart: true`。
 2. 在新项目的 `Source/Mod.csproj` 中加入下面的排除规则。它让普通 .NET 编译跳过独立 Unity 工程里的 Editor 脚本。
@@ -75,7 +75,7 @@ ResearchCamp/
 
 0.1.2 将旧版的局部引用 ID 固定在 `CampVisualNodes` 和 `RationVisualNodes`。每一行使用相对于视觉根的路径和已保存的 GameObject ID。该 ID 加一为 Transform ID，有网格时再依次保留 MeshFilter 和 MeshRenderer 的 ID。节点的遍历顺序不参与编号。重排兄弟节点无需修改表。重命名或移动同一个节点时只改路径，保留原 ID。新增节点或组件时分配从未使用过的 ID，并补齐映射。移除旧节点或组件前需先设计兼容方案。登记阶段会拒绝缺失和未映射的组件，避免游戏在含有错误引用的情况下进岛。调整层级后，用副本冷读含原营地或口粮的旧档。
 
-世界任务用 `RegisterSaveData(2, ...)` 与主存档一起保存，包含三个计数与已领奖布尔值。v1 的 `made/ate/visits/claimed` 转成 v2 的 `crafted/eaten/visited/rewarded`；未知版本拒绝恢复。恢复回调不发奖励。跨世界偏好单独写入 `Application.persistentDataPath/<Mod ID>/preferences.json`，作品不改加载器的启用配置。当前原生游戏的岛屿保存默认位于 `Application.dataPath/SaveFiles`，与用户偏好位置不同。
+世界任务用 `RegisterSaveData(2, ...)` 与主存档一起保存，包含三个计数与已领奖布尔值。v1 的 `made/ate/visits/claimed` 转成 v2 的 `crafted/eaten/visited/rewarded`；未知版本拒绝恢复。恢复回调不发奖励。跨世界偏好单独写入 `Application.persistentDataPath/<Mod UUID>/preferences.json`，作品不改加载器的启用配置。当前原生游戏的岛屿保存默认位于 `Application.dataPath/SaveFiles`，与用户偏好位置不同。
 
 两条配方会一起检查并注册。发生冲突或任意一条被拒绝时，本次已添加的配方会一起撤销。房主是世界状态唯一写入者。同包客机每两秒发协议 1 的 Hello，请求 JSON 快照。作者显式注册普通 Mirror 消息的读写委托，无自定义 NetworkBehaviour。房主只把作者快照发给主动 Hello 的连接，已暂停的 Mod 停止处理这两类消息。
 

@@ -1,83 +1,10 @@
 {
   "schemaVersion": 1,
   "game": "CozyIsland",
-  "sourceRevision": "6940f7b92ae8b8b7e29df7854634f23224d1c491",
+  "sourceRevision": null,
   "steamAppId": 2918500,
   "requiredCapabilities": [
-    "unique-id-manifest-v1"
+    "display-name-name-uuid-manifest"
   ],
-  "players": [
-    {
-      "platform": "macOS",
-      "architectures": [
-        "x86_64",
-        "arm64"
-      ],
-      "unityVersion": "2022.3.62f2c1",
-      "purpose": "release-candidate",
-      "executableSha256": "fe2fec57f39ffd932289c50e3e73c2e7babfe25c4f41e2d45b359ad381cf950d",
-      "files": [
-        {
-          "file": "Assembly-CSharp.dll",
-          "sha256": "743527ea1d7864df90bce355291aa888d9ff80c7b0b668dd90116ac41f5093d4"
-        },
-        {
-          "file": "Mirror.dll",
-          "sha256": "e9ec73b6be9f7967114f684557b07ff21090afbada4a4ceb35768611f226a87b"
-        },
-        {
-          "file": "0Harmony.dll",
-          "sha256": "0b66cd1ddbf0b35c98382220bc7b66684d1115fa53a76bd64249d10e082aabd9"
-        },
-        {
-          "file": "UnityEngine.CoreModule.dll",
-          "sha256": "2139b293c42bdfb86d5e05d28034bfd4183eee95877ac93bb3e49f5850142a8f"
-        },
-        {
-          "file": "Mono.Cecil.dll",
-          "sha256": "c41bdb9ffd3c5f6e17d2382c1012d73703e035e3f1100245fdd4e08c8dc6eb5b"
-        },
-        {
-          "file": "Mono.Cecil.Mdb.dll",
-          "sha256": "570a437dea0271d1d5c8b7d6a408b0b2635bdb0e8b8d5051878f3e7fca087f89"
-        },
-        {
-          "file": "Mono.Cecil.Pdb.dll",
-          "sha256": "50a1a1a79dc86fcfb8b51249b5325a10dd93d193c52999cf6775d25030a4e606"
-        },
-        {
-          "file": "Mono.Cecil.Rocks.dll",
-          "sha256": "842e09959084eda733aab1a5354d7af79e29594f4d8b91c8792103e5c755ed9b"
-        },
-        {
-          "file": "MonoMod.Backports.dll",
-          "sha256": "6db3486eb3bfc458c770d61a1391569000cd871dcc7160fb3da2cbfe8d98601a"
-        },
-        {
-          "file": "MonoMod.Core.dll",
-          "sha256": "4bb34dd557481564105e279ee92912d2fa615ba9f39e5212f0031bf62eff9571"
-        },
-        {
-          "file": "MonoMod.Iced.dll",
-          "sha256": "7890f9eeac088c52796c1ae73fa8feb1e7967a36e63f71d84cfb0445045a19c0"
-        },
-        {
-          "file": "MonoMod.ILHelpers.dll",
-          "sha256": "20df341949b81662e09787e42b66ac3fea601d4cf4b717294f2d72a80860e4ec"
-        },
-        {
-          "file": "MonoMod.RuntimeDetour.dll",
-          "sha256": "42720ec61bd108b5cf10e986374d1e06046f07f7597e16c1fd727dfb51ac9c98"
-        },
-        {
-          "file": "MonoMod.Utils.dll",
-          "sha256": "f0bdd7717cca42312e55ccd23e3ee7b61df104fe9440881d2e8abbebaf8fe644"
-        },
-        {
-          "file": "System.ValueTuple.dll",
-          "sha256": "f341fdcd30bfe1615b8cdcb0da0fb8c60dfae0b7aaf9238fe1cd5b721df16eb1"
-        }
-      ]
-    }
-  ]
+  "players": []
 }

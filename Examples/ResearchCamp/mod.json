@@ -1,1 +1,15 @@
-{"schemaVersion":1,"id":"fresh-eye.research-camp-20261104","title":"岛屿研究营地 / Island Research Camp","author":"Independent Fresh-eye Author","version":"0.1.2","description":"原生基础工作台新增研究口粮(1原木)与营地蓝图(2原木)。制作口粮、食用、访问营地后获得一次吐司奖励。F8显示任务，偏好跨世界保存。测试作品：联网与冷读验证状态见作者README。","requiresRestart":true,"dependencies":[],"code":{"assembly":"Code/FreshEye.ResearchCamp.dll","type":"FreshEye.ResearchCamp.CampMod"}}
+{
+  "schemaVersion": 1,
+  "displayName": "岛屿研究营地 / Island Research Camp",
+  "name": "fresh-eye.research-camp-20261104",
+  "uuid": "f54809b9-35aa-4ef9-820c-3c22c3d05e12",
+  "author": "Independent Fresh-eye Author",
+  "version": "0.1.2",
+  "description": "原生基础工作台新增研究口粮(1原木)与营地蓝图(2原木)。制作口粮、食用、访问营地后获得一次吐司奖励。F8显示任务，偏好跨世界保存。测试作品：联网与冷读验证状态见作者README。",
+  "requiresRestart": true,
+  "dependencies": [],
+  "code": {
+    "assembly": "Code/FreshEye.ResearchCamp.dll",
+    "type": "FreshEye.ResearchCamp.CampMod"
+  }
+}

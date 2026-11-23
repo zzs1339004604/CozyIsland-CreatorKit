@@ -2,7 +2,7 @@
 
 这是 Cozy Island Modding 的原生新物品范例，请使用本工具包配套的 Mono Player。下方历史 Windows 测试使用较早的 Unity 2022.3.62f3c1 构建。目标是展示：从原生食物模板建立独立保存身份，接入原生工作台配方，用原生食用事件完成作者任务，并在作者 DLL 中构造新视觉层级。它不依赖游戏专用 Bridge/Content SDK。
 
-目录应放在创作者包的 `Examples/TrailTreat`。Mod ID 为 `trial.nobridge.trail-treat`，版本 1.1.0，程序集为 `Trial.NoBridge.TrailTreat`，入口 `Trial.NoBridge.TrailTreat`。这些身份保留自实际验证作品；不要同时启用同 ID 的本地副本和工坊副本。制作独立派生作品时，先运行 `New-CodeMod.ps1` 创建新 UUID 工程，保留生成的 `UniqueID` 和程序集名。把 `TrailTreat.cs` 移入新工程的 `Source/`，把 `Assets/trail.png` 复制到新工程同相对位置。移除生成的空入口，把清单 `code.type` 设为移植后的完整入口类名，保留新工程的 `code.assembly` 并按本例设置 `requiresRestart: true`。为 `RecipeName` 选唯一配方键，并更换 `GUI.Window` 的固定窗口 ID（本例为 789312）。更新同一作品时保持作品身份和局部物品 ID。
+目录应放在创作者包的 `Examples/TrailTreat`。标识名为 `trial.nobridge.trail-treat`，版本 1.1.0，程序集为 `Trial.NoBridge.TrailTreat`，入口 `Trial.NoBridge.TrailTreat`。UUID 见本目录的 `mod.json`。本地副本和工坊副本使用同一个 UUID 时，只启用一份。制作独立派生作品时，先运行 `New-CodeMod.ps1` 创建新 UUID 工程，保留生成的 `uuid` 和程序集名。把 `TrailTreat.cs` 移入新工程的 `Source/`，把 `Assets/trail.png` 复制到新工程同相对位置。移除生成的空入口，把清单 `code.type` 设为移植后的完整入口类名，保留新工程的 `code.assembly` 并按本例设置 `requiresRestart: true`。为 `RecipeName` 选唯一配方键，并更换 `GUI.Window` 的固定窗口 ID（本例为 789312）。更新同一作品时保持作品身份和局部物品 ID。
 
 ## 编译与安装
 

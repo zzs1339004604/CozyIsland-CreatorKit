@@ -24,7 +24,7 @@
 
 顺序按账号保存，新作品追加。必要依赖先于使用者加载，拖动不能破坏这条约束；缺失、版本过低或循环依赖报错。依赖字段结构见 [Manifest.md](Manifest.md)。仅调整顺序也可能重建上下文，因此 `OnLoad` 不能假定进程中只执行一次。
 
-通常反序卸载，使使用者先于依赖清理。Harmony 的优先级和补丁规则仍会影响执行次序；两个 Mod 修改同一原生方法时，排序不能消除所有语义冲突。注册物品的稳定身份来自 Mod ID 与局部 ID，不随列表位置变化。
+通常反序卸载，使使用者先于依赖清理。Harmony 的优先级和补丁规则仍会影响执行次序；两个 Mod 修改同一原生方法时，排序不能消除所有语义冲突。注册物品的稳定身份来自 Mod UUID 与局部 ID，不随列表位置变化。
 
 ## 上下文与清理
 
@@ -48,7 +48,7 @@
 
 ## 游戏提供的 Harmony
 
-所有作品共享游戏固定提供的 HarmonyX 运行时，通过 `context.Harmony` 得到按 Mod ID 隔离的 owner：`cozy.mod.<id>`。玩家不需要额外订阅 Harmony 前置作品，作者也不要把另一份 `0Harmony.dll`、MonoMod 或 Cecil 带入包。
+所有作品共享游戏固定提供的 HarmonyX 运行时，通过 `context.Harmony` 得到按 Mod UUID 隔离的 owner：`cozy.mod.<uuid>`。玩家不需要额外订阅 Harmony 前置作品，作者也不要把另一份 `0Harmony.dll`、MonoMod 或 Cecil 带入包。
 
 | 程序集 | 游戏固定版本 |
 | --- | --- |

@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Checks a complete Player for UniqueID support and compares its assemblies to the kit's paired build.
+Checks a complete Player for displayName, name, and uuid support and compares its assemblies to the kit's paired build.
 #>
 [CmdletBinding()]
 param(
@@ -24,15 +24,16 @@ $pairing = if ($null -ne $matchingProfile) { 'exact' }
 
 # The temporary DLL exercises the Player's shared DLL inventory. Validation reads its metadata.
 $probeId = [guid]::NewGuid()
-$probeRoot = Join-Path ([IO.Path]::GetTempPath()) ('CozyUniqueIdProbe-' + $probeId.ToString('N'))
+$probeRoot = Join-Path ([IO.Path]::GetTempPath()) ('CozyModManifestProbe-' + $probeId.ToString('N'))
 $probeAssembly = Join-Path $probeRoot 'Probe.dll'
 try {
     [IO.Directory]::CreateDirectory($probeRoot) | Out-Null
     Add-Type -TypeDefinition "internal sealed class Probe$($probeId.ToString('N')) {}" -OutputAssembly $probeAssembly
     [ordered]@{
         schemaVersion = 1
-        UniqueID = $probeId.ToString('D').ToUpperInvariant()
-        title = 'CreatorKit compatibility probe'
+        uuid = $probeId.ToString('D').ToUpperInvariant()
+        name = 'cozy.creator-kit-probe'
+        displayName = 'CreatorKit compatibility probe'
         author = 'Cozy Island'
         version = '1.0.0'
     } | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $probeRoot 'mod.json') -Encoding UTF8
@@ -40,10 +41,11 @@ try {
     try {
         $report = & (Join-Path $PSScriptRoot 'Validate-Mod.ps1') -GameExe $GameDirectory -ModDirectory $probeRoot -ResultPath $ResultPath -Rosetta:$Rosetta
     } catch {
-        throw "The supplied Player did not pass the UniqueID compatibility probe. Use the complete paired Workshop-enabled build. $($_.Exception.Message)"
+        throw "The supplied Player did not pass the Mod manifest compatibility probe. Use the complete paired Workshop-enabled build. $($_.Exception.Message)"
     }
-    if ($report.UniqueID -cne $probeId.ToString('D') -or $report.id -cne $probeId.ToString('D') -or $report.files -ne 2) {
-        throw 'The supplied Player did not return the normalized UniqueID and expected file count. Use the paired Workshop-enabled build.'
+    if ($report.uuid -cne $probeId.ToString('D') -or $report.name -cne 'cozy.creator-kit-probe' -or
+        $report.displayName -cne 'CreatorKit compatibility probe' -or $report.files -ne 2) {
+        throw 'The supplied Player did not return the expected Mod identity and file count. Use the paired Workshop-enabled build.'
     }
 } finally {
     if (Test-Path -LiteralPath $probeRoot) { Remove-Item -LiteralPath $probeRoot -Recurse -Force }
@@ -51,7 +53,7 @@ try {
 if ($pairing -eq 'exact') {
     Write-Host "Player assembly fingerprints match the pinned $($player.platform) profile."
 } else {
-    Write-Warning "UniqueID validation passed, but the $($player.platform) Player is $pairing for this kit. This does not establish compatibility with the pinned examples, game APIs or assets."
+    Write-Warning "Mod manifest validation passed, but the $($player.platform) Player is $pairing for this kit. This does not establish compatibility with the pinned examples, game APIs or assets."
 }
 [pscustomobject]@{
     platform = $player.platform

@@ -6,7 +6,7 @@
 
 [安装模组](#安装模组) · [试做第一个模组](#试做第一个模组) · [发布到创意工坊](#发布到创意工坊) · [更多示例](#更多示例) · [常见问题](#常见问题)
 
-> **开始前**　请使用带「模组」菜单的配套游戏版本。仓库提供工具和示例源码，游戏需另外安装。目前记录的配套版本是一份 macOS 测试版。有兼容的 Windows 游戏版本时，也可以按下方的 Windows 步骤操作。 [Steam 商店](https://store.steampowered.com/app/2918500/) · [配套版本记录](PlayerIdentity.json)
+> **开始前**　请另外安装带「模组」菜单且能读取本仓库清单的游戏版本。导入引用时，工具会自动检查配套情况。可以按下方对应系统的步骤操作。 [Steam 商店](https://store.steampowered.com/app/2918500/) · [配套版本记录](PlayerIdentity.json)
 
 ## 安装模组
 
@@ -66,18 +66,18 @@ $game = '/Applications/CozyIsland.app'
 
 ### 新建自己的作品
 
-试过示例后，可以在同一个 PowerShell 窗口创建自己的工程。把标题和作者名换成你想用的名字。
+试过示例后，可以在同一个 PowerShell 窗口创建自己的工程。把显示名和作者名换成你想用的名字。
 
 ```powershell
-./Tools/New-CodeMod.ps1 -ProjectName my-first-mod -Title '我的第一个模组' -Author '我的名字'
+./Tools/New-CodeMod.ps1 -ProjectName my-first-mod -DisplayName '我的第一个模组' -Author '我的名字'
 ./Tools/Build-CodeMod.ps1 -ProjectPath './MyMods/my-first-mod/Source/Mod.csproj'
 ```
 
-新工程在 `MyMods/my-first-mod`。按上面的安装方法，把它的 `mod.json` 和编译生成的 DLL 复制到 `Mods/my-first-mod` 下的对应位置。启用后，在游戏日志中查找 `Loaded 1.0.0`。给同一个作品改名或更新时，保留 `mod.json` 里的模组 ID。 [工程说明](Tools/README.md#新建自己的作品) · [模组 ID 和文件说明](Docs/Manifest.md)
+新工程在 `MyMods/my-first-mod`。按上面的安装方法，把它的 `mod.json` 和编译生成的 DLL 复制到 `Mods/my-first-mod` 下的对应位置。启用后，在游戏日志中查找 `Loaded 1.0.0`。清单里的 `displayName` 是玩家看到的名字，`name` 是作者用的标识名。工具会为每个新作品生成一个 `uuid`。给同一作品改名或更新时，保留这个值。 [工程说明](Tools/README.md#新建自己的作品) · [清单和文件说明](Docs/Manifest.md)
 
 ## 发布到创意工坊
 
-1. 登录 Steam，在游戏里打开 **模组 → 模组创作**，选中你自己制作并在游戏里试过的本地作品。填写标题、作者和介绍，点击 **保存修改**。
+1. 登录 Steam，在游戏里打开 **模组 → 模组创作**，选中你自己制作并在游戏里试过的本地作品。填写显示名、作者和介绍，点击 **保存修改**。
 2. 第一次发布时，工坊 ID 留空，点击 **发布到创意工坊**。第一次上传默认是私密的。如果 Steam 提示接受创意工坊协议，请在 Steam 页面完成。更新作品时，确认原工坊 ID 后点击 **发布更新**。换电脑后如果列表找不到原关联，可以填回原作品页上的数字 ID。
 3. 上传完成后，从 Steam 订阅并等下载完成。在游戏里停用本地副本，启用工坊副本。完全退出游戏再打开，然后用和本地版一样的方法试一遍，确认订阅到的版本也能用。 [发布、更新和包大小限制](Docs/Workshop.md#发布和更新)
 

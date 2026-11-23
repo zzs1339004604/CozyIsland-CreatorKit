@@ -1,33 +1,33 @@
 <#
 .SYNOPSIS
-Creates a new code Mod with a UUID generated once and stored as UniqueID.
+Creates a new code Mod with a UUID generated once and stored as uuid.
 .EXAMPLE
-./Tools/New-CodeMod.ps1 -ProjectName garden -Title 'Garden Tools' -Author 'Alice'
+./Tools/New-CodeMod.ps1 -ProjectName garden -DisplayName 'Garden Tools' -Author 'Alice'
 #>
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateLength(1, 48)]
+    [ValidateLength(3, 48)]
     [ValidatePattern('(?-i)^[a-z][a-z0-9_-]*$')]
     [string]$ProjectName,
-    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$Title,
+    [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$DisplayName,
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$Author
 )
 $ErrorActionPreference = 'Stop'
 if ($ProjectName -match '^(con|prn|aux|nul|com[1-9]|lpt[1-9])$') {
     throw 'ProjectName must use a valid Windows directory name.'
 }
-if ([string]::IsNullOrWhiteSpace($Title) -or $Title.Length -gt 100 -or
+if ([string]::IsNullOrWhiteSpace($DisplayName) -or $DisplayName.Length -gt 100 -or
     [string]::IsNullOrWhiteSpace($Author) -or $Author.Length -gt 100) {
-    throw 'Title and Author must be nonempty and at most 100 characters each.'
+    throw 'DisplayName and Author must be nonempty and at most 100 characters each.'
 }
 
 $kitRoot = Split-Path -Parent $PSScriptRoot
 $workspace = Join-Path $kitRoot 'MyMods'
 $destination = Join-Path $workspace $ProjectName
 if (Test-Path -LiteralPath $destination) { throw "A project already exists at '$destination'. Choose a different project directory for a new work." }
-$uniqueId = [Guid]::NewGuid().ToString('D')
-$assemblySuffix = $uniqueId.Replace('-', '')
+$uuid = [Guid]::NewGuid().ToString('D')
+$assemblySuffix = $uuid.Replace('-', '')
 $assemblyName = "CozyMods.$assemblySuffix"
 $namespace = "CozyMods.Mod_$assemblySuffix"
 $entryType = "$namespace.ModEntry"
@@ -38,8 +38,9 @@ try {
     [IO.Directory]::CreateDirectory((Join-Path $temporary 'Source')) | Out-Null
     $manifest = [ordered]@{
         schemaVersion = 1
-        UniqueID = $uniqueId
-        title = $Title.Trim()
+        displayName = $DisplayName.Trim()
+        name = $ProjectName
+        uuid = $uuid
         author = $Author.Trim()
         version = '1.0.0'
         description = ''
@@ -77,6 +78,6 @@ namespace $namespace {
 }
 
 Write-Host "Created $ProjectName in $destination"
-Write-Host "UniqueID $uniqueId"
-Write-Host 'Keep this UniqueID and assembly name when updating or publishing the same work.'
+Write-Host "UUID $uuid"
+Write-Host 'Keep this UUID and assembly name when updating or publishing the same work.'
 Write-Host "Build with Tools/Build-CodeMod.ps1 -ProjectPath '$destination/Source/Mod.csproj'."

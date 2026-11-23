@@ -6,7 +6,7 @@ Use this guide to play with mods or make your own for Cozy Island. This reposito
 
 [Install mods](#install-mods) · [Build your first mod](#build-your-first-mod) · [Publish to Steam Workshop](#publish-to-steam-workshop) · [More examples](#more-examples) · [Common questions](#common-questions)
 
-> **Before you start**  Use a compatible version of Cozy Island with a **Mods** menu. Install the game separately from the tools and sample source in this repository. The compatibility record currently lists a macOS test build. You can follow the Windows instructions with a compatible Windows build. [Steam store](https://store.steampowered.com/app/2918500/) · [Game build record](PlayerIdentity.json)
+> **Before you start**  Install a version of Cozy Island with a **Mods** menu that supports this repository’s manifest. The import tool checks compatibility before it copies the files you need to build a mod. Follow the instructions below for your operating system. [Steam store](https://store.steampowered.com/app/2918500/) · [Game build record](PlayerIdentity.json)
 
 ## Install mods
 
@@ -66,18 +66,18 @@ Run these two commands in the same window. The first briefly starts the selected
 
 ### Start your own mod
 
-Once you’ve tried the example, create your own project in the same PowerShell window. Replace the title and author name with the ones you want to use.
+Once you’ve tried the example, create your own project in the same PowerShell window. Replace the display name and author name with the ones you want to use.
 
 ```powershell
-./Tools/New-CodeMod.ps1 -ProjectName my-first-mod -Title 'My First Mod' -Author 'Your name'
+./Tools/New-CodeMod.ps1 -ProjectName my-first-mod -DisplayName 'My First Mod' -Author 'Your name'
 ./Tools/Build-CodeMod.ps1 -ProjectPath './MyMods/my-first-mod/Source/Mod.csproj'
 ```
 
-Your project is in `MyMods/my-first-mod`. Follow the same folder layout as the example when you copy its `mod.json` and DLL into `Mods/my-first-mod`. Turn on your mod and look for `Loaded 1.0.0` in the game log. Keep the mod ID in `mod.json` when you rename or update the same mod. [Project setup (Chinese)](Tools/README.md#新建自己的作品) · [Mod IDs and files (Chinese)](Docs/Manifest.md)
+Your project is in `MyMods/my-first-mod`. Follow the same folder layout as the example when you copy its `mod.json` and DLL into `Mods/my-first-mod`. Turn on your mod and look for `Loaded 1.0.0` in the game log. In `mod.json`, `displayName` is what players see and `name` is the identifier authors use in tools and logs. The tool creates a `uuid` for each new mod. Keep that UUID when you rename or update the same mod. [Project setup (Chinese)](Tools/README.md#新建自己的作品) · [Manifest and files (Chinese)](Docs/Manifest.md)
 
 ## Publish to Steam Workshop
 
-1. Sign in to Steam. In the game, open **Mods → Create Mods** and select your own local mod that you’ve tested in-game. Fill in its title, author, and description, then choose **Save changes**.
+1. Sign in to Steam. In the game, open **Mods → Create Mods** and select your own local mod that you’ve tested in-game. Fill in its display name, author, and description, then choose **Save changes**.
 2. For a new item, leave the Workshop ID blank and choose **Publish to Workshop**. First uploads are private by default. If Steam asks you to accept the Workshop agreement, do so on Steam. To update an existing item, confirm its original Workshop ID and choose **Publish update**. If the game has lost the link to your item, enter the number from its original Workshop page.
 3. After the upload, subscribe to the item on Steam and wait for it to download. Turn off the local copy and turn on the Workshop copy in the game. Quit the game completely, open it again, and repeat your local test to check the version Steam delivered. [Publishing, updates, and size limits (Chinese)](Docs/Workshop.md#发布和更新)
 
