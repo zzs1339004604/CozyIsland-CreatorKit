@@ -10,7 +10,9 @@
 dotnet build ./Examples/ClothingColor/Source/ClothingColor.csproj -c Release "-p:GameManagedPath=D:/SteamLibrary/steamapps/common/Cozy Island/CozyIsland_Data/Managed"
 ```
 
-范例把自己的 DLL 写到 `Code/`。`Managed` 只供编译，游戏依赖由玩家自己的游戏提供。按范例说明把 `mod.json`、`Code/` 和需要的资源放进本地 `Mods`，然后到游戏里[启用和发布](../Docs/Workshop.md)。游戏更新后，使用最新版安装目录重新编译并进岛试用。
+范例把自己的 DLL 写到 `Code/`。`Managed` 只供编译，游戏依赖由玩家自己的游戏提供。按范例说明把 `mod.json`、`Code/` 和需要的资源放进本地 `Mods`，然后到游戏里启用和发布。目标游戏版本更新后，用将实际运行该模组的游戏重新编译并进岛试用。 [启用和发布](../Docs/Workshop.md)
+
+含模型或 Shader 的模组还需要与目标平台匹配的 Unity 资源包。范例索引列出了随附的资源包和试用方式。 [范例与资源平台](../Examples/README.md)
 
 ## 可选的 PowerShell 工具
 

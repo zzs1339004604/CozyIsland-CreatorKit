@@ -1,24 +1,22 @@
-# 作者源码示例
+# 模组范例
 
-第一次制作从[起始上衣换色](ClothingColor/README.md)开始。想把模型带进游戏，可以接着看依赖联机外观框架的[直立鼠外观包](UprightMouse/README.md)。
+第一次制作可以从[起始上衣换色](ClothingColor/README.md)开始。这个范例用游戏已有的模型和材质，可以先改一个颜色，再观察实际效果。
 
-`mod.json` 是作品清单。在 C# 范例中，`Source/` 存放可编辑的源码，`Code/` 存放编译生成、供游戏加载的 DLL。编译引用来自你安装的配套游戏。纯数据外观包可以按其 README 直接使用。 [编译方式](../Tools/README.md#直接编译)
-
-| 示例 | 目的与依赖 | 实际观察方式 |
+| 想做什么 | 范例 | 怎么试 |
 | --- | --- | --- |
-| [ClothingColor](ClothingColor/README.md) | 用原版材质给本机 Human 的起始上衣和袖子换色 | 穿着起始上衣进岛，就能看到它从绿色变成玫红色 |
-| [MinimalCodeMod](MinimalCodeMod/README.md) | 仅依赖加载上下文与 Harmony，修补自己 DLL 的方法 | Player 日志出现原值 21、补丁值 42、更新/场景/清理回调；停用重启用再次从 21 开始 |
-| [BuildingHints](BuildingHints/README.md) | 原生 `PCDBuilding` 提示 getter 与 `EasyLocalText` | 拿小木锤聚焦建筑，提示追加建筑名称；停用后恢复，不需真的拆除 |
-| [GreenThumb](GreenThumb/README.md) | 原生 `CozyFallowLand.Update` 的房主补丁与自有配置 | 同种作物对比成熟/耗水时间，检查停用后行为恢复 |
-| [BriskWalk](BriskWalk/README.md) | 原生玩家和控制器移动字段、自有配置与原值恢复 | 同一路径/输入对比步行距离；奔跑字段是否被具体控制器使用须另行实测 |
-| [TrailTreat](TrailTreat/README.md) | 通用登记、原生物品/配方/食用事件、作者 HUD 与新模型 | 原木制作远足饼，食用两次获得吐司；世界进度随主档保存；已验与未验范围见范例 README，作者状态不自动联网 |
-| [WitchRobe](WitchRobe/README.md) | 独立服装模型、原版材质改色、配方和装备同步 | 制作并穿戴青苔魔法袍与魔法帽，两端安装同一范例可观察实时穿脱 |
-| [UprightMouse](UprightMouse/README.md) | 给联机外观框架制作纯数据身体外观包 | 启用框架和数据包后，在 F10 外观菜单选择直立鼠 |
-| [RetroFilters](RetroFilters/README.md) | 用 Shader 处理主摄像机画面，借用游戏 UI 调节参数 | 在主菜单切换抖动、像素化、色阶和描边，即时对比效果 |
-| [ResearchCamp](ResearchCamp/README.md) | 独立 Unity AssetBundle、多节点营地、两配方、三目标任务、主档数据及作者网络消息 | 0.1.2 同包选择 Windows/macOS 资源，旧清单下的读档、玩法和工坊测试见该范例的历史记录 |
+| 给起始上衣换色 | [ClothingColor](ClothingColor/README.md) | 穿着默认装扮进岛，本机角色的上衣和袖子会变成玫红色。 |
+| 观察代码加载与清理 | [MinimalCodeMod](MinimalCodeMod/README.md) | 从游戏日志查看 Harmony 补丁、更新回调和清理结果。 |
+| 给交互提示加文字 | [BuildingHints](BuildingHints/README.md) | 用小木锤对准可拆除的建筑，观察拆除提示中的建筑名。 |
+| 调整作物生长和耗水 | [GreenThumb](GreenThumb/README.md) | 用房主角色对比同种作物的生长和耗水。参数在 `garden.json`。 |
+| 调整角色移动速度 | [BriskWalk](BriskWalk/README.md) | 在相同路线对比步行速度。奔跑倍率的效果取决于角色控制器。 |
+| 给角色换上直立鼠皮肤 | [UprightMouse](UprightMouse/README.md) | 启用联机外观框架和此纯数据包，在 F10 菜单选择直立鼠。附 Windows x64 资源包。 |
+| 给画面加复古滤镜 | [RetroFilters](RetroFilters/README.md) | 使用随附的 Windows x64 资源包，在主菜单实时预览，或进岛后按 F9 调整效果。 |
+| 添加可以制作和穿戴的服装物品 | [WitchRobe](WitchRobe/README.md) | 在基础工作台制作青苔魔法袍和魔法帽。随附 Windows x64 资源包，联机时各端安装同一版本以显示模型。 |
+| 选择和分享联机外观 | [AppearanceFramework](AppearanceFramework/README.md) | 各端启用同一框架后，可以用 F10 选择外观。外观包可按作者设置在房间内分享资源。 |
+| 在 F10 菜单选择青苔造型 | [MossWitchAppearance](MossWitchAppearance/README.md) | 启用框架和此可选纯数据包，在 F10 菜单选择魔法袍或帽子。附 Windows x64 资源包。 |
+| 添加食物、配方和任务 | [TrailTreat](TrailTreat/README.md) | 制作并食用两次远足饼，触发吐司奖励。任务由房主推进并存入世界存档。 |
+| 添加营地和可保存的联机任务 | [ResearchCamp](ResearchCamp/README.md) | 从营地、口粮配方和三个小目标入手。随附 Windows x64 和 macOS 资源包，同包客机可接收进度。 |
 
-玩法范例展示如何在 C# 代码中使用游戏已有的功能。玩法写在作者 DLL 中，加载器不增加建筑提示、园艺倍率、移动倍率或食物奖励接口。TrailTreat 的正式玩法不调用游戏私有方法，不包含验证驱动；普通输入、多人与任务保存的具体边界见其 README。原生方法/字段可能随游戏更新改变；重新导入 Player 程序集并核对行为。
+`mod.json` 是作品清单。C# 范例的 `Source/` 存放可编辑的源码，使用配套游戏的程序集编译。将清单、生成的 `Code/` 和所需资源放入游戏的 `Mods` 子目录。纯数据外观包可按各自说明安装，保留清单和资源目录。修改已加载的 DLL 后，完整退出游戏再验证。 [编译方式](../Tools/README.md#直接编译) · [启用和发布](../Docs/Workshop.md)
 
-在游戏 `Mods` 下为示例创建一个子目录，复制 `mod.json` 和该范例说明中列出的资源。C# 范例还需要复制 `Code/` 下的 DLL。切回游戏后，在模组列表手动开启。若“打开作品文件夹”打开已有作品，新增示例应放在其上一级 `Mods`。修改 C# 后先编译，再复制运行文件；修改已加载 DLL 必须完整退出游戏。
-
-各示例的 README 记录实际验收范围。涉及玩法请使用测试存档，按[原生创作验收表](../Docs/Native-Authoring.md)记录结果。复制范例做新作品时，为作品生成新的 UUID。C# 项目还需要独立的程序集名和对应的代码入口。使用同一作品的测试副本或发布更新时保留原身份。 [清单身份与副本](../Docs/Manifest.md#身份与副本)
+各范例的 README 记录了实际验收范围。涉及存档或联机的作品可以在测试岛验证。复制范例做新作品时生成新的 UUID，给 C# 项目设置独立的程序集名，并核对清单中的代码入口。更新同一作品时保留 UUID。 [验收方法](../Docs/Native-Authoring.md#验收与证据) · [作品身份与副本](../Docs/Manifest.md#身份与副本)

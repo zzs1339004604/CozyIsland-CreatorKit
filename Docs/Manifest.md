@@ -37,7 +37,7 @@
 | `code.assembly` | 相对作品根部的 `.dll` 路径，文件须存在 |
 | `code.type` | 实现 `CozyIsland.Modding.ICozyMod` 的完整入口类名，最多 256 字符；公开、非抽象、有可公开调用的无参构造函数 |
 
-无代码的元信息目录可以被识别，但不会产生玩法效果。清单不提供 `content` 或专用玩法字段；未知字段和未知格式版本会报错。自己的 `settings.json` 等文件可以随包发布，由代码通过 `context.ReadPath` 定位并自行校验。
+数据包可以只提供清单与资源，并在 `dependencies` 中声明负责读取它的模组。例如，联机外观框架读取直立鼠外观包的 `appearance.json`。清单负责说明身份、依赖和代码入口。自定义配置可以随包发布，由代码通过 `context.ReadPath` 定位并校验。未知清单字段和未知格式版本会报错。 [直立鼠外观数据](../Examples/UprightMouse/appearance.json)
 
 没有 `preview` 字段时，上传器依次尝试 `preview.png`、`icon.png`，均不存在则生成默认封面。显示名与标识名可以修改。`uuid` 用于副本识别、依赖匹配、发布关联、Harmony owner 和注册归属。更新时保留它。
 
@@ -53,9 +53,9 @@
 | 工坊数字 ID | Steam 创建作品时返回 | 用于下载和更新某个工坊发布项 |
 | 本地目录名 | `garden` | 本机工程或安装位置，与永久身份分别记录 |
 
-创建新作品时，生成一次随机 UUID 并写入 `mod.json`，项目使用独立的程序集名，`code.type` 填入口类名。Windows 可以在系统自带的 PowerShell 运行 `[guid]::NewGuid()`，macOS 可在终端运行 `uuidgen`。同一作品的本地版、工坊版和更新版本共用该 UUID。 [示例中的操作](../Examples/ClothingColor/README.md#发布到-steam-创意工坊) · [可选的工程生成工具](../Tools/README.md#新建自己的作品)
+创建新作品时，生成一次随机 UUID 并写入 `mod.json`。C# 项目还需要独立的程序集名，用 `code.type` 指定入口类名。Windows 可以在系统自带的 PowerShell 运行 `[guid]::NewGuid()`，macOS 可在终端运行 `uuidgen`。同一作品的本地版、工坊版和更新版本共用该 UUID。 [示例中的操作](../Examples/ClothingColor/README.md#发布到-steam-创意工坊) · [可选的工程生成工具](../Tools/README.md#新建自己的作品)
 
-复制工程做一个独立作品时，生成新的 UUID，更新作品信息、程序集名和入口，并检查源码里的身份引用。复制运行包作为同一作品的测试副本时，保留原 UUID。
+复制工程做一个独立作品时，生成新的 UUID 并更新作品信息。复制 C# 项目时，同时更新程序集名和入口，检查源码里的身份引用。复制运行包作为同一作品的测试副本时，保留原 UUID。
 
 启用和排序使用安装键，本地为 `local:<目录名>`，工坊为 `workshop:<数字 ID>`。同一作品可以安装多份。启用一份时，游戏会同时停用已读出相同作品身份的其他副本。需要重启时，按提示退出整个进程。若多个同身份副本同时开启，先在列表保留一份。改本地安装目录名、换账号或切换副本后，先核对副本的版本与安装路径，确认这一份已启用并生效，再读含该作品物件的存档。停用或未识别的副本可能触发[缺失内容清理](Save-Data.md#缺失内容与失败是不同情况)。
 
