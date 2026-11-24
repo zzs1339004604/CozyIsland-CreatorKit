@@ -47,6 +47,8 @@ Download the source with **Code → Download ZIP** on the repository page. You c
 
 ## Publish to Steam Workshop
 
+One Workshop item can support Windows and macOS. Use managed dependencies available on both platforms, build a separate Unity AssetBundle for each target, and test the same release package in both game builds. List the platforms you support in the item description. [Windows and macOS compatibility guide (Chinese)](Docs/Native-Authoring.md#兼容-windows-和-macos)
+
 1. Sign in to Steam. In the game, open **Mods → Create Mods** and select your own local mod that you’ve tested in-game. Fill in its display name, author, and description, then choose **Save changes**.
 2. For a new item, leave the Workshop ID blank and choose **Publish to Workshop**. First uploads are private by default. If Steam asks you to accept the Workshop agreement, do so on Steam. To update an existing item, confirm its original Workshop ID and choose **Publish update**. If the game has lost the link to your item, enter the number from its original Workshop page.
 3. After the upload, subscribe to the item on Steam and wait for it to download. Turn off the local copy and turn on the Workshop copy in the game. Quit the game completely, open it again, and repeat your local test to check the version Steam delivered. [Publishing, updates, and size limits (Chinese)](Docs/Workshop.md#发布和更新)

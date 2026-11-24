@@ -6,17 +6,17 @@
 
 ## 在游戏里试用
 
-准备支持 UUID 模组清单的 Windows x64 游戏版本和 .NET SDK。范例已经带有 Windows 资源包，试用时直接编译 C# 即可。 [模组清单](../../Docs/Manifest.md)
+准备支持 UUID 模组清单的 Windows x64 或 macOS 游戏版本和 .NET SDK。范例随附两个平台的资源包，试用时直接编译 C# 即可。 [模组清单](../../Docs/Manifest.md)
 
 如果旧工坊副本 2.0.0 提示「缺少字段：displayName」，请使用本节步骤编译并试用包含 UUID 清单的当前范例。更新已有工坊作品时，在游戏的作者页将新版关联到原工坊数字 ID。 [工坊更新说明](../../Docs/Workshop.md#发布和更新)
 
-1. 在仓库根目录打开终端，把命令里的路径换成游戏安装目录中的 `CozyIsland_Data/Managed`，编译后会得到 `Examples/RetroFilters/Code/CozyMods.ColorDither.dll`。
+1. 在仓库根目录打开终端，把命令里的路径换成游戏安装目录中的 Managed 路径。Windows 的路径通常以 `CozyIsland_Data/Managed` 结尾，macOS 的路径以 `CozyIsland.app/Contents/Resources/Data/Managed` 结尾。编译后会得到 `Examples/RetroFilters/Code/CozyMods.ColorDither.dll`。
 
    ```text
-   dotnet build Examples/RetroFilters/Source/ColorDither.csproj -c Release "-p:GameManagedPath=D:/SteamLibrary/steamapps/common/CozyIsland/CozyIsland_Data/Managed"
+   dotnet build Examples/RetroFilters/Source/ColorDither.csproj -c Release "-p:GameManagedPath=<Managed 路径>"
    ```
 
-2. 在游戏打开 **模组 → 模组创作 → 打开作品文件夹**。如果打开的是已有作品，返回上一级 `Mods`。在 `Mods` 里建一个 `RetroFilters` 文件夹，把编译好的 DLL 和示例里的清单、资源包、封面按下面的结构放好。
+2. 在游戏打开 **模组 → 模组创作 → 打开作品文件夹**。如果打开的是已有作品，返回上一级 `Mods`。在 `Mods` 里建一个 `RetroFilters` 文件夹，把编译好的 DLL 和示例里的清单、两个资源包、封面按下面的结构放好。
 
    ```text
    Mods/
@@ -24,6 +24,7 @@
        mod.json
        preview.png
        Assets/colordither.bundle
+       Assets/colordither-macos.bundle
        Code/CozyMods.ColorDither.dll
    ```
 
@@ -42,8 +43,15 @@
 - `RetroControls.cs` 使用游戏现有的滑块、按钮、开关和字体搭建面板，把参数交给滤镜材质。调整保存在本机游戏设置中。想换一套默认参数，可从同一文件的 `RetroSettings` 入手。 [面板和参数](Source/RetroControls.cs)
 - `CozyColorDither.shader` 定义画面如何像素化、分层、描边和加抖动。低分辨率在最终画面上模拟像素块，游戏的渲染分辨率保持原值。 [Shader 源码](Source/UnityProject/Assets/CozyColorDither.shader)
 
-## 重建资源包
+## 为 Windows 和 macOS 重建资源包
 
-只改 C# 或默认参数时，重新编译 DLL 即可。改动 Shader 后，用 Unity Hub 添加 `Source/UnityProject`，以 **Unity 2022.3.62f3c1** 打开。该项目已配好 **URP 14.0.12**。保存修改，点 **Cozy Island → Build Windows Retro Filter Bundle** 重建范例的 `Assets/colordither.bundle`。把生成的资源包复制到本地测试副本，完整退出并重开游戏。 [资源包构建代码](Source/UnityProject/Assets/Editor/BuildColorDitherBundle.cs)
+只改 C# 或默认参数时，重新编译 DLL 即可。改动 Shader 后，用 Unity Hub 添加 `Source/UnityProject`。该项目使用 **URP 14.0.12**，随附 Windows 包使用 Unity **2022.3.62f3c1**，macOS 包使用 Unity **2022.3.62f2c1**。重建时核对目标游戏的 Unity 版本，安装对应平台的 Standalone Build Support，然后在 Build Settings 切换到目标平台。
+
+| 目标平台 | Unity 菜单 | 输出 |
+| --- | --- | --- |
+| Windows x64 | **Cozy Island → Build Windows Retro Filter Bundle** | `Assets/colordither.bundle` |
+| macOS | **Cozy Island → Build macOS Retro Filter Bundle** | `Assets/colordither-macos.bundle` |
+
+一个 DLL 会根据运行平台选择对应的资源包。更新工坊前，把两个包都放入试用包，并分别在 Windows 和 macOS 游戏中冷启动，检查主菜单预览和岛上滤镜。 [资源包构建代码](Source/UnityProject/Assets/Editor/BuildColorDitherBundle.cs)
 
 从范例制作自己的作品时，使用新的 UUID、作品信息和程序集名，在清单里填入新 DLL 的路径。在 `RetroControls.cs` 里给设置键换一个前缀，两份作品就可以各自保存设置。发布时使用已在游戏里试过的运行文件。 [清单身份与副本](../../Docs/Manifest.md#身份与副本) · [发布到创意工坊](../../Docs/Workshop.md#发布和更新)
