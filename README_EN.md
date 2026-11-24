@@ -10,6 +10,8 @@ Find guides, examples, and tools for making Cozy Island mods. For your first mod
 
 ## Make mods with AI (recommended)
 
+AI helped write much of this repository’s documentation, examples, and tools. If you’ve made or tried a mod, we’d love your help improving the repository. Share what worked and what got in your way, or send a pull request to update existing materials or add a new mod example. [Share feedback](https://github.com/zzs1339004604/cozyisland-modding/issues) · [Contribute](https://github.com/zzs1339004604/cozyisland-modding/pulls)
+
 AI assistants such as GPT and Claude can help you start from an existing example, edit and build the code, or troubleshoot loading problems using the game log.
 
 Follow these steps to open this guide in your AI assistant’s workspace. You can also send the repository URL to your assistant and ask it to handle the setup.
@@ -27,8 +29,6 @@ Install the mod in the game and test it. Once you’ve confirmed it works, uploa
 ```
 
 Once it builds, enable the local mod and verify the result in-game before deciding whether to publish it.
-
-Some of the documentation, examples, and tools in this repository were written with AI assistance. We welcome corrections, bug reports, and suggestions. [Share feedback](https://github.com/zzs1339004604/cozyisland-modding/issues)
 
 ## Build your first mod
 
@@ -53,8 +53,6 @@ Download the source with **Code → Download ZIP** on the repository page. You c
 | Add items, recipes, and tasks | [TrailTreat](Examples/TrailTreat/README.md) demonstrates food and saved task progress. [ResearchCamp](Examples/ResearchCamp/README.md) adds a custom model and multiplayer tasks. |
 
 Find more examples for interaction prompts, crops, and movement, along with supported platforms and ways to try each one. [Full example index (Chinese)](Examples/README.md)
-
-We welcome pull requests that add new mod examples or make existing ones easier to follow. Include the example files and a few steps for trying the mod in-game. [Contribute an example](https://github.com/zzs1339004604/cozyisland-modding/pulls)
 
 The detailed guides are in Chinese. They cover [tools and game versions](Tools/README.md), [writing gameplay code](Docs/Native-Authoring.md), [making models and items](Docs/Game-and-Prefab-Guide.md), [saving progress](Docs/Save-Data.md), and [multiplayer](Docs/Networking.md). The [item list](Reference/GameItems.json) and [recipe list](Reference/GameRecipes.json) can help you look up names and IDs. Check them against your own game version.
 

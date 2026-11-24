@@ -10,6 +10,8 @@
 
 ## AI 辅助制作 Mod（推荐）
 
+本仓库不少文档、范例和工具是在 AI 协助下编写的。欢迎做过或试用过模组的创作者一起维护这个仓库，分享实际遇到的问题和有效的做法。你也可以提交 PR 改进现有内容，或贡献新的 Mod 范例。 [提交反馈](https://github.com/zzs1339004604/cozyisland-modding/issues) · [参与贡献](https://github.com/zzs1339004604/cozyisland-modding/pulls)
+
 GPT 和 Claude 等 AI 助手可以帮你从现成的范例做起，修改代码、编译，或根据日志排查加载问题。
 
 你可以通过以下步骤将本指南导入到 AI 助手的工作区（当然你也可以直接将网址发送给你的 AI 助手让它帮你完成）：
@@ -27,8 +29,6 @@ GPT 和 Claude 等 AI 助手可以帮你从现成的范例做起，修改代码�
 ```
 
 编译后，在游戏里启用本地模组并确认实际效果，再决定是否发布。
-
-本仓库的部分文档、示例和工具在 AI 协助下编写。欢迎反馈说明中的错误、使用中遇到的问题，或提出改进建议。 [提交反馈](https://github.com/zzs1339004604/cozyisland-modding/issues)
 
 ## 试做第一个模组
 
@@ -53,8 +53,6 @@ GPT 和 Claude 等 AI 助手可以帮你从现成的范例做起，修改代码�
 | 加入物品、配方和任务 | [远足饼](Examples/TrailTreat/README.md) 演示食物和任务进度。[研究营地](Examples/ResearchCamp/README.md) 演示自制模型和联机任务。 |
 
 交互提示、作物和移动速度等示例，以及各范例的平台和试用方法，见[完整范例索引](Examples/README.md)。
-
-欢迎提交 PR，为仓库贡献新的 Mod 范例，或把现有范例改得更容易上手。请附上范例文件和简短的试用步骤，让其他创作者也能在游戏里看到效果。 [贡献范例](https://github.com/zzs1339004604/cozyisland-modding/pulls)
 
 进一步制作时，可以查阅 [工具与版本配套](Tools/README.md)、[编写游戏玩法](Docs/Native-Authoring.md)、[制作模型和物品](Docs/Game-and-Prefab-Guide.md)、[保存进度](Docs/Save-Data.md) 和 [多人游戏](Docs/Networking.md)。需要查原版名称和标识时，用 [物品表](Reference/GameItems.json) 和 [配方表](Reference/GameRecipes.json) 找线索，再以自己的游戏版本为准。
 
