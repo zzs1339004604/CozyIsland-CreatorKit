@@ -4,4 +4,7 @@
     <AssemblyName>CozyMods.ColorDither</AssemblyName>
     <DefaultItemExcludes>$(DefaultItemExcludes);UnityProject/**</DefaultItemExcludes>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../../Tools/ModMainMenuEntry.cs" Link="ModMainMenuEntry.cs" />
+  </ItemGroup>
 </Project>
