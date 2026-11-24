@@ -14,13 +14,22 @@ namespace CozyMods
 
         public void OnLoad(CozyModContext context)
         {
-            var bundle = AssetBundle.LoadFromFile(context.ReadPath("Assets/colordither.bundle"));
-            if (bundle == null) throw new InvalidOperationException("Could not load the retro filter bundle.");
-            var shader = bundle.LoadAsset<Shader>("assets/cozycolordither.shader");
-            bundle.Unload(false);
-            if (shader != null) context.AddCleanup(() => Object.Destroy(shader));
-            if (shader == null || !shader.isSupported)
-                throw new InvalidOperationException("The retro filter shader is unavailable on this graphics device.");
+            var bundlePath = Application.platform switch
+            {
+                RuntimePlatform.WindowsPlayer or RuntimePlatform.WindowsEditor => "Assets/colordither.bundle",
+                RuntimePlatform.OSXPlayer or RuntimePlatform.OSXEditor => "Assets/colordither-macos.bundle",
+                _ => throw new PlatformNotSupportedException("Retro Filters supports Windows and macOS.")
+            };
+            var bundle = AssetBundle.LoadFromFile(context.ReadPath(bundlePath));
+            if (bundle == null) throw new InvalidOperationException("Could not load the retro filter bundle: " + bundlePath);
+
+            Shader shader;
+            try { shader = bundle.LoadAsset<Shader>("assets/cozycolordither.shader"); }
+            finally { bundle.Unload(false); }
+            if (shader == null) throw new InvalidOperationException("The retro filter bundle is missing its shader: " + bundlePath);
+            context.AddCleanup(() => Object.Destroy(shader));
+            if (!shader.isSupported)
+                throw new PlatformNotSupportedException("The retro filter shader is unavailable on this graphics device.");
 
             var material = new Material(shader);
             context.AddCleanup(() => Object.Destroy(material));
