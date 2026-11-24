@@ -16,22 +16,20 @@ Use this guide to play with mods or make your own for Cozy Island. This reposito
 
 ## Make mods with AI (recommended)
 
-An AI coding assistant such as Codex can help you edit and build an existing example or troubleshoot loading errors from the game log.
+AI assistants such as GPT and Claude can help you start from an existing example, edit and build the code, or troubleshoot loading problems using the game log.
 
-1. Install Git, then open a terminal in the folder where you want to keep the project and run the following command. [Download Git](https://git-scm.com/downloads/)
+Follow these steps to open this guide in your AI assistant’s workspace. You can also send the repository URL to your assistant and ask it to handle the setup.
 
-   ```sh
-   git clone https://github.com/zzs1339004604/cozyisland-modding.git
-   ```
-
-2. In your AI coding assistant, open the `cozyisland-modding` folder you just cloned as a workspace. Choose the folder that contains `README.md` and `Examples/`.
+1. Clone this repository with Git or download and extract it to your computer.
+2. In your AI assistant, open the `cozyisland-modding` folder as a workspace.
 3. Tell the assistant where your compatible copy of the game is installed and what you’d like to see in-game. [Task template for AI assistants (Chinese)](AI-AUTHORING.md)
 
-Here’s an example of a first request.
+Here’s an example of how to describe the change you want.
 
 ```text
-Use Examples/BuildingHints to replace the dot between “Remove” and the building name with a slash.
-Build it against my installed game and tell me how to check the result in-game. Keep this test local.
+Study the existing mod examples and make a mod that changes the player character’s default clothing color to yellow.
+
+Install the mod in the game and test it. Once you’ve confirmed it works, upload it to the Steam Workshop with visibility set to Private.
 ```
 
 Once it builds, enable the local mod and verify the result in-game before deciding whether to publish it.
