@@ -1,8 +1,8 @@
-# Multiplayer Appearance Framework
+# Appearance Mod Framework
 
 [简体中文](README.md)
 
-The Multiplayer Appearance Framework lets players choose custom bodies and clothing in the game. Players running the framework in the same room can see one another's outfits. When the author permits sharing, the framework can also receive missing models from the room. Each wearable appearance comes from a creator's data pack.
+The Appearance Mod Framework supports character skins and outfits from mods such as Upright Mouse and the Moss Witch Outfit Appearance Pack. Enable the framework and an appearance pack to choose a look in the Appearances menu. Players running the framework in the same room can see one another's looks. When the author permits sharing, the framework can also receive missing models from other players in the room.
 
 ## Build and try it
 

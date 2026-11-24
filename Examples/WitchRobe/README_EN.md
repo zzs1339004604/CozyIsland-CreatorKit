@@ -4,7 +4,7 @@
 
 This example adds a Moss Witch Robe and a Moss Witch Hat. The robe, sleeves, and hat use separate meshes included in the mod. The fabric is teal (`#267B73`). The hat trim and lighting use the game's materials, and the items use its existing equipment system.
 
-For the same look in the F10 appearance menu, enable Appearance Framework and the companion pack. [Moss Witch appearance pack](../MossWitchAppearance/README_EN.md)
+For the same look in the Appearances menu (F10), enable the Appearance Mod Framework and the companion pack. [Moss Witch appearance pack](../MossWitchAppearance/README_EN.md)
 
 ## Try it in the game
 

@@ -49,7 +49,7 @@ namespace CozyMods.Appearance
             syncAllowed = initialAllowed;
             shortcut = PlayerPrefs.GetInt(ShortcutPreference, 0);
             if (shortcut < 0 || shortcut >= Shortcuts.Length) shortcut = 0;
-            entry = new ModMainMenuEntry("Appearance Framework Entry", () => L("联机外观", "Appearances"), Open);
+            entry = new ModMainMenuEntry("Appearance Framework Entry", () => L("外观库", "Appearances"), Open);
         }
 
         private void OnEnable() => SceneManager.activeSceneChanged += OnSceneChanged;

@@ -53,9 +53,9 @@ Download the source with **Code → Download ZIP** on the repository page. You c
 
 | What you want to do | Where to start |
 | --- | --- |
-| Make a body appearance with custom models | [Upright Mouse](Examples/UprightMouse/README_EN.md) is a data-only pack you can select in the Appearance Framework menu with F10. |
+| Make a body appearance with custom models | [Upright Mouse](Examples/UprightMouse/README_EN.md) is a data-only pack you can select in the Appearances menu with F10. |
 | Add clothing players can craft | [Moss Witch Outfit](Examples/WitchRobe/README_EN.md) adds a craftable robe and hat that use the game’s equipment system. |
-| See each other’s custom looks in multiplayer | [Appearance Framework](Examples/AppearanceFramework/README_EN.md) lets players with the framework enabled choose and share looks in the same room. |
+| Support character skin and outfit mods | The [Appearance Mod Framework](Examples/AppearanceFramework/README_EN.md) adds the Appearances menu and syncs custom looks between players in a room. |
 | Change the look of the game | [Retro Filters](Examples/RetroFilters/README_EN.md) demonstrates full-screen effects and live controls. |
 | Add items, recipes, and tasks | [TrailTreat](Examples/TrailTreat/README.md) demonstrates food and saved task progress. [ResearchCamp](Examples/ResearchCamp/README.md) adds a custom model and multiplayer tasks. |
 

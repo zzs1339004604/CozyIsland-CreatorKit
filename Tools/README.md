@@ -18,7 +18,7 @@ dotnet build ./Examples/ClothingColor/Source/ClothingColor.csproj -c Release "-p
 
 需要从主菜单打开模组界面时，可以把 [ModMainMenuEntry.cs](ModMainMenuEntry.cs) 编译进自己的模组。传入一个属于自己作品的按钮名称、显示文字和点击操作。每次更新时调用 `Refresh(panelIsOpen)`，在面板开启时隐藏入口。在模组停用或卸载时调用 `Dispose()`。
 
-使用这份代码的模组会加入同一个按钮栏，由 Unity 自动排布。按钮栏从主菜单右上方第二行开始，为旧版复古画面的固定入口留出空间。可参考[联机外观](../Examples/AppearanceFramework/Source/Wardrobe.cs)和[复古画面](../Examples/RetroFilters/Source/RetroControls.cs)如何接入。给新模组接入时，建议和另一个使用按钮栏的模组一同启用，核对主菜单、游戏设置和返回主菜单后的显示。
+使用这份代码的模组会加入同一个按钮栏，由 Unity 自动排布。按钮栏从主菜单右上方第二行开始，为旧版复古画面的固定入口留出空间。可参考[外观模组框架](../Examples/AppearanceFramework/Source/Wardrobe.cs)和[复古画面](../Examples/RetroFilters/Source/RetroControls.cs)如何接入。给新模组接入时，建议和另一个使用按钮栏的模组一同启用，核对主菜单、游戏设置和返回主菜单后的显示。
 
 ## 可选的 PowerShell 工具
 
