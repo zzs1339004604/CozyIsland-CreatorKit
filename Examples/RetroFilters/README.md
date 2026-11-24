@@ -8,7 +8,7 @@
 
 准备支持 UUID 模组清单的 Windows x64 游戏版本和 .NET SDK。范例已经带有 Windows 资源包，试用时直接编译 C# 即可。 [模组清单](../../Docs/Manifest.md) · [配套版本](../../PlayerIdentity.json)
 
-如果旧工坊副本 2.0.0 提示「缺少字段：displayName」，请使用本节步骤编译并试用带 UUID 清单的 2.1.0。更新已有工坊作品时，在游戏的作者页将新版关联到原工坊数字 ID。 [工坊更新说明](../../Docs/Workshop.md#发布和更新)
+如果旧工坊副本 2.0.0 提示「缺少字段：displayName」，请使用本节步骤编译并试用包含 UUID 清单的当前范例。更新已有工坊作品时，在游戏的作者页将新版关联到原工坊数字 ID。 [工坊更新说明](../../Docs/Workshop.md#发布和更新)
 
 1. 在仓库根目录打开终端，把命令里的路径换成游戏安装目录中的 `CozyIsland_Data/Managed`，编译后会得到 `Examples/RetroFilters/Code/CozyMods.ColorDither.dll`。
 

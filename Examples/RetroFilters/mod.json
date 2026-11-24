@@ -4,7 +4,7 @@
   "name": "cozy.example.colordither",
   "uuid": "ca34db54-6bf3-4927-a9a8-955818e574fb",
   "author": "Cozy Island Mod Examples",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "给小岛加一点老游戏的像素感。彩色抖动、低分辨率、色阶分层和轮廓描边可以单独开启，也可以叠加。\n\n在主界面右上角点「复古画面」，边调参数边看背景，按钮和文字保持清晰。进岛后按 F9 也能调整。\n\n效果只作用于本机画面，调整会保存。点击「恢复默认」可以回到推荐搭配。",
   "preview": "preview.png",
   "code": {

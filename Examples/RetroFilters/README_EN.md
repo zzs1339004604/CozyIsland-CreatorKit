@@ -8,7 +8,7 @@ Give Cozy Island a pixelated, old-game look. Turn on any of the four effects, co
 
 You need the .NET SDK and a Windows x64 game build that supports UUID mod manifests. The example includes a Windows asset bundle, so you can compile the C# and try it right away. [Manifest guide (Chinese)](../../Docs/Manifest.md) · [Compatible builds](../../PlayerIdentity.json)
 
-If an older 2.0.0 Workshop copy reports a missing `displayName`, follow the steps below to build and try version 2.1.0 with a UUID manifest. When updating an existing Workshop item, link the new package to the original Workshop ID in the game’s mod creation menu. [Workshop updates (Chinese)](../../Docs/Workshop.md#发布和更新)
+If an older 2.0.0 Workshop copy reports a missing `displayName`, follow the steps below to build and try the current example with a UUID manifest. When updating an existing Workshop item, link the new package to the original Workshop ID in the game’s mod creation menu. [Workshop updates (Chinese)](../../Docs/Workshop.md#发布和更新)
 
 1. Open a terminal at the repository root. Replace the path in the command with `CozyIsland_Data/Managed` from your game installation. The build creates `Examples/RetroFilters/Code/CozyMods.ColorDither.dll`.
 
