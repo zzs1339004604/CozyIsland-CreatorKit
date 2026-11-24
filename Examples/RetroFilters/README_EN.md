@@ -6,7 +6,7 @@ Give Cozy Island a pixelated, old-game look. Turn on any of the four effects, co
 
 ## Try it in the game
 
-You need the .NET SDK and a Windows x64 game build that supports UUID mod manifests. The example includes a Windows asset bundle, so you can compile the C# and try it right away. [Manifest guide (Chinese)](../../Docs/Manifest.md) · [Compatible builds](../../PlayerIdentity.json)
+You need the .NET SDK and a Windows x64 game build that supports UUID mod manifests. The example includes a Windows asset bundle, so you can compile the C# and try it right away. [Manifest guide (Chinese)](../../Docs/Manifest.md)
 
 If an older 2.0.0 Workshop copy reports a missing `displayName`, follow the steps below to build and try the current example with a UUID manifest. When updating an existing Workshop item, link the new package to the original Workshop ID in the game’s mod creation menu. [Workshop updates (Chinese)](../../Docs/Workshop.md#发布和更新)
 

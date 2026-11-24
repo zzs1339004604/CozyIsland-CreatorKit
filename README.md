@@ -66,7 +66,7 @@ GPT 和 Claude 等 AI 助手可以帮你从现成的范例做起，修改代码�
 
 ## 常见问题
 
-- **主菜单没有「模组」怎么办？** 先核对你启动的是哪一份游戏。如果这个版本还没有模组功能，需要先取得配套游戏版本。 [配套版本检查](Tools/README.md#核对配套-build-并导入引用)
+- **主菜单没有「模组」怎么办？** 先核对你启动的是哪一份游戏。制作和试用范例需要带「模组」菜单并支持 UUID 清单的游戏版本。 [配套游戏与编译](Tools/README.md#直接编译)
 - **模组不在列表里，或启用了却没效果？** 确认 Steam 已下载完成，或确认 `mod.json` 在本地作品文件夹的第一层。回到主菜单查看依赖、版本或重启提示。如果仍然有问题，可以查看游戏日志。 [重启与加载顺序](Docs/Reloading.md#应用时机)
 - **游戏日志在哪？** 在 Windows 上通常是 `%USERPROFILE%\AppData\LocalLow\LazyFish Studio\CozyIsland\Player.log`，在 macOS 上通常是 `~/Library/Logs/LazyFish Studio/CozyIsland/Player.log`。
 - **停用模组后还能继续原来的岛吗？** 如果存档使用了模组新增的物品，缺失物品可能在读档时被清理。用测试岛试验，并保留原存档的备份。 [缺失内容与存档](Docs/Save-Data.md#缺失内容与失败是不同情况)
