@@ -54,6 +54,8 @@ GPT 和 Claude 等 AI 助手可以帮你从现成的范例做起，修改代码�
 
 交互提示、作物和移动速度等示例，以及各范例的平台和试用方法，见[完整范例索引](Examples/README.md)。
 
+欢迎提交 PR，为仓库贡献新的 Mod 范例，或把现有范例改得更容易上手。请附上范例文件和简短的试用步骤，让其他创作者也能在游戏里看到效果。 [贡献范例](https://github.com/zzs1339004604/cozyisland-modding/pulls)
+
 进一步制作时，可以查阅 [工具与版本配套](Tools/README.md)、[编写游戏玩法](Docs/Native-Authoring.md)、[制作模型和物品](Docs/Game-and-Prefab-Guide.md)、[保存进度](Docs/Save-Data.md) 和 [多人游戏](Docs/Networking.md)。需要查原版名称和标识时，用 [物品表](Reference/GameItems.json) 和 [配方表](Reference/GameRecipes.json) 找线索，再以自己的游戏版本为准。
 
 ## 常见问题

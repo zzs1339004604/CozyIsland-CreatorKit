@@ -54,6 +54,8 @@ Download the source with **Code → Download ZIP** on the repository page. You c
 
 Find more examples for interaction prompts, crops, and movement, along with supported platforms and ways to try each one. [Full example index (Chinese)](Examples/README.md)
 
+We welcome pull requests that add new mod examples or make existing ones easier to follow. Include the example files and a few steps for trying the mod in-game. [Contribute an example](https://github.com/zzs1339004604/cozyisland-modding/pulls)
+
 The detailed guides are in Chinese. They cover [tools and game versions](Tools/README.md), [writing gameplay code](Docs/Native-Authoring.md), [making models and items](Docs/Game-and-Prefab-Guide.md), [saving progress](Docs/Save-Data.md), and [multiplayer](Docs/Networking.md). The [item list](Reference/GameItems.json) and [recipe list](Reference/GameRecipes.json) can help you look up names and IDs. Check them against your own game version.
 
 ## Common questions
