@@ -6,6 +6,7 @@
   "author": "Cozy Island Mod Examples",
   "version": "0.5.0",
   "description": "在联机外观的外观窗口选择直立鼠，保留游戏的角色动作和穿戴。",
+  "preview": "preview.png",
   "dependencies": [
     {
       "uuid": "a2f648bf-1066-45da-91ea-1c7ca2f2511e",

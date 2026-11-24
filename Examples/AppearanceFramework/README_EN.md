@@ -12,7 +12,7 @@ The Multiplayer Appearance Framework lets players choose custom bodies and cloth
    dotnet build Source/AppearanceFramework.csproj -c Release "-p:GameManagedPath=D:/SteamLibrary/steamapps/common/CozyIsland/CozyIsland_Data/Managed"
    ```
 
-2. In the game, open **Mods → Mod Creator → Open Work Folder**. If it opens an existing mod, go up one level to `Mods`. Create an `AppearanceFramework` folder there and copy in `mod.json` and the generated `Code/CozyMods.AppearanceFramework.dll`, keeping their paths.
+2. In the game, open **Mods → Mod Creator → Open Work Folder**. If it opens an existing mod, go up one level to `Mods`. Create an `AppearanceFramework` folder there and copy in `mod.json`, the [cover image](preview.png), and the generated `Code/CozyMods.AppearanceFramework.dll`, keeping their paths.
 3. Place your chosen appearance pack in another folder under `Mods`. Enable both mods and restart the game. Enter an island, press **F10**, and choose an appearance under Body or Clothing. The window also lets you change the shortcut or restore the default appearance.
 
 The host and guests need the same framework version. Received appearances go into a temporary cache. If the author allows saving, select the appearance under Room Appearances and choose **Save and Equip** to use it next time. Turning off automatic reception stops the local player from fetching missing assets. It also stops the host from fetching missing assets on behalf of guests. Installed or cached appearances remain available.

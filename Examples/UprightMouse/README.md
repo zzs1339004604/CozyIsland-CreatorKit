@@ -6,7 +6,7 @@
 
 ## 在游戏里试用
 
-本范例附带 Windows x64 模型资源包。先按说明编译并安装[联机外观框架](../AppearanceFramework/README.md#编译和试用)，然后把本目录中的 `mod.json`、`appearance.json` 和 `Assets/uprightmouse.bundle` 复制到游戏的 `Mods/UprightMouse` 目录，保留 `Assets/` 这一层。
+本范例附带 Windows x64 模型资源包。先按说明编译并安装[联机外观框架](../AppearanceFramework/README.md#编译和试用)，然后把本目录中的 `mod.json`、`appearance.json`、[封面图](preview.png)和 `Assets/uprightmouse.bundle` 复制到游戏的 `Mods/UprightMouse` 目录，保留 `Assets/` 这一层。
 
 在模组列表启用「联机外观」和「直立鼠」，完整重开游戏。进岛按 **F10**，在「身体」选择「直立鼠」。试试走动、转身和穿原版服装。和朋友试用时，双方都启用框架。缺少直立鼠的玩家可在允许自动接收房间外观时看到它。
 
