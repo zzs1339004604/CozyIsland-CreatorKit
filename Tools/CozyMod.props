@@ -21,8 +21,8 @@
     </Reference>
   </ItemGroup>
   <Target Name="CheckCozyGameReferences" BeforeTargets="ResolveReferences">
-    <Error Condition="!Exists('$(GameManagedPath)\Assembly-CSharp.dll')" Text="Game references are missing. Run Tools/Import-GameReferences.ps1 with your game's installation directory." />
-    <Error Condition="!Exists('$(GameManagedPath)\0Harmony.dll')" Text="This game build predates the code-Mod API. Update the game and re-import its Managed references." />
-    <Error Condition="!Exists('$(GameManagedPath)\mscorlib.dll')" Text="The exact Unity Mono framework references are missing. Import the complete Managed directory from the installed game." />
+    <Error Condition="!Exists('$(GameManagedPath)\Assembly-CSharp.dll')" Text="Set -p:GameManagedPath to the Managed directory inside your Cozy Island installation. See Tools/README.md." />
+    <Error Condition="!Exists('$(GameManagedPath)\0Harmony.dll')" Text="Use the Managed directory from a Cozy Island build that supports C# mods." />
+    <Error Condition="!Exists('$(GameManagedPath)\mscorlib.dll')" Text="Use the complete Managed directory from a Cozy Island Mono build." />
   </Target>
 </Project>

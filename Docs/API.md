@@ -1,10 +1,10 @@
 # 外部 C# Mod 基础 API
 
-本文说明《舒舒服服小岛时光》配套 Mono Player 在 `CozyIsland.Modding` 命名空间提供的加载与注册底座。作者从自己的完整游戏 Build 导入程序集编译，不需要游戏 Unity 工程。玩法通过[原生 API 创作指南](Native-Authoring.md)中的方法实现；清单规则见 [Manifest.md](Manifest.md)。
+本文说明《舒舒服服小岛时光》配套 Mono Player 在 `CozyIsland.Modding` 命名空间提供的加载与注册底座。作者使用自己安装的完整游戏提供的程序集编译。玩法通过[原生 API 创作指南](Native-Authoring.md)中的方法实现。 [清单规则](Manifest.md)
 
 ## 取得接口与代码入口
 
-运行 `Tools/Import-GameReferences.ps1 -GameDirectory '<游戏安装目录>'`，再用 `Tools/Build-CodeMod.ps1` 构建项目。引用位于 `References/Managed`，仅供本机使用。工具使用已安装 Player 的 Unity Mono 框架和 API，不把引用 DLL 复制进作品。游戏更新后重新导入、编译并运行验证。
+用 `dotnet build` 编译项目，并通过 `-p:GameManagedPath` 指定配套游戏的 `Managed` 目录。这里的程序集仅供本机编译。游戏更新后，使用新版游戏目录重新编译并在游戏内验证。 [查找游戏引用和编译项目](../Tools/README.md#直接编译)
 
 ```csharp
 using CozyIsland.Modding;

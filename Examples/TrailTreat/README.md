@@ -2,19 +2,21 @@
 
 这是 Cozy Island Modding 的原生新物品范例，请使用本工具包配套的 Mono Player。下方历史 Windows 测试使用较早的 Unity 2022.3.62f3c1 构建。目标是展示：从原生食物模板建立独立保存身份，接入原生工作台配方，用原生食用事件完成作者任务，并在作者 DLL 中构造新视觉层级。它不依赖游戏专用 Bridge/Content SDK。
 
-目录应放在创作者包的 `Examples/TrailTreat`。标识名为 `trial.nobridge.trail-treat`，版本 1.1.0，程序集为 `Trial.NoBridge.TrailTreat`，入口 `Trial.NoBridge.TrailTreat`。UUID 见本目录的 `mod.json`。本地副本和工坊副本使用同一个 UUID 时，只启用一份。制作独立派生作品时，先运行 `New-CodeMod.ps1` 创建新 UUID 工程，保留生成的 `uuid` 和程序集名。把 `TrailTreat.cs` 移入新工程的 `Source/`，把 `Assets/trail.png` 复制到新工程同相对位置。移除生成的空入口，把清单 `code.type` 设为移植后的完整入口类名，保留新工程的 `code.assembly` 并按本例设置 `requiresRestart: true`。为 `RecipeName` 选唯一配方键，并更换 `GUI.Window` 的固定窗口 ID（本例为 789312）。更新同一作品时保持作品身份和局部物品 ID。
+示例位于仓库的 `Examples/TrailTreat`。标识名为 `trial.nobridge.trail-treat`，版本 1.1.0，程序集和入口为 `Trial.NoBridge.TrailTreat`。UUID 见本目录的 `mod.json`。本地副本和工坊副本使用同一个 UUID 时，只启用一份。
+
+制作独立派生作品时，把示例复制到仓库下的 `MyMods`，给副本的清单填入新的 UUID 和作品信息。修改 `Source/TrailTreat.csproj` 的 `AssemblyName`，让清单的 `code.assembly` 指向新的 DLL。如果修改了入口类或命名空间，同步更新 `code.type`。保留 `Assets/trail.png` 的相对位置和 `requiresRestart: true`。为 `RecipeName` 选唯一配方键，并更换 `GUI.Window` 的固定窗口 ID（本例为 789312）。更新同一作品时保持作品身份和局部物品 ID。 [创建自己的作品](../../Docs/Manifest.md#身份与副本)
 
 ## 编译与安装
 
-先按创作者包 Tools/README.md，从自己的配套完整 Player 导入编译引用，再在创作者包根目录执行：
+在仓库根目录编译，将 `<Managed 路径>` 换成已安装游戏的 Managed 目录。 [编译方式](../../Tools/README.md#直接编译)
 
-```powershell
-./Tools/Build-CodeMod.ps1 -ProjectPath './Examples/TrailTreat/Source/TrailTreat.csproj'
+```text
+dotnet build ./Examples/TrailTreat/Source/TrailTreat.csproj -c Release "-p:GameManagedPath=<Managed 路径>"
 ```
 
 项目通过 `../../../Tools/CozyMod.props` 引用游戏 Mono/Unity/原生类型和共享 Harmony，生成 `Code/Trial.NoBridge.TrailTreat.dll`。只分发作者自己的 DLL；不要把游戏、Unity、Harmony、Mirror、Cecil 或 References 中的 DLL 放入作品。
 
-将本范例目录复制为游戏用户数据 `Mods` 下的直接子目录，回主菜单勾选启用，然后完整退出并重新启动。范例声明 `requiresRestart: true`，以确保物品定义、事件、资源及主域程序集在冷启动时按保存组合准备。修改已加载 DLL 后必须完整退出进程。
+把 `mod.json`、`Assets/` 和 `Code/` 复制到游戏的 `Mods/TrailTreat`，回主菜单勾选启用，然后完整退出并重新启动。范例声明 `requiresRestart: true`，以确保物品定义、事件、资源及主域程序集在冷启动时按保存组合准备。修改已加载 DLL 后必须完整退出进程。
 
 ## 普通玩家使用
 

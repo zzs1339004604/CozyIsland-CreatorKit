@@ -2,11 +2,11 @@
 
 简体中文 · [English](README_EN.md)
 
-**Cozy Island Modding** 提供模组安装指南、源码示例和制作工具。你可以订阅别人做的模组，也可以动手给游戏加一点变化，比如装备小木锤时，在「拆除」提示旁显示建筑名称。
+这里有《舒舒服服小岛时光》的模组制作指南、范例和工具。第一次做模组，可以从给角色的默认上衣换个颜色开始。
 
 [AI 辅助制作](#ai-辅助制作-mod推荐) · [试做第一个模组](#试做第一个模组) · [发布到创意工坊](#发布到创意工坊) · [更多示例](#更多示例) · [常见问题](#常见问题) · [免责声明](#免责声明)
 
-> **开始前**　请另外安装带「模组」菜单且能读取本仓库清单的游戏版本。导入引用时，工具会自动检查配套情况。可以按下方对应系统的步骤操作。 [Steam 商店](https://store.steampowered.com/app/2918500/) · [配套版本记录](PlayerIdentity.json)
+> **开始前**　制作下方范例需要带「模组」菜单并支持 `displayName`、`name`、`uuid` 清单的 Cozy Island 版本。配套版本记录会列出已验收的游戏版本。 [Steam 商店](https://store.steampowered.com/app/2918500/) · [配套版本记录](PlayerIdentity.json)
 
 ## AI 辅助制作 Mod（推荐）
 
@@ -32,62 +32,9 @@ GPT 和 Claude 等 AI 助手可以帮你从现成的范例做起，修改代码�
 
 ## 试做第一个模组
 
-先用 **BuildingHints（建筑名称提示）** 跑通整个流程。这个示例已经写好，你可以先编译和试用，再改一点文字看看效果。 [示例源码和说明](Examples/BuildingHints/README.md)
+从 **ClothingColor（起始上衣换色）** 开始。启用后，穿着默认上衣进岛就能看见变化。跟着说明改一次颜色，就能跑通编译、安装和发布的过程。 [Quick Start 指南](Examples/ClothingColor/README.md)
 
-### 准备工具
-
-- 在 GitHub 仓库首页选择 **Code → Download ZIP**，解压到一个方便找到的文件夹。
-- 安装 **PowerShell 7** 和 **.NET SDK**。PowerShell 用来运行这里的命令，.NET SDK 用来把 C# 源码编译成游戏能读取的文件。下载时选择 **SDK**。这个示例无需安装 Unity 编辑器。 [PowerShell 7](https://learn.microsoft.com/powershell/scripting/install/installing-powershell) · [.NET SDK](https://dotnet.microsoft.com/download)
-
-### 编译示例
-
-先完全退出游戏。在刚解压的目录中打开 **PowerShell 7**，确认目录里有 `Tools` 和 `Examples`。在下方选择你的系统，把示例路径换成你自己的游戏位置。Windows 选择包含 `CozyIsland.exe` 的目录，macOS 选择完整的 `.app`。
-
-**Windows**
-
-```powershell
-$game = 'D:\SteamLibrary\steamapps\common\Cozy Island'
-```
-
-**macOS**
-
-```powershell
-$game = '/Applications/CozyIsland.app'
-```
-
-在同一个窗口运行下面两条命令。第一条会短暂启动所选游戏，检查游戏是否支持新作品，并复制编译用的文件。第二条会在 `Examples/BuildingHints/Code` 生成 `CozyMods.BuildingHints.dll`。 [工具使用说明](Tools/README.md)
-
-```powershell
-./Tools/Import-GameReferences.ps1 -GameDirectory $game
-./Tools/Build-CodeMod.ps1 -ProjectPath './Examples/BuildingHints/Source/BuildingHints.csproj'
-```
-
-### 放进游戏并试用
-
-1. 重新打开刚才选中的游戏版本。选择 **模组 → 模组创作 → 打开作品文件夹**。如果打开的是已有作品，先回到上一级 `Mods`，然后在里面新建 `BuildingHints` 文件夹。
-2. 从 `Examples/BuildingHints` 复制 `mod.json` 和刚编译出的 DLL，按下面的结构放好。`Source` 目录留在原处，之后改代码时会用到。
-
-   ```text
-   Mods/
-     BuildingHints/
-       mod.json
-       Code/
-         CozyMods.BuildingHints.dll
-   ```
-
-3. 回到 **模组** 列表，启用 **建筑名称提示**，按提示进岛。拿起 **小木锤**，对准有名称、可以拆除的建筑或家具。看到提示从「拆除」变成「拆除 · 建筑名称」，就说明示例生效了。
-4. 想试试自己的改动，可以把 `Examples/BuildingHints/Source/BuildingHints.cs` 里的 `" · "` 改成 `" / "`。完全退出游戏，再编译一次，用新的 DLL 替换 `Mods/BuildingHints/Code` 里的旧文件。重新开游戏，看看提示有没有换成斜线。
-
-### 新建自己的作品
-
-试过示例后，可以在同一个 PowerShell 窗口创建自己的工程。把显示名和作者名换成你想用的名字。
-
-```powershell
-./Tools/New-CodeMod.ps1 -ProjectName my-first-mod -DisplayName '我的第一个模组' -Author '我的名字'
-./Tools/Build-CodeMod.ps1 -ProjectPath './MyMods/my-first-mod/Source/Mod.csproj'
-```
-
-新工程在 `MyMods/my-first-mod`。按上面的安装方法，把它的 `mod.json` 和编译生成的 DLL 复制到 `Mods/my-first-mod` 下的对应位置。启用后，在游戏日志中查找 `Loaded 1.0.0`。清单里的 `displayName` 是玩家看到的名字，`name` 是作者用的标识名。工具会为每个新作品生成一个 `uuid`。给同一作品改名或更新时，保留这个值。 [工程说明](Tools/README.md#新建自己的作品) · [清单和文件说明](Docs/Manifest.md)
+在仓库首页点 **Code → Download ZIP** 下载源码。准备好配套游戏和 **.NET SDK**，就能在系统终端里编译。范例只用游戏现成的衣服模型和材质。 [下载 .NET SDK](https://dotnet.microsoft.com/download) · [查找游戏引用和编译项目](Tools/README.md#直接编译)
 
 ## 发布到创意工坊
 
@@ -99,10 +46,12 @@ $game = '/Applications/CozyIsland.app'
 
 | 想做什么 | 从这里开始 |
 | --- | --- |
+| 给默认上衣换色 | [ClothingColor](Examples/ClothingColor/README.md) 演示从改一处颜色到发布的完整流程。 |
 | 改一条游戏提示 | [BuildingHints](Examples/BuildingHints/README.md) 在拆除提示旁显示建筑名称。 |
 | 看看游戏怎样运行自己的代码 | [MinimalCodeMod](Examples/MinimalCodeMod/README.md) 在游戏日志里显示加载结果。 |
 | 调整作物生长或角色步行 | [GreenThumb](Examples/GreenThumb/README.md) 改作物生长和耗水，[BriskWalk](Examples/BriskWalk/README.md) 演示修改步行数值。 |
 | 添加一个能制作和食用的物品 | [TrailTreat](Examples/TrailTreat/README.md) 加入远足饼、配方和可保存的任务进度。 |
+| 用自己的模型制作身体外观包 | [直立鼠](Examples/UprightMouse/README.md) 演示用模型和数据配置提供可在联机外观菜单选择的皮肤。 |
 | 带入自己的模型并保存物品和进度 | [ResearchCamp](Examples/ResearchCamp/README.md) 展示营地模型、配方和存档，含可编辑的 Unity 工程。 |
 
 进一步制作时，可以查阅 [工具与版本配套](Tools/README.md)、[编写游戏玩法](Docs/Native-Authoring.md)、[制作模型和物品](Docs/Game-and-Prefab-Guide.md)、[保存进度](Docs/Save-Data.md) 和 [多人游戏](Docs/Networking.md)。需要查原版名称和标识时，用 [物品表](Reference/GameItems.json) 和 [配方表](Reference/GameRecipes.json) 找线索，再以自己的游戏版本为准。

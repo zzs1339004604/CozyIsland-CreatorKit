@@ -1,6 +1,6 @@
 # 游戏结构与原生 Prefab 指南
 
-本文为仅持有完整《舒舒服服小岛时光》配套 Mono Build 的 Mod 作者说明原生对象结构。使用[引用导入工具](../Tools/README.md)读取自己的 Player 程序集，配合[物品目录](../Reference/GameItems.json)和[配方目录](../Reference/GameRecipes.json)查证类型和资源。作者不需要游戏源码工程；工具包不重新分发游戏模型、材质或 DLL。
+本文介绍《舒舒服服小岛时光》原生对象的结构。用自己安装的配套游戏程序集查证类型，再参考物品和配方目录查找资源。想制作角色外观包，可以从直立鼠随附的模型和 Unity 预制件入手。 [游戏引用](../Tools/README.md#直接编译) · [物品目录](../Reference/GameItems.json) · [配方目录](../Reference/GameRecipes.json) · [直立鼠](../Examples/UprightMouse/README.md)
 
 ## 从菜单到世界
 
