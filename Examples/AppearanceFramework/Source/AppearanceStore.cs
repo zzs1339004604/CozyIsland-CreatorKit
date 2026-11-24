@@ -292,10 +292,10 @@ namespace CozyMods.Appearance
 
             var root = pack.Model.Root.transform;
             if (entry.Prefab != null) root = root.Find(entry.Prefab);
-            if (root == null || entry.Parts.Any(part => root.Find(part.Path) == null))
+            if (root == null || entry.Parts.Any(part => !HasRenderablePart(root.Find(part.Path))))
             {
                 pack.FailedEntries.Add(entry.Id);
-                log("Appearance model does not contain the configured root or parts for " + entry.Id + ".");
+                log("Appearance model does not contain the configured root or renderable parts for " + entry.Id + ".");
                 return null;
             }
 
@@ -303,6 +303,11 @@ namespace CozyMods.Appearance
             pack.Loaded[entry.Id] = loaded;
             return loaded;
         }
+
+        private static bool HasRenderablePart(Transform node) => node != null &&
+            node.GetComponentsInChildren<Renderer>(true).Any(renderer =>
+                renderer is SkinnedMeshRenderer skinned && skinned.sharedMesh != null ||
+                renderer is MeshRenderer && renderer.TryGetComponent<MeshFilter>(out var filter) && filter.sharedMesh != null);
 
         private async Task LoadModelAsync(Pack pack, CancellationTokenSource request)
         {
