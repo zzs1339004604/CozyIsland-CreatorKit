@@ -27,6 +27,10 @@
 | `appearance.json` | 使用 `schemaVersion: 1`。填写 `id`、`name`、`author`、`platform`、`bundle` 和 `entries`。 |
 | `Assets/模型名.bundle` | 用 Unity 打包一个或多个预制件，供框架安装到角色身上。资源包要为玩家使用的平台构建。 |
 
+`mod.json` 的 `author` 显示在「模组」页。`appearance.json` 的 `author` 会随外观传给房间里的玩家，显示在「外观库」。同一位作者制作模组和外观时，两处填同一个署名。
+
+更新已发布的外观包时，可以附带 `appearance-upgrades.json`，用 JSON 字符串数组列出被替换的旧版 SHA-256。计算旧版摘要时，依次使用 4 字节小端序的目录字节数、旧 `appearance.json` 原始字节和旧资源包字节。安装新版外观包后，框架会沿用相同条目 ID 和穿戴部位的选择。复制范例做新外观包时，删除范例附带的升级文件。
+
 `platform` 可以是 `win64` 或 `macos`。每个 `entries` 条目用 `id` 和 `name` 标识外观，用 `slot` 指定穿戴位置，用 `prefab` 填写资源包里的预制件路径，再用 `parts` 列出要挂到角色身上的模型部件。部件的 `path` 是预制件中相对根节点的路径，`anchor` 是游戏角色上的挂点。
 
 - 身体条目使用 `Body`。头部用 `Face`，跟随发型显隐的部件用 `Hair`，躯干用 `Torso`。需要先按一个挂点摆好位置，再跟随另一个挂点时，填写 `followAnchor`。

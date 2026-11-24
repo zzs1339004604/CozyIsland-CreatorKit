@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using CozyIsland.Modding;
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace CozyMods.Appearance
@@ -31,7 +32,8 @@ namespace CozyMods.Appearance
         private sealed class InstalledSource
         {
             public string Digest, BundlePath;
-            public DateTime CatalogTime, BundleTime;
+            public DateTime CatalogTime, BundleTime, UpgradesTime;
+            public string[] PreviousDigests = Array.Empty<string>();
         }
 
         private readonly Dictionary<string, Pack> known = new Dictionary<string, Pack>(StringComparer.Ordinal);
@@ -68,13 +70,22 @@ namespace CozyMods.Appearance
                 if (!File.Exists(path)) continue;
                 present.Add(folder);
                 var time = File.GetLastWriteTimeUtc(path);
+                var upgradesPath = Path.Combine(folder, "appearance-upgrades.json");
+                var upgradesTime = File.GetLastWriteTimeUtc(upgradesPath);
                 if (installed.TryGetValue(folder, out var source) && source.CatalogTime == time &&
+                    source.UpgradesTime == upgradesTime &&
                     (source.BundlePath == null || source.BundleTime == File.GetLastWriteTimeUtc(source.BundlePath))) continue;
 
-                var next = new InstalledSource { CatalogTime = time };
+                var next = new InstalledSource { CatalogTime = time, UpgradesTime = upgradesTime };
                 installed[folder] = next;
                 try
                 {
+                    if (File.Exists(upgradesPath))
+                    {
+                        next.PreviousDigests = JsonConvert.DeserializeObject<string[]>(File.ReadAllText(upgradesPath));
+                        if (next.PreviousDigests == null || next.PreviousDigests.Any(digest => !AppearanceData.IsDigest(digest)))
+                            throw new InvalidDataException("Invalid appearance upgrade digests.");
+                    }
                     if (new FileInfo(path).Length > AppearanceData.MaxCatalogBytes)
                         throw new InvalidDataException("The appearance catalog is too large.");
                     var json = File.ReadAllBytes(path);
@@ -111,6 +122,22 @@ namespace CozyMods.Appearance
         public bool HasPack(string digest) => Find(digest) != null;
 
         public bool IsShareable(string digest) => Find(digest)?.Catalog.Share == true;
+
+        public string UpgradeSelection(string key, string slot)
+        {
+            if (!AppearanceData.TryKey(key, out var digest, out var id) ||
+                known.TryGetValue(digest, out var pack) && pack.Installed)
+                return key;
+
+            // An installed pack may replace an earlier packet with the same entry IDs.
+            var candidates = installed.Values
+                .Where(source => source.Digest != null && source.PreviousDigests.Contains(digest))
+                .Select(source => source.Digest).Distinct().Take(2).ToArray();
+            if (candidates.Length != 1) return key;
+
+            var updated = candidates[0] + "/" + id;
+            return CanSelect(updated, slot) ? updated : key;
+        }
 
         public string NativeAppearance(GameObject actor, string slot)
         {
@@ -256,6 +283,7 @@ namespace CozyMods.Appearance
                 foreach (var entry in pack.Catalog.Entries)
                 {
                     var key = pack.Digest + "/" + entry.Id;
+                    if (UpgradeSelection(key, entry.Slot) != key) continue;
                     keys.Add(key);
                     items.Add(ToItem(pack, entry, key));
                 }
@@ -274,22 +302,12 @@ namespace CozyMods.Appearance
         private static WardrobeItem ToItem(Pack pack, AppearanceEntry entry, string key) =>
             new WardrobeItem
             {
-                Key = key, Name = entry.Name, Author = DisplayAuthor(pack.Catalog), Slot = entry.Slot,
+                Key = key, Name = entry.Name, Author = pack.Catalog.Author, Slot = entry.Slot,
                 Source = pack.Installed ? "已安装" : pack.Saved ? "已保存" : "房间获取",
                 Installed = pack.Installed, Saved = pack.Saved,
                 CanEquip = pack.Installed || pack.Saved || pack.Catalog.AllowSave,
                 Ready = !pack.LoadFailed
             };
-
-        private static string DisplayAuthor(AppearanceCatalog catalog)
-        {
-            // These two published catalogs are hashed into equipped appearance keys.
-            if (catalog.Author == "Cozy Island Mod Examples" &&
-                (catalog.Id is "cozy.appearance.upright-mouse" or "cozy.appearance.moss-witch"))
-                return "LazyFish Studio";
-
-            return catalog.Author;
-        }
 
         public void TrimLoaded(ISet<string> inUse)
         {

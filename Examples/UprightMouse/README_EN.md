@@ -6,7 +6,7 @@ This pack adds an upright mouse as a wearable player appearance. Select it in th
 
 ## Try it in the game
 
-The example includes a Windows x64 model bundle. Build and install the [Appearance Mod Framework](../AppearanceFramework/README_EN.md#build-and-try-it). Copy `mod.json`, `appearance.json`, the [cover image](preview.png), and `Assets/uprightmouse.bundle` to `Mods/UprightMouse`, keeping the `Assets/` folder.
+The example includes a Windows x64 model bundle. Build and install the [Appearance Mod Framework](../AppearanceFramework/README_EN.md#build-and-try-it). Copy `mod.json`, `appearance.json`, `appearance-upgrades.json`, the [cover image](preview.png), and `Assets/uprightmouse.bundle` to `Mods/UprightMouse`, keeping the `Assets/` folder.
 
 Enable the framework and Upright Mouse in the mod list. Quit and reopen the game. On an island, press **F10** and choose Upright Mouse under Body. Walk, turn, and try on some of the game's clothes. To try it with a friend, both players need the framework. A player without the pack can see it when automatic reception of room appearances is allowed.
 
