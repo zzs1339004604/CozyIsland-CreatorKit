@@ -14,6 +14,12 @@ dotnet build ./Examples/ClothingColor/Source/ClothingColor.csproj -c Release "-p
 
 含模型或 Shader 的模组还需要与目标平台匹配的 Unity 资源包。范例索引列出了随附的资源包和试用方式。 [范例与资源平台](../Examples/README.md)
 
+## 添加主菜单按钮
+
+需要从主菜单打开模组界面时，可以把 [ModMainMenuEntry.cs](ModMainMenuEntry.cs) 编译进自己的模组。传入一个属于自己作品的按钮名称、显示文字和点击操作。每次更新时调用 `Refresh(panelIsOpen)`，在面板开启时隐藏入口。在模组停用或卸载时调用 `Dispose()`。
+
+使用这份代码的模组会加入同一个按钮栏，由 Unity 自动排布。按钮栏从主菜单右上方第二行开始，为旧版复古画面的固定入口留出空间。可参考[联机外观](../Examples/AppearanceFramework/Source/Wardrobe.cs)和[复古画面](../Examples/RetroFilters/Source/RetroControls.cs)如何接入。给新模组接入时，建议和另一个使用按钮栏的模组一同启用，核对主菜单、游戏设置和返回主菜单后的显示。
+
 ## 可选的 PowerShell 工具
 
 使用下列工具时安装 PowerShell 7。兼容性报告适合排查游戏版本，命令行校验和发布适合自动化。日常创作流程见[直接编译](#直接编译)。

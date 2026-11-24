@@ -3,4 +3,7 @@
   <PropertyGroup>
     <AssemblyName>CozyMods.AppearanceFramework</AssemblyName>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../../Tools/ModMainMenuEntry.cs" Link="ModMainMenuEntry.cs" />
+  </ItemGroup>
 </Project>

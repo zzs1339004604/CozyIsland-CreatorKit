@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using CozyMods.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace CozyMods
@@ -38,9 +37,7 @@ namespace CozyMods
         private RetroSettings settings;
         private Material material;
         private bool open;
-        private Scene cachedMenu;
-        private PCDButton[] menuExits = Array.Empty<PCDButton>();
-        private Button entry;
+        private ModMainMenuEntry menuEntry;
         private Button done;
         private RectTransform panel;
         private Slider sliderStyle;
@@ -59,6 +56,7 @@ namespace CozyMods
         public void Initialize(Material target)
         {
             material = target;
+            menuEntry = new ModMainMenuEntry("Retro Filters Entry", () => "复古画面", OpenFromMenu);
             if (PlayerPrefs.HasKey(SettingsKey))
             {
                 settings = JsonUtility.FromJson<RetroSettings>(PlayerPrefs.GetString(SettingsKey));
@@ -77,33 +75,29 @@ namespace CozyMods
 
         private void Update()
         {
-            bool menuVisible = IsMainMenuVisible();
+            bool menuVisible = menuEntry.Refresh(open);
             bool shortcut = Input.GetKeyDown(KeyCode.F9);
             if ((menuVisible || shortcut) && panel == null) CreateUi();
             if (panel == null) return;
             if (shortcut) SetOpen(!open);
             if (open && Input.GetKeyDown(KeyCode.Escape)) SetOpen(false);
-            bool visible = menuVisible && !open;
-            if (entry.gameObject.activeSelf != visible) entry.gameObject.SetActive(visible);
         }
 
-        private bool IsMainMenuVisible()
+        private void OpenFromMenu()
         {
-            var scene = SceneManager.GetActiveScene();
-            if (scene.name != "MainMenu") return false;
-            if (scene != cachedMenu)
-            {
-                cachedMenu = scene;
-                menuExits = FindObjectsOfType<PCDButton>(true).Where(button => button.gameObject.scene == scene &&
-                    Enumerable.Range(0, button.onClick.GetPersistentEventCount())
-                        .Any(i => button.onClick.GetPersistentMethodName(i) == nameof(MainMenuMgr.ExitGame))).ToArray();
-            }
-            return menuExits.Any(button => button != null && button.isActiveAndEnabled);
+            if (panel == null) CreateUi();
+            if (panel != null) SetOpen(true);
+        }
+
+        private void OnDisable()
+        {
+            if (open) SetOpen(false);
+            menuEntry?.Dispose();
         }
 
         private void CreateUi()
         {
-            var native = PCDGameSettingMgr.Instance;
+            var native = PCDGameSettingMgr.TryGetInstance(true);
             if (native == null || native.masterVolumeSlider == null || native.fullScreenToggle == null) return;
             sliderStyle = native.masterVolumeSlider;
             toggleStyle = native.fullScreenToggle;
@@ -175,10 +169,6 @@ namespace CozyMods
             MakeButton(panel, "全部关闭", 83, 550, 116, DisableAll);
             MakeButton(panel, "恢复默认", 220, 550, 116, ResetDefaults);
             done = MakeButton(panel, "完成", 357, 550, 116, () => SetOpen(false), primary: true);
-            entry = MakeButton(root, "复古画面", -103, 46, 150, () => SetOpen(true));
-            entry.name = "Retro Filters Entry";
-            ((RectTransform)entry.transform).anchorMin = ((RectTransform)entry.transform).anchorMax = new Vector2(1, 1);
-
             panel.gameObject.SetActive(false);
             root.gameObject.SetActive(true);
             Apply();
@@ -292,7 +282,7 @@ namespace CozyMods
             var events = EventSystem.current;
             if (open && events != null) previousSelection = events.currentSelectedGameObject;
             panel.gameObject.SetActive(open);
-            entry.gameObject.SetActive(!open && IsMainMenuVisible());
+            menuEntry.Refresh(open);
             if (events != null && open) events.SetSelectedGameObject(done.gameObject);
             if (!open)
             {
