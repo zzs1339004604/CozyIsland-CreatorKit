@@ -2,7 +2,11 @@
 
 [简体中文](README.md) · English
 
-Find guides, examples, and tools for making Cozy Island mods. For your first mod, try giving the player’s starting shirt a new color.
+This is the guide to making mods for Cozy Island.
+
+> Some of the documentation, examples, and tools in this repository were written with AI assistance. We welcome corrections, bug reports, and suggestions. [Share feedback](https://github.com/zzs1339004604/cozyisland-modding/issues)
+>
+> We also welcome pull requests to improve existing materials or add new mod examples. [Contribute](https://github.com/zzs1339004604/cozyisland-modding/pulls)
 
 [Make mods with AI](#make-mods-with-ai-recommended) · [Build your first mod](#build-your-first-mod) · [Publish to Steam Workshop](#publish-to-steam-workshop) · [More examples](#more-examples) · [Common questions](#common-questions) · [Disclaimer](#disclaimer)
 
@@ -27,8 +31,6 @@ Install the mod in the game and test it. Once you’ve confirmed it works, uploa
 ```
 
 Once it builds, enable the local mod and verify the result in-game before deciding whether to publish it.
-
-Some of the documentation, examples, and tools in this repository were written with AI assistance. We welcome corrections, bug reports, and suggestions. [Share feedback](https://github.com/zzs1339004604/cozyisland-modding/issues)
 
 ## Build your first mod
 
