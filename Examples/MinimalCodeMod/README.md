@@ -4,21 +4,13 @@
 
 ## 构建与安装
 
-在工具包根目录打开 PowerShell，按[工具说明](../../Tools/README.md#核对配套-build-并导入引用)为配套 Mono Player 设置 `$game` 和 `$player`，再导入、编译。
+在仓库根目录编译，将 `<Managed 路径>` 换成已安装游戏的 Managed 目录。 [编译方式](../../Tools/README.md#直接编译)
 
-```powershell
-./Tools/Import-GameReferences.ps1 -GameDirectory $game
-./Tools/Build-CodeMod.ps1 -ProjectPath './Examples/MinimalCodeMod/Source/MinimalCodeMod.csproj'
+```text
+dotnet build ./Examples/MinimalCodeMod/Source/MinimalCodeMod.csproj -c Release "-p:GameManagedPath=<Managed 路径>"
 ```
 
-生成文件为 `Code/CozyMods.MinimalCodeMod.dll`。把示例的 `mod.json` 和 `Code/` 复制到游戏 `Mods/MinimalCodeMod`，关闭游戏后用下面的命令校验这一份。`Source` 留在作者目录。
-
-```powershell
-$runtime = '<Mods 根目录的绝对路径>/MinimalCodeMod'
-./Tools/Validate-Mod.ps1 -GameExe $player -ModDirectory $runtime
-```
-
-校验成功后启动游戏，在主菜单模组列表中启用该副本并核对下方日志。
+生成文件为 `Code/CozyMods.MinimalCodeMod.dll`。把示例的 `mod.json` 和 `Code/` 复制到游戏 `Mods/MinimalCodeMod`，将 `Source` 留在作者目录。在主菜单模组列表中启用该副本并核对下方日志。
 
 ## 如何判断结果
 

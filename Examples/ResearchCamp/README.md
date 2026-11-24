@@ -19,23 +19,24 @@
 
 ## 从源码构建
 
-本示例位于仓库的 `Examples/ResearchCamp`。在下载目录的根目录执行：
+在仓库根目录编译，将 `<Managed 路径>` 换成已安装游戏的 Managed 目录。 [编译方式](../../Tools/README.md#直接编译)
 
-```powershell
-./Tools/Import-GameReferences.ps1 -GameDirectory 'Windows游戏根目录或Mac游戏.app的绝对路径'
-./Tools/Build-CodeMod.ps1 -ProjectPath './Examples/ResearchCamp/Source/ResearchCamp.csproj'
+```text
+dotnet build ./Examples/ResearchCamp/Source/ResearchCamp.csproj -c Release "-p:GameManagedPath=<Managed 路径>"
 ```
 
-`Source/ResearchCamp.csproj` 引用 `../../../Tools/CozyMod.props`，显式排除 `UnityProject/**/*.cs`，因此 Unity Editor 构建脚本和其缓存不会混入作者 DLL。构建后得到 `Examples/ResearchCamp/Code/FreshEye.ResearchCamp.dll`。编译引用由导入命令从本机配套 Player 提取。
+`Source/ResearchCamp.csproj` 引用 `../../../Tools/CozyMod.props`，显式排除 `UnityProject/**/*.cs`，因此 Unity Editor 构建脚本和其缓存不会混入作者 DLL。构建后得到 `Examples/ResearchCamp/Code/FreshEye.ResearchCamp.dll`。
 
-资源工程为 `Source/UnityProject`。随包 Windows Bundle 沿用历史版的 Unity **2022.3.62f3c1** 产物，Mac Bundle 由 Unity **2022.3.62f2c1** 构建。直接试用范例可以使用随包资源。改了资源后，按 [配套游戏版本说明](../../Tools/README.md#核对配套-build-并导入引用) 核对目标 Player 的实际 Unity 版本，并安装该版本的目标平台 Standalone Build Support。打开资源工程，编辑并保存 `Assets/camp.prefab`、`Assets/ration.prefab` 和材质，关闭 Editor，再执行相应的批处理命令。
+资源工程为 `Source/UnityProject`。随包 Windows Bundle 沿用历史版的 Unity **2022.3.62f3c1** 产物，Mac Bundle 由 Unity **2022.3.62f2c1** 构建。直接试用范例可以使用随包资源。改了资源后，核对目标游戏的 Unity 版本，并安装该版本的目标平台 Standalone Build Support。打开资源工程，编辑并保存 `Assets/camp.prefab`、`Assets/ration.prefab` 和材质，关闭 Editor，再执行对应平台的命令。 [版本和工具说明](../../Tools/README.md)
 
 ```powershell
-# Windows x64 Mono Player
+# Windows x64（PowerShell）
 & 'Unity.exe 的绝对路径' -batchmode -quit -buildTarget Win64 -projectPath 'Source/UnityProject 的绝对路径' -executeMethod BuildCamp.BuildWindows -logFile '作者日志绝对路径'
+```
 
-# macOS Mono Player
-& 'Unity.app/Contents/MacOS/Unity 的绝对路径' -batchmode -quit -buildTarget OSXUniversal -projectPath 'Source/UnityProject 的绝对路径' -executeMethod BuildCamp.BuildMac -logFile '作者日志绝对路径'
+```bash
+# macOS（终端）
+'Unity.app/Contents/MacOS/Unity 的绝对路径' -batchmode -quit -buildTarget OSXUniversal -projectPath 'Source/UnityProject 的绝对路径' -executeMethod BuildCamp.BuildMac -logFile '作者日志绝对路径'
 ```
 
 两条命令使用已经保存的资源。检查进程退出码和日志中的目标平台与 Unity 版本。每次只在成功后替换目标平台的 Bundle，失败时保留现有文件。面向两个平台发布时，从同一份资源源码分别构建 Windows 与 Mac，并把两个产物放进同一运行包。游戏按平台加载对应文件。Steam 更新会替换整个工坊项的内容，因此每次更新都要带齐两个文件。
@@ -56,18 +57,9 @@ ResearchCamp/
 
 ## 内容、存档与网络
 
-创建独立派生作品时，从下载目录的根目录运行 `./Tools/New-CodeMod.ps1 -ProjectName my-camp -DisplayName '我的营地' -Author '作者名'`。保留新项目生成的 `uuid` 和程序集名，按下面步骤迁移实现。
-
-1. 把 `Source/CampMod.cs` 和 `Source/UnityProject` 复制到 `MyMods/my-camp/Source`。删除脚手架的 `ModEntry.cs`，将 `CampMod.cs` 的命名空间改为自己的命名空间，并把 `mod.json` 的 `code.type` 更新为该命名空间下的 `CampMod`。保留脚手架的 `code.assembly`，并设置 `requiresRestart: true`。
-2. 在新项目的 `Source/Mod.csproj` 中加入下面的排除规则。它让普通 .NET 编译跳过独立 Unity 工程里的 Editor 脚本。
-
-   ```xml
-   <ItemGroup>
-     <Compile Remove="UnityProject/**/*.cs" />
-   </ItemGroup>
-   ```
-
-3. 为自己的配方选择唯一 `productName`，按实际 Player 核对原生工作台名和材料键。在 `BuildCamp.cs` 和加载代码中同步换成派生作品自己的 Bundle 文件名，再按上节构建资源并执行 `./Tools/Build-CodeMod.ps1 -ProjectPath './MyMods/my-camp/Source/Mod.csproj'`。初次测试可以先只启用派生作品。
+1. 创建独立派生作品时，将示例目录复制到仓库下的 `MyMods/my-camp`。为新作品生成一个 UUID，写入 `mod.json`，再修改显示名、标识名和作者。保留 `requiresRestart: true`。 [创建自己的作品](../../Docs/Manifest.md#身份与副本)
+2. 给副本的 `Source/ResearchCamp.csproj` 设置独立的 `AssemblyName`，把清单里的 `code.assembly` 更新为编译输出的 DLL。把 `CampMod.cs` 的命名空间改为自己的命名空间，并同步清单中的 `code.type`。
+3. 为自己的配方选择唯一 `productName`，按实际 Player 核对原生工作台名和材料键。在 `BuildCamp.cs` 和加载代码中同步换成派生作品自己的 Bundle 文件名。构建资源后，用上节命令编译，将项目路径改为 `./MyMods/my-camp/Source/ResearchCamp.csproj`。初次测试可以先只启用派生作品。
 
 更新同一作品时保持原身份、局部物品 ID 和已确认的工坊数字 ID。历史范例的私密工坊项只用于记录本范例的验证。
 

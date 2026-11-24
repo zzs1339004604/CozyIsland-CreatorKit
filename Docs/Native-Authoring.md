@@ -4,15 +4,15 @@
 
 ## 查证可用类型
 
-先运行 `Tools/Import-GameReferences.ps1`，从自己的 Player 导入 `References/Managed`。在 IDE 对象浏览器、程序集反编译工具或反射中查看实际类型、程序集、可见性、方法参数、返回值与事件签名。游戏类型通常位于 `Assembly-CSharp.dll`，其他类型以导入的真实程序集为准。导入的 DLL 不得随作品或工具包分发。
+在配套游戏安装目录找到 `Managed`。用 IDE 对象浏览器、程序集查看工具或反射核对实际类型、程序集、可见性、方法参数、返回值与事件签名。游戏类型通常位于 `Assembly-CSharp.dll`。这些 DLL 仅供本机编译。 [引用位置和编译方法](../Tools/README.md#直接编译)
 
 [GameItems.json](../Reference/GameItems.json) 和 [GameRecipes.json](../Reference/GameRecipes.json) 是带 `gameVersion`、`apiVersion` 与 `generatedUtc` 的目录快照。它们是精选条目，不覆盖场景内全部登记对象。使用下面的只读示例在实际 Player 核对。物品用 `prefabId` 取得 ES3 登记模板，`prefabName` 是对象名，不能当作 `Resources.Load` 路径。`objectId` 允许为空，显示名和 Prefab 名可能重名。配方的 `name` 对应 `CozyRecipe.productName`，`product` 对应产品 Prefab 名。`ingredients[].item` 对应 `ResourceDemand.resourceName`，由原生材料组件提供，不能用物品的 `objectId` 代替。
 
-类型存在只证明可以引用，不能证明调用时机、权限、保存或多人语义。记录所用 Build 版本及引用哈希清单；游戏更新后重新导入和验证。`CozyIsland.Modding` 的底座接口承担通用生命周期和归属，直接调用的原生游戏实现可能变化。
+还要在游戏里核对调用时机、权限、保存或多人行为。记录所用游戏构建，游戏更新后用新版程序集重新编译和验证。`CozyIsland.Modding` 的底座接口承担通用生命周期和归属，直接调用的原生游戏实现可能变化。
 
 ## 核对一个原生模板与配方
 
-用 `New-CodeMod.ps1` 建一个本地测试工程，把下面的代码替换 `Source/ModEntry.cs`。将清单中的 `code.type` 改为 `InspectWorkbench`，保留原 `uuid` 和 `code.assembly`。编译、安装并启用后进入测试岛。此例只读取现有模板和配方，输出到 Player 日志。
+在 `Examples/` 下复制一份[起始上衣换色范例](../Examples/ClothingColor/README.md)，按[清单的身份规则](Manifest.md#身份与副本)填写测试作品信息。将副本的 `Source/ClothingColor.cs` 内容换成下面的代码，把清单的 `code.type` 改为 `InspectWorkbench`。编译、安装并启用后进入测试岛。这个例子将现有模板和配方的信息写入游戏日志。
 
 ```csharp
 using CozyIsland.Modding;

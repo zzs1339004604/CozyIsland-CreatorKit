@@ -4,11 +4,10 @@
 
 本文件夹的 `mod.json` 只声明身份、入口和文件位置，实际行为由 `Code/CozyMods.GreenThumb.dll` 实现。修改配置后完全退出当前世界，在主菜单重新协调或重启；修改已加载 DLL 必须重启进程。
 
-在工具包根目录导入本机引用并编译：
+在仓库根目录编译，将 `<Managed 路径>` 换成已安装游戏的 Managed 目录。 [编译方式](../../Tools/README.md#直接编译)
 
-```powershell
-./Tools/Import-GameReferences.ps1 -GameDirectory 'D:\SteamLibrary\steamapps\common\Cozy Island'
-./Tools/Build-CodeMod.ps1 -ProjectPath ./Examples/GreenThumb/Source/GreenThumb.csproj
+```text
+dotnet build ./Examples/GreenThumb/Source/GreenThumb.csproj -c Release "-p:GameManagedPath=<Managed 路径>"
 ```
 
-把完整文件夹放入本地 Mod 目录，开启并使用测试岛验证效果与关闭后的恢复。只上传自己的运行 DLL、清单、图片和配置，不携带游戏或 Harmony DLL。发布流程见[主指南](../../README.md)，补丁与清理约定见[生命周期](../../Docs/Reloading.md)。
+把 `mod.json`、`garden.json`、`preview.png` 和生成的 `Code/` 复制到本地 `Mods/GreenThumb`，开启并使用测试岛验证效果与关闭后的恢复。发布时选择这份试过的作品。 [发布流程](../../Docs/Workshop.md#发布和更新) · [补丁与清理](../../Docs/Reloading.md)

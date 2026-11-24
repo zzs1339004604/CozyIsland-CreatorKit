@@ -1,6 +1,32 @@
 # Cozy Island Modding 工具说明
 
-下载并解压 Cozy Island Modding 仓库，准备一份配套的完整 Cozy Island Mono 游戏版本，再安装 PowerShell 7 和 .NET SDK。普通 C# 作品不需要 Unity Editor。只有重建 AssetBundle 等资源时，才需要与目标 Player 配套的 Unity Editor 和目标平台构建模块。
+普通 C# 模组只需要配套游戏和 .NET SDK。可以在系统终端直接编译，再到游戏里试用和发布。第一次制作可以跟着[默认上衣换色](../Examples/ClothingColor/README.md)操作。要重新制作 AssetBundle，再安装与游戏配套的 Unity 编辑器和目标平台构建模块。
+
+## 直接编译
+
+在仓库根目录打开系统终端。把命令里的路径换成自己的 `Managed` 目录。Windows 上可以在 Steam 的 **管理 → 浏览本地文件** 找到游戏，再打开 `CozyIsland_Data/Managed`。macOS 上从 `CozyIsland.app/Contents/Resources/Data/Managed` 找到同一目录。
+
+```text
+dotnet build ./Examples/ClothingColor/Source/ClothingColor.csproj -c Release "-p:GameManagedPath=D:/SteamLibrary/steamapps/common/Cozy Island/CozyIsland_Data/Managed"
+```
+
+范例把自己的 DLL 写到 `Code/`。`Managed` 只供编译，游戏依赖由玩家自己的游戏提供。按范例说明把 `mod.json`、`Code/` 和需要的资源放进本地 `Mods`，然后到游戏里[启用和发布](../Docs/Workshop.md)。游戏更新后，使用最新版安装目录重新编译并进岛试用。
+
+## 可选的 PowerShell 工具
+
+使用下列工具时安装 PowerShell 7。兼容性报告适合排查游戏版本，命令行校验和发布适合自动化。日常创作流程见[直接编译](#直接编译)。
+
+| 脚本 | 适用场景 |
+| --- | --- |
+| `New-CodeMod.ps1` | 批量或重复创建作者工程，生成 UUID、程序集和入口。手工创建时可以从范例复制。 |
+| `Build-CodeMod.ps1` | 编译已导入的引用快照，顺便核对快照指纹。直接使用游戏安装目录时用 `dotnet build` 即可。 |
+| `Import-GameReferences.ps1` | 保存一份经过游戏探测的引用快照，便于固定和复查某个游戏版本。 |
+| `Test-GameCompatibility.ps1` | 让选中的游戏读取测试清单，并和已登记的构建指纹比较。 |
+| `Validate-Mod.ps1` | 运行游戏的包校验并留下机器可读回执。 |
+| `Publish-Mod.ps1` | 在 Steam 会话中自动上传，或显式调整现有作品的可见性。 |
+| `Invoke-ModOperation.ps1` | 供校验、发布和兼容性探测共用。负责启动游戏、超时和读取回执。 |
+| `PlayerLayout.ps1` | 供上述工具共用。负责定位 Windows 和 macOS 游戏文件及计算指纹。 |
+| `Package-ModCreatorKit.ps1` | 维护者为已验收的游戏构建制作完整工具包 ZIP。下载范例可以直接使用 GitHub 的 **Download ZIP**。 |
 
 ## 核对配套 Build 并导入引用
 
@@ -72,10 +98,10 @@ $runtime = '/替换为/Mods/garden'
 
 ## 维护者生成 Foundation ZIP
 
-从干净的 Cozy Island Modding 提交或 Release 标签准备打包。打包器要求所选 Player 能实际读取包含 `displayName`、`name` 和 `uuid` 的清单，且程序集指纹与当前平台的 `release` 或 `release-candidate` 记录一致。
+从干净的 Cozy Island Modding 提交或 Release 标签准备打包。打包器要求所选 Player 能实际读取包含 `displayName`、`name` 和 `uuid` 的清单，且程序集和可执行文件指纹与当前平台的 `release` 或 `release-candidate` 记录一致。当前 [PlayerIdentity.json](../PlayerIdentity.json) 还没有登记配套发行构建，待验收并登记后使用。
 
 ```powershell
 ./Tools/Package-ModCreatorKit.ps1 -GameDirectory $game -OutputPath '../Artifacts/CozyIsland-ModCreatorKit-Foundation.zip'
 ```
 
-ZIP 收录仓库的 `PlayerIdentity.json`、指南、原生参考快照、六个作者范例的源码与资源和工具。打包器会排除 `EvaluationSDK`、本机引用、用户工程、范例生成的 `Code/`、结果、编辑器缓存和日志，并按配套 Player 的 Managed 程序集身份检查误带的游戏 DLL。发布时复查 ZIP 条目和授权范围。发行前用实际交付的 Player 验证启用代码 Mod、进岛、存档冷读和工坊流程。需要增加平台或重新构建时，先完成该配套 Build 的验收，再更新身份清单。
+ZIP 收录仓库的 `PlayerIdentity.json`、指南、原生参考快照、作者范例的源码与资源和工具。打包器会排除 `EvaluationSDK`、本机引用、用户工程、范例生成的 `Code/`、结果、编辑器缓存和日志，并按配套 Player 的 Managed 程序集身份检查误带的游戏 DLL。发布时复查 ZIP 条目和授权范围。发行前用实际交付的 Player 验证启用代码 Mod、进岛、存档冷读和工坊流程。需要增加平台或重新构建时，先完成该配套 Build 的验收，再更新身份清单。
