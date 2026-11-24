@@ -10,8 +10,27 @@
       "name": "芽苗帽",
       "slot": "Hat",
       "parts": [
-        { "path": "Crown", "anchor": "Hat", "color": "#C39860", "hideOriginal": true },
-        { "path": "Sprout", "anchor": "Hat", "color": "#6FA657" }
+        {
+          "path": "Crown",
+          "anchor": "Hat",
+          "color": "#C39860",
+          "hideOriginal": true,
+          "position": [
+            0,
+            0.5,
+            0
+          ]
+        },
+        {
+          "path": "Sprout",
+          "anchor": "Hat",
+          "color": "#6FA657",
+          "position": [
+            0,
+            0.5,
+            0
+          ]
+        }
       ]
     }
   ]
