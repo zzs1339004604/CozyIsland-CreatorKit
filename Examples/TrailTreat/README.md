@@ -28,7 +28,7 @@
 
 ## 源码与原生接入
 
-生产玩法全部在 `Source/TrailTreat.cs`。`OnLoad` 注册生命周期回调、托管 HUD 和本 owner 的 Harmony 图标补丁。`OnContentReady` 中，通过实际 Player 的 `ES3ReferenceMgrBase.Current.GetPrefab(2773636279, false)` 取得吐司模板，再调用通用 `CozyModRegistry.RegisterPrefab`；稳定局部 ID 为 `trail-biscuit`。此身份在验证包中得到保存 ID `7828777201722243219`，不应靠显示名称或顺序替代。
+生产玩法全部在 `Source/TrailTreat.cs`。`OnLoad` 注册生命周期回调、托管 HUD 和本 owner 的 Harmony 图标补丁。`OnContentReady` 中，通过实际 Player 的 `ES3ReferenceMgrBase.Current.GetPrefab(2773636279, false)` 取得吐司模板，再调用通用 `CozyModRegistry.RegisterPrefab`。游戏使用本范例的 UUID 和稳定局部 ID `trail-biscuit` 计算出保存 ID `4898462272259585933`。
 
 模板准备时，原生配方管理器可能尚未执行 Awake/网络生成。因此模板在同步关口完成，`OnUpdate` 等待真实 `CozyWorkshopRecipeMgr` 出现，再按当前管理器实例幂等创建 `CozyRecipe` 并检查 `AddRecipe` 返回值。只有成功插入才记录配方归属；清理前核对管理器按名称查得的对象仍为自己的实例，避免注册冲突或后来被替换时删除别人的配方。配方使用真实键 `基础工作台`、分类 `物体`、材料资源名 `原木`；`productName` 是本范例唯一查找键，不是物品身份。
 
@@ -54,7 +54,9 @@
 
 ## 验证范围与限制
 
-以下是 1.1.0 用较早的完整 Windows Mono Player（Unity 2022.3.62f3c1）取得的历史记录。该范例当时重新编译，并在独立进程调用原生制作、拾取、入背包和食用流程，验证两次食用的一次性奖励。自动化由本地外部驱动调用原生操作，不等同于完整手工 UI 导航；驱动不属于本范例，也未随工具包分发。
+本范例的三文件运行包已在 Windows Steam 测试构建 `26887228` 通过游戏内置校验。
+
+以下是 1.1.0 在 Windows Mono Player（Unity 2022.3.62f3c1）中的测试记录。该范例当时重新编译，并在独立进程调用原生制作、拾取、入背包和食用流程，验证两次食用的一次性奖励。自动化由本地外部驱动调用原生操作，不等同于完整手工 UI 导航；驱动不属于本范例，也未随工具包分发。
 
 任务保存已实际验证两份世界存档：A 为 1/2、未领奖，B 为 2/2、已领奖；完全退出后分别读取，世界物品和任务状态随所选版本恢复。主动停用后，Mod 物品和背包引用被清理，原始存档及备份字节一致；另存仍保留不透明任务 JSON。重新启用并冷读另存版本，任务恢复为 2/2，已清理的物品没有重新出现。框架另有捕获、迁移、序列化和提交失败的故障注入回归，不能据此宣称所有第三方作者代码都安全。
 
