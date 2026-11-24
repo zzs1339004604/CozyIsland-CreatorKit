@@ -4,17 +4,31 @@
 
 Use this guide to play with mods or make your own for Cozy Island. This repository includes sample mods, source code, and tools for building and publishing your work. A mod can make a small change, such as showing a building’s name next to the Remove prompt when you equip the Small Wooden Hammer.
 
-[Install mods](#install-mods) · [Build your first mod](#build-your-first-mod) · [Publish to Steam Workshop](#publish-to-steam-workshop) · [More examples](#more-examples) · [Common questions](#common-questions)
+[Make mods with AI](#make-mods-with-ai-recommended) · [Build your first mod](#build-your-first-mod) · [Publish to Steam Workshop](#publish-to-steam-workshop) · [More examples](#more-examples) · [Common questions](#common-questions) · [Disclaimer](#disclaimer)
 
 > **Before you start**  Install a version of Cozy Island with a **Mods** menu that supports this repository’s manifest. The import tool checks compatibility before it copies the files you need to build a mod. Follow the instructions below for your operating system. [Steam store](https://store.steampowered.com/app/2918500/) · [Game build record](PlayerIdentity.json)
 
-## Install mods
+## Make mods with AI (recommended)
 
-1. From the main menu, choose **Mods → Open Steam Workshop**. Find a mod, click **Subscribe**, and wait for Steam to download it. [Steam Workshop](https://steamcommunity.com/app/2918500/workshop/)
-2. Return to **Mods** and turn on the mod you subscribed to. New mods start turned off. If the mod lists any required mods, subscribe to and turn on those too.
-3. Enter your island when the game is ready. If prompted to restart, quit the game completely and open it again.
+AI assistants such as GPT and Claude can help you start from an existing example, edit and build the code, or troubleshoot loading problems using the game log.
 
-If an author gives you a ZIP file, extract it first. Choose **Mods → Create Mods → Open mod folder**, then put the folder containing `mod.json` inside `Mods`. If the button opens an existing mod’s folder, go up one level and put the new folder next to it. Return to the **Mods** list and turn it on. [Local installs and account settings (Chinese)](Docs/Workshop.md)
+Follow these steps to open this guide in your AI assistant’s workspace. You can also send the repository URL to your assistant and ask it to handle the setup.
+
+1. Clone this repository with Git or download and extract it to your computer.
+2. In your AI assistant, open the `cozyisland-modding` folder as a workspace.
+3. Tell the assistant where your compatible copy of the game is installed and what you’d like to see in-game. [Task template for AI assistants (Chinese)](AI-AUTHORING.md)
+
+Here’s an example of how to describe the change you want.
+
+```text
+Study the existing mod examples and make a mod that changes the player character’s default clothing color to yellow.
+
+Install the mod in the game and test it. Once you’ve confirmed it works, upload it to the Steam Workshop with visibility set to Private.
+```
+
+Once it builds, enable the local mod and verify the result in-game before deciding whether to publish it.
+
+Some of the documentation, examples, and tools in this repository were written with AI assistance. We welcome corrections, bug reports, and suggestions. [Share feedback](https://github.com/zzs1339004604/cozyisland-modding/issues)
 
 ## Build your first mod
 
@@ -100,4 +114,8 @@ The detailed guides are in Chinese. They cover [tools and game versions](Tools/R
 - **Where is the game log?** On Windows it’s usually at `%USERPROFILE%\AppData\LocalLow\LazyFish Studio\CozyIsland\Player.log`. On macOS it’s usually at `~/Library/Logs/LazyFish Studio/CozyIsland/Player.log`.
 - **Can I keep playing the same island after turning off a mod?** If the save uses items added by a mod, the game may remove missing items when you load it. Try changes on a test island and keep a backup of the original save. [Missing content and saves (Chinese)](Docs/Save-Data.md#缺失内容与失败是不同情况)
 
-This repository has yet to declare a public reuse license. For redistribution of the source, documentation, or example assets, follow the permissions formally provided by the rights holder.
+## Disclaimer
+
+- Code mods run code supplied by their authors inside the game. Install mods from sources you trust and check each mod’s supported game versions and instructions.
+- Mods can conflict with one another or stop working after a game update. Before trying a mod that changes your island, use a test island or back up your existing save. [Save data (Chinese)](Docs/Save-Data.md)
+- This repository has yet to declare a public reuse license. For redistribution of the source, documentation, or example assets, follow the permissions formally provided by the rights holder.
