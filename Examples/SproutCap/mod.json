@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "uuid": "2e4cd9cb-8fa0-4d40-ac77-5bb55d5b8fc9",
+  "displayName": "芽苗帽",
+  "name": "cozy.example.sprout-cap",
+  "author": "LazyFish Studio",
+  "version": "1.0.0",
+  "description": "一顶长着两片嫩叶的小帽子。在「外观库 → 服装 → 帽子」中穿戴。Windows 和 macOS 共用同一份 GLB 模型。",
+  "dependencies": [
+    {
+      "uuid": "a2f648bf-1066-45da-91ea-1c7ca2f2511e",
+      "minimumVersion": "0.2.0"
+    }
+  ]
+}

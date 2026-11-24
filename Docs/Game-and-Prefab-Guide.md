@@ -1,6 +1,6 @@
 # 游戏结构与原生 Prefab 指南
 
-本文介绍《舒舒服服小岛时光》原生对象的结构。用自己安装的配套游戏程序集查证类型，再参考物品和配方目录查找资源。想制作角色外观包，可以从直立鼠随附的模型和 Unity 预制件入手。 [游戏引用](../Tools/README.md#直接编译) · [物品目录](../Reference/GameItems.json) · [配方目录](../Reference/GameRecipes.json) · [直立鼠](../Examples/UprightMouse/README.md)
+本文介绍《舒舒服服小岛时光》原生对象的结构。用自己安装的配套游戏程序集查证类型，再参考物品和配方目录查找资源。只做角色皮肤或服装外观可以直接用 GLB。本文的 Unity Prefab 和注册流程适用于原生物品与复杂对象。 [游戏引用](../Tools/README.md#直接编译) · [物品目录](../Reference/GameItems.json) · [配方目录](../Reference/GameRecipes.json) · [GLB 外观制作指南](../Examples/AppearanceFramework/README.md#做自己的外观包)
 
 ## 从菜单到世界
 

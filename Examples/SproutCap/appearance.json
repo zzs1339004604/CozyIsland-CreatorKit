@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 2,
+  "id": "cozy.appearance.sprout-cap",
+  "name": "芽苗帽",
+  "author": "LazyFish Studio",
+  "model": "Assets/sprout-cap.glb",
+  "entries": [
+    {
+      "id": "sprout-cap",
+      "name": "芽苗帽",
+      "slot": "Hat",
+      "parts": [
+        { "path": "Crown", "anchor": "Hat", "color": "#C39860", "hideOriginal": true },
+        { "path": "Sprout", "anchor": "Hat", "color": "#6FA657" }
+      ]
+    }
+  ]
+}

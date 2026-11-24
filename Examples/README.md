@@ -1,9 +1,10 @@
 # 模组范例
 
-第一次制作可以从[起始上衣换色](ClothingColor/README.md)开始。这个范例用游戏已有的模型和材质，可以先改一个颜色，再观察实际效果。
+第一次做外观可以从[芽苗帽](SproutCap/README.md)开始，改一处配色或换一份 GLB。要试做代码模组，可以使用[起始上衣换色](ClothingColor/README.md)。
 
 | 想做什么 | 范例 | 怎么试 |
 | --- | --- | --- |
+| 用 Blender 做帽子或皮肤 | [SproutCap](SproutCap/README.md) | GLB 加两份 JSON。启用外观框架后，在外观库的「服装 → 帽子」中选择芽苗帽。 |
 | 给起始上衣换色 | [ClothingColor](ClothingColor/README.md) | 穿着默认装扮进岛，本机角色的上衣和袖子会变成玫红色。 |
 | 观察代码加载与清理 | [MinimalCodeMod](MinimalCodeMod/README.md) | 从游戏日志查看 Harmony 补丁、更新回调和清理结果。 |
 | 给交互提示加文字 | [BuildingHints](BuildingHints/README.md) | 用小木锤对准可拆除的建筑，观察拆除提示中的建筑名。 |
