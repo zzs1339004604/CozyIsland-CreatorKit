@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "id": "cozy.appearance.upright-mouse",
+  "name": "直立鼠",
+  "author": "Cozy Island Mod Examples",
+  "platform": "win64",
+  "bundle": "Assets/uprightmouse.bundle",
+  "share": true,
+  "allowSave": true,
+  "entries": [
+    {
+      "id": "upright-mouse",
+      "name": "直立鼠",
+      "slot": "Body",
+      "prefab": "Assets/UprightMouse/UprightMouse.prefab",
+      "materials": {
+        "MouseFur": {
+          "prefab": 859571797,
+          "name": "Cozy-AnimalSkin-Mouse-1",
+          "color": "0.36078432,0.4338002,0.4509804"
+        },
+        "EarPink": {
+          "prefab": 859571797,
+          "name": "Cozy-AnimalSkin-Mouse-2",
+          "color": "0.7490196,0.50184315,0.50184315"
+        },
+        "MouseNose": {
+          "prefab": 859571797,
+          "name": "Cozy-AnimalSkin-Mouse-3",
+          "color": "0.17588234,0.24470584,0.26"
+        },
+        "EyeWhite": {
+          "prefab": 859571797,
+          "name": "Cozy-Eye-White",
+          "color": "1,1,1"
+        },
+        "EyePupil": {
+          "prefab": 859571797,
+          "name": "Cozy-Eye-Black",
+          "color": "0.1,0.1,0.1"
+        },
+        "EyeHidden": {
+          "prefab": 859571797,
+          "name": "Cozy-Transparent"
+        },
+        "TailPink": {
+          "prefab": 859571797,
+          "name": "Cozy-AnimalSkin-Mouse-2",
+          "color": "0.7490196,0.50184315,0.50184315"
+        }
+      },
+      "bodyMaterial": "MouseFur",
+      "hideBody": [
+        "Hair",
+        "Neck",
+        "DefaultClothing"
+      ],
+      "parts": [
+        {
+          "path": "UprightMouseHead",
+          "anchor": "Face",
+          "hideOriginal": true,
+          "blinkBlendShape": "Close"
+        },
+        {
+          "path": "Torso",
+          "anchor": "Torso",
+          "hideOriginal": true
+        },
+        {
+          "path": "MouseEars",
+          "anchor": "Face",
+          "followAnchor": "Hair"
+        },
+        {
+          "path": "MouseTail",
+          "anchor": "BodyParts",
+          "followAnchor": "BodyVisuals",
+          "materialOverrides": {
+            "EarPink": "TailPink"
+          },
+          "followThrough": {
+            "root": "Tail/Neck",
+            "target": "TailTip",
+            "bones": [
+              "Spine1",
+              "Spine2",
+              "Spine3",
+              "Spine4",
+              "Spine5"
+            ],
+            "eulerOffset": [
+              90,
+              0,
+              0
+            ],
+            "jointScale": 0.16,
+            "scaleKeys": [
+              [
+                0,
+                1,
+                -1.3773452,
+                -1.3773452
+              ],
+              [
+                1,
+                0.1,
+                -1.7321578,
+                -1.7321578
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
