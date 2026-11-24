@@ -33,8 +33,7 @@ namespace CozyMods.Appearance
                 this.owner = owner;
                 var menu = settings.transform.Find("MenuBody");
                 var back = menu.Find("CloseBtn").GetComponent<Button>();
-                var volume = settings.masterVolumeSlider.transform.parent;
-                nativeText = volume.Find("ItemName").GetComponent<TMP_Text>();
+                nativeText = back.GetComponentInChildren<TMP_Text>(true);
                 paper = menu.Find("Background/BackgroundBody").GetComponent<Image>();
                 trim = menu.Find("TitleContainer/Background-Yellow").GetComponent<Image>();
                 buttonPaper = back.transform.Find("Background").GetComponent<Image>();

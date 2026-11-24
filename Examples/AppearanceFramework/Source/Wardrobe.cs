@@ -101,8 +101,8 @@ namespace CozyMods.Appearance
         private void Open()
         {
             if (open) return;
-            var settings = PCDGameSettingMgr.Instance;
-            if (settings == null || settings.masterVolumeSlider == null || settings.fullScreenToggle == null) return;
+            var settings = PCDGameSettingMgr.TryGetInstance(true);
+            if (settings == null || settings.fullScreenToggle == null) return;
             panel ??= new Panel(this, settings);
 
             ui = ClientUIMgr.TryGetInstance(true);
