@@ -12,6 +12,7 @@
 | [GreenThumb](GreenThumb/README.md) | 原生 `CozyFallowLand.Update` 的房主补丁与自有配置 | 同种作物对比成熟/耗水时间，检查停用后行为恢复 |
 | [BriskWalk](BriskWalk/README.md) | 原生玩家和控制器移动字段、自有配置与原值恢复 | 同一路径/输入对比步行距离；奔跑字段是否被具体控制器使用须另行实测 |
 | [TrailTreat](TrailTreat/README.md) | 通用登记、原生物品/配方/食用事件、作者 HUD 与新模型 | 原木制作远足饼，食用两次获得吐司；世界进度随主档保存；已验与未验范围见范例 README，作者状态不自动联网 |
+| [WitchRobe](WitchRobe/README.md) | 独立服装模型、原版材质改色、配方和装备同步 | 制作并穿戴青苔魔法袍与魔法帽，两端安装同一范例可观察实时穿脱 |
 | [UprightMouse](UprightMouse/README.md) | 给联机外观框架制作纯数据身体外观包 | 启用框架和数据包后，在 F10 外观菜单选择直立鼠 |
 | [RetroFilters](RetroFilters/README.md) | 用 Shader 处理主摄像机画面，借用游戏 UI 调节参数 | 在主菜单切换抖动、像素化、色阶和描边，即时对比效果 |
 | [ResearchCamp](ResearchCamp/README.md) | 独立 Unity AssetBundle、多节点营地、两配方、三目标任务、主档数据及作者网络消息 | 0.1.2 同包选择 Windows/macOS 资源，旧清单下的读档、玩法和工坊测试见该范例的历史记录 |

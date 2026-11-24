@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "cozy.appearance.moss-witch",
+  "name": "青苔魔法套装",
+  "author": "Cozy Island Mod Examples",
+  "platform": "win64",
+  "bundle": "Assets/witch-robe-win64.bundle",
+  "share": true,
+  "allowSave": true,
+  "entries": [
+    {
+      "id": "moss-robe",
+      "name": "青苔魔法袍",
+      "slot": "Cloth",
+      "prefab": "Assets/WitchRobe/WitchRobe.prefab",
+      "color": "#267B73",
+      "nativeOwner": "f730ddf9-0078-4d0b-aaa9-4fe171855d15",
+      "nativeItem": "witch-robe",
+      "parts": [
+        {
+          "path": "Robe",
+          "anchor": "Cloth",
+          "nativeEquipment": 1853934543
+        },
+        {
+          "path": "Sleeve",
+          "anchor": "Sleeve",
+          "nativeEquipment": 1853934543
+        }
+      ]
+    },
+    {
+      "id": "moss-hat",
+      "name": "青苔魔法帽",
+      "slot": "Hat",
+      "prefab": "Assets/WitchRobe/WitchRobe.prefab",
+      "color": "#267B73",
+      "nativeOwner": "f730ddf9-0078-4d0b-aaa9-4fe171855d15",
+      "nativeItem": "witch-hat",
+      "parts": [
+        {
+          "path": "Hat",
+          "anchor": "Hat",
+          "nativeEquipment": 815921587
+        }
+      ]
+    }
+  ]
+}

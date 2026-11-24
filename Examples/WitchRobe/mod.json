@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "displayName": "青苔魔法套装",
+  "name": "cozy.example.witch-robe",
+  "uuid": "f730ddf9-0078-4d0b-aaa9-4fe171855d15",
+  "author": "Cozy Island Mod Examples",
+  "version": "0.1.0",
+  "description": "在基础工作台制作青苔魔法袍和魔法帽，各需要一份原木。两件衣服使用模组内的独立模型。",
+  "requiresRestart": true,
+  "code": {
+    "assembly": "Code/CozyMods.WitchRobe.dll",
+    "type": "CozyMods.Examples.WitchRobe"
+  }
+}

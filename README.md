@@ -51,6 +51,7 @@ GPT 和 Claude 等 AI 助手可以帮你从现成的范例做起，修改代码�
 | 看看游戏怎样运行自己的代码 | [MinimalCodeMod](Examples/MinimalCodeMod/README.md) 在游戏日志里显示加载结果。 |
 | 调整作物生长或角色步行 | [GreenThumb](Examples/GreenThumb/README.md) 改作物生长和耗水，[BriskWalk](Examples/BriskWalk/README.md) 演示修改步行数值。 |
 | 添加一个能制作和食用的物品 | [TrailTreat](Examples/TrailTreat/README.md) 加入远足饼、配方和可保存的任务进度。 |
+| 制作可以穿戴的服装 | [WitchRobe](Examples/WitchRobe/README.md) 加入可制作的魔法袍和帽子，演示独立模型和原版装备同步。 |
 | 用自己的模型制作身体外观包 | [直立鼠](Examples/UprightMouse/README.md) 演示用模型和数据配置提供可在联机外观菜单选择的皮肤。 |
 | 给画面加滤镜 | [RetroFilters](Examples/RetroFilters/README.md) 演示全屏 Shader、实时调节面板和本机设置保存。 |
 | 带入自己的模型并保存物品和进度 | [ResearchCamp](Examples/ResearchCamp/README.md) 展示营地模型、配方和存档，含可编辑的 Unity 工程。 |
