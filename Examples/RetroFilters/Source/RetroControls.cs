@@ -30,6 +30,9 @@ namespace CozyMods
     {
         private const string Prefix = "cozy.example.colordither.";
         private const string SettingsKey = Prefix + "retro";
+        private const float PanelWidth = 440;
+        private const float RowWidth = 396;
+        private const float ControlScale = 720f / 1080f;
 
         private readonly List<Action> refresh = new List<Action>();
         private RetroSettings settings;
@@ -37,14 +40,16 @@ namespace CozyMods
         private bool open;
         private Scene cachedMenu;
         private PCDButton[] menuExits = Array.Empty<PCDButton>();
-        private PCDButton buttonStyle;
-        private PCDButton entry;
-        private PCDButton done;
+        private Button entry;
+        private Button done;
         private RectTransform panel;
         private Slider sliderStyle;
         private Toggle toggleStyle;
-        private TMP_FontAsset font;
-        private Color ink;
+        private TMP_Text captionStyle;
+        private Image rowEdge;
+        private Image buttonPaper;
+        private Image buttonAccent;
+        private ColorBlock buttonColors;
         private GameObject previousSelection;
 
         public bool HasEffects => (settings.dither && settings.ditherAmount > 0) ||
@@ -102,11 +107,14 @@ namespace CozyMods
             if (native == null || native.masterVolumeSlider == null || native.fullScreenToggle == null) return;
             sliderStyle = native.masterVolumeSlider;
             toggleStyle = native.fullScreenToggle;
-            buttonStyle = menuExits.FirstOrDefault(button => button != null && button.isActiveAndEnabled)
-                ?? native.GetComponentInChildren<PCDButton>(true);
-            if (buttonStyle == null) return;
-            font = buttonStyle.GetComponentInChildren<TMP_Text>(true).font;
-            ink = toggleStyle.targetGraphic.color;
+            var settingsMenu = native.transform.Find("MenuBody");
+            var volumeRow = sliderStyle.transform.parent;
+            captionStyle = volumeRow.Find("ItemName").GetComponent<TMP_Text>();
+            rowEdge = volumeRow.Find("BackgroundOuter").GetComponent<Image>();
+            var backButton = settingsMenu.Find("CloseBtn").GetComponent<Button>();
+            buttonPaper = backButton.transform.Find("Background").GetComponent<Image>();
+            buttonAccent = settingsMenu.Find("TabMenu/Tab-Common-Selected/Background").GetComponent<Image>();
+            buttonColors = backButton.colors;
 
             var root = NewRect("Retro Filters Overlay", transform);
             root.gameObject.SetActive(false);
@@ -124,16 +132,25 @@ namespace CozyMods
             panel.anchorMin = panel.anchorMax = new Vector2(1, 1);
             panel.pivot = new Vector2(1, 1);
             panel.anchoredPosition = new Vector2(-22, -22);
-            panel.sizeDelta = new Vector2(440, 586);
-            var background = panel.gameObject.AddComponent<Image>();
-            background.sprite = sliderStyle.handleRect.GetComponent<Image>().sprite;
-            background.type = Image.Type.Sliced;
-            background.color = new Color32(252, 242, 209, 255);
-            var shadow = panel.gameObject.AddComponent<Shadow>();
-            shadow.effectColor = new Color32(45, 35, 16, 120);
-            shadow.effectDistance = new Vector2(3, -4);
+            panel.sizeDelta = new Vector2(PanelWidth, 586);
 
-            Label(panel, "复古画面", 28, 35, 384, 28, true);
+            var settingsBackground = settingsMenu.Find("Background");
+            var title = settingsMenu.Find("TitleContainer");
+            var paper = settingsBackground.Find("BackgroundBody").GetComponent<Image>();
+            var trim = title.Find("Background-Yellow").GetComponent<Image>();
+            // Use matching corner sizes so the settings paper has an even rim.
+            Surface(panel, settingsBackground.Find("SoftOutlineShadow").GetComponent<Image>(),
+                PanelWidth / 2, 295, PanelWidth + 6, 592);
+            var rim = Surface(panel, paper, PanelWidth / 2, 293, PanelWidth, 586);
+            rim.color = trim.color;
+            rim.pixelsPerUnitMultiplier *= 2;
+            var body = Surface(panel, paper, PanelWidth / 2, 293, PanelWidth - 8, 578);
+            body.pixelsPerUnitMultiplier = rim.pixelsPerUnitMultiplier;
+            body.raycastTarget = true;
+
+            Surface(panel, trim, PanelWidth / 2, 34, 164, 40);
+            var heading = Label(panel, "复古画面", 152, 34, 136, 24);
+            heading.alignment = TextAlignmentOptions.Center;
             Section("彩色抖动", 80, () => settings.dither, value => settings.dither = value);
             Range("抖动强度", 116, 0, 100, () => Mathf.RoundToInt(settings.ditherAmount * 100),
                 value => settings.ditherAmount = value / 100f, () => settings.dither, "%");
@@ -157,7 +174,7 @@ namespace CozyMods
 
             MakeButton(panel, "全部关闭", 83, 550, 116, DisableAll);
             MakeButton(panel, "恢复默认", 220, 550, 116, ResetDefaults);
-            done = MakeButton(panel, "完成", 357, 550, 116, () => SetOpen(false));
+            done = MakeButton(panel, "完成", 357, 550, 116, () => SetOpen(false), primary: true);
             entry = MakeButton(root, "复古画面", -103, 46, 150, () => SetOpen(true));
             entry.name = "Retro Filters Entry";
             ((RectTransform)entry.transform).anchorMin = ((RectTransform)entry.transform).anchorMax = new Vector2(1, 1);
@@ -184,51 +201,59 @@ namespace CozyMods
             item.sizeDelta = new Vector2(width, height);
         }
 
-        private TMP_Text Label(RectTransform parent, string text, float left, float y, float width, int size, bool bold = false)
+        private static Image Surface(RectTransform parent, Image style, float x, float y, float width, float height)
+        {
+            var rect = NewRect(style.name, parent);
+            Place(rect, x, y, width, height);
+            var image = rect.gameObject.AddComponent<Image>();
+            image.sprite = style.sprite;
+            image.type = style.type;
+            image.pixelsPerUnitMultiplier = style.pixelsPerUnitMultiplier;
+            image.color = style.color;
+            image.raycastTarget = false;
+            return image;
+        }
+
+        private TMP_Text Label(RectTransform parent, string text, float left, float y, float width, int size)
         {
             var item = NewRect(text, parent);
             Place(item, left + width / 2, y, width, 36);
             var label = item.gameObject.AddComponent<TextMeshProUGUI>();
-            label.font = font;
+            label.font = captionStyle.font;
+            label.fontSharedMaterial = captionStyle.fontSharedMaterial;
+            label.fontStyle = captionStyle.fontStyle;
             label.fontSize = size;
-            label.fontStyle = bold ? FontStyles.Bold : FontStyles.Normal;
             label.alignment = TextAlignmentOptions.MidlineLeft;
-            label.color = ink;
+            label.color = captionStyle.color;
             label.raycastTarget = false;
             label.text = text;
             return label;
         }
 
-        private PCDButton MakeButton(RectTransform parent, string text, float x, float y, float width, UnityAction click)
+        private Button MakeButton(RectTransform parent, string text, float x, float y, float width,
+            UnityAction click, bool primary = false)
         {
-            var button = Instantiate(buttonStyle, parent, false);
-            button.name = text;
-            var rect = (RectTransform)button.transform;
-            float originalWidth = ((RectTransform)buttonStyle.transform).rect.width;
-            float originalHeight = ((RectTransform)buttonStyle.transform).rect.height;
-            Place(rect, x, y, originalWidth, originalHeight);
-            float scale = width / originalWidth;
-            rect.localScale = Vector3.one * scale;
-            foreach (var localizer in button.GetComponentsInChildren<EasyLocalTMUGUI>(true))
-                localizer.enabled = false;
-            foreach (var label in button.GetComponentsInChildren<TMP_Text>(true))
-            {
-                label.text = text;
-                label.enableAutoSizing = false;
-                label.fontSize = 18 / scale;
-            }
-            button.onClick = new UnityEvent();
+            var image = Surface(parent, primary ? buttonAccent : buttonPaper, x, y, width, 34);
+            image.name = text;
+            image.raycastTarget = true;
+            var button = image.gameObject.AddComponent<Button>();
+            button.targetGraphic = image;
+            button.colors = buttonColors;
             button.onClick.AddListener(click);
-            button.gameObject.SetActive(true);
+            var label = Label(image.rectTransform, text, 0, 17, width, 17);
+            label.alignment = TextAlignmentOptions.Center;
+            if (primary) label.color = Color.white;
             return button;
         }
 
         private void Section(string title, float y, Func<bool> get, Action<bool> set)
         {
-            Label(panel, title, 28, y, 300, 21, true);
+            Surface(panel, rowEdge, PanelWidth / 2, y, RowWidth, 34);
+            Label(panel, title, 36, y, 300, 19);
             var toggle = Instantiate(toggleStyle, panel, false);
             toggle.name = title;
-            Place((RectTransform)toggle.transform, 399, y, 25, 25);
+            Place((RectTransform)toggle.transform, 398, y, 25, 25);
+            toggle.transform.localScale *= ControlScale;
             toggle.group = null;
             toggle.onValueChanged = new Toggle.ToggleEvent();
             toggle.onValueChanged.AddListener(value => { set(value); Apply(); });
@@ -239,12 +264,13 @@ namespace CozyMods
         private void Range(string name, float y, int min, int max, Func<int> get, Action<int> set,
             Func<bool> active, string suffix = "")
         {
-            var caption = Label(panel, name, 42, y, 150, 16);
-            var valueLabel = Label(panel, "", 370, y, 54, 16);
+            var caption = Label(panel, name, 36, y, 139, 17);
+            var valueLabel = Label(panel, "", 368, y, 42, 16);
             valueLabel.alignment = TextAlignmentOptions.MidlineRight;
             var slider = Instantiate(sliderStyle, panel, false);
             slider.name = name;
-            Place((RectTransform)slider.transform, 272, y, 190, 5);
+            Place((RectTransform)slider.transform, 272, y, 190 / ControlScale, 5);
+            slider.transform.localScale *= ControlScale;
             slider.onValueChanged = new Slider.SliderEvent();
             slider.wholeNumbers = true;
             slider.minValue = min;
