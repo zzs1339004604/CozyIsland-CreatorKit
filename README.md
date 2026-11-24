@@ -52,6 +52,7 @@ GPT 和 Claude 等 AI 助手可以帮你从现成的范例做起，修改代码�
 | 调整作物生长或角色步行 | [GreenThumb](Examples/GreenThumb/README.md) 改作物生长和耗水，[BriskWalk](Examples/BriskWalk/README.md) 演示修改步行数值。 |
 | 添加一个能制作和食用的物品 | [TrailTreat](Examples/TrailTreat/README.md) 加入远足饼、配方和可保存的任务进度。 |
 | 用自己的模型制作身体外观包 | [直立鼠](Examples/UprightMouse/README.md) 演示用模型和数据配置提供可在联机外观菜单选择的皮肤。 |
+| 给画面加滤镜 | [RetroFilters](Examples/RetroFilters/README.md) 演示全屏 Shader、实时调节面板和本机设置保存。 |
 | 带入自己的模型并保存物品和进度 | [ResearchCamp](Examples/ResearchCamp/README.md) 展示营地模型、配方和存档，含可编辑的 Unity 工程。 |
 
 进一步制作时，可以查阅 [工具与版本配套](Tools/README.md)、[编写游戏玩法](Docs/Native-Authoring.md)、[制作模型和物品](Docs/Game-and-Prefab-Guide.md)、[保存进度](Docs/Save-Data.md) 和 [多人游戏](Docs/Networking.md)。需要查原版名称和标识时，用 [物品表](Reference/GameItems.json) 和 [配方表](Reference/GameRecipes.json) 找线索，再以自己的游戏版本为准。

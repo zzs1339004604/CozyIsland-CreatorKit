@@ -52,6 +52,7 @@ Download the source with **Code → Download ZIP** on the repository page. You c
 | Adjust crops or how fast a character walks | [GreenThumb](Examples/GreenThumb/README.md) changes crop growth and water use. [BriskWalk](Examples/BriskWalk/README.md) shows how to adjust walking speed. |
 | Add something you can craft and eat | [TrailTreat](Examples/TrailTreat/README.md) adds a snack, a recipe, and a task that saves its progress. |
 | Make a body appearance pack with your own models | [Upright Mouse](Examples/UprightMouse/README_EN.md) shows how to configure a skin that players can select in the Appearance Framework menu. |
+| Add a screen filter | [RetroFilters](Examples/RetroFilters/README_EN.md) demonstrates a full-screen shader, live controls, and local preferences. |
 | Bring in your own model and save items and progress | [ResearchCamp](Examples/ResearchCamp/README.md) demonstrates a camp model, recipes, and saved progress with an editable Unity project. |
 
 The detailed guides are in Chinese. They cover [tools and game versions](Tools/README.md), [writing gameplay code](Docs/Native-Authoring.md), [making models and items](Docs/Game-and-Prefab-Guide.md), [saving progress](Docs/Save-Data.md), and [multiplayer](Docs/Networking.md). The [item list](Reference/GameItems.json) and [recipe list](Reference/GameRecipes.json) can help you look up names and IDs. Check them against your own game version.
