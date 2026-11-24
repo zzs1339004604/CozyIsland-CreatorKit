@@ -101,3 +101,5 @@ The detailed guides are in Chinese. They cover [tools and game versions](Tools/R
 - **Can I keep playing the same island after turning off a mod?** If the save uses items added by a mod, the game may remove missing items when you load it. Try changes on a test island and keep a backup of the original save. [Missing content and saves (Chinese)](Docs/Save-Data.md#缺失内容与失败是不同情况)
 
 This repository has yet to declare a public reuse license. For redistribution of the source, documentation, or example assets, follow the permissions formally provided by the rights holder.
+
+> Some of the documentation, examples, and tools in this repository were written with AI assistance. We welcome corrections, bug reports, and suggestions. [Share feedback](https://github.com/zzs1339004604/cozyisland-modding/issues)
