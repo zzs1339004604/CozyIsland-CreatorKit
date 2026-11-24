@@ -28,7 +28,7 @@ Study the existing mod examples and make a mod that changes the player character
 Install the mod in the game and test it. Once you’ve confirmed it works, upload it to the Steam Workshop with visibility set to Private.
 ```
 
-> **Authoring tip** You can refer to the existing examples and consider reusing the base game’s UI styles and materials for a consistent look.
+> **Authoring tip** You can refer to the existing examples and consider reusing the base game’s UI styles and materials for a consistent look. Use smooth shading by default on curved surfaces when making characters, skins, or clothing. [Model and normal settings](Examples/UprightMouse/README_EN.md#edit-the-model-or-make-your-own-character)
 
 You can also try your mod locally in the game before deciding whether to publish it to the Steam Workshop.
 
