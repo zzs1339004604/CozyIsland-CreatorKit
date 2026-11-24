@@ -10,6 +10,14 @@
 
 还要在游戏里核对调用时机、权限、保存或多人行为。记录所用游戏构建，游戏更新后用新版程序集重新编译和验证。`CozyIsland.Modding` 的底座接口承担通用生命周期和归属，直接调用的原生游戏实现可能变化。
 
+## 兼容 Windows 和 macOS
+
+使用两个平台都有的游戏 API 时，同一份托管 DLL 可以随同一个工坊作品分发，编译机可以用 Windows 或 macOS。编译后请核对 DLL 引用的程序集名称和 API 在两个目标 Player 的 `Managed` 中都可用。Steamworks 等依赖在不同平台的程序集名称可能不同，优先通过游戏已有的接口获取所需数据。 [外观模组框架](../Examples/AppearanceFramework/README.md)
+
+模型、Prefab 和 Shader 等 Unity AssetBundle 按目标平台分别构建。开放给 Windows 和 macOS 的作品应保留两份资源，例如 `Assets/mod-windows.bundle` 和 `Assets/mod-macos.bundle`，在代码中按 `Application.platform` 选择。使用与目标游戏匹配的 Unity 版本和渲染管线，检查 Mac 包的 Shader 支持 Metal。原工坊条目和 `mod.json` 的 UUID 可以继续使用。 [复古滤镜范例](../Examples/RetroFilters/README.md) · [Unity AssetBundle 构建说明](https://docs.unity3d.com/2022.3/Documentation/ScriptReference/BuildPipeline.BuildAssetBundles.html)
+
+在作品介绍中列出实际支持的平台。模组确认当前平台或渲染后端不受支持时，可以在 `OnLoad` 抛出 `System.PlatformNotSupportedException`，并在异常中写明原因，供支持此诊断的游戏版本显示「不支持的平台」。已支持平台上的文件缺失或损坏应按加载错误报告。发布前用对应的完整 Player 冷启动，核对模组能启用且实际功能可用。 [发布和更新](Workshop.md#发布和更新)
+
 ## 核对一个原生模板与配方
 
 在 `Examples/` 下复制一份[起始上衣换色范例](../Examples/ClothingColor/README.md)，按[清单的身份规则](Manifest.md#身份与副本)填写测试作品信息。将副本的 `Source/ClothingColor.cs` 内容换成下面的代码，把清单的 `code.type` 改为 `InspectWorkbench`。编译、安装并启用后进入测试岛。这个例子将现有模板和配方的信息写入游戏日志。
