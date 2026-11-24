@@ -46,15 +46,13 @@ Download the source with **Code → Download ZIP** on the repository page. You c
 
 | What you want to do | Where to start |
 | --- | --- |
-| Change the starting shirt’s color | [ClothingColor](Examples/ClothingColor/README_EN.md) walks you through your first edit and Workshop upload. |
-| Change an interaction prompt | [BuildingHints](Examples/BuildingHints/README.md) adds a building name next to the Remove prompt. |
-| See the game run your code | [MinimalCodeMod](Examples/MinimalCodeMod/README.md) writes its results to the game log. |
-| Adjust crops or how fast a character walks | [GreenThumb](Examples/GreenThumb/README.md) changes crop growth and water use. [BriskWalk](Examples/BriskWalk/README.md) shows how to adjust walking speed. |
-| Add something you can craft and eat | [TrailTreat](Examples/TrailTreat/README.md) adds a snack, a recipe, and a task that saves its progress. |
-| Make clothing that players can wear | [WitchRobe](Examples/WitchRobe/README_EN.md) adds a craftable robe and hat with editable models and built-in equipment sync. |
-| Make a body appearance pack with your own models | [Upright Mouse](Examples/UprightMouse/README_EN.md) shows how to configure a skin that players can select in the Appearance Framework menu. |
-| Add a screen filter | [RetroFilters](Examples/RetroFilters/README_EN.md) demonstrates a full-screen shader, live controls, and local preferences. |
-| Bring in your own model and save items and progress | [ResearchCamp](Examples/ResearchCamp/README.md) demonstrates a camp model, recipes, and saved progress with an editable Unity project. |
+| Make a body appearance with custom models | [Upright Mouse](Examples/UprightMouse/README_EN.md) is a data-only pack you can select in the Appearance Framework menu with F10. |
+| Add clothing players can craft | [Moss Witch Outfit](Examples/WitchRobe/README_EN.md) adds a craftable robe and hat that use the game’s equipment system. |
+| See each other’s custom looks in multiplayer | [Appearance Framework](Examples/AppearanceFramework/README_EN.md) lets players with the framework enabled choose and share looks in the same room. |
+| Change the look of the game | [Retro Filters](Examples/RetroFilters/README_EN.md) demonstrates full-screen effects and live controls. |
+| Add items, recipes, and tasks | [TrailTreat](Examples/TrailTreat/README.md) demonstrates food and saved task progress. [ResearchCamp](Examples/ResearchCamp/README.md) adds a custom model and multiplayer tasks. |
+
+Find more examples for interaction prompts, crops, and movement, along with supported platforms and ways to try each one. [Full example index (Chinese)](Examples/README.md)
 
 The detailed guides are in Chinese. They cover [tools and game versions](Tools/README.md), [writing gameplay code](Docs/Native-Authoring.md), [making models and items](Docs/Game-and-Prefab-Guide.md), [saving progress](Docs/Save-Data.md), and [multiplayer](Docs/Networking.md). The [item list](Reference/GameItems.json) and [recipe list](Reference/GameRecipes.json) can help you look up names and IDs. Check them against your own game version.
 

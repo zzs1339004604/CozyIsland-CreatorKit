@@ -46,15 +46,13 @@ GPT 和 Claude 等 AI 助手可以帮你从现成的范例做起，修改代码�
 
 | 想做什么 | 从这里开始 |
 | --- | --- |
-| 给默认上衣换色 | [ClothingColor](Examples/ClothingColor/README.md) 演示从改一处颜色到发布的完整流程。 |
-| 改一条游戏提示 | [BuildingHints](Examples/BuildingHints/README.md) 在拆除提示旁显示建筑名称。 |
-| 看看游戏怎样运行自己的代码 | [MinimalCodeMod](Examples/MinimalCodeMod/README.md) 在游戏日志里显示加载结果。 |
-| 调整作物生长或角色步行 | [GreenThumb](Examples/GreenThumb/README.md) 改作物生长和耗水，[BriskWalk](Examples/BriskWalk/README.md) 演示修改步行数值。 |
-| 添加一个能制作和食用的物品 | [TrailTreat](Examples/TrailTreat/README.md) 加入远足饼、配方和可保存的任务进度。 |
-| 制作可以穿戴的服装 | [WitchRobe](Examples/WitchRobe/README.md) 加入可制作的魔法袍和帽子，演示独立模型和原版装备同步。 |
-| 用自己的模型制作身体外观包 | [直立鼠](Examples/UprightMouse/README.md) 演示用模型和数据配置提供可在联机外观菜单选择的皮肤。 |
-| 给画面加滤镜 | [RetroFilters](Examples/RetroFilters/README.md) 演示全屏 Shader、实时调节面板和本机设置保存。 |
-| 带入自己的模型并保存物品和进度 | [ResearchCamp](Examples/ResearchCamp/README.md) 展示营地模型、配方和存档，含可编辑的 Unity 工程。 |
+| 用自制模型做身体外观 | [直立鼠](Examples/UprightMouse/README.md) 演示纯数据身体外观包，可在联机外观框架的 F10 菜单选用。 |
+| 加入能在工作台制作的服装 | [青苔魔法套装](Examples/WitchRobe/README.md) 添加魔法袍和帽子，沿用游戏的穿脱流程。 |
+| 和朋友互相看到自定义外观 | [联机外观](Examples/AppearanceFramework/README.md) 让启用同一框架的玩家在房间里选择和分享外观。 |
+| 改变画面风格 | [复古滤镜](Examples/RetroFilters/README.md) 演示全屏效果和实时调节。 |
+| 加入物品、配方和任务 | [远足饼](Examples/TrailTreat/README.md) 演示食物和任务进度。[研究营地](Examples/ResearchCamp/README.md) 演示自制模型和联机任务。 |
+
+交互提示、作物和移动速度等示例，以及各范例的平台和试用方法，见[完整范例索引](Examples/README.md)。
 
 进一步制作时，可以查阅 [工具与版本配套](Tools/README.md)、[编写游戏玩法](Docs/Native-Authoring.md)、[制作模型和物品](Docs/Game-and-Prefab-Guide.md)、[保存进度](Docs/Save-Data.md) 和 [多人游戏](Docs/Networking.md)。需要查原版名称和标识时，用 [物品表](Reference/GameItems.json) 和 [配方表](Reference/GameRecipes.json) 找线索，再以自己的游戏版本为准。
 
