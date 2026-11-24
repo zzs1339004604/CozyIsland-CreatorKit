@@ -10,17 +10,9 @@ Use this guide to play with mods or make your own for Cozy Island. This reposito
 
 ## Install mods
 
-### Subscribe on Steam Workshop
-
 1. From the main menu, choose **Mods → Open Steam Workshop**. Find a mod, click **Subscribe**, and wait for Steam to download it. [Steam Workshop](https://steamcommunity.com/app/2918500/workshop/)
 2. Return to **Mods** and turn on the mod you subscribed to. New mods start turned off. If the mod lists any required mods, subscribe to and turn on those too.
 3. Enter your island when the game is ready. If prompted to restart, quit the game completely and open it again.
-
-### Install from local files
-
-1. Extract the mod you got from its author. Choose **Mods → Create Mods → Open mod folder**. If it opens an existing mod’s folder, go up one level to `Mods`.
-2. Put the extracted mod folder inside `Mods`. For example, you should now have `Mods/MyMod/mod.json`. Keep `Code/` and any assets in their original locations within the mod folder.
-3. Return to **Mods**, turn on the mod, and follow the game’s instructions to enter your island or restart. [Local installs and account settings (Chinese)](Docs/Workshop.md) · [Mod file layout (Chinese)](Docs/Manifest.md#文件和发布边界)
 
 ## Make mods with AI (recommended)
 
