@@ -241,14 +241,21 @@ namespace CozyMods.Appearance
             if (avatar.Failed != next) avatar.Attempts = 0;
             try
             {
-                if (ready.Count == 0)
+                if (avatar.Placement != null)
                 {
-                    avatar.Placement?.Dispose();
+                    avatar.Placement.Dispose();
                     avatar.Placement = null;
+                    avatar.Applied = AppearanceSlots.Empty;
+                    if (ready.Count != 0)
+                    {
+                        // Give outgoing appearance scripts their LateUpdate before capturing renderer state again.
+                        applyAfter = 0;
+                        return;
+                    }
                 }
-                else
+                if (ready.Count != 0)
                 {
-                    avatar.Placement ??= new Placement(actor, skeleton);
+                    avatar.Placement = new Placement(actor, skeleton);
                     avatar.Placement.Apply(ready);
                     context.Log("Applied " + string.Join(", ", ready.Select(item => item.Entry.Name)) + " to " +
                         actor.GetComponent<CozyPlayer>().playerName + ".");
