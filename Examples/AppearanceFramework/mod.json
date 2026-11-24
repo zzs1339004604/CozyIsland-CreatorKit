@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "uuid": "a2f648bf-1066-45da-91ea-1c7ca2f2511e",
+  "displayName": "联机外观",
+  "name": "cozy.appearance.framework",
+  "author": "Cozy Island Mod Examples",
+  "version": "0.1.0",
+  "description": "在联机房间同步并按需收取可分享的身体皮肤和服装外观。F10 打开外观库。",
+  "requiresRestart": true,
+  "code": {
+    "assembly": "Code/CozyMods.AppearanceFramework.dll",
+    "type": "CozyMods.Appearance.AppearanceFrameworkMod"
+  }
+}
