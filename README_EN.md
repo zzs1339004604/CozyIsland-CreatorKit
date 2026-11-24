@@ -4,15 +4,9 @@
 
 Use this guide to play with mods or make your own for Cozy Island. This repository includes sample mods, source code, and tools for building and publishing your work. A mod can make a small change, such as showing a building’s name next to the Remove prompt when you equip the Small Wooden Hammer.
 
-[Install mods](#install-mods) · [Make mods with AI](#make-mods-with-ai-recommended) · [Build your first mod](#build-your-first-mod) · [Publish to Steam Workshop](#publish-to-steam-workshop) · [More examples](#more-examples) · [Common questions](#common-questions) · [Disclaimer](#disclaimer)
+[Make mods with AI](#make-mods-with-ai-recommended) · [Build your first mod](#build-your-first-mod) · [Publish to Steam Workshop](#publish-to-steam-workshop) · [More examples](#more-examples) · [Common questions](#common-questions) · [Disclaimer](#disclaimer)
 
 > **Before you start**  Install a version of Cozy Island with a **Mods** menu that supports this repository’s manifest. The import tool checks compatibility before it copies the files you need to build a mod. Follow the instructions below for your operating system. [Steam store](https://store.steampowered.com/app/2918500/) · [Game build record](PlayerIdentity.json)
-
-## Install mods
-
-1. From the main menu, choose **Mods → Open Steam Workshop**. Find a mod, click **Subscribe**, and wait for Steam to download it. [Steam Workshop](https://steamcommunity.com/app/2918500/workshop/)
-2. Return to **Mods** and turn on the mod you subscribed to. New mods start turned off. If the mod lists any required mods, subscribe to and turn on those too.
-3. Enter your island when the game is ready. If prompted to restart, quit the game completely and open it again.
 
 ## Make mods with AI (recommended)
 
