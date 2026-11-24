@@ -6,7 +6,9 @@ The Appearance Mod Framework supports character skins and outfits from mods such
 
 ## Build and try it
 
-1. Use a game version that supports [UUID mod manifests](../../Docs/Manifest.md) and install the .NET SDK. Run the command from this directory, replacing the path with `CozyIsland_Data/Managed` in your game installation.
+The same framework DLL supports Windows and macOS. Appearance packs used with the framework still need asset bundles built for each player's platform.
+
+1. Use a game version that supports [UUID mod manifests](../../Docs/Manifest.md) and install the .NET SDK. Run the command from this directory, replacing the path with `CozyIsland_Data/Managed` on Windows or `CozyIsland.app/Contents/Resources/Data/Managed` on macOS.
 
    ```powershell
    dotnet build Source/AppearanceFramework.csproj -c Release "-p:GameManagedPath=D:/SteamLibrary/steamapps/common/CozyIsland/CozyIsland_Data/Managed"

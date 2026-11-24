@@ -5,7 +5,6 @@ using System.Linq;
 using CozyIsland.Modding;
 using Mirror;
 using Newtonsoft.Json;
-using Steamworks;
 using UnityEngine;
 
 namespace CozyMods.Appearance
@@ -42,7 +41,8 @@ namespace CozyMods.Appearance
         public void OnLoad(CozyModContext modContext)
         {
             context = modContext;
-            var profile = SteamClient.IsValid ? SteamClient.SteamId.ToString() : "local";
+            var steam = SteamAppMgr.TryGetInstance();
+            var profile = steam != null && steam.SteamInited ? steam.SteamUserID : "local";
             var directory = Path.Combine(Application.persistentDataPath, "CozyAppearance", profile);
             Directory.CreateDirectory(directory);
             preferencesPath = Path.Combine(directory, "preferences.json");

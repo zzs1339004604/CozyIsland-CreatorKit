@@ -6,7 +6,9 @@
 
 ## 编译和试用
 
-1. 准备支持 [UUID 模组清单](../../Docs/Manifest.md)的游戏和 .NET SDK。在本目录运行下面的命令。将路径替换为游戏安装目录中的 `CozyIsland_Data/Managed`。
+同一份框架 DLL 支持 Windows 和 macOS。与框架搭配的外观包仍需为玩家使用的平台构建资源包。
+
+1. 准备支持 [UUID 模组清单](../../Docs/Manifest.md)的游戏和 .NET SDK。在本目录运行下面的命令。将路径替换为游戏安装目录中的 `CozyIsland_Data/Managed`（Windows）或 `CozyIsland.app/Contents/Resources/Data/Managed`（macOS）。
 
    ```powershell
    dotnet build Source/AppearanceFramework.csproj -c Release "-p:GameManagedPath=D:/SteamLibrary/steamapps/common/CozyIsland/CozyIsland_Data/Managed"
