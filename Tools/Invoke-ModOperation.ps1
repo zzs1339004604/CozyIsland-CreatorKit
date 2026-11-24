@@ -1,4 +1,5 @@
 # Internal shared implementation for Validate-Mod.ps1 and Publish-Mod.ps1.
+#Requires -Version 7.0
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)][string]$GameExe,
@@ -10,12 +11,54 @@ param(
     [switch]$Rosetta
 )
 $ErrorActionPreference = 'Stop'
-. (Join-Path $PSScriptRoot 'PlayerLayout.ps1')
-$player = Get-CozyPlayer $GameExe
-if (($player.platform -eq 'macOS' -and -not $IsMacOS) -or
-    ($player.platform -eq 'Windows' -and [Environment]::OSVersion.Platform -ne [PlatformID]::Win32NT)) {
-    throw "Run the supplied $($player.platform) Player on its own platform."
+
+function Get-CozyPlayer([string]$GamePath) {
+    $item = Get-Item -LiteralPath $GamePath
+    if ($item.PSIsContainer -and $item.Extension -eq '.app') {
+        if (-not $IsMacOS) { throw 'A macOS .app must be used on macOS.' }
+        $platform = 'macOS'
+        $contents = Join-Path $item.FullName 'Contents'
+        $plist = Join-Path $contents 'Info.plist'
+        $exeName = & /usr/bin/plutil -extract CFBundleExecutable raw -o - $plist
+        if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($exeName) -or $exeName -ne [IO.Path]::GetFileName($exeName)) {
+            throw 'Could not determine the executable from the macOS Player Info.plist.'
+        }
+        $exe = Join-Path $contents "MacOS/$exeName"
+        $managed = Join-Path $contents 'Resources/Data/Managed'
+        $workingDirectory = $item.Parent.FullName
+    } else {
+        if (-not $IsWindows) { throw 'Run the Windows Player on Windows.' }
+        $platform = 'Windows'
+        if ($item.PSIsContainer) {
+            $candidates = @(Get-ChildItem -LiteralPath $item.FullName -File -Filter '*.exe' | Where-Object {
+                Test-Path -LiteralPath (Join-Path $item.FullName "$($_.BaseName)_Data/Managed/Assembly-CSharp.dll") -PathType Leaf
+            })
+            if ($candidates.Count -ne 1) { throw 'Choose a Windows Player folder with one executable and matching *_Data/Managed directory.' }
+            $item = $candidates[0]
+        } elseif ($item.Extension -ne '.exe') {
+            throw 'Specify a complete Windows Player folder or executable, or a macOS .app.'
+        }
+        $exe = $item.FullName
+        $workingDirectory = $item.DirectoryName
+        $managed = Join-Path $workingDirectory "$($item.BaseName)_Data/Managed"
+        if (-not (Test-Path -LiteralPath (Join-Path $workingDirectory 'UnityPlayer.dll') -PathType Leaf)) {
+            throw 'The Windows Player is incomplete: missing UnityPlayer.dll.'
+        }
+    }
+    if (-not (Test-Path -LiteralPath $exe -PathType Leaf)) { throw 'The Player executable is missing.' }
+    foreach ($name in @('Assembly-CSharp.dll', 'Mirror.dll', '0Harmony.dll', 'UnityEngine.CoreModule.dll', 'mscorlib.dll', 'netstandard.dll')) {
+        if (-not (Test-Path -LiteralPath (Join-Path $managed $name) -PathType Leaf)) {
+            throw "The complete Workshop-enabled Mono Player is required. Missing assembly: $name."
+        }
+    }
+    [pscustomobject]@{
+        platform = $platform
+        executable = $exe
+        workingDirectory = $workingDirectory
+    }
 }
+
+$player = Get-CozyPlayer $GameExe
 if ($Rosetta -and $player.platform -ne 'macOS') { throw '-Rosetta applies only to a macOS Player.' }
 $modRoot = (Resolve-Path -LiteralPath $ModDirectory).ProviderPath
 if (-not (Test-Path -LiteralPath (Join-Path $modRoot 'mod.json') -PathType Leaf)) { throw 'ModDirectory must contain mod.json.' }
@@ -28,23 +71,17 @@ if ([string]::IsNullOrWhiteSpace($ResultPath)) {
     $resultName = $Operation + '-' + [DateTime]::UtcNow.ToString('yyyyMMddTHHmmss') + '-' + [Guid]::NewGuid().ToString('N').Substring(0, 8) + '.json'
     $ResultPath = Join-Path (Split-Path -Parent $PSScriptRoot) "Results/$resultName"
 }
-$resultFile = Resolve-CozyFilePath $ResultPath
+$resultFile = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($ResultPath)
 if (Test-Path -LiteralPath $resultFile) { throw 'ResultPath already exists. Choose a new result file so an old result cannot be mistaken for this run.' }
 [IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName($resultFile)) | Out-Null
 $logFile = [IO.Path]::ChangeExtension($resultFile, '.log')
 
-function ConvertTo-WindowsArgument([string]$Value) {
-    # Quote using CommandLineToArgvW/CRT escaping on Windows PowerShell 5.1.
-    $escaped = [Regex]::Replace($Value, '(\\*)"', '$1$1\"')
-    $escaped = [Regex]::Replace($escaped, '(\\+)$', '$1$1')
-    '"' + $escaped + '"'
-}
 $gameArguments = @('--disable-mods', ('--mod-' + $Operation), $modRoot, '--mod-result', $resultFile, '--mod-exit', '-logFile', $logFile)
 if ($Operation -eq 'upload' -and $PSBoundParameters.ContainsKey('Visibility')) {
     $gameArguments += @('--mod-visibility', $Visibility)
 }
 
-$start = New-Object Diagnostics.ProcessStartInfo
+$start = [Diagnostics.ProcessStartInfo]::new()
 $start.FileName = $player.executable
 $start.WorkingDirectory = $player.workingDirectory
 $start.UseShellExecute = $false
@@ -59,26 +96,16 @@ if ($player.platform -eq 'macOS') {
     $architectures = if ($Rosetta) { @('-x86_64') } else { @('-arm64', '-x86_64') }
     $gameArguments = @($architectures) + @($player.executable) + $gameArguments
 }
-if ($null -ne $start.PSObject.Properties['ArgumentList']) {
-    foreach ($argument in $gameArguments) { $start.ArgumentList.Add($argument) }
-} else {
-    $start.Arguments = ($gameArguments | ForEach-Object { ConvertTo-WindowsArgument $_ }) -join ' '
-}
+foreach ($argument in $gameArguments) { $start.ArgumentList.Add($argument) }
 
 Write-Host "Starting $Operation with $($player.executable); result: $resultFile"
-$process = New-Object Diagnostics.Process
+$process = [Diagnostics.Process]::new()
 $process.StartInfo = $start
-$deadline = [DateTime]::UtcNow.AddSeconds($TimeoutSeconds)
 try {
     if (-not $process.Start()) { throw 'Could not start the supplied Player.' }
-    while (-not $process.HasExited) {
-        if ([DateTime]::UtcNow -ge $deadline) {
-            throw "Timed out waiting for game process $($process.Id). The process remains running; inspect $logFile and $resultFile before retrying."
-        }
-        Start-Sleep -Milliseconds 250
-        $process.Refresh()
+    if (-not $process.WaitForExit($TimeoutSeconds * 1000)) {
+        throw "Timed out waiting for game process $($process.Id). The process remains running; inspect $logFile and $resultFile before retrying."
     }
-    $process.WaitForExit()
     if (-not (Test-Path -LiteralPath $resultFile)) {
         throw "The supplied Player exited ($($process.ExitCode)) without a result. Check $logFile, the Steam client/login and the Player architecture. This command requires a Workshop-enabled game build."
     }

@@ -59,7 +59,7 @@
 | `MonoMod.Utils.dll` | 25.0.11.0 |
 | `Mono.Cecil.dll` | 0.11.6.0 |
 
-编译时使用实际安装的配套游戏提供的引用。依赖版本随游戏构建而定，更新游戏后重新导入引用并编译。游戏在运行时加载 `MonoMod.Backports.dll`，范例项目会将它从编译引用中排除，以避免与 Unity Mono 自带类型重复。 [导入引用](../Tools/README.md#核对配套-build-并导入引用)
+编译时使用配套游戏安装目录里的程序集。依赖版本随游戏构建而定，更新游戏后用新版程序集重新编译。游戏在运行时加载 `MonoMod.Backports.dll`，范例项目会将它从编译引用中排除，以避免与 Unity Mono 自带类型重复。 [编译方式](../Tools/README.md#直接编译)
 
 使用 `context.Harmony.Patch(...)` 或仅对自己的补丁类型/程序集 `PatchAll(...)`。正常上下文清理只撤销该 owner；作者不得调用全局 `UnpatchAll()`。需要主动撤销自己的补丁时使用 `UnpatchSelf()`，并负责恢复额外静态状态和缓存。撤销补丁不会自动复原之前已改写的字段值。
 

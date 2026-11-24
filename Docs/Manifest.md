@@ -53,7 +53,7 @@
 | 工坊数字 ID | Steam 创建作品时返回 | 用于下载和更新某个工坊发布项 |
 | 本地目录名 | `garden` | 本机工程或安装位置，与永久身份分别记录 |
 
-创建新作品时，生成一次随机 UUID 并写入 `mod.json`。C# 项目还需要独立的程序集名，用 `code.type` 指定入口类名。Windows 可以在系统自带的 PowerShell 运行 `[guid]::NewGuid()`，macOS 可在终端运行 `uuidgen`。同一作品的本地版、工坊版和更新版本共用该 UUID。 [示例中的操作](../Examples/ClothingColor/README.md#发布到-steam-创意工坊) · [可选的工程生成工具](../Tools/README.md#新建自己的作品)
+创建新作品时，生成一次随机 UUID 并写入 `mod.json`。C# 项目还需要独立的程序集名，用 `code.type` 指定入口类名。Windows 可以在系统自带的 PowerShell 运行 `[guid]::NewGuid()`，macOS 可在终端运行 `uuidgen`。同一作品的本地版、工坊版和更新版本共用该 UUID。 [示例中的操作](../Examples/ClothingColor/README.md#发布到-steam-创意工坊)
 
 复制工程做一个独立作品时，生成新的 UUID 并更新作品信息。复制 C# 项目时，同时更新程序集名和入口，检查源码里的身份引用。复制运行包作为同一作品的测试副本时，保留原 UUID。
 
@@ -85,6 +85,6 @@ MyMod/
 
 清单最大 64 KiB；运行包最大 256 MiB、4096 个文件。路径必须位于作品根部，不允许路径逃逸、符号链接或目录联接。运行文件允许 `.json`、`.png`、`.jpg`、`.jpeg`、`.dll`、`.bundle`、`.assetbundle`、`.wav`、`.ogg`、`.mp3`、`.csv`、`.txt`、`.bytes`、`.xml`、`.md`。允许上传某扩展名不代表加载器会自动解析它。
 
-上传工具排除 `Source`、`References`、`Tools`、`bin`、`obj` 及版本控制/IDE 目录。游戏、Unity、Mirror、Harmony、MonoMod、Cecil、系统和其他共享运行时程序集不得混入运行包；游戏的运行包校验按 DLL 元数据中的程序集身份检查共享库，改文件名不会改变程序集身份。作者从自己安装的游戏导入引用，仅供本机编译。
+上传工具排除 `Source`、`References`、`Tools`、`bin`、`obj` 及版本控制/IDE 目录。游戏、Unity、Mirror、Harmony、MonoMod、Cecil、系统和其他共享运行时程序集不得混入运行包；游戏的运行包校验按 DLL 元数据中的程序集身份检查共享库，改文件名不会改变程序集身份。自己安装的游戏程序集仅供本机编译。
 
-在本地 `Mods` 的直接子目录放入 `mod.json`、`Code/` 和所需运行资源。先在游戏里启用并试用，再选择这份安装副本发布。需要单独查看机器可读的包校验回执时，可以运行 `Validate-Mod.ps1`。 [游戏内发布](Workshop.md#发布和更新) · [命令行校验](../Tools/README.md#编译并验证运行包)
+在本地 `Mods` 的直接子目录放入 `mod.json`、`Code/` 和所需运行资源。先在游戏里启用并试用，再选择这份安装副本发布。需要单独查看机器可读的包校验回执时，可以运行 `Validate-Mod.ps1`。 [游戏内发布](Workshop.md#发布和更新) · [命令行校验](../Tools/README.md#命令行校验与发布)

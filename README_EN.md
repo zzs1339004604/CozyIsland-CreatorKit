@@ -65,7 +65,7 @@ The detailed guides are in Chinese. They cover [tools and game versions](Tools/R
 
 ## Common questions
 
-- **What if I don’t see Mods on the main menu?** Check which copy of the game you started. If that build doesn’t support mods yet, you’ll need a compatible game build to continue. [Game build check (Chinese)](Tools/README.md#核对配套-build-并导入引用)
+- **What if I don’t see Mods on the main menu?** Check which copy of the game you started. The examples need a game version with a **Mods** menu and support for UUID manifests. [Game requirements and build instructions (Chinese)](Tools/README.md#直接编译)
 - **What if a mod is missing from the list or has no effect?** Check that Steam finished downloading it or that `mod.json` is at the top level of your local mod folder. Return to the main menu and check for missing requirements, version errors, or a restart prompt. If you still need to troubleshoot, check the game log. [Restarts and load order (Chinese)](Docs/Reloading.md#应用时机)
 - **Where is the game log?** On Windows it’s usually at `%USERPROFILE%\AppData\LocalLow\LazyFish Studio\CozyIsland\Player.log`. On macOS it’s usually at `~/Library/Logs/LazyFish Studio/CozyIsland/Player.log`.
 - **Can I keep playing the same island after turning off a mod?** If the save uses items added by a mod, the game may remove missing items when you load it. Try changes on a test island and keep a backup of the original save. [Missing content and saves (Chinese)](Docs/Save-Data.md#缺失内容与失败是不同情况)
