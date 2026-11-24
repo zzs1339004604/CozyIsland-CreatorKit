@@ -16,7 +16,16 @@ Use this guide to play with mods or make your own for Cozy Island. This reposito
 
 ## Make mods with AI (recommended)
 
-An AI coding assistant such as Codex can help you start from an existing example, edit the code, build it, or troubleshoot loading errors from the game log. Give it the paths to this repository and your compatible game installation, then describe what you want to see in the game. [Task template for AI assistants (Chinese)](AI-AUTHORING.md)
+An AI coding assistant such as Codex can help you edit and build an existing example or troubleshoot loading errors from the game log.
+
+1. Install Git, then open a terminal in the folder where you want to keep the project and run the following command. [Download Git](https://git-scm.com/downloads/)
+
+   ```sh
+   git clone https://github.com/zzs1339004604/cozyisland-modding.git
+   ```
+
+2. In your AI coding assistant, open the `cozyisland-modding` folder you just cloned as a workspace. Choose the folder that contains `README.md` and `Examples/`.
+3. Tell the assistant where your compatible copy of the game is installed and what you’d like to see in-game. [Task template for AI assistants (Chinese)](AI-AUTHORING.md)
 
 Here’s an example of a first request.
 

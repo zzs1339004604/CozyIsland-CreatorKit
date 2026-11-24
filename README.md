@@ -16,7 +16,16 @@
 
 ## AI 辅助制作 Mod（推荐）
 
-如果你在使用 Codex 等 AI 编码助手，可以从现成的范例做起，让它帮你修改代码、编译，或根据日志排查加载问题。把仓库和配套游戏的安装位置告诉助手，再描述你想看到的效果。 [给 AI 的任务模板](AI-AUTHORING.md)
+Codex 等 AI 编码助手可以帮你从现成的范例做起，修改代码、编译，或根据日志排查加载问题。
+
+1. 安装 Git 后，在想存放项目的目录打开终端，运行下面的命令。 [下载 Git](https://git-scm.com/downloads/)
+
+   ```sh
+   git clone https://github.com/zzs1339004604/cozyisland-modding.git
+   ```
+
+2. 在 AI 编码助手中，把刚克隆的 `cozyisland-modding` 文件夹作为工作区打开。选包含 `README.md` 和 `Examples/` 的那一层目录。
+3. 告诉助手配套游戏安装在哪里，以及你想在游戏里看到什么效果。 [给 AI 的任务模板](AI-AUTHORING.md)
 
 例如，可以这样交代第一次修改。
 
