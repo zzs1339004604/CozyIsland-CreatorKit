@@ -3,7 +3,7 @@
   "displayName": "轻快散步",
   "name": "examples.brisk-walk",
   "uuid": "92785af3-8794-48d7-8589-73e8410ed4e3",
-  "author": "Cozy Island Mod Examples",
+  "author": "LazyFish Studio",
   "version": "2.0.0",
   "description": "功能模组：房主世界中玩家步行速度提高25%，奔跑设置提高15%。返回主菜单关闭后恢复原始设置。",
   "preview": "preview.png",

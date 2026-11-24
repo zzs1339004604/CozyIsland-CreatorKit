@@ -3,7 +3,7 @@
   "displayName": "起始上衣换色",
   "name": "cozy.example.clothing-color",
   "uuid": "012583ea-39c7-4b36-a3a1-fef1b4925f8f",
-  "author": "Cozy Island Mod Examples",
+  "author": "LazyFish Studio",
   "version": "1.0.0",
   "description": "将本机角色的起始上衣和袖子从绿色改成玫红色。",
   "code": {
