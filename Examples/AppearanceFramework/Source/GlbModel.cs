@@ -109,6 +109,7 @@ namespace CozyMods.Appearance
                 var source = data.Materials[i];
                 var material = Own(new Material(shader));
                 material.name = source.Name;
+                material.color = source.BaseColor;
                 if (source.Image >= 0)
                 {
                     int index = source.Image;

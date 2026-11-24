@@ -57,6 +57,7 @@ namespace CozyMods.Appearance
         {
             public string Name;
             public int Image;
+            public Color BaseColor;
         }
 
         internal sealed class Image
@@ -374,12 +375,14 @@ namespace CozyMods.Appearance
             {
                 var material = Object(token, "material");
                 var pbr = material["pbrMetallicRoughness"] as JObject;
+                var factor = Values(pbr?["baseColorFactor"], 4, new[] { 1f, 1f, 1f, 1f }, 0, 1);
                 var info = pbr?["baseColorTexture"] as JObject;
                 Require(Optional(info?["texCoord"], 0, "texture coordinates") == 0, "base color needs TEXCOORD_0");
                 return new Surface
                 {
                     Name = Name(material["name"], "Material " + i),
-                    Image = info == null ? -1 : textures[Index(info["index"], textures.Length, "base color texture")]
+                    Image = info == null ? -1 : textures[Index(info["index"], textures.Length, "base color texture")],
+                    BaseColor = new Color(factor[0], factor[1], factor[2], factor[3])
                 };
             }).ToArray();
         }

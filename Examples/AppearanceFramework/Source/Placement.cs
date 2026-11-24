@@ -74,7 +74,7 @@ namespace CozyMods.Appearance
         private void ApplyParts(LoadedAppearance appearance)
         {
             var entry = appearance.Entry;
-            var palette = ReadMaterials(entry.Materials);
+            var palette = ReadMaterials(entry.Materials, appearance.UsesGlb);
             if (entry.Slot == "Body")
             {
                 foreach (var anchor in entry.HideBody ?? Array.Empty<string>())
@@ -102,7 +102,7 @@ namespace CozyMods.Appearance
                 var kind = ToEquipmentPart(part.Anchor);
                 if (part.NativeEquipment is long prefabId)
                 {
-                    AttachUsingNativeEquipment(appearance, part, kind, prefabId);
+                    AttachUsingNativeEquipment(appearance, part, kind, prefabId, palette);
                     continue;
                 }
 
@@ -127,7 +127,7 @@ namespace CozyMods.Appearance
             _ => throw new InvalidDataException("Unknown body appearance anchor.")
         };
 
-        private Dictionary<string, Material> ReadMaterials(Dictionary<string, AppearanceMaterial> definitions)
+        private Dictionary<string, Material> ReadMaterials(Dictionary<string, AppearanceMaterial> definitions, bool usesGlb)
         {
             var palette = new Dictionary<string, Material>(StringComparer.Ordinal);
             if (definitions == null) return palette;
@@ -137,7 +137,7 @@ namespace CozyMods.Appearance
                     .GetComponentsInChildren<Renderer>(true).SelectMany(renderer => renderer.sharedMaterials)
                     .Where(material => material != null).ToLookup(material => material.name);
                 foreach (var pair in group)
-                    palette.Add(pair.Key, TintMaterial(originals[pair.Value.Name].First(), pair.Value.Color));
+                    palette.Add(pair.Key, TintMaterial(originals[pair.Value.Name].First(), ReadTint(pair.Value.Color), usesGlb: usesGlb));
             }
             return palette;
         }
@@ -154,7 +154,7 @@ namespace CozyMods.Appearance
         }
 
         private void AttachUsingNativeEquipment(LoadedAppearance appearance, AppearancePart part, PCDEquipmentPart kind,
-            long prefabId)
+            long prefabId, Dictionary<string, Material> palette)
         {
             var stock = ES3ReferenceMgrBase.Current.GetPrefab(prefabId, false)
                 .GetComponent<PCDEquipmentProp>().equipmentPrefab.GetComponent<PCDEquipment>();
@@ -165,23 +165,29 @@ namespace CozyMods.Appearance
 
             var stockRenderer = stock.GetComponentInChildren<MeshRenderer>(true);
             var stockMaterials = stockRenderer.sharedMaterials;
-            var color = TintMaterial(stockMaterials[0], part.Color ?? appearance.Entry.Color);
+            Func<Material, int, Material> material;
+            if (appearance.UsesGlb)
+                material = SlotMaterials(appearance, part, stockMaterials, palette);
+            else
+            {
+                var color = TintMaterial(stockMaterials[0], ReadTint(part.Color ?? appearance.Entry.Color));
+                material = (_, i) => i == 0 ? color : stockMaterials[Math.Min(i, stockMaterials.Length - 1)];
+            }
             foreach (var handle in Handles(kind))
             {
                 var anchor = CreateWardrobeAnchor(handle, part.HideOriginal || stock.needHideOri);
-                var copy = Attach(appearance, part.Path, anchor, (_, i) => i == 0 ? color :
-                    stockMaterials[Math.Min(i, stockMaterials.Length - 1)]);
+                var copy = Attach(appearance, part.Path, anchor, material);
                 ApplyTransform(part, copy, stock.transform.InverseTransformPoint(stockRenderer.transform.position),
                     Quaternion.Inverse(stock.transform.rotation) * stockRenderer.transform.rotation,
                     RelativeScale(stockRenderer.transform, stock.transform));
             }
         }
 
-        private void AttachPart(LoadedAppearance appearance, AppearancePart part, Transform target, Material[] stockMaterials,
-            Dictionary<string, Material> palette)
+        private Func<Material, int, Material> SlotMaterials(LoadedAppearance appearance, AppearancePart part,
+            Material[] stockMaterials, Dictionary<string, Material> palette)
         {
-            var variants = new Dictionary<(Material, Texture2D), Material>();
-            Material MaterialForSlot(Material source, int index)
+            var variants = new Dictionary<(Material Stock, Texture2D Texture, Color? Tint), Material>();
+            return (source, index) =>
             {
                 if (source != null)
                 {
@@ -202,12 +208,20 @@ namespace CozyMods.Appearance
                 }
                 if (texture != null && (texture.width > 2048 || texture.height > 2048))
                     throw new InvalidDataException("Appearance texture exceeds 2048 pixels per side.");
-                var key = (regular, texture);
+                var tint = ReadTint(part.Color ?? appearance.Entry.Color);
+                if (tint == null && appearance.UsesGlb && source != null) tint = source.color;
+                var key = (regular, texture, tint);
                 if (!variants.TryGetValue(key, out var material))
-                    variants[key] = material = TintMaterial(regular, part.Color ?? appearance.Entry.Color, texture);
+                    variants[key] = material = TintMaterial(regular, tint, texture, appearance.UsesGlb);
                 return material;
-            }
-            var copy = Attach(appearance, part.Path, target, MaterialForSlot, part.FollowThrough == null);
+            };
+        }
+
+        private void AttachPart(LoadedAppearance appearance, AppearancePart part, Transform target, Material[] stockMaterials,
+            Dictionary<string, Material> palette)
+        {
+            var material = SlotMaterials(appearance, part, stockMaterials, palette);
+            var copy = Attach(appearance, part.Path, target, material, part.FollowThrough == null);
             ApplyTransform(part, copy, copy.localPosition, copy.localRotation, copy.localScale);
             if (part.FollowAnchor != null)
                 copy.SetParent(BodyAnchor(part.FollowAnchor), worldPositionStays: true);
@@ -227,16 +241,16 @@ namespace CozyMods.Appearance
             copy.localScale = VisualImport.Vector(part.Scale, scale);
         }
 
-        private Material TintMaterial(Material material, string color, Texture2D texture = null)
+        private Material TintMaterial(Material material, Color? color, Texture2D texture = null, bool usesGlb = false)
         {
-            if (string.IsNullOrEmpty(color) && texture == null) return material;
+            if (color == null && texture == null) return material;
             var owned = new Material(material);
             materials.Add(owned);
-            if (!string.IsNullOrEmpty(color))
+            if (color is Color tint)
             {
-                var tint = ParseColor(color);
                 if (owned.HasProperty("_AlbedoColor")) owned.SetColor("_AlbedoColor", tint);
                 if (owned.HasProperty("_Color")) owned.SetColor("_Color", tint);
+                if (usesGlb && owned.HasProperty("_BaseColor")) owned.SetColor("_BaseColor", tint);
             }
             if (texture != null)
             {
@@ -245,6 +259,8 @@ namespace CozyMods.Appearance
             }
             return owned;
         }
+
+        private static Color? ReadTint(string value) => string.IsNullOrEmpty(value) ? (Color?)null : ParseColor(value);
 
         private static Color ParseColor(string value)
         {
@@ -270,7 +286,7 @@ namespace CozyMods.Appearance
             var source = string.IsNullOrEmpty(path) ? root : root.Find(path);
             if (source == null || target == null)
                 throw new InvalidDataException("Appearance part or its target anchor is missing.");
-            var combined = import.Clone(source, target, material, activate);
+            var combined = import.Clone(source, target, material, activate, appearance.UsesGlb);
             roots.Add(combined.gameObject);
             return combined;
         }

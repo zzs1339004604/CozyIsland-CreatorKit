@@ -299,7 +299,7 @@ namespace CozyMods.Appearance
                 return null;
             }
 
-            var loaded = new LoadedAppearance(entry, root.gameObject);
+            var loaded = new LoadedAppearance(entry, root.gameObject, usesGlb: true);
             pack.Loaded[entry.Id] = loaded;
             return loaded;
         }

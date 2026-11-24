@@ -56,11 +56,13 @@ namespace CozyMods.Appearance
     {
         public readonly AppearanceEntry Entry;
         public readonly GameObject Prefab;
+        public readonly bool UsesGlb;
 
-        public LoadedAppearance(AppearanceEntry entry, GameObject prefab)
+        public LoadedAppearance(AppearanceEntry entry, GameObject prefab, bool usesGlb = false)
         {
             Entry = entry;
             Prefab = prefab;
+            UsesGlb = usesGlb;
         }
     }
 

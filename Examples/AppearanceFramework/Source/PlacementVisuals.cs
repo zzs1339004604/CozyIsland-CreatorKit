@@ -38,7 +38,8 @@ namespace CozyMods.Appearance
     {
         private int nodes, vertices;
 
-        public Transform Clone(Transform source, Transform parent, Func<Material, int, Material> material, bool activate = true)
+        public Transform Clone(Transform source, Transform parent, Func<Material, int, Material> material, bool activate,
+            bool preserveMorphWeights)
         {
             var hierarchy = new Dictionary<Transform, Transform>();
             int startingVertices = vertices;
@@ -72,6 +73,9 @@ namespace CozyMods.Appearance
                         CheckVector(skinned.localBounds.center, 32);
                         CheckVector(skinned.localBounds.extents, 32);
                         output.localBounds = skinned.localBounds;
+                        if (preserveMorphWeights)
+                            for (int i = 0; i < mesh.blendShapeCount; i++)
+                                output.SetBlendShapeWeight(i, skinned.GetBlendShapeWeight(i));
                         SetRenderer(output, skinned, mesh, material);
                     }
                 }
