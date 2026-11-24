@@ -19,6 +19,9 @@
 ## 修改模型或做一套自己的角色
 
 1. 在 Unity Hub 新建 **Unity 2022.3.62f3c1** 的 Universal 3D（URP）项目，安装 Windows Build Support。预览材质使用 URP 14.0.12。将 [Source/UnityAssets](Source/UnityAssets) **里面的内容**复制到新项目的 `Assets` 目录，包含随附的 `.meta` 文件。
-2. 打开 `Assets/UprightMouse/Preview.unity` 看组合效果。在 `Assets/UprightMouse/UprightMouse.prefab` 修改并保存部件位置。需要修改网格时，可用 [Blender 原稿](Source/Models/UprightMouse.blend)导出新的 FBX。尾巴的可编辑骨骼在 [UprightMouseTail.fbx](Source/UnityAssets/UprightMouse/Models/UprightMouseTail.fbx) 中。
-3. 在 Unity 的 Project 窗口选中要打包的预制件，使用 **Cozy Island → Build Selected Prefab Bundle (Windows)**。如果在改直立鼠，将打包结果命名为 `uprightmouse.bundle`，替换测试副本中 `Assets` 下的同名文件，然后重启游戏检查。
-4. 如果要做一套全新的外观，先复制这个范例。在 `mod.json` 给新作品生成 UUID，并改作品名称。在 `appearance.json` 给外观包和条目改成自己的 `id` 和名称。把 `appearance.json` 中的 `bundle`、`prefab` 和 `parts` 改成新模型对应的资源包、预制件路径和部件。可以先做一颗新头。在预制件根节点下放一个名为 `Head` 的模型子节点，在配置里只留一个部件 `{"path":"Head","anchor":"Face","hideOriginal":true}`。先移除原来对应鼠身的 `materials`、`bodyMaterial` 和 `hideBody`，确认新头能显示，再加其他部位和配色。 [外观数据说明](../AppearanceFramework/README.md#做自己的外观包)
+2. 打开 `Assets/UprightMouse/Preview.unity` 看组合效果。在 `Assets/UprightMouse/UprightMouse.prefab` 修改并保存部件位置。需要修改网格时，打开 [Blender 原稿](Source/Models/UprightMouse.blend)。尾巴的可编辑骨骼在 [UprightMouseTail.fbx](Source/UnityAssets/UprightMouse/Models/UprightMouseTail.fbx) 中。
+3. 在 Blender 中，圆弧曲面默认使用 **Shade Smooth（平滑着色）**，让光照过渡与原版更一致。只在造型需要的折角和接缝用 **Mark Sharp（标记锐边）** 保留硬边。随 FBX 导出网格法线。在 Unity 中选中 FBX，在 **Model** 标签将 **Normals** 设为 **Import**。
+4. 在 Unity 的 Project 窗口选中要打包的预制件，使用 **Cozy Island → Build Selected Prefab Bundle (Windows)**。如果在改直立鼠，将打包结果命名为 `uprightmouse.bundle`，替换测试副本中 `Assets` 下的同名文件，然后重启游戏检查。转动视角，检查圆面的光照过渡和需要保留的硬边。
+5. 如果要做一套全新的外观，先复制这个范例。在 `mod.json` 给新作品生成 UUID，并改作品名称。在 `appearance.json` 给外观包和条目改成自己的 `id` 和名称。把 `appearance.json` 中的 `bundle`、`prefab` 和 `parts` 改成新模型对应的资源包、预制件路径和部件。可以先做一颗新头。在预制件根节点下放一个名为 `Head` 的模型子节点，在配置里只留一个部件 `{"path":"Head","anchor":"Face","hideOriginal":true}`。先移除原来对应鼠身的 `materials`、`bodyMaterial` 和 `hideBody`，确认新头能显示，再加其他部位和配色。 [外观数据说明](../AppearanceFramework/README.md#做自己的外观包)
+
+更新或重新打包后，如果角色恢复成默认外观，在 F10 的「身体」栏重新选择直立鼠。
