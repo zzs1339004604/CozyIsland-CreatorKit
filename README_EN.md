@@ -28,6 +28,8 @@ Study the existing mod examples and make a mod that changes the player character
 Install the mod in the game and test it. Once you’ve confirmed it works, upload it to the Steam Workshop with visibility set to Private.
 ```
 
+> **Authoring tip** Start with an example close to what you want to make. Where possible, reuse the base game’s UI styles and materials so your mod fits the game’s visual style. [Mod examples (Chinese)](Examples/README.md)
+
 You can also try your mod locally in the game before deciding whether to publish it to the Steam Workshop.
 
 ## Contents
