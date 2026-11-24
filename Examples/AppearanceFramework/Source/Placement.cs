@@ -255,6 +255,7 @@ namespace CozyMods.Appearance
             if (texture != null)
             {
                 if (owned.HasProperty("_AlbedoMap")) owned.SetTexture("_AlbedoMap", texture);
+                else if (usesGlb && owned.HasProperty("_BaseMap")) owned.SetTexture("_BaseMap", texture);
                 else if (owned.HasProperty("_MainTex")) owned.SetTexture("_MainTex", texture);
             }
             return owned;
