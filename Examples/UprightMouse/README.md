@@ -2,26 +2,23 @@
 
 [English](README_EN.md)
 
-这个外观包给玩家加上一只可以穿衣服的直立鼠。进岛后在「外观库」中选用它，角色会换上鼠头、耳朵、躯干和会摆动的尾巴，仍然使用游戏的角色动作。
+在「外观库」换上直立鼠，角色会有鼠头、会眨眼的眼睛、耳朵和走动时会摆动的尾巴。可以继续穿游戏里的服装。
 
 ## 在游戏里试用
 
-本范例附带 Windows x64 模型资源包。先按说明编译并安装[外观模组框架](../AppearanceFramework/README.md#编译和试用)，然后把本目录中的 `mod.json`、`appearance.json`、`appearance-upgrades.json`、[封面图](preview.png)和 `Assets/uprightmouse.bundle` 复制到游戏的 `Mods/UprightMouse` 目录，保留 `Assets/` 这一层。
+1. 安装并启用 [外观模组框架](../AppearanceFramework/README.md) 0.2.0 或更新版本，再订阅并启用直立鼠。[Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3844597180)
+2. 重启游戏，点主菜单的「外观库」，或进岛按 **F10**。在「身体」选择「直立鼠」。
 
-在模组列表启用「外观模组框架」和「直立鼠」，完整重开游戏。进岛按 **F10**，在「身体」选择「直立鼠」。试试走动、转身和穿原版服装。和朋友试用时，双方都启用框架。缺少直立鼠的玩家可在允许自动接收房间外观时看到它。
+从仓库手动安装时，把 `mod.json`、`appearance.json`、`appearance-upgrades.json`、`preview.png` 和 [Assets/upright-mouse.glb](Assets/upright-mouse.glb) 复制到 `Mods/UprightMouse`，保留 `Assets/` 这一层。Windows x64 和 macOS 使用同一份模型。和朋友联机时，双方启用同版本的框架，即可接收房间分享的外观。
 
 ## 改颜色
 
-打开安装副本的 [appearance.json](appearance.json)。在 `materials` 里，`MouseFur` 是毛色，`EarPink` 是内耳，`TailPink` 是尾巴，`MouseNose` 是鼻尖，`EyeWhite` 和 `EyePupil` 是眼白和瞳孔。把对应的 `color` 换成 `"#C8875C"` 这样的颜色代码，保存后重开游戏，再选择这套外观。
+打开 [appearance.json](appearance.json)。在 `materials` 中，`MouseFur` 是毛色，`EarPink` 是内耳，`TailPink` 是尾巴，`MouseNose` 是鼻尖，`EyeWhite` 和 `EyePupil` 是眼白和瞳孔。把对应的 `color` 改成 `"#C8875C"` 这样的颜色代码。保存后重开游戏，在外观库选穿检查效果。
 
-框架用原版老鼠的材质保留游戏的光照和阴影。范例把各部位的颜色明确写在配置里。配置里的模型部件还能指定挂点、遮住原有外观，以及调整眨眼和尾巴的骨骼摆动。 [外观数据说明](../AppearanceFramework/README.md#做自己的外观包)
+这些颜色用在游戏原有的鼠材质上，保留原版光照和阴影。配置还指定了各部位的挂点、眼睛的眨眼形状以及尾巴的五节骨骼。
 
-## 修改模型或做一套自己的角色
+## 改模型或做自己的身体外观
 
-1. 在 Unity Hub 新建 **Unity 2022.3.62f3c1** 的 Universal 3D（URP）项目，安装 Windows Build Support。预览材质使用 URP 14.0.12。将 [Source/UnityAssets](Source/UnityAssets) **里面的内容**复制到新项目的 `Assets` 目录，包含随附的 `.meta` 文件。
-2. 打开 `Assets/UprightMouse/Preview.unity` 看组合效果。在 `Assets/UprightMouse/UprightMouse.prefab` 修改并保存部件位置。需要修改网格时，打开 [Blender 原稿](Source/Models/UprightMouse.blend)。尾巴的可编辑骨骼在 [UprightMouseTail.fbx](Source/UnityAssets/UprightMouse/Models/UprightMouseTail.fbx) 中。
-3. 在 Blender 中，圆弧曲面默认使用 **Shade Smooth（平滑着色）**，让光照过渡与原版更一致。只在造型需要的折角和接缝用 **Mark Sharp（标记锐边）** 保留硬边。随 FBX 导出网格法线。在 Unity 中选中 FBX，在 **Model** 标签将 **Normals** 设为 **Import**。
-4. 在 Unity 的 Project 窗口选中要打包的预制件，使用 **Cozy Island → Build Selected Prefab Bundle (Windows)**。如果在改直立鼠，将打包结果命名为 `uprightmouse.bundle`，替换测试副本中 `Assets` 下的同名文件，然后重启游戏检查。转动视角，检查圆面的光照过渡和需要保留的硬边。
-5. 如果要做一套全新的外观，先复制这个范例。在 `mod.json` 给新作品生成 UUID，并改作品名称。在 `appearance.json` 给外观包和条目改成自己的 `id` 和名称。把 `appearance.json` 中的 `bundle`、`prefab` 和 `parts` 改成新模型对应的资源包、预制件路径和部件。可以先做一颗新头。在预制件根节点下放一个名为 `Head` 的模型子节点，在配置里只留一个部件 `{"path":"Head","anchor":"Face","hideOriginal":true}`。先移除原来对应鼠身的 `materials`、`bodyMaterial` 和 `hideBody`，确认新头能显示，再加其他部位和配色。 [外观数据说明](../AppearanceFramework/README.md#做自己的外观包)
-
-更新或重新打包后，如果角色恢复成默认外观，在 F10 的「身体」栏重新选择直立鼠。
+1. 在 Blender 导入 [upright-mouse.glb](Assets/upright-mouse.glb)，即可看到游戏实际使用的模型组合。鼠的网格原稿见 [UprightMouse.blend](Source/Models/UprightMouse.blend)，尾巴骨骼也保存在 [UprightMouseTail.fbx](Source/UnityAssets/UprightMouse/Models/UprightMouseTail.fbx) 中。
+2. 导出单个 GLB 时保留网格法线。保留眼睛的 `Close` 形状键、尾巴骨骼和顶点权重。模型改名或移动节点后，同时更新 `appearance.json` 的 `prefab`、`parts` 或 `followThrough` 路径。替换测试副本中的模型，重开游戏看眨眼、走动和穿衣效果。
+3. 做全新外观时，先用自己的作品名称、UUID 和条目 ID，并移除范例的 `appearance-upgrades.json`。可以从一颗名为 `Head` 的头开始，只保留 `{"path":"Head","anchor":"Face","hideOriginal":true}` 这个部件。按新模型更新材质和隐藏设置。[外观数据说明](../AppearanceFramework/README.md#做自己的外观包)

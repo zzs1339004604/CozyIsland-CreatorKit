@@ -2,7 +2,7 @@
 
 [简体中文](README.md) · English
 
-This is the guide to making mods for Cozy Island.
+This is the guide to making mods for Cozy Island. To make an ordinary skin, hat, or clothing appearance, start with a GLB model and two JSON files. [Appearance authoring guide](Examples/AppearanceFramework/README_EN.md#make-an-appearance-pack)
 
 > Some of the documentation, examples, and tools in this repository were written with AI assistance. We welcome corrections, bug reports, and suggestions. [Share feedback](https://github.com/zzs1339004604/cozyisland-modding/issues)
 >
@@ -28,7 +28,7 @@ Study the existing mod examples and make a mod that changes the player character
 Install the mod in the game and test it. Once you’ve confirmed it works, upload it to the Steam Workshop with visibility set to Private.
 ```
 
-> **Authoring tip** You can refer to the existing examples and consider reusing the base game’s UI styles and materials for a consistent look. Use smooth shading by default on curved surfaces when making characters, skins, or clothing. [Model and normal settings](Examples/UprightMouse/README_EN.md#edit-the-model-or-make-your-own-character)
+> **Authoring tip** You can refer to the existing examples and consider reusing the base game’s UI styles and materials for a consistent look. Use smooth shading on curved surfaces and preserve normals when exporting models. [Model export](Examples/AppearanceFramework/README_EN.md#make-an-appearance-pack)
 
 You can also try your mod locally in the game before deciding whether to publish it to the Steam Workshop.
 
@@ -41,13 +41,13 @@ You can also try your mod locally in the game before deciding whether to publish
 
 ## Build your first mod
 
-Start with **ClothingColor**. Turn it on and enter an island wearing the default shirt to see the change. The guide walks you through changing one color, building the mod, trying it locally, and publishing it. [Quick Start guide](Examples/ClothingColor/README_EN.md)
+Start with [Sprout Cap](Examples/SproutCap/README_EN.md). Install a compatible game and Appearance Mod Framework with GLB support, change a color in `appearance.json`, and try it in Appearances. To make your own hat or skin, supply another GLB and match the part paths to your model’s node names. [Configuration and export](Examples/AppearanceFramework/README_EN.md#make-an-appearance-pack)
 
-Download the source with **Code → Download ZIP** on the repository page. You can build the example in your system terminal with a compatible copy of the game and the **.NET SDK**. The example uses the game’s existing clothing model and material. [Download the .NET SDK](https://dotnet.microsoft.com/download) · [Find game references and build a project (Chinese)](Tools/README.md#直接编译)
+Use C# and the .NET SDK for custom gameplay behavior or native item integration. [ClothingColor](Examples/ClothingColor/README_EN.md) is a first example of building a code mod. Use Unity build tools when the assets require Unity-specific Prefabs or custom shaders. [Build tools (Chinese)](Tools/README.md)
 
 ## Publish to Steam Workshop
 
-One Workshop item can support Windows and macOS. Use managed dependencies available on both platforms, build a separate Unity AssetBundle for each target, and test the same release package in both game builds. List the platforms you support in the item description. [Windows and macOS compatibility guide (Chinese)](Docs/Native-Authoring.md#兼容-windows-和-macos)
+GLB appearances use the same model file on Windows and macOS. Try the release package on both platforms and list the supported platforms in the item description. For mods with custom code or Unity AssetBundles, also check the dependencies or asset build targets. [Windows and macOS compatibility guide (Chinese)](Docs/Native-Authoring.md#兼容-windows-和-macos)
 
 1. Sign in to Steam. In the game, open **Mods → Create Mods** and select your own local mod that you’ve tested in-game. Fill in its display name, author, and description, then choose **Save changes**.
 2. For a new item, leave the Workshop ID blank and choose **Publish to Workshop**. First uploads are private by default. If Steam asks you to accept the Workshop agreement, do so on Steam. To update an existing item, confirm its original Workshop ID and choose **Publish update**. If the game has lost the link to your item, enter the number from its original Workshop page.
@@ -57,7 +57,8 @@ One Workshop item can support Windows and macOS. Use managed dependencies availa
 
 | What you want to do | Where to start |
 | --- | --- |
-| Make a body appearance with custom models | [Upright Mouse](Examples/UprightMouse/README_EN.md) is a data-only pack you can select in the Appearances menu with F10. |
+| Make an appearance from a model and configuration | [Sprout Cap](Examples/SproutCap/README_EN.md) is a GLB example you can edit without code or Unity. |
+| Make a character skin that blinks and moves its tail | [Upright Mouse](Examples/UprightMouse/README_EN.md) shows GLB body attachments, eyelid shapes, and tail bones. |
 | Add clothing players can craft | [Moss Witch Outfit](Examples/WitchRobe/README_EN.md) adds a craftable robe and hat that use the game’s equipment system. |
 | Support character skin and outfit mods | The [Appearance Mod Framework](Examples/AppearanceFramework/README_EN.md) adds the Appearances menu and syncs custom looks between players in a room. |
 | Change the look of the game | [Retro Filters](Examples/RetroFilters/README_EN.md) demonstrates full-screen effects and live controls. |

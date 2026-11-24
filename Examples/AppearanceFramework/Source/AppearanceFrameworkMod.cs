@@ -52,14 +52,19 @@ namespace CozyMods.Appearance
             Application.quitting += OnQuitting;
             context.AddCleanup(Dispose);
             var wardrobe = context.Root.AddComponent<Wardrobe>();
-            wardrobe.Initialize(Items, () => preferences.Selection, Select, Save, () => room.Connected, SetAutoReceive, preferences.AutoReceive);
+            wardrobe.Initialize(Items, () => preferences.Selection, Select, Save, store.Preview, () => room.Connected,
+                SetAutoReceive, preferences.AutoReceive);
             context.OnUpdate(Tick);
             Active = this;
         }
 
         public void OnUnload() { }
 
-        private void OnQuitting() => quitting = true;
+        private void OnQuitting()
+        {
+            quitting = true;
+            store?.CancelModelImports();
+        }
 
         private Preferences ReadPreferences()
         {
@@ -220,7 +225,11 @@ namespace CozyMods.Appearance
                     if (!AppearanceData.TryKey(key, out var digest, out _) ||
                         !isLocal && !store.IsShareable(digest)) continue;
                     var item = store.Load(key, AppearanceSlots.All[i]);
-                    if (item == null) continue;
+                    if (item == null)
+                    {
+                        if (store.IsLoadingModel(digest)) used.Add(digest);
+                        continue;
+                    }
                     used.Add(digest);
                     ready.Add(item);
                     signature[i] = key;

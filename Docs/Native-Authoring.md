@@ -12,9 +12,11 @@
 
 ## 兼容 Windows 和 macOS
 
+角色皮肤和服装外观优先用 GLB 与 JSON。两端共用一份模型，由外观模组框架导入。 [从 Blender 导出并配置外观](../Examples/AppearanceFramework/README.md#做自己的外观包)
+
 使用两个平台都有的游戏 API 时，同一份托管 DLL 可以随同一个工坊作品分发，编译机可以用 Windows 或 macOS。编译后请核对 DLL 引用的程序集名称和 API 在两个目标 Player 的 `Managed` 中都可用。Steamworks 等依赖在不同平台的程序集名称可能不同，优先通过游戏已有的接口获取所需数据。 [外观模组框架](../Examples/AppearanceFramework/README.md)
 
-模型、Prefab 和 Shader 等 Unity AssetBundle 按目标平台分别构建。开放给 Windows 和 macOS 的作品应保留两份资源，例如 `Assets/mod-windows.bundle` 和 `Assets/mod-macos.bundle`，在代码中按 `Application.platform` 选择。使用与目标游戏匹配的 Unity 版本和渲染管线，检查 Mac 包的 Shader 支持 Metal。原工坊条目和 `mod.json` 的 UUID 可以继续使用。 [复古滤镜范例](../Examples/RetroFilters/README.md) · [Unity AssetBundle 构建说明](https://docs.unity3d.com/2022.3/Documentation/ScriptReference/BuildPipeline.BuildAssetBundles.html)
+Unity 专用 Prefab 和 Shader 可用 AssetBundle，按目标平台分别构建。开放给 Windows 和 macOS 的作品应保留两份资源，例如 `Assets/mod-windows.bundle` 和 `Assets/mod-macos.bundle`，在代码中按 `Application.platform` 选择。使用与目标游戏匹配的 Unity 版本和渲染管线，检查 Mac 包的 Shader 支持 Metal。原工坊条目和 `mod.json` 的 UUID 可以继续使用。 [复古滤镜范例](../Examples/RetroFilters/README.md) · [Unity AssetBundle 构建说明](https://docs.unity3d.com/2022.3/Documentation/ScriptReference/BuildPipeline.BuildAssetBundles.html)
 
 在作品介绍中列出实际支持的平台。模组确认当前平台或渲染后端不受支持时，可以在 `OnLoad` 抛出 `System.PlatformNotSupportedException`，并在异常中写明原因，供支持此诊断的游戏版本显示「不支持的平台」。已支持平台上的文件缺失或损坏应按加载错误报告。发布前用对应的完整 Player 冷启动，核对模组能启用且实际功能可用。 [发布和更新](Workshop.md#发布和更新)
 
@@ -100,7 +102,7 @@ public sealed class InspectWorkbench : ICozyMod
 
 现有原生 Renderer、材质、角色组件和 Unity API 可以由作者代码使用。替换材质时保留原值，只修改自有材质实例或属性块，清理时恢复；纹理可用 `context.LoadTexture/LoadSprite` 管理。纯视觉对象放在 `context.Root` 下不会自动成为可保存、可联网的物品。
 
-新模型、骨骼、动画或 Prefab 可由作者自己的 Unity 工程构建 AssetBundle，然后在代码中读取；这需要与 Player 的 Unity 版本、平台和渲染管线匹配。原始模型文件和 `.prefab` 文本不是运行时导入方案。允许上传 `.bundle` 不意味着已经注册内容，详见 [Prefab 指南](Game-and-Prefab-Guide.md)。
+只为角色添加皮肤或服装外观时，用外观框架和 GLB。要为注册物品携带 Unity 专用 Prefab 或 Shader，可以在作者工程构建 AssetBundle，然后在代码中加载并登记。按目标 Player 的 Unity 版本、平台和渲染管线构建。 [外观制作](../Examples/AppearanceFramework/README.md#做自己的外观包) · [Prefab 指南](Game-and-Prefab-Guide.md)
 
 [ResearchCamp](../Examples/ResearchCamp/README.md) 提供可独立重建的 Unity 资源工程：原创视觉 Prefab/Shader → AssetBundle → 作者 DLL 加载 → 附加到已登记的原生行为模板 → 完整退出后读取世界。它已验证同版本的多节点视觉、保存和本机客机生成，没有验证骨骼、动画、自定义 NetworkBehaviour 或任意场景加载。示例使用固定遍历顺序分配局部引用 ID；改变模型层级时必须维护旧 ID 映射并回测旧档，不能以一次冷读成功推断跨版本兼容。
 

@@ -83,7 +83,7 @@ MyMod/
   Source/MyMod.csproj
 ```
 
-清单最大 64 KiB；运行包最大 256 MiB、4096 个文件。路径必须位于作品根部，不允许路径逃逸、符号链接或目录联接。运行文件允许 `.json`、`.png`、`.jpg`、`.jpeg`、`.dll`、`.bundle`、`.assetbundle`、`.wav`、`.ogg`、`.mp3`、`.csv`、`.txt`、`.bytes`、`.xml`、`.md`。允许上传某扩展名不代表加载器会自动解析它。
+清单最大 64 KiB；运行包最大 256 MiB、4096 个文件。路径必须位于作品根部，不允许路径逃逸、符号链接或目录联接。运行文件允许 `.json`、`.png`、`.jpg`、`.jpeg`、`.dll`、`.bundle`、`.assetbundle`、`.glb`、`.wav`、`.ogg`、`.mp3`、`.csv`、`.txt`、`.bytes`、`.xml`、`.md`。允许上传某扩展名不代表加载器会自动解析它。
 
 上传工具排除 `Source`、`References`、`Tools`、`bin`、`obj` 及版本控制/IDE 目录。游戏、Unity、Mirror、Harmony、MonoMod、Cecil、系统和其他共享运行时程序集不得混入运行包；游戏的运行包校验按 DLL 元数据中的程序集身份检查共享库，改文件名不会改变程序集身份。自己安装的游戏程序集仅供本机编译。
 

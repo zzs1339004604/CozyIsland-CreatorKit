@@ -1,5 +1,7 @@
 # Cozy Island Modding 工具说明
 
+制作普通外观可以直接用 GLB 和两份 JSON。自定义游戏逻辑用 .NET 编译，Unity 专用 Prefab 或 Shader 才需要 Unity 构建。 [外观制作指南](../Examples/AppearanceFramework/README.md#做自己的外观包)
+
 ## 直接编译
 
 编译 C# 模组时，准备 .NET SDK 和带「模组」菜单、支持 UUID 清单的游戏版本。第一次制作可以从上衣换色开始，跟着范例编译、在游戏里试用和发布。 [起始上衣换色](../Examples/ClothingColor/README.md) · [模组清单](../Docs/Manifest.md)

@@ -4,8 +4,8 @@
   "displayName": "外观模组框架",
   "name": "cozy.appearance.framework",
   "author": "LazyFish Studio",
-  "version": "0.1.7",
-  "description": "为其他模组提供角色皮肤和服装支持，并在联机房间同步外观。启用框架和外观模组后，点主菜单的「外观库」，或在岛上按 F10 来选择外观。\n\n支持 Windows x64 和 macOS。",
+  "version": "0.2.0",
+  "description": "为角色皮肤和服装提供「外观库」。支持 GLB 模型和 JSON 配置制作本机外观，兼容已有的 Unity AssetBundle 外观包。启用框架与外观包后，在主菜单打开「外观库」，或在岛上按 F10。\n\n支持 Windows x64 和 macOS。",
   "preview": "preview.png",
   "requiresRestart": true,
   "code": {

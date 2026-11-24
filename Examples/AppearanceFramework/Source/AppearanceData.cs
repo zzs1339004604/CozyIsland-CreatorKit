@@ -45,20 +45,24 @@ namespace CozyMods.Appearance
         public string Author { get; set; }
         public string Platform { get; set; }
         public string Bundle { get; set; }
+        public string Model { get; set; }
         public bool Share { get; set; }
         public bool AllowSave { get; set; }
         public AppearanceEntry[] Entries { get; set; }
+        internal bool UsesGlb => SchemaVersion == 2;
     }
 
     internal sealed class LoadedAppearance
     {
         public readonly AppearanceEntry Entry;
         public readonly GameObject Prefab;
+        public readonly bool UsesGlb;
 
-        public LoadedAppearance(AppearanceEntry entry, GameObject prefab)
+        public LoadedAppearance(AppearanceEntry entry, GameObject prefab, bool usesGlb = false)
         {
             Entry = entry;
             Prefab = prefab;
+            UsesGlb = usesGlb;
         }
     }
 
@@ -66,6 +70,7 @@ namespace CozyMods.Appearance
     {
         public string Key, Name, Author, Slot, Source;
         public bool Installed, Saved, CanEquip, Ready;
+        public bool IsModel, LoadFailed;
     }
 
     internal static class AppearanceData
@@ -109,9 +114,9 @@ namespace CozyMods.Appearance
                 TypeNameHandling = TypeNameHandling.None,
                 MaxDepth = 16
             });
-            if (catalog == null || catalog.SchemaVersion != 1 || !IsSlug(catalog.Id) ||
+            if (catalog == null || !IsSlug(catalog.Id) ||
                 !ValidText(catalog.Name) || !ValidText(catalog.Author) ||
-                catalog.Platform != Platform || !AssetPath(catalog.Bundle, ".bundle") ||
+                !ValidPayload(catalog) ||
                 catalog.Entries == null || catalog.Entries.Length == 0 || catalog.Entries.Length > 24)
                 throw new InvalidDataException("Unsupported appearance catalog or platform.");
 
@@ -119,7 +124,8 @@ namespace CozyMods.Appearance
             foreach (var entry in catalog.Entries)
             {
                 if (entry == null || !IsSlug(entry.Id) || !ids.Add(entry.Id) || !ValidText(entry.Name) ||
-                    !AppearanceSlots.All.Contains(entry.Slot) || !AssetPath(entry.Prefab, ".prefab") ||
+                    !AppearanceSlots.All.Contains(entry.Slot) ||
+                    (catalog.UsesGlb ? entry.Prefab != null && !NodePath(entry.Prefab) : !AssetPath(entry.Prefab, ".prefab")) ||
                     (entry.Color?.Length ?? 0) > 64 || entry.Parts == null ||
                     entry.Parts.Length == 0 || entry.Parts.Length > 32)
                     throw new InvalidDataException("Invalid appearance entry.");
@@ -139,6 +145,7 @@ namespace CozyMods.Appearance
                 foreach (var part in entry.Parts)
                 {
                     if (part == null || string.IsNullOrWhiteSpace(part.Path) || part.Path.Length > 192 ||
+                        (catalog.UsesGlb && !NodePath(part.Path)) ||
                         (part.Color?.Length ?? 0) > 64 ||
                         !Vector(part.Position, 3) || !Vector(part.Rotation, 4) || !Vector(part.Scale, 3))
                         throw new InvalidDataException("Invalid appearance part.");
@@ -162,6 +169,18 @@ namespace CozyMods.Appearance
             anchor is "Face" or "Hair" or "Torso" or "BodyParts" or "BodyVisuals" or "Neck";
 
         private static bool ValidText(string value) => !string.IsNullOrWhiteSpace(value) && value.Length <= 100 && !value.Any(char.IsControl);
+
+        private static bool ValidPayload(AppearanceCatalog catalog) => catalog.SchemaVersion switch
+        {
+            1 => catalog.Model == null && catalog.Platform == Platform && AssetPath(catalog.Bundle, ".bundle"),
+            2 => catalog.Platform == null && catalog.Bundle == null &&
+                AssetPath(catalog.Model, ".glb"),
+            _ => false
+        };
+
+        private static bool NodePath(string path) => path.Length <= 192 && !path.Contains('\\') &&
+            !path.Contains(':') && path.Split('/').All(segment => !string.IsNullOrWhiteSpace(segment) &&
+                segment != "." && segment != ".." && !segment.Any(char.IsControl));
 
         private static bool AssetPath(string path, string extension) => path != null && path.Length <= 192 &&
             path.StartsWith("Assets/", StringComparison.Ordinal) && path.EndsWith(extension, StringComparison.OrdinalIgnoreCase) &&

@@ -164,6 +164,7 @@ namespace CozyMods.Appearance
 
             public void Refresh()
             {
+                owner.preview(owner.focusedKey);
                 string activeKey = owner.CurrentKey();
                 WardrobeItem active = null;
                 focused = null;
@@ -238,7 +239,10 @@ namespace CozyMods.Appearance
                 string author = string.IsNullOrEmpty(focused.Author) ? "" : L("作者 · ", "Author · ") + focused.Author + "\n";
                 string source = string.IsNullOrEmpty(focused.Source) ? "" : focused.Source + "\n";
                 string text = author + source + SlotName(owner.slot);
-                if (!focused.Ready) text += "\n" + L("等待下载", "Waiting for download");
+                if (!focused.Ready && focused.IsModel) text += "\n" + (focused.LoadFailed
+                    ? L("模型加载失败，请查看游戏日志。", "The model could not be loaded. Check the game log.")
+                    : L("正在加载模型", "Loading model"));
+                else if (!focused.Ready) text += "\n" + L("等待下载", "Waiting for download");
                 else if (!focused.CanEquip) text += "\n" + L("作者仅允许在房间展示", "The author permits room viewing only");
                 itemDetails.text = text;
                 wear.Label.text = focused.Installed || focused.Saved ? L("穿上", "Wear") : L("保存并穿上", "Save and wear");

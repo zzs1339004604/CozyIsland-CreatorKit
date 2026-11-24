@@ -2,7 +2,7 @@
 
 简体中文 · [English](README_EN.md)
 
-这里是《舒舒服服小岛时光》的模组制作指南。
+这里是《舒舒服服小岛时光》的模组制作指南。制作普通皮肤、帽子或服装外观，从一个 GLB 模型和两份 JSON 开始。 [外观制作指南](Examples/AppearanceFramework/README.md#做自己的外观包)
 
 > 本仓库部分文档、示例和工具在 AI 协助下编写。欢迎反馈说明中的错误、使用中遇到的问题，或提出改进建议。 [提交反馈](https://github.com/zzs1339004604/cozyisland-modding/issues)
 >
@@ -28,7 +28,7 @@ GPT 和 Claude 等 AI 助手可以帮你从现成的范例做起，修改代码�
 完成后帮我导入到游戏中进行测试，测试确认无误后帮我上传到 Steam 创意工坊，默认权限为私密。
 ```
 
-> **创作提示**　可以参考已有的范例，并考虑沿用原版游戏的 UI 样式和材质以保持风格一致。制作角色、皮肤或服装模型时，圆弧曲面默认使用平滑着色。 [模型与法线设置](Examples/UprightMouse/README.md#修改模型或做一套自己的角色)
+> **创作提示**　可以参考已有的范例，并考虑沿用原版游戏的 UI 样式和材质以保持风格一致。制作角色、皮肤或服装模型时，圆弧曲面默认使用平滑着色，导出时保留网格法线。 [模型导出](Examples/AppearanceFramework/README.md#做自己的外观包)
 
 当然也可以本地以本地模组的方式进行测试，然后再决定是否要发布到创意工坊。
 
@@ -42,13 +42,13 @@ GPT 和 Claude 等 AI 助手可以帮你从现成的范例做起，修改代码�
 
 ## 试做第一个模组
 
-从 **ClothingColor（起始上衣换色）** 开始。启用后，穿着默认上衣进岛就能看见变化。跟着说明改一次颜色，就能跑通编译、安装和发布的过程。 [Quick Start 指南](Examples/ClothingColor/README.md)
+从[芽苗帽](Examples/SproutCap/README.md)开始。安装配套游戏和支持 GLB 的外观模组框架，在 `appearance.json` 改一次颜色，进外观库查看效果。做自己的帽子或皮肤时，替换 GLB 并把配置里的部件路径改成自己的节点名。 [配置字段和导出步骤](Examples/AppearanceFramework/README.md#做自己的外观包)
 
-在仓库首页点 **Code → Download ZIP** 下载源码。准备好配套游戏和 **.NET SDK**，就能在系统终端里编译。范例只用游戏现成的衣服模型和材质。 [下载 .NET SDK](https://dotnet.microsoft.com/download) · [查找游戏引用和编译项目](Tools/README.md#直接编译)
+需要自定义玩法或接入原生物品时，再使用 C# 和 .NET SDK。想了解代码模组的编译流程，可以试做[起始上衣换色](Examples/ClothingColor/README.md)。涉及 Unity 专用 Prefab 或自定义 Shader 的资源才需要 Unity 构建工具。 [编译和资源构建](Tools/README.md)
 
 ## 发布到创意工坊
 
-准备同时支持 Windows 和 macOS 时，请先检查 DLL 引用和资源包的构建目标，再用两个平台的游戏测试同一份发布包。 [兼容 Windows 和 macOS](Docs/Native-Authoring.md#兼容-windows-和-macos)
+GLB 外观在 Windows 和 macOS 共用同一份模型。发布前用两个平台的游戏试戴。包含自定义代码或 Unity AssetBundle 的作品还需检查依赖或构建目标。 [兼容 Windows 和 macOS](Docs/Native-Authoring.md#兼容-windows-和-macos)
 
 1. 登录 Steam，在游戏里打开 **模组 → 模组创作**，选中你自己制作并在游戏里试过的本地作品。填写显示名、作者和介绍，点击 **保存修改**。
 2. 第一次发布时，工坊 ID 留空，点击 **发布到创意工坊**。第一次上传默认是私密的。如果 Steam 提示接受创意工坊协议，请在 Steam 页面完成。更新作品时，确认原工坊 ID 后点击 **发布更新**。换电脑后如果列表找不到原关联，可以填回原作品页上的数字 ID。
@@ -58,7 +58,8 @@ GPT 和 Claude 等 AI 助手可以帮你从现成的范例做起，修改代码�
 
 | 想做什么 | 从这里开始 |
 | --- | --- |
-| 用自制模型做身体外观 | [直立鼠](Examples/UprightMouse/README.md) 演示纯数据身体外观包，按 F10 打开「外观库」即可选择。 |
+| 用模型和配置做新外观 | [芽苗帽](Examples/SproutCap/README.md) 演示免 Unity、免代码的 GLB 外观。 |
+| 制作会眨眼和摆尾的角色皮肤 | [直立鼠](Examples/UprightMouse/README.md) 演示 GLB 身体挂接、眨眼形状键和尾巴骨骼。 |
 | 加入能在工作台制作的服装 | [青苔魔法套装](Examples/WitchRobe/README.md) 添加魔法袍和帽子，沿用游戏的穿脱流程。 |
 | 为角色皮肤和服装模组提供支持 | [外观模组框架](Examples/AppearanceFramework/README.md) 提供「外观库」，让玩家选择外观，并在同一个房间里同步。 |
 | 改变画面风格 | [复古滤镜](Examples/RetroFilters/README.md) 演示全屏效果和实时调节。 |
