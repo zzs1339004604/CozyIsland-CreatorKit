@@ -12,7 +12,7 @@
    dotnet build Source/AppearanceFramework.csproj -c Release "-p:GameManagedPath=D:/SteamLibrary/steamapps/common/CozyIsland/CozyIsland_Data/Managed"
    ```
 
-2. 在游戏中打开 **模组 → 模组创作 → 打开作品文件夹**。如果打开的是某个作品，回到上一级 `Mods`。在其中新建 `AppearanceFramework`，把 `mod.json` 和刚生成的 `Code/CozyMods.AppearanceFramework.dll` 放进去，保留原有目录结构。
+2. 在游戏中打开 **模组 → 模组创作 → 打开作品文件夹**。如果打开的是某个作品，回到上一级 `Mods`。在其中新建 `AppearanceFramework`，把 `mod.json`、[封面图](preview.png)和刚生成的 `Code/CozyMods.AppearanceFramework.dll` 放进去，保留原有目录结构。
 3. 把你想试用的外观包放入 `Mods` 下另一个文件夹。在模组列表开启框架和外观包，完整重开游戏。进岛后按 **F10**，在「身体」或「服装」选择外观。可以在窗口里更改快捷键或恢复默认外观。
 
 房主和客机都需要启用同一版本的框架。收到的外观先放入临时缓存。想下次继续使用时，可以在「房间外观」选中作者允许保存的外观，点击 **保存并穿上**。关闭「自动接收房间外观」后，本机停止获取缺少的资源，房主也停止为客机获取缺少的资源。已安装或缓存的外观仍可使用。
