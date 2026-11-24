@@ -2,15 +2,17 @@
 
 简体中文 · [English](README_EN.md)
 
-这里有《舒舒服服小岛时光》的模组制作指南、范例和工具。第一次做模组，可以从给角色的默认上衣换个颜色开始。
+这里是《舒舒服服小岛时光》的模组制作指南。
+
+> 本仓库部分文档、示例和工具在 AI 协助下编写。欢迎反馈说明中的错误、使用中遇到的问题，或提出改进建议。 [提交反馈](https://github.com/zzs1339004604/cozyisland-modding/issues)
+>
+> 也非常欢迎大家直接提交 PR 改进现有内容，或贡献新的 Mod 范例。 [参与贡献](https://github.com/zzs1339004604/cozyisland-modding/pulls)
 
 [AI 辅助制作](#ai-辅助制作-mod推荐) · [试做第一个模组](#试做第一个模组) · [发布到创意工坊](#发布到创意工坊) · [更多示例](#更多示例) · [常见问题](#常见问题) · [免责声明](#免责声明)
 
 > **开始前**　制作下方范例需要带「模组」菜单并支持 `displayName`、`name`、`uuid` 清单的 Cozy Island 版本。配套版本记录会列出已验收的游戏版本。 [Steam 商店](https://store.steampowered.com/app/2918500/) · [配套版本记录](PlayerIdentity.json)
 
 ## AI 辅助制作 Mod（推荐）
-
-本仓库不少文档、范例和工具是在 AI 协助下编写的。欢迎做过或试用过模组的创作者一起维护这个仓库，分享实际遇到的问题和有效的做法。你也可以提交 PR 改进现有内容，或贡献新的 Mod 范例。 [提交反馈](https://github.com/zzs1339004604/cozyisland-modding/issues) · [参与贡献](https://github.com/zzs1339004604/cozyisland-modding/pulls)
 
 GPT 和 Claude 等 AI 助手可以帮你从现成的范例做起，修改代码、编译，或根据日志排查加载问题。
 

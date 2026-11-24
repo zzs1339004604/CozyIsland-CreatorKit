@@ -2,15 +2,17 @@
 
 [简体中文](README.md) · English
 
-Find guides, examples, and tools for making Cozy Island mods. For your first mod, try giving the player’s starting shirt a new color.
+This is the guide to making mods for Cozy Island.
+
+> Some of the documentation, examples, and tools in this repository were written with AI assistance. We welcome corrections, bug reports, and suggestions. [Share feedback](https://github.com/zzs1339004604/cozyisland-modding/issues)
+>
+> We also welcome pull requests to improve existing materials or add new mod examples. [Contribute](https://github.com/zzs1339004604/cozyisland-modding/pulls)
 
 [Make mods with AI](#make-mods-with-ai-recommended) · [Build your first mod](#build-your-first-mod) · [Publish to Steam Workshop](#publish-to-steam-workshop) · [More examples](#more-examples) · [Common questions](#common-questions) · [Disclaimer](#disclaimer)
 
 > **Before you start**  The examples need a version of Cozy Island with a **Mods** menu that understands the `displayName`, `name`, and `uuid` manifest fields. The build record lists game versions that have been verified for the kit. [Steam store](https://store.steampowered.com/app/2918500/) · [Game build record](PlayerIdentity.json)
 
 ## Make mods with AI (recommended)
-
-AI helped write much of this repository’s documentation, examples, and tools. If you’ve made or tried a mod, we’d love your help improving the repository. Share what worked and what got in your way, or send a pull request to update existing materials or add a new mod example. [Share feedback](https://github.com/zzs1339004604/cozyisland-modding/issues) · [Contribute](https://github.com/zzs1339004604/cozyisland-modding/pulls)
 
 AI assistants such as GPT and Claude can help you start from an existing example, edit and build the code, or troubleshoot loading problems using the game log.
 
