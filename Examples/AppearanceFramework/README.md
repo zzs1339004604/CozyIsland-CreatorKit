@@ -31,7 +31,7 @@
 | --- | --- |
 | `mod.json` | 作品清单继续使用 `schemaVersion: 1`。生成新作品 UUID，填写名称，并在 `dependencies` 声明框架 UUID `a2f648bf-1066-45da-91ea-1c7ca2f2511e` 和最低版本 `0.2.0`。 [模组清单](../../Docs/Manifest.md) |
 | `appearance.json` | 使用 `schemaVersion: 2`，填写 `id`、`name`、`author`、`model` 和 `entries`。例如将 `model` 设为 `Assets/hat.glb`。 |
-| `Assets/hat.glb` | 从 Blender 等建模工具导出的自包含 glTF Binary。保留模型节点名称，把使用的 PNG 或 JPEG 贴图嵌入文件。 |
+| `Assets/hat.glb` | 从 Blender 等建模工具导出的自包含 glTF Binary。导出单个场景，保留模型节点名称，把使用的 PNG 或 JPEG 贴图嵌入文件。 |
 
 在 Blender 中选择 **File → Export → glTF 2.0**，格式选 **glTF Binary (.glb)**，导出需要的模型节点。圆弧曲面可使用平滑着色并保留法线。导出皮肤时保留需要的形状键和骨骼权重，并关闭动画和压缩。FBX 可以作为可编辑的源文件保存，导入 Blender 后再导出供游戏读取的 GLB。 [Blender 导出说明](https://docs.blender.org/manual/en/latest/addons/scene_gltf2.html)
 
@@ -45,9 +45,9 @@
 
 - 身体条目使用 `Body`。头部用 `Face`，跟随发型显隐的部件用 `Hair`，躯干用 `Torso`。需要先按一个挂点摆好位置，再跟随另一个挂点时，填写 `followAnchor`。
 - 服装可用 `Hat`、`Cloth`、`Shoe`、`Glove` 或 `Knee`。衣身和袖子分别使用 `Cloth` 和 `Sleeve` 挂点。部件可填写 `position`、四元数 `rotation` 和 `scale`。需要遮住挂点上的原有外观时，设置 `hideOriginal`。
-- 改色可在条目或部件填写 `color`，例如 `"#C8875C"`。要为不同模型材质槽指定游戏原版材质，在条目的 `materials` 中按槽名填写原版预制件 ID、材质名和可选颜色。部件可以用 `materialOverrides` 把自己的材质槽重定向到同一份配色中的另一项。
+- GLB 的基础色与嵌入贴图可用于原版材质。要覆盖基础色，可在条目或部件填写 `color`，例如 `"#C8875C"`。要为不同模型材质槽指定游戏原版材质，在条目的 `materials` 中按槽名填写原版预制件 ID、材质名和可选颜色。部件可以用 `materialOverrides` 把自己的材质槽重定向到同一份配色中的另一项。
 - 身体条目可用 `bodyMaterial` 给原角色露出的皮肤指定配色，用 `hideBody` 另行遮住颈部等原有部件。眼睛可通过 `blinkBlendShape` 指定眨眼使用的形变。带骨骼的尾巴等部件可以用 `followThrough` 配置跟随角色移动的摆动。
-- 服装部件可用 `nativeEquipment` 选一个游戏原版装备作为位置和材质的参考。要让穿上自制实物时也同步外观，填入条目的 `nativeOwner`（注册物品的模组 UUID）和 `nativeItem`（物品 ID）。
+- 服装部件可用 `nativeEquipment` 选一个游戏原版装备作为位置和材质的参考。要让穿上自制实物时自动应用外观，填入条目的 `nativeOwner`（注册物品的模组 UUID）和 `nativeItem`（物品 ID）。
 
 GLB 外观当前用于本机穿戴，`share` 和 `allowSave` 留空或设为 `false`。模型和外观清单合计上限 8 MiB。框架使用自带的挂接、材质和动画行为。 [数据字段](Source/AppearanceData.cs) · [部件字段](Source/PlacementVisuals.cs)
 
