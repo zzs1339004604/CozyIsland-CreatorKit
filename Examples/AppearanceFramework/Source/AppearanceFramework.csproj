@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../../../Tools/CozyMod.props" />
+  <PropertyGroup>
+    <AssemblyName>CozyMods.AppearanceFramework</AssemblyName>
+  </PropertyGroup>
+</Project>
