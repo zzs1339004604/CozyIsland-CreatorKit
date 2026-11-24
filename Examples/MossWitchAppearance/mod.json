@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "uuid": "7b891a24-9e5e-43da-a600-28be17bcf08d",
+  "displayName": "青苔魔法套装外观包",
+  "name": "cozy.appearance.example.moss-witch",
+  "author": "Cozy Island Mod Examples",
+  "version": "0.1.0",
+  "description": "给联机外观框架使用的青苔魔法袍和帽子。",
+  "dependencies": [
+    {
+      "uuid": "a2f648bf-1066-45da-91ea-1c7ca2f2511e",
+      "minimumVersion": "0.1.0"
+    }
+  ]
+}

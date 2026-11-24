@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <AssemblyName>CozyMods.WitchRobe</AssemblyName>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NoStdLib>true</NoStdLib>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>../Code/</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="UnityProject/**/*.cs" />
+    <Reference Include="$(GameManagedPath)/*.dll" Exclude="$(GameManagedPath)/MonoMod.Backports.dll" Private="false" />
+  </ItemGroup>
+  <Target Name="CheckGameReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(GameManagedPath)/Assembly-CSharp.dll') Or !Exists('$(GameManagedPath)/mscorlib.dll')"
+      Text="Set GameManagedPath to CozyIsland_Data/Managed in your installed game." />
+  </Target>
+</Project>
