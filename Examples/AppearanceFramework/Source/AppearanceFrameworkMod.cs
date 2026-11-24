@@ -227,7 +227,7 @@ namespace CozyMods.Appearance
                     var item = store.Load(key, AppearanceSlots.All[i]);
                     if (item == null)
                     {
-                        if (isLocal && store.IsLoadingModel(digest)) used.Add(digest);
+                        if (store.IsLoadingModel(digest)) used.Add(digest);
                         continue;
                     }
                     used.Add(digest);

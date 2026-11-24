@@ -59,7 +59,7 @@ GLB 外观在 Windows 和 macOS 共用同一份模型。发布前用两个平台
 | 想做什么 | 从这里开始 |
 | --- | --- |
 | 用模型和配置做新外观 | [芽苗帽](Examples/SproutCap/README.md) 演示免 Unity、免代码的 GLB 外观。 |
-| 维护已有的 Unity 模型包 | [直立鼠](Examples/UprightMouse/README.md) 演示身体挂接、眨眼和尾巴，以及旧版 AssetBundle 外观。 |
+| 制作会眨眼和摆尾的角色皮肤 | [直立鼠](Examples/UprightMouse/README.md) 演示 GLB 身体挂接、眨眼形状键和尾巴骨骼。 |
 | 加入能在工作台制作的服装 | [青苔魔法套装](Examples/WitchRobe/README.md) 添加魔法袍和帽子，沿用游戏的穿脱流程。 |
 | 为角色皮肤和服装模组提供支持 | [外观模组框架](Examples/AppearanceFramework/README.md) 提供「外观库」，让玩家选择外观，并在同一个房间里同步。 |
 | 改变画面风格 | [复古滤镜](Examples/RetroFilters/README.md) 演示全屏效果和实时调节。 |

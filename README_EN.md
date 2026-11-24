@@ -58,7 +58,7 @@ GLB appearances use the same model file on Windows and macOS. Try the release pa
 | What you want to do | Where to start |
 | --- | --- |
 | Make an appearance from a model and configuration | [Sprout Cap](Examples/SproutCap/README_EN.md) is a GLB example you can edit without code or Unity. |
-| Maintain an existing Unity model pack | [Upright Mouse](Examples/UprightMouse/README_EN.md) shows body attachment, blinking, and tail movement with the existing AssetBundle format. |
+| Make a character skin that blinks and moves its tail | [Upright Mouse](Examples/UprightMouse/README_EN.md) shows GLB body attachments, eyelid shapes, and tail bones. |
 | Add clothing players can craft | [Moss Witch Outfit](Examples/WitchRobe/README_EN.md) adds a craftable robe and hat that use the game’s equipment system. |
 | Support character skin and outfit mods | The [Appearance Mod Framework](Examples/AppearanceFramework/README_EN.md) adds the Appearances menu and syncs custom looks between players in a room. |
 | Change the look of the game | [Retro Filters](Examples/RetroFilters/README_EN.md) demonstrates full-screen effects and live controls. |

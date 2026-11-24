@@ -59,7 +59,7 @@ namespace CozyMods.Appearance
             foreach (var path in Directory.GetFiles(library, "*.appearance"))
             {
                 var digest = Path.GetFileNameWithoutExtension(path);
-                if (AppearanceData.IsDigest(digest) && TryReadFile(digest, path, out var pack) && !pack.Catalog.UsesGlb)
+                if (AppearanceData.IsDigest(digest) && TryReadFile(digest, path, out var pack))
                 {
                     pack.Saved = true;
                     known[digest] = pack;
@@ -268,7 +268,7 @@ namespace CozyMods.Appearance
         public void Preview(string key)
         {
             var pack = FindEntry(key, out var entry);
-            preview = pack != null && pack.Installed && pack.Catalog.UsesGlb ? pack : null;
+            preview = pack != null && pack.Catalog.UsesGlb ? pack : null;
             if (preview != null && !pack.LoadFailed && !pack.Loaded.ContainsKey(entry.Id))
                 GetModelEntry(pack, entry);
         }
@@ -278,7 +278,7 @@ namespace CozyMods.Appearance
 
         private LoadedAppearance GetModelEntry(Pack pack, AppearanceEntry entry)
         {
-            if (!pack.Installed || pack.FailedEntries.Contains(entry.Id)) return null;
+            if (pack.FailedEntries.Contains(entry.Id)) return null;
             if (pack.Model == null)
             {
                 if (pack.ModelRequest == null)
@@ -320,7 +320,7 @@ namespace CozyMods.Appearance
                 var path = pack.Path;
                 var bytes = await Task.Run(() => ReadModel(path), request.Token);
                 model = await GlbModel.LoadAsync(bytes, request.Token);
-                if (request.IsCancellationRequested || !pack.Installed) return;
+                if (request.IsCancellationRequested) return;
                 pack.Model = model;
                 model = null;
             }
@@ -418,7 +418,7 @@ namespace CozyMods.Appearance
         {
             foreach (var pack in known.Values)
                 if ((pack.Bundle != null || pack.Model != null || pack.ModelRequest != null) &&
-                    !inUse.Contains(pack.Digest) && (pack != preview || !pack.Installed)) Unload(pack);
+                    !inUse.Contains(pack.Digest) && pack != preview) Unload(pack);
         }
 
         public void TrimCache(ISet<string> requested)

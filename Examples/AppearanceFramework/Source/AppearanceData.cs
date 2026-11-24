@@ -173,7 +173,7 @@ namespace CozyMods.Appearance
         private static bool ValidPayload(AppearanceCatalog catalog) => catalog.SchemaVersion switch
         {
             1 => catalog.Model == null && catalog.Platform == Platform && AssetPath(catalog.Bundle, ".bundle"),
-            2 => catalog.Platform == null && catalog.Bundle == null && !catalog.Share && !catalog.AllowSave &&
+            2 => catalog.Platform == null && catalog.Bundle == null &&
                 AssetPath(catalog.Model, ".glb"),
             _ => false
         };

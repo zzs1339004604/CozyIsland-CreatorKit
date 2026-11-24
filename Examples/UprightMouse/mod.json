@@ -4,13 +4,13 @@
   "name": "cozy.example.upright-mouse",
   "uuid": "e2dcfcb1-c153-46b2-95ad-8e69a66da2e4",
   "author": "LazyFish Studio",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "在「外观库」选择直立鼠。换上鼠皮肤后仍能使用游戏原有的动作和服装。",
   "preview": "preview.png",
   "dependencies": [
     {
       "uuid": "a2f648bf-1066-45da-91ea-1c7ca2f2511e",
-      "minimumVersion": "0.1.0"
+      "minimumVersion": "0.2.0"
     }
   ]
 }

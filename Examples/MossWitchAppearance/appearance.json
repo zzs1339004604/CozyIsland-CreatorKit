@@ -1,10 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "cozy.appearance.moss-witch",
   "name": "青苔魔法套装",
   "author": "LazyFish Studio",
-  "platform": "win64",
-  "bundle": "Assets/witch-robe-win64.bundle",
   "share": true,
   "allowSave": true,
   "entries": [
@@ -12,8 +10,7 @@
       "id": "moss-robe",
       "name": "青苔魔法袍",
       "slot": "Cloth",
-      "prefab": "Assets/WitchRobe/WitchRobe.prefab",
-      "color": "#267B73",
+      "prefab": "WitchRobe",
       "nativeOwner": "f730ddf9-0078-4d0b-aaa9-4fe171855d15",
       "nativeItem": "witch-robe",
       "parts": [
@@ -27,14 +24,20 @@
           "anchor": "Sleeve",
           "nativeEquipment": 1853934543
         }
-      ]
+      ],
+      "materials": {
+        "ClothTeal": {
+          "prefab": 815921587,
+          "name": "Cozy-Cloth-MagicHat-1",
+          "color": "#267B73"
+        }
+      }
     },
     {
       "id": "moss-hat",
       "name": "青苔魔法帽",
       "slot": "Hat",
-      "prefab": "Assets/WitchRobe/WitchRobe.prefab",
-      "color": "#267B73",
+      "prefab": "WitchRobe",
       "nativeOwner": "f730ddf9-0078-4d0b-aaa9-4fe171855d15",
       "nativeItem": "witch-hat",
       "parts": [
@@ -43,7 +46,27 @@
           "anchor": "Hat",
           "nativeEquipment": 815921587
         }
-      ]
+      ],
+      "materials": {
+        "ClothTeal": {
+          "prefab": 815921587,
+          "name": "Cozy-Cloth-MagicHat-1",
+          "color": "#267B73"
+        },
+        "TrimGold": {
+          "prefab": 815921587,
+          "name": "Cozy-Cloth-MagicHat-2"
+        },
+        "LiningPurple": {
+          "prefab": 815921587,
+          "name": "Cozy-Cloth-MagicHat-3"
+        },
+        "BuckleSilver": {
+          "prefab": 815921587,
+          "name": "Cozy-Rock-Metical"
+        }
+      }
     }
-  ]
+  ],
+  "model": "Assets/moss-witch.glb"
 }

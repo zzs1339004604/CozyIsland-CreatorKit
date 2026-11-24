@@ -1,10 +1,8 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "cozy.appearance.upright-mouse",
   "name": "直立鼠",
   "author": "LazyFish Studio",
-  "platform": "win64",
-  "bundle": "Assets/uprightmouse.bundle",
   "share": true,
   "allowSave": true,
   "entries": [
@@ -12,7 +10,7 @@
       "id": "upright-mouse",
       "name": "直立鼠",
       "slot": "Body",
-      "prefab": "Assets/UprightMouse/UprightMouse.prefab",
+      "prefab": "UprightMouse",
       "materials": {
         "MouseFur": {
           "prefab": 859571797,
@@ -113,5 +111,6 @@
         }
       ]
     }
-  ]
+  ],
+  "model": "Assets/upright-mouse.glb"
 }

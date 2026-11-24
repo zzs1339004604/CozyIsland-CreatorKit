@@ -21,7 +21,7 @@ Use these steps when maintaining the framework code. The same framework DLL supp
 2. In the game, open **Mods → Mod Creator → Open Work Folder**. If it opens an existing mod, go up one level to `Mods`. Create an `AppearanceFramework` folder there and copy in `mod.json`, the [cover image](preview.png), and the generated `Code/CozyMods.AppearanceFramework.dll`, keeping their paths.
 3. Place your chosen appearance pack in another folder under `Mods`. Enable both mods and restart the game. Choose **Appearances** on the main menu to select a body and clothing before entering an island. Press **F10** during play to open the same window. You can also change the shortcut or restore the default appearance there.
 
-For room sharing with existing AssetBundle appearances, the host and guests need the same framework version. Received appearances go into a temporary cache. If the author allows saving, select the appearance under Room Appearances and choose **Save and Equip** to use it next time. Turning off automatic reception stops the local player from fetching missing assets. It also stops the host from fetching missing assets on behalf of guests. Installed or cached appearances remain available.
+The host and guests need the same framework version to share appearances in a room. Received appearances go into a temporary cache. If the author allows saving, select the appearance under Room Appearances and choose **Save and Equip** to use it next time. Turning off automatic reception stops the local player from fetching missing assets. It also stops the host from fetching missing assets on behalf of guests. Installed or cached appearances remain available.
 
 ## Make an appearance pack
 
@@ -49,8 +49,8 @@ Each entry has an `id`, `name`, wearable `slot`, and list of `parts` to attach. 
 - A body can use `bodyMaterial` for exposed original skin and `hideBody` for original parts such as the neck. Use `blinkBlendShape` to pick an eyelid shape for blinking. For a skinned tail or similar part, `followThrough` describes the bones that sway as the character moves.
 - A clothing part can use `nativeEquipment` to take placement and materials from an existing game item. To apply the appearance automatically when a player wears a custom craftable item, set the entry's `nativeOwner` (the registering mod UUID) and `nativeItem` (the item ID).
 
-GLB appearances currently support local wear. Leave `share` and `allowSave` unset or set them to `false`. The model and catalog together may be up to 8 MiB. The framework supplies attachment, materials, and animation behavior. [Entry fields](Source/AppearanceData.cs) · [Part fields](Source/PlacementVisuals.cs)
+Set `share` to `true` to share a GLB appearance in a room. Also set `allowSave` to `true` to let recipients save and equip it. The model and catalog together may be up to 8 MiB. The framework supplies attachment, materials, and animation behavior. [Entry fields](Source/AppearanceData.cs) · [Part fields](Source/PlacementVisuals.cs)
 
 ## Existing AssetBundle appearances
 
-The framework still supports `schemaVersion: 1` with `platform` (`win64` or `macos`), a `bundle` path, and Unity Prefab paths. In this format, `share` and `allowSave` control room sharing and saving. See [Upright Mouse](../UprightMouse/README_EN.md) for an example of building bundles for Unity-specific assets.
+The framework still supports `schemaVersion: 1` with `platform` (`win64` or `macos`), a `bundle` path, and Unity Prefab paths. Here too, `share` and `allowSave` control room sharing and saving. Build Unity-specific AssetBundles separately for each target platform. [Native asset authoring](../../Docs/Native-Authoring.md)

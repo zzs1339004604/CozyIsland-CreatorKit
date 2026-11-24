@@ -21,7 +21,7 @@
 2. 在游戏中打开 **模组 → 模组创作 → 打开作品文件夹**。如果打开的是某个作品，回到上一级 `Mods`。在其中新建 `AppearanceFramework`，把 `mod.json`、[封面图](preview.png)和刚生成的 `Code/CozyMods.AppearanceFramework.dll` 放进去，保留原有目录结构。
 3. 把你想试用的外观包放入 `Mods` 下另一个文件夹。在模组列表开启框架和外观包，完整重开游戏。在主菜单点 **外观库**，可以先选好要穿的身体和服装，进岛后就会显示。游戏中按 **F10** 也能打开窗口，可以在窗口里更改快捷键或恢复默认外观。
 
-使用旧版 AssetBundle 外观的房间共享功能时，房主和客机都需启用同一版本的框架。收到的外观先放入临时缓存。想下次继续使用时，可以在「房间外观」选中作者允许保存的外观，点击 **保存并穿上**。关闭「自动接收房间外观」后，本机停止获取缺少的资源，房主也停止为客机获取缺少的资源。已安装或缓存的外观仍可使用。
+在房间里分享外观时，房主和客机都需启用同一版本的框架。收到的外观先放入临时缓存。想下次继续使用时，可以在「房间外观」选中作者允许保存的外观，点击 **保存并穿上**。关闭「自动接收房间外观」后，本机停止获取缺少的资源，房主也停止为客机获取缺少的资源。已安装或缓存的外观仍可使用。
 
 ## 做自己的外观包
 
@@ -49,8 +49,8 @@
 - 身体条目可用 `bodyMaterial` 给原角色露出的皮肤指定配色，用 `hideBody` 另行遮住颈部等原有部件。眼睛可通过 `blinkBlendShape` 指定眨眼使用的形变。带骨骼的尾巴等部件可以用 `followThrough` 配置跟随角色移动的摆动。
 - 服装部件可用 `nativeEquipment` 选一个游戏原版装备作为位置和材质的参考。要让穿上自制实物时自动应用外观，填入条目的 `nativeOwner`（注册物品的模组 UUID）和 `nativeItem`（物品 ID）。
 
-GLB 外观当前用于本机穿戴，`share` 和 `allowSave` 留空或设为 `false`。模型和外观清单合计上限 8 MiB。框架使用自带的挂接、材质和动画行为。 [数据字段](Source/AppearanceData.cs) · [部件字段](Source/PlacementVisuals.cs)
+将 `share` 设为 `true` 可以在房间里分享 GLB 外观。也将 `allowSave` 设为 `true` 时，收到外观的玩家可以保存并穿上。模型和外观清单合计上限 8 MiB。框架使用自带的挂接、材质和动画行为。 [数据字段](Source/AppearanceData.cs) · [部件字段](Source/PlacementVisuals.cs)
 
 ## 现有 AssetBundle 外观
 
-框架继续支持 `schemaVersion: 1`。这一格式使用 `platform`（`win64` 或 `macos`）、`bundle` 和各条目的 Unity Prefab 路径。这里的 `share` 和 `allowSave` 仍控制房间分享和保存。维护 Unity 专用资源时，按各平台构建资源包，可以参考[直立鼠](../UprightMouse/README.md)。
+框架继续支持 `schemaVersion: 1`。这一格式使用 `platform`（`win64` 或 `macos`）、`bundle` 和各条目的 Unity Prefab 路径。这里的 `share` 和 `allowSave` 也控制房间分享和保存。维护 Unity 专用的 AssetBundle 时，为每个目标平台分别构建。 [原生资源制作](../../Docs/Native-Authoring.md)
