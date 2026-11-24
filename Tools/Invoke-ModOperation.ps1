@@ -92,6 +92,6 @@ try {
         if ($report.result -ne 'OK') { throw "Steam did not report a successful upload: $resultFile" }
         Write-Host "Uploaded Workshop item $($report.workshopId): https://steamcommunity.com/sharedfiles/filedetails/?id=$($report.workshopId)"
         if ($report.needsWorkshopAgreement) { Write-Warning 'Steam requires the creator to accept the Workshop agreement on the item page.' }
-    } else { Write-Host "Validated $($report.id), $($report.files) packaged files." }
+    } else { Write-Host "Validated $($report.name) ($($report.uuid)), $($report.files) packaged files." }
     Write-Output $report
 } finally { $process.Dispose() }

@@ -7,13 +7,13 @@
 复制模板并替换路径、身份、需求和可见性。模板明确授权上传一个作品；只做本地制作时改为“完成制作与本地测试，暂不上传”。
 
 ```text
-请使用我提供的 Cozy Island ModCreatorKit，为《舒舒服服小岛时光》制作一个 Mod，完成本地测试后上传到我当前登录的 Steam 账号。
+请使用我提供的 Cozy Island Modding 工具包，为《舒舒服服小岛时光》制作一个 Mod，完成本地测试后上传到我当前登录的 Steam 账号。
 
-工具包目录：D:\ModCreatorKit
+工具包目录：D:\cozy-island-modding
 完整游戏 Build：Windows 安装目录（如 D:\SteamLibrary\steamapps\common\Cozy Island），或 macOS 的完整 CozyIsland.app
 游戏启动路径：Windows 的 CozyIsland.exe，或 macOS 的完整 CozyIsland.app
-作者作品目录：D:\ModCreatorKit\MyMods\my-garden
-UniqueID：由 New-CodeMod.ps1 创建时生成，后续保留
+作者作品目录：D:\cozy-island-modding\MyMods\my-garden
+uuid：由 New-CodeMod.ps1 创建时生成，后续保留
 作者名：我的作者名
 作品标题：轻松园艺
 需求：房主作物生长速度提高 25%，耗水保持原样；停用后恢复。
@@ -21,8 +21,8 @@ UniqueID：由 New-CodeMod.ps1 创建时生成，后续保留
 
 请按以下步骤执行：
 1. 阅读 README.md、Docs/Manifest.md、Docs/API.md、Docs/Reloading.md、Docs/Save-Data.md、Docs/Native-Authoring.md、Docs/Game-and-Prefab-Guide.md、Tools/README.md 和相关范例。先用 MinimalCodeMod 理解加载/共享 Harmony，再检查 GreenThumb 的原生农田补丁。新物品与配方参考 TrailTreat，保留其同步登记和延后接入原生管理器的区分；世界任务进度参考其 RegisterSaveData 版本化 JSON，不写独立任务侧文件，也不把保存接口当作多人同步协议。
-2. 使用 New-CodeMod.ps1，以本地工程名创建项目，生成一次 UUID 作为 UniqueID，并生成配套程序集与入口；更新已有作品时保留原身份。仅使用提供的完整游戏 Build 与创作包。按 Tools/README.md 核对配套 Player。运行 Import-GameReferences.ps1 导入该 Build 的引用，通过 IDE/反射/程序集查看工具核对真实类型与签名。不要请求或读取游戏 Unity 源码工程，不编造 API、路径或资源 ID。需要物品/配方时使用随包 Reference 快照并核对生成信息及当前 Player。
-3. 在作者作品目录实现需求，保留已生成的 UniqueID，使用独立 AssemblyName 和正确 code 入口。mod.json 仅负责元信息、依赖和代码入口；自己的配置 JSON 由作者代码读取和校验。不要向清单添加未实现玩法字段。
+2. 使用 New-CodeMod.ps1，以本地工程名创建项目，将工程名写入 name，生成一次 UUID 写入 uuid，并生成配套程序集与入口；更新已有作品时保留原身份。仅使用提供的完整游戏 Build 与创作包。按 Tools/README.md 核对配套 Player。运行 Import-GameReferences.ps1 导入该 Build 的引用，通过 IDE/反射/程序集查看工具核对真实类型与签名。不要请求或读取游戏 Unity 源码工程，不编造 API、路径或资源 ID。需要物品/配方时使用随包 Reference 快照并核对生成信息及当前 Player。
+3. 在作者作品目录实现需求，保留已生成的 uuid，使用独立 AssemblyName 和正确 code 入口。mod.json 仅负责元信息、依赖和代码入口；自己的配置 JSON 由作者代码读取和校验。不要向清单添加未实现玩法字段。
 4. 使用 context.Harmony、托管回调和 AddCleanup；不复制游戏、Unity、Harmony、MonoMod、Cecil 或 Mirror DLL。无法可靠撤销效果时声明 requiresRestart。新增可保存/联网物品时按 OnContentReady 与 Registry 契约登记稳定归属，不靠延迟首帧补注册。
 5. 用 Build-CodeMod.ps1 编译，复制运行文件后，用 Validate-Mod.ps1 检查将启用的这份运行包。校验成功只证明清单和包结构被接受，尤其要在实际启用时确认入口与依赖。按 Docs/Save-Data.md 核对世界存档和用户数据的不同位置，备份原配置并使用独立测试岛；复制 Build 不等于隔离用户数据。复制运行包到本地 Mods 直接子目录，手动启用，检查需求、停用恢复及重入世界。修改 DLL 后完整退出进程。编译、包校验和“列表已开启”不算玩法通过；测试驱动调用原生 API 与手工界面操作分别记录。
 6. 本地验证通过后，对实际通过校验和测试的运行包调用 Publish-Mod.ps1。显式传入所授权的可见性。省略 Visibility 时首次默认私密，更新沿用原可见性。保持 Steam 登录，不收集密码；上传前关闭目标游戏。只有本次 success=true 且 result=OK 才算成功。超时时检查仍运行的进程、日志和工坊状态，不重复创建作品。
@@ -36,13 +36,13 @@ UniqueID：由 New-CodeMod.ps1 创建时生成，后续保留
 
 ## 更新已有作品
 
-提供原作品目录、Mod ID、工坊链接、新版本和修改需求。更新保持 Mod ID、程序集身份以及已发布物品局部 ID 稳定；修改显示标题不等于换身份。
+提供原作品目录、Mod UUID、工坊链接、新版本和修改需求。更新保持 Mod UUID、程序集身份以及已发布物品局部 ID 稳定；修改显示标题不等于换身份。
 
 ```text
 请更新我的现有 Cozy Island Mod，并更新原工坊物品。
 工具包/完整游戏 Build：<绝对路径>
 原作品目录：<绝对路径>
-保持不变的 Mod ID：<ID>
+保持不变的 Mod UUID：<ID>
 原工坊链接：<链接>
 新版本：<数字版本>
 改动需求：<具体行为>

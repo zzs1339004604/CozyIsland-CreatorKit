@@ -26,7 +26,7 @@ $referenceManifest = Join-Path $managedRoot 'reference-manifest.json'
 if (Test-Path -LiteralPath $referenceManifest -PathType Leaf) {
     $reference = Get-Content -LiteralPath $referenceManifest -Raw | ConvertFrom-Json
     if ($reference.compatibility.capability -ne 'unique-id-manifest-v1') {
-        throw 'Reimport the references with this CreatorKit to verify the Player supports UniqueID.'
+        throw 'Reimport the references with this CreatorKit to verify the Player supports the displayName, name, and uuid manifest.'
     }
     foreach ($actual in Get-CozyPlayerFingerprint ([pscustomobject]@{ managed = $managedRoot })) {
         $expected = @($reference.compatibility.files | Where-Object { $_.file -eq $actual.file })
@@ -35,7 +35,7 @@ if (Test-Path -LiteralPath $referenceManifest -PathType Leaf) {
         }
     }
 } else {
-    Write-Warning 'These references lack a compatibility report. Build success alone does not verify the Player supports UniqueID. Run Import-GameReferences.ps1 for verified references.'
+    Write-Warning 'These references lack a compatibility report. Build success alone does not verify the Player supports the displayName, name, and uuid manifest. Run Import-GameReferences.ps1 for verified references.'
 }
 $arguments = @('build', $projectFile, '--configuration', $Configuration, '--nologo', "-p:GameManagedPath=$managedRoot")
 & $dotnetCommand.Source @arguments

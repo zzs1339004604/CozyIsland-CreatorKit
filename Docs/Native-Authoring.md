@@ -12,7 +12,7 @@
 
 ## 核对一个原生模板与配方
 
-用 `New-CodeMod.ps1` 建一个本地测试工程，把下面的代码替换 `Source/ModEntry.cs`。将清单中的 `code.type` 改为 `InspectWorkbench`，保留原 `UniqueID` 和 `code.assembly`。编译、安装并启用后进入测试岛。此例只读取现有模板和配方，输出到 Player 日志。
+用 `New-CodeMod.ps1` 建一个本地测试工程，把下面的代码替换 `Source/ModEntry.cs`。将清单中的 `code.type` 改为 `InspectWorkbench`，保留原 `uuid` 和 `code.assembly`。编译、安装并启用后进入测试岛。此例只读取现有模板和配方，输出到 Player 日志。
 
 ```csharp
 using CozyIsland.Modding;

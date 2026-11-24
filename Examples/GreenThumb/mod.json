@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "id": "examples.green-thumb",
-  "title": "园艺好帮手",
+  "displayName": "园艺好帮手",
+  "name": "examples.green-thumb",
+  "uuid": "aa25a567-9000-4c50-8c2e-f82dac4fe1e3",
   "author": "Cozy Island Mod Examples",
   "version": "2.0.0",
   "description": "配置型平衡模组：作物生长速度加倍，耗水减半。",
-  "multiplayer": "host",
   "preview": "preview.png",
   "code": {
     "assembly": "Code/CozyMods.GreenThumb.dll",

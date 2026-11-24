@@ -1,8 +1,8 @@
 # Trail Treat / 远足饼
 
-这是 CozyIsland-ModCreatorKit 的原生新物品范例，请使用本工具包配套的 Mono Player。下方历史 Windows 测试使用较早的 Unity 2022.3.62f3c1 构建。目标是展示：从原生食物模板建立独立保存身份，接入原生工作台配方，用原生食用事件完成作者任务，并在作者 DLL 中构造新视觉层级。它不依赖游戏专用 Bridge/Content SDK。
+这是 Cozy Island Modding 的原生新物品范例，请使用本工具包配套的 Mono Player。下方历史 Windows 测试使用较早的 Unity 2022.3.62f3c1 构建。目标是展示：从原生食物模板建立独立保存身份，接入原生工作台配方，用原生食用事件完成作者任务，并在作者 DLL 中构造新视觉层级。它不依赖游戏专用 Bridge/Content SDK。
 
-目录应放在创作者包的 `Examples/TrailTreat`。Mod ID 为 `trial.nobridge.trail-treat`，版本 1.1.0，程序集为 `Trial.NoBridge.TrailTreat`，入口 `Trial.NoBridge.TrailTreat`。这些身份保留自实际验证作品；不要同时启用同 ID 的本地副本和工坊副本。制作独立派生作品时，先运行 `New-CodeMod.ps1` 创建新 UUID 工程，保留生成的 `UniqueID` 和程序集名。把 `TrailTreat.cs` 移入新工程的 `Source/`，把 `Assets/trail.png` 复制到新工程同相对位置。移除生成的空入口，把清单 `code.type` 设为移植后的完整入口类名，保留新工程的 `code.assembly` 并按本例设置 `requiresRestart: true`。为 `RecipeName` 选唯一配方键，并更换 `GUI.Window` 的固定窗口 ID（本例为 789312）。更新同一作品时保持作品身份和局部物品 ID。
+目录应放在创作者包的 `Examples/TrailTreat`。标识名为 `trial.nobridge.trail-treat`，版本 1.1.0，程序集为 `Trial.NoBridge.TrailTreat`，入口 `Trial.NoBridge.TrailTreat`。UUID 见本目录的 `mod.json`。本地副本和工坊副本使用同一个 UUID 时，只启用一份。制作独立派生作品时，先运行 `New-CodeMod.ps1` 创建新 UUID 工程，保留生成的 `uuid` 和程序集名。把 `TrailTreat.cs` 移入新工程的 `Source/`，把 `Assets/trail.png` 复制到新工程同相对位置。移除生成的空入口，把清单 `code.type` 设为移植后的完整入口类名，保留新工程的 `code.assembly` 并按本例设置 `requiresRestart: true`。为 `RecipeName` 选唯一配方键，并更换 `GUI.Window` 的固定窗口 ID（本例为 789312）。更新同一作品时保持作品身份和局部物品 ID。
 
 ## 编译与安装
 
@@ -54,7 +54,7 @@
 
 ## 验证范围与限制
 
-以下是 1.1.0 用较早的完整 Windows Mono Player（Unity 2022.3.62f3c1）取得的历史记录。该范例当时重新编译，并在独立进程调用原生制作、拾取、入背包和食用流程，验证两次食用的一次性奖励。自动化由本地外部驱动调用原生操作，不等同于完整手工 UI 导航；驱动不属于本范例，也不随 CreatorKit 分发。
+以下是 1.1.0 用较早的完整 Windows Mono Player（Unity 2022.3.62f3c1）取得的历史记录。该范例当时重新编译，并在独立进程调用原生制作、拾取、入背包和食用流程，验证两次食用的一次性奖励。自动化由本地外部驱动调用原生操作，不等同于完整手工 UI 导航；驱动不属于本范例，也未随工具包分发。
 
 任务保存已实际验证两份世界存档：A 为 1/2、未领奖，B 为 2/2、已领奖；完全退出后分别读取，世界物品和任务状态随所选版本恢复。主动停用后，Mod 物品和背包引用被清理，原始存档及备份字节一致；另存仍保留不透明任务 JSON。重新启用并冷读另存版本，任务恢复为 2/2，已清理的物品没有重新出现。框架另有捕获、迁移、序列化和提交失败的故障注入回归，不能据此宣称所有第三方作者代码都安全。
 
