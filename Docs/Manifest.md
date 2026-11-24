@@ -37,7 +37,7 @@
 | `code.assembly` | 相对作品根部的 `.dll` 路径，文件须存在 |
 | `code.type` | 实现 `CozyIsland.Modding.ICozyMod` 的完整入口类名，最多 256 字符；公开、非抽象、有可公开调用的无参构造函数 |
 
-数据包可以只提供清单与资源，并在 `dependencies` 中声明负责读取它的模组。例如，联机外观框架读取直立鼠外观包的 `appearance.json`。清单负责说明身份、依赖和代码入口。自定义配置可以随包发布，由代码通过 `context.ReadPath` 定位并校验。未知清单字段和未知格式版本会报错。 [直立鼠外观数据](../Examples/UprightMouse/appearance.json)
+数据包可以只提供清单与资源，并在 `dependencies` 中声明负责读取它的模组。例如，外观模组框架读取直立鼠外观包的 `appearance.json`。清单负责说明身份、依赖和代码入口。自定义配置可以随包发布，由代码通过 `context.ReadPath` 定位并校验。未知清单字段和未知格式版本会报错。 [直立鼠外观数据](../Examples/UprightMouse/appearance.json)
 
 没有 `preview` 字段时，上传器依次尝试 `preview.png`、`icon.png`，均不存在则生成默认封面。显示名与标识名可以修改。`uuid` 用于副本识别、依赖匹配、发布关联、Harmony owner 和注册归属。更新时保留它。
 

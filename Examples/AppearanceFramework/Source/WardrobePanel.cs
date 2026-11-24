@@ -66,7 +66,7 @@ namespace CozyMods.Appearance
                 center.pixelsPerUnitMultiplier = edge.pixelsPerUnitMultiplier;
 
                 Surface(At("Title background", panel, 250, 16, 244, 42), trim);
-                Text(panel, L("联机外观", "Appearances"), 250, 16, 244, 42, 25).alignment = TextAlignmentOptions.Center;
+                Text(panel, L("外观库", "Appearances"), 250, 16, 244, 42, 25).alignment = TextAlignmentOptions.Center;
 
                 body = Button(panel, "Appearance Body", L("身体", "Body"), 24, 69, 96, 35, () => owner.ChangeSlot(0));
                 clothing = Button(panel, "Appearance Clothing", L("服装", "Clothing"), 128, 69, 96, 35,

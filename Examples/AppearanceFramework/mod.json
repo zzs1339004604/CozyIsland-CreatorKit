@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "uuid": "a2f648bf-1066-45da-91ea-1c7ca2f2511e",
-  "displayName": "联机外观",
+  "displayName": "外观模组框架",
   "name": "cozy.appearance.framework",
   "author": "Cozy Island Mod Examples",
-  "version": "0.1.1",
-  "description": "在联机房间同步并按需收取可分享的身体皮肤和服装外观。在主菜单点「联机外观」，或按 F10 打开外观库。",
+  "version": "0.1.2",
+  "description": "为其他模组提供角色皮肤和服装支持，并在联机房间同步外观。启用框架和外观模组后，点主菜单的「外观库」，或在岛上按 F10 来选择外观。",
   "preview": "preview.png",
   "requiresRestart": true,
   "code": {

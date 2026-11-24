@@ -54,9 +54,9 @@ GPT 和 Claude 等 AI 助手可以帮你从现成的范例做起，修改代码�
 
 | 想做什么 | 从这里开始 |
 | --- | --- |
-| 用自制模型做身体外观 | [直立鼠](Examples/UprightMouse/README.md) 演示纯数据身体外观包，可在联机外观框架的 F10 菜单选用。 |
+| 用自制模型做身体外观 | [直立鼠](Examples/UprightMouse/README.md) 演示纯数据身体外观包，按 F10 打开「外观库」即可选择。 |
 | 加入能在工作台制作的服装 | [青苔魔法套装](Examples/WitchRobe/README.md) 添加魔法袍和帽子，沿用游戏的穿脱流程。 |
-| 和朋友互相看到自定义外观 | [联机外观](Examples/AppearanceFramework/README.md) 让启用同一框架的玩家在房间里选择和分享外观。 |
+| 为角色皮肤和服装模组提供支持 | [外观模组框架](Examples/AppearanceFramework/README.md) 提供「外观库」，让玩家选择外观，并在同一个房间里同步。 |
 | 改变画面风格 | [复古滤镜](Examples/RetroFilters/README.md) 演示全屏效果和实时调节。 |
 | 加入物品、配方和任务 | [远足饼](Examples/TrailTreat/README.md) 演示食物和任务进度。[研究营地](Examples/ResearchCamp/README.md) 演示自制模型和联机任务。 |
 

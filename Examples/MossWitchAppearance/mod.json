@@ -5,7 +5,7 @@
   "name": "cozy.appearance.example.moss-witch",
   "author": "Cozy Island Mod Examples",
   "version": "0.1.0",
-  "description": "给联机外观框架使用的青苔魔法袍和帽子。",
+  "description": "在「外观库」选择青苔魔法袍和帽子。需要启用外观模组框架。",
   "preview": "preview.png",
   "dependencies": [
     {

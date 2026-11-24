@@ -9,10 +9,10 @@
 | 给交互提示加文字 | [BuildingHints](BuildingHints/README.md) | 用小木锤对准可拆除的建筑，观察拆除提示中的建筑名。 |
 | 调整作物生长和耗水 | [GreenThumb](GreenThumb/README.md) | 用房主角色对比同种作物的生长和耗水。参数在 `garden.json`。 |
 | 调整角色移动速度 | [BriskWalk](BriskWalk/README.md) | 在相同路线对比步行速度。奔跑倍率的效果取决于角色控制器。 |
-| 给角色换上直立鼠皮肤 | [UprightMouse](UprightMouse/README.md) | 启用联机外观框架和此纯数据包，在 F10 菜单选择直立鼠。附 Windows x64 资源包。 |
+| 给角色换上直立鼠皮肤 | [UprightMouse](UprightMouse/README.md) | 启用外观模组框架和此数据包，按 F10 打开「外观库」并选择直立鼠。附 Windows x64 资源包。 |
 | 给画面加复古滤镜 | [RetroFilters](RetroFilters/README.md) | 使用随附的 Windows x64 资源包，在主菜单实时预览，或进岛后按 F9 调整效果。 |
 | 添加可以制作和穿戴的服装物品 | [WitchRobe](WitchRobe/README.md) | 在基础工作台制作青苔魔法袍和魔法帽。随附 Windows x64 资源包，联机时各端安装同一版本以显示模型。 |
-| 选择和分享联机外观 | [AppearanceFramework](AppearanceFramework/README.md) | 各端启用同一框架后，可以用 F10 选择外观。外观包可按作者设置在房间内分享资源。 |
+| 为外观包提供支持 | [AppearanceFramework](AppearanceFramework/README.md) | 外观模组框架提供「外观库」，并按作者的设置在联机房间同步和分享皮肤及服装。 |
 | 在 F10 菜单选择青苔造型 | [MossWitchAppearance](MossWitchAppearance/README.md) | 启用框架和此可选纯数据包，在 F10 菜单选择魔法袍或帽子。附 Windows x64 资源包。 |
 | 添加食物、配方和任务 | [TrailTreat](TrailTreat/README.md) | 制作并食用两次远足饼，触发吐司奖励。任务由房主推进并存入世界存档。 |
 | 添加营地和可保存的联机任务 | [ResearchCamp](ResearchCamp/README.md) | 从营地、口粮配方和三个小目标入手。随附 Windows x64 和 macOS 资源包，同包客机可接收进度。 |
