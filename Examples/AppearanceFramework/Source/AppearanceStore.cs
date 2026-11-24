@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using CozyIsland.Modding;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -17,7 +19,10 @@ namespace CozyMods.Appearance
             public AppearanceCatalog Catalog;
             public bool Saved, Installed;
             public SharedBundle Bundle;
+            public GlbModel Model;
+            public CancellationTokenSource ModelRequest;
             public bool LoadFailed;
+            public readonly HashSet<string> FailedEntries = new HashSet<string>();
             public readonly Dictionary<string, LoadedAppearance> Loaded = new Dictionary<string, LoadedAppearance>();
         }
 
@@ -31,8 +36,8 @@ namespace CozyMods.Appearance
 
         private sealed class InstalledSource
         {
-            public string Digest, BundlePath;
-            public DateTime CatalogTime, BundleTime, UpgradesTime;
+            public string Digest, PayloadPath;
+            public DateTime CatalogTime, PayloadTime, UpgradesTime;
             public string[] PreviousDigests = Array.Empty<string>();
         }
 
@@ -41,6 +46,8 @@ namespace CozyMods.Appearance
         private readonly Dictionary<string, InstalledSource> installed = new Dictionary<string, InstalledSource>(StringComparer.OrdinalIgnoreCase);
         private readonly string cache, library;
         private readonly Action<string> log;
+        private readonly SemaphoreSlim modelImports = new SemaphoreSlim(1);
+        private Pack preview;
 
         public AppearanceStore(string root, Action<string> log)
         {
@@ -52,7 +59,7 @@ namespace CozyMods.Appearance
             foreach (var path in Directory.GetFiles(library, "*.appearance"))
             {
                 var digest = Path.GetFileNameWithoutExtension(path);
-                if (AppearanceData.IsDigest(digest) && TryReadFile(digest, path, out var pack))
+                if (AppearanceData.IsDigest(digest) && TryReadFile(digest, path, out var pack) && !pack.Catalog.UsesGlb)
                 {
                     pack.Saved = true;
                     known[digest] = pack;
@@ -74,7 +81,7 @@ namespace CozyMods.Appearance
                 var upgradesTime = File.GetLastWriteTimeUtc(upgradesPath);
                 if (installed.TryGetValue(folder, out var source) && source.CatalogTime == time &&
                     source.UpgradesTime == upgradesTime &&
-                    (source.BundlePath == null || source.BundleTime == File.GetLastWriteTimeUtc(source.BundlePath))) continue;
+                    (source.PayloadPath == null || source.PayloadTime == File.GetLastWriteTimeUtc(source.PayloadPath))) continue;
 
                 var next = new InstalledSource { CatalogTime = time, UpgradesTime = upgradesTime };
                 installed[folder] = next;
@@ -90,18 +97,20 @@ namespace CozyMods.Appearance
                         throw new InvalidDataException("The appearance catalog is too large.");
                     var json = File.ReadAllBytes(path);
                     var catalog = AppearanceData.ReadCatalog(json, 0, json.Length);
-                    var bundlePath = Path.Combine(folder, catalog.Bundle);
-                    next.BundlePath = bundlePath;
-                    next.BundleTime = File.GetLastWriteTimeUtc(bundlePath);
-                    var size = new FileInfo(bundlePath).Length;
+                    // The framework can load a local .glb even with a Player that predates Workshop delivery for the extension.
+                    var payloadPath = catalog.UsesGlb ? CozyModFiles.Resolve(folder, catalog.Model, false) :
+                        Path.Combine(folder, catalog.Bundle);
+                    next.PayloadPath = payloadPath;
+                    next.PayloadTime = File.GetLastWriteTimeUtc(payloadPath);
+                    var size = new FileInfo(payloadPath).Length;
                     if (size < 1 || size + json.Length + 4 > AppearanceData.MaxPackBytes)
                         throw new InvalidDataException("The appearance pack exceeds 8 MiB.");
                     var bytes = new byte[4 + json.Length + (int)size];
                     Buffer.BlockCopy(BitConverter.GetBytes(json.Length), 0, bytes, 0, 4);
                     Buffer.BlockCopy(json, 0, bytes, 4, json.Length);
-                    var bundle = File.ReadAllBytes(bundlePath);
-                    if (bundle.Length != size) throw new IOException("The bundle changed while it was being read.");
-                    Buffer.BlockCopy(bundle, 0, bytes, 4 + json.Length, bundle.Length);
+                    var payload = File.ReadAllBytes(payloadPath);
+                    if (payload.Length != size) throw new IOException("The appearance payload changed while it was being read.");
+                    Buffer.BlockCopy(payload, 0, bytes, 4 + json.Length, payload.Length);
                     var digest = AppearanceData.Digest(bytes);
                     Register(digest, bytes, catalog);
                     next.Digest = digest;
@@ -220,6 +229,7 @@ namespace CozyMods.Appearance
             var pack = FindEntry(key, out var entry);
             if (pack == null || entry.Slot != slot || pack.LoadFailed) return null;
             if (pack.Loaded.TryGetValue(entry.Id, out var loaded)) return loaded;
+            if (pack.Catalog.UsesGlb) return GetModelEntry(pack, entry);
             try
             {
                 if (pack.Bundle == null)
@@ -253,6 +263,94 @@ namespace CozyMods.Appearance
                 log("Appearance could not be loaded: " + error.Message);
                 return null;
             }
+        }
+
+        public void Preview(string key)
+        {
+            var pack = FindEntry(key, out var entry);
+            preview = pack != null && pack.Installed && pack.Catalog.UsesGlb ? pack : null;
+            if (preview != null && !pack.LoadFailed && !pack.Loaded.ContainsKey(entry.Id))
+                GetModelEntry(pack, entry);
+        }
+
+        public bool IsLoadingModel(string digest) =>
+            known.TryGetValue(digest, out var pack) && pack.ModelRequest != null;
+
+        private LoadedAppearance GetModelEntry(Pack pack, AppearanceEntry entry)
+        {
+            if (!pack.Installed || pack.FailedEntries.Contains(entry.Id)) return null;
+            if (pack.Model == null)
+            {
+                if (pack.ModelRequest == null)
+                {
+                    var request = new CancellationTokenSource();
+                    pack.ModelRequest = request;
+                    _ = LoadModelAsync(pack, request);
+                }
+                return null;
+            }
+
+            var root = pack.Model.Root.transform;
+            if (entry.Prefab != null) root = root.Find(entry.Prefab);
+            if (root == null || entry.Parts.Any(part => root.Find(part.Path) == null))
+            {
+                pack.FailedEntries.Add(entry.Id);
+                log("Appearance model does not contain the configured root or parts for " + entry.Id + ".");
+                return null;
+            }
+
+            var loaded = new LoadedAppearance(entry, root.gameObject);
+            pack.Loaded[entry.Id] = loaded;
+            return loaded;
+        }
+
+        private async Task LoadModelAsync(Pack pack, CancellationTokenSource request)
+        {
+            GlbModel model = null;
+            bool entered = false;
+            try
+            {
+                await modelImports.WaitAsync(request.Token);
+                entered = true;
+                var path = pack.Path;
+                var bytes = await Task.Run(() => ReadModel(path), request.Token);
+                model = await GlbModel.LoadAsync(bytes, request.Token);
+                if (request.IsCancellationRequested || !pack.Installed) return;
+                pack.Model = model;
+                model = null;
+            }
+            catch (OperationCanceledException) when (request.IsCancellationRequested) { }
+            catch (Exception error)
+            {
+                if (!request.IsCancellationRequested)
+                {
+                    pack.LoadFailed = true;
+                    log("Appearance model " + pack.Catalog.Name + " could not be loaded: " + error.Message);
+                }
+            }
+            finally
+            {
+                if (pack.ModelRequest == request) pack.ModelRequest = null;
+                model?.Dispose();
+                if (entered) modelImports.Release();
+                request.Dispose();
+            }
+        }
+
+        private static byte[] ReadModel(string path)
+        {
+            using var input = File.OpenRead(path);
+            using var reader = new BinaryReader(input);
+            if (input.Length < 5 || input.Length > AppearanceData.MaxPackBytes)
+                throw new InvalidDataException("Invalid appearance model packet size.");
+            var header = reader.ReadInt32();
+            var length = (int)input.Length - 4 - header;
+            if (header <= 0 || header > AppearanceData.MaxCatalogBytes || length <= 0)
+                throw new InvalidDataException("Invalid appearance model packet.");
+            input.Seek(header, SeekOrigin.Current);
+            var bytes = reader.ReadBytes(length);
+            if (bytes.Length != length) throw new IOException("Incomplete appearance model payload.");
+            return bytes;
         }
 
         private static AssetBundle FindNativeBundle(string relativePath, AppearanceEntry entry, string digest, int length)
@@ -306,13 +404,16 @@ namespace CozyMods.Appearance
                 Source = pack.Installed ? "已安装" : pack.Saved ? "已保存" : "房间获取",
                 Installed = pack.Installed, Saved = pack.Saved,
                 CanEquip = pack.Installed || pack.Saved || pack.Catalog.AllowSave,
-                Ready = !pack.LoadFailed
+                Ready = !pack.LoadFailed && (!pack.Catalog.UsesGlb || pack.Loaded.ContainsKey(entry.Id)),
+                IsModel = pack.Catalog.UsesGlb,
+                LoadFailed = pack.LoadFailed || pack.FailedEntries.Contains(entry.Id)
             };
 
         public void TrimLoaded(ISet<string> inUse)
         {
             foreach (var pack in known.Values)
-                if (pack.Bundle != null && !inUse.Contains(pack.Digest)) Unload(pack);
+                if ((pack.Bundle != null || pack.Model != null || pack.ModelRequest != null) &&
+                    !inUse.Contains(pack.Digest) && (pack != preview || !pack.Installed)) Unload(pack);
         }
 
         public void TrimCache(ISet<string> requested)
@@ -326,7 +427,8 @@ namespace CozyMods.Appearance
                 if (remaining <= MaxCacheBytes) break;
                 var digest = Path.GetFileNameWithoutExtension(file.Name);
                 known.TryGetValue(digest, out var pack);
-                if (requested.Contains(digest) || pack?.Installed == true || pack?.Bundle != null) continue;
+                if (requested.Contains(digest) || pack?.Installed == true || pack?.Bundle != null ||
+                    pack?.Model != null || pack?.ModelRequest != null) continue;
                 var size = file.Length;
                 try { file.Delete(); }
                 catch (IOException) { continue; }
@@ -338,19 +440,35 @@ namespace CozyMods.Appearance
 
         public void Dispose()
         {
+            preview = null;
             foreach (var pack in known.Values) Unload(pack);
             known.Clear();
         }
 
+        public void CancelModelImports()
+        {
+            foreach (var pack in known.Values) CancelModelImport(pack);
+        }
+
         private void Unload(Pack pack)
         {
+            CancelModelImport(pack);
             pack.Loaded.Clear();
+            pack.Model?.Dispose();
+            pack.Model = null;
             if (pack.Bundle != null && --pack.Bundle.Users == 0)
             {
                 if (!pack.Bundle.Borrowed && pack.Bundle.Value != null) pack.Bundle.Value.Unload(true);
                 bundles.Remove(pack.Bundle.Digest);
             }
             pack.Bundle = null;
+        }
+
+        private static void CancelModelImport(Pack pack)
+        {
+            var request = pack.ModelRequest;
+            pack.ModelRequest = null;
+            request?.Cancel();
         }
 
         private Pack FindEntry(string key, out AppearanceEntry entry)

@@ -18,6 +18,7 @@ namespace CozyMods.Appearance
         private Func<string> selection;
         private Action<string, string> select;
         private Action<string> save;
+        private Action<string> preview;
         private Func<bool> online;
         private Action<bool> allowAutoSync;
         private ClientUIMgr ui;
@@ -37,13 +38,14 @@ namespace CozyMods.Appearance
         private float nextRefresh;
 
         public void Initialize(Func<IReadOnlyList<WardrobeItem>> items, Func<string> selection,
-            Action<string, string> select, Action<string> save, Func<bool> online,
+            Action<string, string> select, Action<string> save, Action<string> preview, Func<bool> online,
             Action<bool> allowAutoSync, bool initialAllowed = true)
         {
             this.items = items;
             this.selection = selection;
             this.select = select;
             this.save = save;
+            this.preview = preview;
             this.online = online;
             this.allowAutoSync = allowAutoSync;
             syncAllowed = initialAllowed;
@@ -151,6 +153,7 @@ namespace CozyMods.Appearance
         {
             open = false;
             panel.Hide();
+            preview(null);
             if (inputLocks != null)
                 inputLocks.EnableGroup(InputGroup.AllGameplay | InputGroup.Backpack | InputGroup.Chat, this);
             inputLocks = null;
