@@ -50,14 +50,16 @@
 
 所有作品共享游戏固定提供的 HarmonyX 运行时，通过 `context.Harmony` 得到按 Mod UUID 隔离的 owner：`cozy.mod.<uuid>`。玩家不需要额外订阅 Harmony 前置作品，作者也不要把另一份 `0Harmony.dll`、MonoMod 或 Cecil 带入包。
 
-| 程序集 | 游戏固定版本 |
-| --- | --- |
-| `0Harmony.dll`（HarmonyX） | 2.10.2.0 |
-| `MonoMod.RuntimeDetour.dll` | 22.7.31.1 |
-| `MonoMod.Utils.dll` | 22.7.31.1 |
-| `Mono.Cecil.dll` | 0.11.4.0 |
+加入 macOS Universal 模组支持后，Windows x64 和 macOS Universal 的 Mono 游戏构建共用同一套依赖。下表列出这次升级锁定的程序集版本。
 
-编译引用从实际安装 Player 导入。固定组合由游戏维护者升级和验证，不表示 Harmony 本身无法多版本运行。引用元数据与游戏运行时不一致时，先更新/重新导入，不复制共享 DLL 到作品绕过。
+| 程序集 | 游戏运行时版本 |
+| --- | --- |
+| `0Harmony.dll`（HarmonyX） | 2.16.0.0 |
+| `MonoMod.RuntimeDetour.dll` | 25.3.3.0 |
+| `MonoMod.Utils.dll` | 25.0.11.0 |
+| `Mono.Cecil.dll` | 0.11.6.0 |
+
+编译时使用实际安装的配套游戏提供的引用。依赖版本随游戏构建而定，更新游戏后重新导入引用并编译。游戏在运行时加载 `MonoMod.Backports.dll`，范例项目会将它从编译引用中排除，以避免与 Unity Mono 自带类型重复。 [导入引用](../Tools/README.md#核对配套-build-并导入引用)
 
 使用 `context.Harmony.Patch(...)` 或仅对自己的补丁类型/程序集 `PatchAll(...)`。正常上下文清理只撤销该 owner；作者不得调用全局 `UnpatchAll()`。需要主动撤销自己的补丁时使用 `UnpatchSelf()`，并负责恢复额外静态状态和缓存。撤销补丁不会自动复原之前已改写的字段值。
 
