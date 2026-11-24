@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "cozy.appearance.upright-mouse",
   "name": "直立鼠",
-  "author": "Cozy Island Mod Examples",
+  "author": "LazyFish Studio",
   "platform": "win64",
   "bundle": "Assets/uprightmouse.bundle",
   "share": true,

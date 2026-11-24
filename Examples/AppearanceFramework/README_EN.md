@@ -27,6 +27,10 @@ A working appearance pack has three files in the same mod folder. Keep the asset
 | `appearance.json` | Set `schemaVersion: 1` and fill in `id`, `name`, `author`, `platform`, `bundle`, and `entries`. |
 | `Assets/model-name.bundle` | Use Unity to bundle one or more prefabs for the framework to attach to the character. Build for the platform your players use. |
 
+`author` in `mod.json` appears on the Mods page. `author` in `appearance.json` travels with the appearance and appears in the Appearances menu, including for players who receive it in a room. Use the same credit in both places when the mod and appearance share an author.
+
+When updating a published pack, you can include an `appearance-upgrades.json` file with a JSON array of previous SHA-256 digests. To calculate one, hash the old catalog's byte count as a four-byte little-endian integer, followed by the original bytes of `appearance.json` and then the old asset bundle bytes. The framework carries over equipped selections when the updated pack is installed and the entry ID and slot match. Remove the example's upgrade file when you use it to create a new pack.
+
 Use `win64` or `macos` for `platform`. Each entry has an `id` and `name`, a wearable `slot`, a `prefab` path inside the bundle, and a list of `parts` to attach. Each part's `path` is relative to the prefab root. Its `anchor` names an attachment point on the game character.
 
 - Use the `Body` slot for a new body. Attach a head at `Face`, parts that follow hair visibility at `Hair`, and the torso at `Torso`. If a part is positioned relative to one anchor and should move with another, set `followAnchor`.

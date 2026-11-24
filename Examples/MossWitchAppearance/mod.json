@@ -4,7 +4,7 @@
   "displayName": "青苔魔法套装外观包",
   "name": "cozy.appearance.example.moss-witch",
   "author": "LazyFish Studio",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "在「外观库」选择青苔魔法袍和帽子。需要启用外观模组框架。",
   "preview": "preview.png",
   "dependencies": [

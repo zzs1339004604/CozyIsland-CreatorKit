@@ -129,8 +129,19 @@ namespace CozyMods.Appearance
                 refreshAfter = 2;
                 var service = CozyWorkshopService.Instance;
                 if (service != null)
+                {
                     store.RefreshInstalled(service.Mods.Where(entry => entry.enabled && string.IsNullOrEmpty(entry.error))
                         .Select(entry => entry.directory));
+                    var equipped = AppearanceSlots.Parse(preferences.Selection);
+                    for (var i = 0; i < equipped.Length; i++)
+                        equipped[i] = store.UpgradeSelection(equipped[i], AppearanceSlots.All[i]);
+                    var upgraded = string.Join("|", equipped);
+                    if (upgraded != preferences.Selection)
+                    {
+                        preferences.Selection = upgraded;
+                        WritePreferences();
+                    }
+                }
             }
 
             var local = PlayerIdentifier.TryGetInstance()?.GetPlayer(needOriginal: true)?.gameObject;

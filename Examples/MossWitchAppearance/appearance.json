@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "cozy.appearance.moss-witch",
   "name": "青苔魔法套装",
-  "author": "Cozy Island Mod Examples",
+  "author": "LazyFish Studio",
   "platform": "win64",
   "bundle": "Assets/witch-robe-win64.bundle",
   "share": true,
