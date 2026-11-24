@@ -3,7 +3,7 @@
   "displayName": "建筑名称提示",
   "name": "cozy.example.buildinghints",
   "uuid": "3b3be159-170e-4e94-89d5-8d5e5e3a604c",
-  "author": "Cozy Island Mod Examples",
+  "author": "LazyFish Studio",
   "version": "1.0.0",
   "description": "拿着小木锤聚焦建筑或家具时，在拆除提示后显示当前建筑的名称。只增强本机提示，演示使用游戏统一提供的 Harmony 给活跃建筑交互方法添加 Postfix。",
   "code": {

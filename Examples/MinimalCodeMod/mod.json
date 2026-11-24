@@ -3,7 +3,7 @@
   "displayName": "代码加载与 Harmony 示例",
   "name": "cozy.example.minimal-code",
   "uuid": "a5e6c859-0987-4565-8788-f35de8c8afbd",
-  "author": "Cozy Island Mod Examples",
+  "author": "LazyFish Studio",
   "version": "1.0.0",
   "description": "最小代码示例：修补自己程序集中的方法，并在 Player 日志中记录加载、更新、场景和清理回调。没有游戏玩法改动或额外界面。",
   "code": {
