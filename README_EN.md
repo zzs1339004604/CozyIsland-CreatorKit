@@ -8,9 +8,7 @@ This is the guide to making mods for Cozy Island.
 >
 > We also welcome pull requests to improve existing materials or add new mod examples. [Contribute](https://github.com/zzs1339004604/cozyisland-modding/pulls)
 
-[Make mods with AI](#make-mods-with-ai-recommended) · [Build your first mod](#build-your-first-mod) · [Publish to Steam Workshop](#publish-to-steam-workshop) · [More examples](#more-examples) · [Common questions](#common-questions) · [Disclaimer](#disclaimer)
-
-> **Before you start**  The examples need a version of Cozy Island with a **Mods** menu that understands the `displayName`, `name`, and `uuid` manifest fields. The build record lists game versions that have been verified for the kit. [Steam store](https://store.steampowered.com/app/2918500/) · [Game build record](PlayerIdentity.json)
+---
 
 ## Make mods with AI (recommended)
 
@@ -30,7 +28,14 @@ Study the existing mod examples and make a mod that changes the player character
 Install the mod in the game and test it. Once you’ve confirmed it works, upload it to the Steam Workshop with visibility set to Private.
 ```
 
-Once it builds, enable the local mod and verify the result in-game before deciding whether to publish it.
+You can also try your mod locally in the game before deciding whether to publish it to the Steam Workshop.
+
+## Contents
+
+- [1. Build your first mod](#build-your-first-mod)
+- [2. Publish to Steam Workshop](#publish-to-steam-workshop)
+- [3. Common questions](#common-questions)
+- [4. Disclaimer](#disclaimer)
 
 ## Build your first mod
 

@@ -5,7 +5,7 @@
 这里是《舒舒服服小岛时光》的模组制作指南。
 
 > 本仓库部分文档、示例和工具在 AI 协助下编写。欢迎反馈说明中的错误、使用中遇到的问题，或提出改进建议。 [提交反馈](https://github.com/zzs1339004604/cozyisland-modding/issues)
-> 
+>
 > 也非常欢迎大家直接提交 PR 改进现有内容，或贡献新的 Mod 范例。 [参与贡献](https://github.com/zzs1339004604/cozyisland-modding/pulls)
 
 ---
