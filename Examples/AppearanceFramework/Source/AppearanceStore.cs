@@ -274,12 +274,22 @@ namespace CozyMods.Appearance
         private static WardrobeItem ToItem(Pack pack, AppearanceEntry entry, string key) =>
             new WardrobeItem
             {
-                Key = key, Name = entry.Name, Author = pack.Catalog.Author, Slot = entry.Slot,
+                Key = key, Name = entry.Name, Author = DisplayAuthor(pack.Catalog), Slot = entry.Slot,
                 Source = pack.Installed ? "已安装" : pack.Saved ? "已保存" : "房间获取",
                 Installed = pack.Installed, Saved = pack.Saved,
                 CanEquip = pack.Installed || pack.Saved || pack.Catalog.AllowSave,
                 Ready = !pack.LoadFailed
             };
+
+        private static string DisplayAuthor(AppearanceCatalog catalog)
+        {
+            // These two published catalogs are hashed into equipped appearance keys.
+            if (catalog.Author == "Cozy Island Mod Examples" &&
+                (catalog.Id is "cozy.appearance.upright-mouse" or "cozy.appearance.moss-witch"))
+                return "LazyFish Studio";
+
+            return catalog.Author;
+        }
 
         public void TrimLoaded(ISet<string> inUse)
         {
