@@ -49,7 +49,8 @@ namespace CozyMods.Appearance
         public bool Share { get; set; }
         public bool AllowSave { get; set; }
         public AppearanceEntry[] Entries { get; set; }
-        internal bool UsesGlb => SchemaVersion == 2;
+        internal bool UsesGlb => SchemaVersion == 2 && Model != null;
+        internal bool IsModelFree => SchemaVersion == 2 && Model == null;
     }
 
     internal sealed class LoadedAppearance
@@ -125,9 +126,7 @@ namespace CozyMods.Appearance
             {
                 if (entry == null || !IsSlug(entry.Id) || !ids.Add(entry.Id) || !ValidText(entry.Name) ||
                     !AppearanceSlots.All.Contains(entry.Slot) ||
-                    (catalog.UsesGlb ? entry.Prefab != null && !NodePath(entry.Prefab) : !AssetPath(entry.Prefab, ".prefab")) ||
-                    (entry.Color?.Length ?? 0) > 64 || entry.Parts == null ||
-                    entry.Parts.Length == 0 || entry.Parts.Length > 32)
+                    (entry.Color?.Length ?? 0) > 64 || entry.Parts == null || entry.Parts.Length > 32)
                     throw new InvalidDataException("Invalid appearance entry.");
                 if (entry.Materials != null && (entry.Materials.Count > 16 ||
                     entry.Materials.Any(pair => !ValidText(pair.Key) || pair.Value == null || pair.Value.Prefab <= 0 ||
@@ -141,6 +140,14 @@ namespace CozyMods.Appearance
                     (entry.HideBody != null && (!body || entry.HideBody.Length > 8 ||
                         entry.HideBody.Any(anchor => !IsBodyAnchor(anchor) && anchor != "DefaultClothing"))))
                     throw new InvalidDataException("Invalid body appearance options.");
+                if (catalog.IsModelFree)
+                {
+                    if (!body || entry.HideBody?.Length is not > 0 || entry.Prefab != null || entry.Parts.Length != 0)
+                        throw new InvalidDataException("An appearance without a model must only modify the original body.");
+                }
+                else if (entry.Parts.Length == 0 ||
+                    (catalog.UsesGlb ? entry.Prefab != null && !NodePath(entry.Prefab) : !AssetPath(entry.Prefab, ".prefab")))
+                    throw new InvalidDataException("Invalid appearance geometry.");
 
                 foreach (var part in entry.Parts)
                 {
@@ -174,7 +181,7 @@ namespace CozyMods.Appearance
         {
             1 => catalog.Model == null && catalog.Platform == Platform && AssetPath(catalog.Bundle, ".bundle"),
             2 => catalog.Platform == null && catalog.Bundle == null &&
-                AssetPath(catalog.Model, ".glb"),
+                (catalog.Model == null || AssetPath(catalog.Model, ".glb")),
             _ => false
         };
 

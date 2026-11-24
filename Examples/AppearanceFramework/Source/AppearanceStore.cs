@@ -97,19 +97,23 @@ namespace CozyMods.Appearance
                         throw new InvalidDataException("The appearance catalog is too large.");
                     var json = File.ReadAllBytes(path);
                     var catalog = AppearanceData.ReadCatalog(json, 0, json.Length);
-                    // The framework can load a local .glb even with a Player that predates Workshop delivery for the extension.
-                    var payloadPath = catalog.UsesGlb ? CozyModFiles.Resolve(folder, catalog.Model, false) :
-                        Path.Combine(folder, catalog.Bundle);
-                    next.PayloadPath = payloadPath;
-                    next.PayloadTime = File.GetLastWriteTimeUtc(payloadPath);
-                    var size = new FileInfo(payloadPath).Length;
-                    if (size < 1 || size + json.Length + 4 > AppearanceData.MaxPackBytes)
-                        throw new InvalidDataException("The appearance pack exceeds 8 MiB.");
-                    var bytes = new byte[4 + json.Length + (int)size];
+                    var payload = Array.Empty<byte>();
+                    if (!catalog.IsModelFree)
+                    {
+                        // Also allow local .glb files on Players that predate Workshop support for the extension.
+                        var payloadPath = catalog.UsesGlb ? CozyModFiles.Resolve(folder, catalog.Model, false) :
+                            Path.Combine(folder, catalog.Bundle);
+                        next.PayloadPath = payloadPath;
+                        next.PayloadTime = File.GetLastWriteTimeUtc(payloadPath);
+                        var size = new FileInfo(payloadPath).Length;
+                        if (size < 1 || size + json.Length + 4 > AppearanceData.MaxPackBytes)
+                            throw new InvalidDataException("The appearance pack exceeds 8 MiB.");
+                        payload = File.ReadAllBytes(payloadPath);
+                        if (payload.Length != size) throw new IOException("The appearance payload changed while it was being read.");
+                    }
+                    var bytes = new byte[4 + json.Length + payload.Length];
                     Buffer.BlockCopy(BitConverter.GetBytes(json.Length), 0, bytes, 0, 4);
                     Buffer.BlockCopy(json, 0, bytes, 4, json.Length);
-                    var payload = File.ReadAllBytes(payloadPath);
-                    if (payload.Length != size) throw new IOException("The appearance payload changed while it was being read.");
                     Buffer.BlockCopy(payload, 0, bytes, 4 + json.Length, payload.Length);
                     var digest = AppearanceData.Digest(bytes);
                     Register(digest, bytes, catalog);
@@ -229,6 +233,7 @@ namespace CozyMods.Appearance
             var pack = FindEntry(key, out var entry);
             if (pack == null || entry.Slot != slot || pack.LoadFailed) return null;
             if (pack.Loaded.TryGetValue(entry.Id, out var loaded)) return loaded;
+            if (pack.Catalog.IsModelFree) return pack.Loaded[entry.Id] = new LoadedAppearance(entry, null, usesGlb: true);
             if (pack.Catalog.UsesGlb) return GetModelEntry(pack, entry);
             try
             {
@@ -517,8 +522,11 @@ namespace CozyMods.Appearance
         {
             if (bytes.Length < 5) throw new InvalidDataException("Incomplete appearance pack.");
             var length = BitConverter.ToInt32(bytes, 0);
-            if (length > bytes.Length - 5) throw new InvalidDataException("Incomplete appearance bundle.");
-            return AppearanceData.ReadCatalog(bytes, 4, length);
+            if (length > bytes.Length - 4) throw new InvalidDataException("Incomplete appearance catalog.");
+            var catalog = AppearanceData.ReadCatalog(bytes, 4, length);
+            if ((length == bytes.Length - 4) != catalog.IsModelFree)
+                throw new InvalidDataException("The appearance payload does not match its catalog.");
+            return catalog;
         }
 
         private void Register(string digest, byte[] bytes, AppearanceCatalog catalog)

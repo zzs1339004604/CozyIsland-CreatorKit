@@ -51,6 +51,10 @@ Each entry has an `id`, `name`, wearable `slot`, and list of `parts` to attach. 
 
 Set `share` to `true` to share a GLB appearance in a room. Also set `allowSave` to `true` to let recipients save and equip it. The model and catalog together may be up to 8 MiB. The framework supplies attachment, materials, and animation behavior. [Entry fields](Source/AppearanceData.cs) · [Part fields](Source/PlacementVisuals.cs)
 
+## Hide original body parts
+
+Appearance Mod Framework 0.2.2 supports body skins defined entirely in the configuration. For example, to hide the original head, use `schemaVersion: 2` and omit `model`. Each entry uses `slot: "Body"`, `hideBody: ["Face", "Hair"]`, and an empty `parts: []` array. Set the minimum framework version to `0.2.2` in `mod.json`. The same `share` and `allowSave` settings control room sharing and saving for these skins.
+
 ## Existing AssetBundle appearances
 
 The framework still supports `schemaVersion: 1` with `platform` (`win64` or `macos`), a `bundle` path, and Unity Prefab paths. Here too, `share` and `allowSave` control room sharing and saving. Build Unity-specific AssetBundles separately for each target platform. [Native asset authoring](../../Docs/Native-Authoring.md)

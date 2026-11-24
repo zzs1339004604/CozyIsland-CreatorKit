@@ -51,6 +51,10 @@
 
 将 `share` 设为 `true` 可以在房间里分享 GLB 外观。也将 `allowSave` 设为 `true` 时，收到外观的玩家可以保存并穿上。模型和外观清单合计上限 8 MiB。框架使用自带的挂接、材质和动画行为。 [数据字段](Source/AppearanceData.cs) · [部件字段](Source/PlacementVisuals.cs)
 
+## 只隐藏原版部件
+
+外观框架 0.2.2 起，可以只用配置制作身体皮肤。例如要隐藏原版头部，使用 `schemaVersion: 2` 并省略 `model`。每个条目使用 `slot: "Body"`、`hideBody: ["Face", "Hair"]` 和空的 `parts: []`。在 `mod.json` 中将框架最低版本设为 `0.2.2`。这类皮肤也可通过 `share` 和 `allowSave` 在房间里分享和保存。
+
 ## 现有 AssetBundle 外观
 
 框架继续支持 `schemaVersion: 1`。这一格式使用 `platform`（`win64` 或 `macos`）、`bundle` 和各条目的 Unity Prefab 路径。这里的 `share` 和 `allowSave` 也控制房间分享和保存。维护 Unity 专用的 AssetBundle 时，为每个目标平台分别构建。 [原生资源制作](../../Docs/Native-Authoring.md)
