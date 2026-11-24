@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using CozyMods.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -103,9 +104,15 @@ namespace CozyMods.Appearance
         private void Open()
         {
             if (open) return;
-            var settings = PCDGameSettingMgr.TryGetInstance(true);
-            if (settings == null || settings.fullScreenToggle == null) return;
-            panel ??= new Panel(this, settings);
+            if (panel == null)
+            {
+                // A scene transition can leave a settings singleton without the menu controls.
+                var scene = SceneManager.GetActiveScene();
+                var settings = FindObjectsOfType<PCDGameSettingMgr>(true).FirstOrDefault(candidate =>
+                    candidate.gameObject.scene == scene && candidate.fullScreenToggle != null);
+                if (settings == null) return;
+                panel = new Panel(this, settings);
+            }
 
             ui = ClientUIMgr.TryGetInstance(true);
             if (ui == null) TakeFocus();
@@ -252,7 +259,7 @@ namespace CozyMods.Appearance
 
         private static string L(string chinese, string english)
         {
-            var settings = PCDGameSettingMgr.Instance;
+            var settings = PCDGameSettingMgr.TryGetInstance();
             if (settings != null)
                 return settings.language == "简体中文" || settings.language == "繁體中文" ? chinese : english;
 
