@@ -24,6 +24,7 @@ namespace CozyMods.Appearance
         private const int ChunkBytes = 8 * 1024;
         private const int MaxPending = 8;
         private const int MaxTransfers = 24;
+        private const float ChunkInterval = 0.05f;
         private const float RequestTimeout = 15f;
         private const float RetryDelay = 5f;
         private const byte ProtocolVersion = 1;
@@ -66,6 +67,7 @@ namespace CozyMods.Appearance
         private NetworkConnection markerConnection, clientConnection;
         private string lastLocalSelection, lastLocalActor;
         private bool autoReceive, hosting, sentHello, welcomed;
+        private float nextChunkAt;
 
         internal IReadOnlyDictionary<string, string> Players => players;
         internal bool Connected => hosting || welcomed;
@@ -114,7 +116,9 @@ namespace CozyMods.Appearance
             }
             else if (clientConnection != null)
             {
-                if (!sentHello && ReferenceEquals(markerConnection, clientConnection) && clientConnection.isAuthenticated)
+                // Wait for the local avatar to be attached before asking for room appearances.
+                if (!sentHello && ReferenceEquals(markerConnection, clientConnection) && clientConnection.isAuthenticated &&
+                    NetworkClient.ready && LocalAvatarReady())
                 {
                     sentHello = true;
                     clientConnection.Send(Packet(Kind.Hello));
@@ -168,8 +172,9 @@ namespace CozyMods.Appearance
             }
             foreach (var connection in NetworkServer.connections.Values)
             {
-                if (connection is LocalConnectionToClient || !connection.isAuthenticated || !connection.isReady
-                    || !announced.Add(connection)) continue;
+                if (connection is LocalConnectionToClient || !connection.isAuthenticated || !connection.isReady ||
+                    announced.Contains(connection) || SpawnedPlayer(connection.identity) == null) continue;
+                announced.Add(connection);
                 connection.Send(new CozyModPrefabCatalogMessage { assetIds = Array.Empty<uint>(), prefabIds = Array.Empty<long>() });
             }
 
@@ -421,9 +426,9 @@ namespace CozyMods.Appearance
 
         private void PumpTransfers()
         {
-            if (outgoing.Count == 0 || Transport.active == null) return;
+            if (outgoing.Count == 0 || Transport.active == null || Time.unscaledTime < nextChunkAt) return;
             var packetBytes = Math.Min(ChunkBytes, NetworkMessages.MaxContentSize(Channels.Reliable) - 160);
-            for (var i = 0; i < 6 && outgoing.Count > 0; i++)
+            while (outgoing.Count > 0)
             {
                 var transfer = outgoing.Dequeue();
                 if (transfer.Destination is NetworkConnectionToClient peer ? !IsLive(peer)
@@ -441,6 +446,9 @@ namespace CozyMods.Appearance
                 transfer.Destination.Send(message);
                 transfer.Offset += count;
                 if (transfer.Offset < transfer.Bytes.Length) outgoing.Enqueue(transfer);
+                // Appearance data shares the reliable channel with player and world state.
+                nextChunkAt = Time.unscaledTime + ChunkInterval;
+                return;
             }
         }
 
@@ -470,6 +478,19 @@ namespace CozyMods.Appearance
             if (identity == null) return null;
             var actor = identity.GetComponent<NetworkPlayerHandler>()?.playerName;
             return ValidActor(actor) ? actor : null;
+        }
+
+        private static bool LocalAvatarReady()
+        {
+            var player = SpawnedPlayer(NetworkClient.localPlayer);
+            return player != null && PlayerIdentifier.TryGetInstance()?.GetPlayer(needOriginal: true)?.gameObject == player;
+        }
+
+        private static GameObject SpawnedPlayer(NetworkIdentity identity)
+        {
+            if (identity == null) return null;
+            var player = identity.GetComponent<NetworkPlayerHandler>()?.playerInstance;
+            return player != null && player.GetComponent<CozyPlayer>()?.pbSkeleton != null ? player : null;
         }
 
         private static bool ValidActor(string name) => !string.IsNullOrEmpty(name) && name.Length <= 128;
@@ -508,6 +529,7 @@ namespace CozyMods.Appearance
             requests.Clear();
             incoming.Clear();
             outgoing.Clear();
+            nextChunkAt = 0;
             sentHello = welcomed = false;
             lastLocalSelection = lastLocalActor = null;
         }
